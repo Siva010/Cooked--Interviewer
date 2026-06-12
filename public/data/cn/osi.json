@@ -1,0 +1,552 @@
+[
+  {
+    "id": "cn_osi_001",
+    "domain": "Computer Networks",
+    "subdomain": "OSI Model",
+    "question": "What are the 7 layers of the OSI model?",
+    "keywords": [
+      "Physical",
+      "Data Link",
+      "Network",
+      "Transport",
+      "Session",
+      "Presentation",
+      "Application"
+    ],
+    "common_mistakes": [
+      "Confusing layers 5-7"
+    ],
+    "followups": [
+      "What is the TCP/IP model?",
+      "What layer does TCP operate on?"
+    ],
+    "roasts": {
+      "angry_staff": "Seven layers. You named five.",
+      "strict_prof": "Each layer has a formal PDU name: bit, frame, packet, segment, data.",
+      "faang_bar": "Good. How do OSI layers 5-7 map to TCP/IP Application layer?",
+      "startup_cto": "Which layer does a firewall typically operate on?"
+    }
+  },
+  {
+    "id": "cn_osi_002",
+    "domain": "Computer Networks",
+    "subdomain": "OSI Model",
+    "question": "What is the difference between the OSI model and the TCP/IP model?",
+    "keywords": [
+      "7 layers",
+      "4 layers",
+      "reference model",
+      "practical",
+      "Internet layer"
+    ],
+    "common_mistakes": [
+      "Thinking OSI is what the internet uses"
+    ],
+    "followups": [
+      "What are the 4 layers of TCP/IP?",
+      "What layer is HTTP?"
+    ],
+    "roasts": {
+      "angry_staff": "The internet uses TCP/IP not OSI.",
+      "strict_prof": "OSI is prescriptive; TCP/IP is descriptive from protocol implementation.",
+      "faang_bar": "Good. Why did TCP/IP defeat OSI?",
+      "startup_cto": "Which model do network engineers reference in practice?"
+    }
+  },
+  {
+    "id": "cn_osi_003",
+    "domain": "Computer Networks",
+    "subdomain": "Application Layer",
+    "question": "What happens when you type a URL in a browser?",
+    "keywords": [
+      "DNS",
+      "TCP handshake",
+      "TLS",
+      "HTTP",
+      "render",
+      "DOM",
+      "SYN"
+    ],
+    "common_mistakes": [
+      "Forgetting TLS",
+      "Not mentioning DNS caching"
+    ],
+    "followups": [
+      "What is OCSP stapling?",
+      "What is HTTP/2?"
+    ],
+    "roasts": {
+      "angry_staff": "You forgot DNS. That is step one.",
+      "strict_prof": "DNS, TCP, TLS, HTTP, rendering are all formally distinct phases.",
+      "faang_bar": "Good. Full TLS 1.3 handshake sequence?",
+      "startup_cto": "Page loads slowly. How do you find the bottleneck layer?"
+    }
+  },
+  {
+    "id": "cn_tcp_001",
+    "domain": "Computer Networks",
+    "subdomain": "TCP/IP",
+    "question": "What is the difference between TCP and UDP?",
+    "keywords": [
+      "reliable",
+      "ACK",
+      "connectionless",
+      "ordered",
+      "congestion control",
+      "latency"
+    ],
+    "common_mistakes": [
+      "Thinking UDP is always bad"
+    ],
+    "followups": [
+      "What is QUIC?",
+      "Why does DNS use UDP?"
+    ],
+    "roasts": {
+      "angry_staff": "UDP is not bad. VoIP uses UDP. Latency > reliability there.",
+      "strict_prof": "TCP provides reliability, ordering, flow control; UDP provides minimal datagram service.",
+      "faang_bar": "Good. Why does QUIC use UDP?",
+      "startup_cto": "Live video call has 3s latency. TCP or UDP for video stream?"
+    }
+  },
+  {
+    "id": "cn_tcp_002",
+    "domain": "Computer Networks",
+    "subdomain": "TCP/IP",
+    "question": "What is TCP three-way handshake?",
+    "keywords": [
+      "SYN",
+      "SYN-ACK",
+      "ACK",
+      "ISN",
+      "SYN flood",
+      "SYN cookie"
+    ],
+    "common_mistakes": [
+      "Thinking handshake is two steps"
+    ],
+    "followups": [
+      "What is SYN flood?",
+      "What is TIME_WAIT?"
+    ],
+    "roasts": {
+      "angry_staff": "THREE steps. SYN, SYN-ACK, ACK.",
+      "strict_prof": "Three-way handshake formally establishes bidirectional sequence number synchronization.",
+      "faang_bar": "Good. What is TIME_WAIT and why does it last 2*MSL?",
+      "startup_cto": "Server runs out of ports from millions of TIME_WAIT. What is the fix?"
+    }
+  },
+  {
+    "id": "cn_tcp_003",
+    "domain": "Computer Networks",
+    "subdomain": "TCP/IP",
+    "question": "What is TCP congestion control?",
+    "keywords": [
+      "cwnd",
+      "ssthresh",
+      "slow start",
+      "CUBIC",
+      "BBR",
+      "packet loss"
+    ],
+    "common_mistakes": [
+      "Thinking TCP sends at max rate"
+    ],
+    "followups": [
+      "What is BBR?",
+      "How does packet loss trigger it?"
+    ],
+    "roasts": {
+      "angry_staff": "TCP does NOT send at max rate. Congestion window limits it.",
+      "strict_prof": "AIMD: Additive Increase Multiplicative Decrease is the formal algorithm.",
+      "faang_bar": "Good. How does BBR differ from loss-based congestion control?",
+      "startup_cto": "Video streaming poor on LTE. What congestion control changes help?"
+    }
+  },
+  {
+    "id": "cn_net_001",
+    "domain": "Computer Networks",
+    "subdomain": "Network Layer",
+    "question": "What is DNS and how does it work?",
+    "keywords": [
+      "recursive resolver",
+      "root",
+      "TLD",
+      "authoritative",
+      "TTL",
+      "A record",
+      "CNAME"
+    ],
+    "common_mistakes": [
+      "Forgetting hierarchy and caching"
+    ],
+    "followups": [
+      "What is DNSSEC?",
+      "What is DNS over HTTPS?"
+    ],
+    "roasts": {
+      "angry_staff": "DNS is hierarchical. Root → TLD → Authoritative.",
+      "strict_prof": "Recursive resolution with TTL-based caching at each level.",
+      "faang_bar": "Good. How does DNSSEC prevent cache poisoning?",
+      "startup_cto": "Updated DNS A record but some users see old IP. Why?"
+    }
+  },
+  {
+    "id": "cn_net_002",
+    "domain": "Computer Networks",
+    "subdomain": "Network Layer",
+    "question": "What is the difference between a hub, switch, and router?",
+    "keywords": [
+      "Layer 1",
+      "Layer 2",
+      "Layer 3",
+      "MAC",
+      "IP",
+      "broadcast",
+      "collision domain"
+    ],
+    "common_mistakes": [
+      "Confusing switch and router"
+    ],
+    "followups": [
+      "What is a Layer 3 switch?",
+      "What is ARP?"
+    ],
+    "roasts": {
+      "angry_staff": "Switch uses MAC. Router uses IP. Different layers.",
+      "strict_prof": "Hub at L1, switch at L2, router at L3 — formal OSI layer mapping.",
+      "faang_bar": "Good. What is a Layer 3 switch?",
+      "startup_cto": "Connect two subnets. Switch or router?"
+    }
+  },
+  {
+    "id": "cn_net_003",
+    "domain": "Computer Networks",
+    "subdomain": "Network Layer",
+    "question": "What is NAT (Network Address Translation)?",
+    "keywords": [
+      "private IP",
+      "public IP",
+      "PAT",
+      "NAT table",
+      "port forwarding",
+      "STUN",
+      "end-to-end"
+    ],
+    "common_mistakes": [
+      "Thinking NAT is a firewall"
+    ],
+    "followups": [
+      "What is PAT?",
+      "How does WebRTC handle NAT?"
+    ],
+    "roasts": {
+      "angry_staff": "NAT is NOT a firewall. Side effect of protection, not the purpose.",
+      "strict_prof": "NAT maps (private IP, port) to (public IP, port) maintaining a state table.",
+      "faang_bar": "Good. How does STUN/TURN enable WebRTC through NAT?",
+      "startup_cto": "Customer behind double NAT cannot connect. Options?"
+    }
+  },
+  {
+    "id": "cn_net_004",
+    "domain": "Computer Networks",
+    "subdomain": "Network Layer",
+    "question": "What is subnetting?",
+    "keywords": [
+      "CIDR",
+      "prefix",
+      "host bits",
+      "usable",
+      "subnet mask",
+      "broadcast"
+    ],
+    "common_mistakes": [
+      "Forgetting to subtract network and broadcast"
+    ],
+    "followups": [
+      "What is VLSM?",
+      "How many hosts in /28?"
+    ],
+    "roasts": {
+      "angry_staff": "Usable hosts in /24 = 254. Not 256. Subtract network and broadcast.",
+      "strict_prof": "Subnetting formally partitions an IP prefix using a longer mask.",
+      "faang_bar": "Good. Subnet 10.0.0.0/16 into 200 subnets with 100 hosts each.",
+      "startup_cto": "Kubernetes needs 500 pod IPs but allocated /24. How to fix?"
+    }
+  },
+  {
+    "id": "cn_sec_001",
+    "domain": "Computer Networks",
+    "subdomain": "Security",
+    "question": "What is the difference between HTTP and HTTPS?",
+    "keywords": [
+      "TLS",
+      "encryption",
+      "certificate",
+      "port 80",
+      "port 443",
+      "confidentiality",
+      "integrity",
+      "authentication"
+    ],
+    "common_mistakes": [
+      "Thinking HTTPS means website is safe"
+    ],
+    "followups": [
+      "What is TLS 1.3?",
+      "What is HSTS?"
+    ],
+    "roasts": {
+      "angry_staff": "HTTPS means CONNECTION encrypted, not website safe.",
+      "strict_prof": "TLS provides three formally distinct security properties.",
+      "faang_bar": "Good. TLS 1.3 handshake and 1-RTT?",
+      "startup_cto": "User says \"HTTPS = safe site.\" What is wrong?"
+    }
+  },
+  {
+    "id": "cn_sec_002",
+    "domain": "Computer Networks",
+    "subdomain": "Security",
+    "question": "What is a firewall?",
+    "keywords": [
+      "stateless",
+      "stateful",
+      "WAF",
+      "iptables",
+      "connection tracking",
+      "ingress",
+      "egress"
+    ],
+    "common_mistakes": [
+      "Confusing stateful and stateless"
+    ],
+    "followups": [
+      "What is WAF?",
+      "AWS Security Group vs NACL?"
+    ],
+    "roasts": {
+      "angry_staff": "Security Group is stateful. NACL is stateless.",
+      "strict_prof": "Stateful firewalls maintain connection tracking table.",
+      "faang_bar": "Good. How does WAF differ from network firewall?",
+      "startup_cto": "AWS security group allows all outbound. What is the risk?"
+    }
+  },
+  {
+    "id": "cn_app_001",
+    "domain": "Computer Networks",
+    "subdomain": "Application Layer",
+    "question": "What is load balancing?",
+    "keywords": [
+      "Layer 4",
+      "Layer 7",
+      "round-robin",
+      "least connections",
+      "SSL termination",
+      "sticky sessions",
+      "HAProxy"
+    ],
+    "common_mistakes": [
+      "Not knowing L4 vs L7 difference"
+    ],
+    "followups": [
+      "What is sticky session?",
+      "What is anycast?"
+    ],
+    "roasts": {
+      "angry_staff": "L4 sees IP/port. L7 reads HTTP headers. Very different.",
+      "strict_prof": "L7 operates on application-layer content enabling URL-based routing.",
+      "faang_bar": "Good. AWS ALB path-based routing and target group weighting?",
+      "startup_cto": "/api/* to API servers, /* to frontend. L4 or L7 LB?"
+    }
+  },
+  {
+    "id": "cn_dhcp_001",
+    "domain": "Computer Networks",
+    "subdomain": "Network Layer",
+    "question": "What is DHCP?",
+    "keywords": [
+      "DORA",
+      "Discover",
+      "Offer",
+      "Request",
+      "Acknowledge",
+      "lease",
+      "broadcast"
+    ],
+    "common_mistakes": [
+      "Not knowing DORA process"
+    ],
+    "followups": [
+      "What is DHCP relay?",
+      "What is APIPA?"
+    ],
+    "roasts": {
+      "angry_staff": "DHCP = DORA. Four steps.",
+      "strict_prof": "DORA uses UDP broadcasts for Discover/Request, unicast for Offer/ACK.",
+      "faang_bar": "Good. How does DHCP relay work for cross-subnet clients?",
+      "startup_cto": "400 devices, /24 pool (254). What happens to device 400?"
+    }
+  },
+  {
+    "id": "cn_vlan_001",
+    "domain": "Computer Networks",
+    "subdomain": "Network Layer",
+    "question": "What is VLAN?",
+    "keywords": [
+      "broadcast domain",
+      "802.1Q",
+      "trunk port",
+      "access port",
+      "isolation"
+    ],
+    "common_mistakes": [
+      "Thinking VLANs need separate hardware"
+    ],
+    "followups": [
+      "What is 802.1Q?",
+      "Trunk vs access port?"
+    ],
+    "roasts": {
+      "angry_staff": "VLANs are logical partitions on ONE physical switch.",
+      "strict_prof": "802.1Q tagging identifies VLAN membership in Ethernet frames.",
+      "faang_bar": "Good. Inter-VLAN routing: L3 switch vs separate router?",
+      "startup_cto": "Guest WiFi on same switch as internal servers. How to isolate?"
+    }
+  },
+  {
+    "id": "cn_arp_001",
+    "domain": "Computer Networks",
+    "subdomain": "Network Layer",
+    "question": "What is ARP?",
+    "keywords": [
+      "IP to MAC",
+      "broadcast",
+      "ARP cache",
+      "Layer 2",
+      "LAN"
+    ],
+    "common_mistakes": [
+      "Thinking ARP works across routers"
+    ],
+    "followups": [
+      "What is ARP poisoning?",
+      "What is Gratuitous ARP?"
+    ],
+    "roasts": {
+      "angry_staff": "ARP only works WITHIN a subnet.",
+      "strict_prof": "ARP maps Layer 3 to Layer 2 — formally a cross-layer resolution protocol.",
+      "faang_bar": "Good. How does ARP poisoning work and how is it prevented with DAI?",
+      "startup_cto": "Intermittent connectivity. ARP table issues suspected. How to diagnose?"
+    }
+  },
+  {
+    "id": "cn_bgp_001",
+    "domain": "Computer Networks",
+    "subdomain": "Routing",
+    "question": "What is BGP?",
+    "keywords": [
+      "autonomous system",
+      "ASN",
+      "path-vector",
+      "eBGP",
+      "iBGP",
+      "route table"
+    ],
+    "common_mistakes": [
+      "Confusing BGP with OSPF"
+    ],
+    "followups": [
+      "What is OSPF?",
+      "What is BGP hijack?"
+    ],
+    "roasts": {
+      "angry_staff": "OSPF within network. BGP between networks.",
+      "strict_prof": "BGP is a path-vector protocol selecting by AS path and policy.",
+      "faang_bar": "Good. BGP route filtering with prefix lists and route maps?",
+      "startup_cto": "BGP leak caused traffic redirect to another country. How?"
+    }
+  },
+  {
+    "id": "cn_ospf_001",
+    "domain": "Computer Networks",
+    "subdomain": "Routing",
+    "question": "What is OSPF?",
+    "keywords": [
+      "link-state",
+      "LSDB",
+      "Dijkstra",
+      "LSA",
+      "Area 0",
+      "convergence"
+    ],
+    "common_mistakes": [
+      "Confusing OSPF with RIP or BGP"
+    ],
+    "followups": [
+      "OSPF vs RIP?",
+      "OSPF Area 0?"
+    ],
+    "roasts": {
+      "angry_staff": "RIP uses hop count. OSPF uses Dijkstra. Completely different.",
+      "strict_prof": "OSPF formally implements Dijkstra SPF on link-state database updated via LSA flooding.",
+      "faang_bar": "Good. OSPF area hierarchy reduces LSDB size how?",
+      "startup_cto": "500-router network. OSPF takes 30s to converge. Tuning?"
+    }
+  },
+  {
+    "id": "cn_ipv4_001",
+    "domain": "Computer Networks",
+    "subdomain": "Network Layer",
+    "question": "What is an IP address?",
+    "keywords": [
+      "32-bit",
+      "IPv4",
+      "IPv6",
+      "private range",
+      "RFC1918",
+      "loopback"
+    ],
+    "common_mistakes": [
+      "Not knowing private IP ranges"
+    ],
+    "followups": [
+      "Public vs private IP?",
+      "What is APIPA?"
+    ],
+    "roasts": {
+      "angry_staff": "IPv4 is 32 bits. IPv6 is 128. Not 64.",
+      "strict_prof": "IPv4 and IPv6 are formally distinct addressing schemes.",
+      "faang_bar": "Good. IPv6 header changes vs IPv4?",
+      "startup_cto": "Got /28 block from ISP. How many public servers?"
+    }
+  },
+  {
+    "id": "cn_http_001",
+    "domain": "Computer Networks",
+    "subdomain": "Application Layer",
+    "question": "What is HTTP/2 and how does it improve over HTTP/1.1?",
+    "keywords": [
+      "multiplexing",
+      "binary",
+      "HPACK",
+      "server push",
+      "head-of-line blocking",
+      "streams",
+      "HTTP/1.1"
+    ],
+    "common_mistakes": [
+      "Thinking HTTP/2 eliminates all HOL blocking (TCP-level HOL still exists — fixed by HTTP/3/QUIC)"
+    ],
+    "followups": [
+      "What is HTTP/3?",
+      "What is QUIC?",
+      "What is head-of-line blocking?"
+    ],
+    "roasts": {
+      "angry_staff": "HTTP/2 still has TCP-level HOL blocking. HTTP/3 with QUIC fixes that.",
+      "strict_prof": "HTTP/2 multiplexing formally uses the stream abstraction to interleave requests over a single TCP connection.",
+      "faang_bar": "Good. How does QUIC eliminate TCP-level head-of-line blocking that HTTP/2 still suffers from?",
+      "startup_cto": "Your page loads 50 CSS/JS files. How does HTTP/2 multiplexing help vs HTTP/1.1?"
+    }
+  }
+]

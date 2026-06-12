@@ -1,0 +1,273 @@
+[
+  {
+    "id": "backend_001",
+    "domain": "Backend",
+    "subdomain": "API Design",
+    "question": "What is REST and what are its key constraints?",
+    "keywords": [
+      "Stateless",
+      "Client-Server",
+      "HTTP verbs",
+      "CRUD",
+      "Uniform Interface",
+      "Cacheable"
+    ],
+    "common_mistakes": [
+      "Thinking REST is a protocol rather than an architectural style",
+      "Confusing PUT and PATCH"
+    ],
+    "followups": [
+      "What does statelessness mean in REST?",
+      "Difference between PUT and PATCH?"
+    ],
+    "roasts": {
+      "angry_staff": "If you maintain session state on the server, it is NOT RESTful.",
+      "strict_prof": "Fielding's dissertation defines REST strictly; most modern APIs are merely HTTP APIs, not true REST.",
+      "faang_bar": "Good. What is HATEOAS and why is it rarely implemented?",
+      "startup_cto": "Keep URLs clean and use the right HTTP methods. Don't overthink it."
+    }
+  },
+  {
+    "id": "backend_002",
+    "domain": "Backend",
+    "subdomain": "API Design",
+    "question": "What is GraphQL and how does it differ from REST?",
+    "keywords": [
+      "query language",
+      "single endpoint",
+      "over-fetching",
+      "under-fetching",
+      "flexible"
+    ],
+    "common_mistakes": [
+      "Assuming GraphQL is faster server-side (it can actually be slower due to complex query parsing)"
+    ],
+    "followups": [
+      "What is the N+1 query problem in GraphQL?",
+      "How do you handle caching in GraphQL?"
+    ],
+    "roasts": {
+      "angry_staff": "GraphQL is great until someone writes a query 10 levels deep that brings your DB to its knees.",
+      "strict_prof": "GraphQL delegates data shape definition to the client, complicating standard HTTP caching strategies.",
+      "faang_bar": "Good. Explain how DataLoader solves the N+1 problem.",
+      "startup_cto": "Great for frontend agility. Watch out for complex resolvers though."
+    }
+  },
+  {
+    "id": "backend_003",
+    "domain": "Backend",
+    "subdomain": "Authentication",
+    "question": "Explain JWT (JSON Web Tokens) vs Session-based authentication.",
+    "keywords": [
+      "stateless",
+      "session ID",
+      "signed token",
+      "revocation",
+      "claims"
+    ],
+    "common_mistakes": [
+      "Putting sensitive info in a JWT payload (it's encoded, not encrypted)",
+      "Not understanding token revocation challenges"
+    ],
+    "followups": [
+      "How do you revoke a JWT?",
+      "Where should you store a JWT on the client?"
+    ],
+    "roasts": {
+      "angry_staff": "Don't put passwords in a JWT! Anyone can decode it at jwt.io.",
+      "strict_prof": "JWT delegates authorization state to the client via cryptographic signatures.",
+      "faang_bar": "Good. Explain the refresh token rotation strategy.",
+      "startup_cto": "JWTs are great for microservices. No need to query a central session DB on every request."
+    }
+  },
+  {
+    "id": "backend_004",
+    "domain": "Backend",
+    "subdomain": "Databases",
+    "question": "SQL vs NoSQL. When would you choose which?",
+    "keywords": [
+      "Relational",
+      "ACID",
+      "schema",
+      "flexible",
+      "horizontal scaling",
+      "JOINs"
+    ],
+    "common_mistakes": [
+      "Thinking NoSQL completely replaces SQL",
+      "Assuming NoSQL cannot be consistent"
+    ],
+    "followups": [
+      "What are the types of NoSQL databases?",
+      "How do you do transactions in NoSQL?"
+    ],
+    "roasts": {
+      "angry_staff": "Don't use MongoDB just because you hate writing schemas. Schemas are your friends.",
+      "strict_prof": "The choice often boils down to the consistency requirements and query access patterns.",
+      "faang_bar": "Good. Give a use case for a Wide-Column store like Cassandra vs a Document store like MongoDB.",
+      "startup_cto": "Postgres can handle 90% of use cases. Only reach for NoSQL if you have a specific need."
+    }
+  },
+  {
+    "id": "backend_005",
+    "domain": "Backend",
+    "subdomain": "Architecture",
+    "question": "What is Idempotency in API design?",
+    "keywords": [
+      "identical requests",
+      "same effect",
+      "Idempotency Key",
+      "network retries",
+      "payment processing"
+    ],
+    "common_mistakes": [
+      "Confusing safe methods (GET) with idempotent methods (PUT/DELETE)",
+      "Not handling retries in distributed systems"
+    ],
+    "followups": [
+      "How do you implement an Idempotency Key?",
+      "Is POST idempotent?"
+    ],
+    "roasts": {
+      "angry_staff": "If your payment API isn't idempotent, a dropped connection will charge the customer twice.",
+      "strict_prof": "Idempotence guarantees state convergence regardless of network transient failures or message duplication.",
+      "faang_bar": "Good. How long should you retain idempotency keys in your database?",
+      "startup_cto": "Always use idempotency keys for anything involving money or state creation."
+    }
+  },
+  {
+    "id": "backend_006",
+    "domain": "Backend",
+    "subdomain": "Security",
+    "question": "What is CORS and how does it work?",
+    "keywords": [
+      "Cross-Origin",
+      "browser security",
+      "preflight",
+      "OPTIONS",
+      "Access-Control-Allow-Origin"
+    ],
+    "common_mistakes": [
+      "Thinking CORS protects the server (it protects the client/browser)"
+    ],
+    "followups": [
+      "What triggers a preflight request?",
+      "How to bypass CORS during local development?"
+    ],
+    "roasts": {
+      "angry_staff": "Setting Access-Control-Allow-Origin to '*' on a secure API is a terrible idea.",
+      "strict_prof": "CORS relaxes the Same-Origin Policy, enabling controlled inter-domain communication.",
+      "faang_bar": "Good. Can server-to-server requests fail due to CORS?",
+      "startup_cto": "Ah, CORS errors. The bane of every frontend developer's existence. Configure your headers properly!"
+    }
+  },
+  {
+    "id": "backend_007",
+    "domain": "Backend",
+    "subdomain": "Performance",
+    "question": "What is the N+1 query problem and how do you fix it?",
+    "keywords": [
+      "ORM",
+      "lazy loading",
+      "eager loading",
+      "batching",
+      "JOINs",
+      "IN clause"
+    ],
+    "common_mistakes": [
+      "Not profiling database queries",
+      "Assuming ORMs optimize queries automatically"
+    ],
+    "followups": [
+      "How does DataLoader solve this in GraphQL?"
+    ],
+    "roasts": {
+      "angry_staff": "Your simple API endpoint just executed 500 database queries. Use eager loading!",
+      "strict_prof": "The N+1 problem is a classic impedance mismatch between object-oriented representations and relational models.",
+      "faang_bar": "Good. How would you detect N+1 issues in a production application?",
+      "startup_cto": "ORMs are magic until they're not. Always check the generated SQL."
+    }
+  },
+  {
+    "id": "backend_008",
+    "domain": "Backend",
+    "subdomain": "Architecture",
+    "question": "What are webhooks?",
+    "keywords": [
+      "HTTP callbacks",
+      "real-time",
+      "event-driven",
+      "polling alternative",
+      "HTTP POST"
+    ],
+    "common_mistakes": [
+      "Confusing webhooks with WebSockets",
+      "Not validating incoming webhook signatures"
+    ],
+    "followups": [
+      "How do you secure a webhook?",
+      "What if the receiving server is down?"
+    ],
+    "roasts": {
+      "angry_staff": "Stop polling the API every second! Use a webhook and let them tell you when it's done.",
+      "strict_prof": "Webhooks implement the observer pattern over HTTP.",
+      "faang_bar": "Good. Describe a robust retry mechanism for failing webhook deliveries.",
+      "startup_cto": "Webhooks are how modern SaaS products talk to each other."
+    }
+  },
+  {
+    "id": "backend_009",
+    "domain": "Backend",
+    "subdomain": "Databases",
+    "question": "What is connection pooling?",
+    "keywords": [
+      "cache of connections",
+      "reuse",
+      "expensive operation",
+      "TCP handshake",
+      "limit connections"
+    ],
+    "common_mistakes": [
+      "Creating a new connection for every request"
+    ],
+    "followups": [
+      "How do you size a connection pool?",
+      "What happens if the pool is exhausted?"
+    ],
+    "roasts": {
+      "angry_staff": "Creating a new DB connection on every request? You're going to crash the database.",
+      "strict_prof": "Pooling amortizes the high latency cost of connection establishment over multiple transactions.",
+      "faang_bar": "Good. Contrast client-side pooling with a proxy like PgBouncer.",
+      "startup_cto": "Configure PgBouncer and forget about it."
+    }
+  },
+  {
+    "id": "backend_010",
+    "domain": "Backend",
+    "subdomain": "Caching",
+    "question": "Difference between Memcached and Redis?",
+    "keywords": [
+      "in-memory",
+      "key-value",
+      "multithreaded",
+      "single-threaded",
+      "complex data structures",
+      "persistence",
+      "Pub/Sub"
+    ],
+    "common_mistakes": [
+      "Using Redis when only simple string caching is needed (overkill)",
+      "Assuming Redis is fully multi-threaded"
+    ],
+    "followups": [
+      "When would you choose Memcached over Redis?",
+      "How does Redis achieve high performance despite being single-threaded?"
+    ],
+    "roasts": {
+      "angry_staff": "Why are you using Redis just to cache a string? You don't need lists and sets for that.",
+      "strict_prof": "Redis's event loop architecture provides high throughput while avoiding lock contention.",
+      "faang_bar": "Good. Explain Redis persistence mechanisms and their trade-offs.",
+      "startup_cto": "Redis is the Swiss army knife of backend development."
+    }
+  }
+]

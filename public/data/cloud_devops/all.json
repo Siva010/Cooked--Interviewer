@@ -1,0 +1,4157 @@
+[
+  {
+    "id": "devops_001",
+    "domain": "Cloud & DevOps",
+    "subdomain": "Containers",
+    "question": "What is the difference between Docker (Containers) and Virtual Machines?",
+    "keywords": [
+      "hypervisor",
+      "guest OS",
+      "share host kernel",
+      "lightweight",
+      "isolate processes"
+    ],
+    "common_mistakes": [
+      "Thinking containers provide the same level of security isolation as VMs"
+    ],
+    "followups": [
+      "What is a Docker image vs a Docker container?",
+      "When would you prefer a VM over a container?"
+    ],
+    "roasts": {
+      "angry_staff": "Running one app per VM is burning money. Containerize it!",
+      "strict_prof": "Containers leverage cgroups and namespaces in the Linux kernel to provide resource limitation and process isolation.",
+      "faang_bar": "Good. Explain the security implications of a container running as root.",
+      "startup_cto": "Docker solves 'It works on my machine'. Ship the container to prod."
+    }
+  },
+  {
+    "id": "devops_002",
+    "domain": "Cloud & DevOps",
+    "subdomain": "Orchestration",
+    "question": "What is Kubernetes and why is it needed?",
+    "keywords": [
+      "container orchestration",
+      "scheduling",
+      "auto-scaling",
+      "self-healing",
+      "rolling updates",
+      "clusters"
+    ],
+    "common_mistakes": [
+      "Thinking Kubernetes replaces Docker (they work together)"
+    ],
+    "followups": [
+      "What are Pods, Nodes, and Clusters in Kubernetes?",
+      "What is a K8s Deployment?"
+    ],
+    "roasts": {
+      "angry_staff": "You're manually SSHing into 50 servers to restart crashed Docker containers? Use Kubernetes!",
+      "strict_prof": "Kubernetes operates on a declarative model: you specify the desired state, and controllers actuate the system to achieve it.",
+      "faang_bar": "Good. Explain how the Kubelet interacts with the Control Plane.",
+      "startup_cto": "K8s is overkill for a 2-person startup. Just use a managed PaaS until you actually need it."
+    }
+  },
+  {
+    "id": "devops_003",
+    "domain": "Cloud & DevOps",
+    "subdomain": "Cloud Computing",
+    "question": "Explain IaaS vs PaaS vs SaaS.",
+    "keywords": [
+      "raw compute",
+      "manage OS",
+      "environment for running apps",
+      "fully managed application"
+    ],
+    "common_mistakes": [
+      "Confusing PaaS and Serverless"
+    ],
+    "followups": [
+      "What is Serverless/FaaS and where does it fit?",
+      "Give an example of a PaaS."
+    ],
+    "roasts": {
+      "angry_staff": "Don't build your own email server on EC2. Just buy Google Workspace (SaaS).",
+      "strict_prof": "The 'as a Service' models represent different levels of abstraction in the shared responsibility model.",
+      "faang_bar": "Good. How does the shared responsibility model differ between IaaS and PaaS?",
+      "startup_cto": "Use PaaS initially to save engineering time. Move to IaaS when bills get too high."
+    }
+  },
+  {
+    "id": "devops_004",
+    "domain": "Cloud & DevOps",
+    "subdomain": "Infrastructure",
+    "question": "What is Infrastructure as Code (IaC) and what is Terraform?",
+    "keywords": [
+      "managing infrastructure",
+      "definition files",
+      "declarative",
+      "version control",
+      "repeatable deployments"
+    ],
+    "common_mistakes": [
+      "Making manual changes in the AWS console when using Terraform (configuration drift)"
+    ],
+    "followups": [
+      "What is configuration drift?",
+      "Declarative (Terraform) vs Imperative (Ansible/Chef) IaC?"
+    ],
+    "roasts": {
+      "angry_staff": "Stop clicking around the AWS console! If you didn't write it in Terraform, it doesn't exist.",
+      "strict_prof": "IaC applies software engineering practices—like versioning, testing, and CI/CD—to infrastructure management.",
+      "faang_bar": "Good. How do you manage Terraform state in a team environment securely?",
+      "startup_cto": "Terraform is essential. Treat your infrastructure just like your application code."
+    }
+  },
+  {
+    "id": "devops_005",
+    "domain": "Cloud & DevOps",
+    "subdomain": "Deployments",
+    "question": "What is a Blue-Green Deployment?",
+    "keywords": [
+      "reduces downtime",
+      "two identical environments",
+      "switch traffic",
+      "instant rollback"
+    ],
+    "common_mistakes": [
+      "Thinking Blue-Green helps with database schema changes (it actually complicates them)"
+    ],
+    "followups": [
+      "What is a Canary Deployment?",
+      "How do you handle database migrations in a Blue-Green deployment?"
+    ],
+    "roasts": {
+      "angry_staff": "Deploying by copying files over FTP and restarting the server? You need Blue-Green.",
+      "strict_prof": "Blue-Green deployments minimize deployment risk but require doubling your infrastructure capacity during the release window.",
+      "faang_bar": "Good. Compare Blue-Green deployments with Shadow Deployments.",
+      "startup_cto": "Zero downtime deployments are a must. Blue-Green makes it easy to revert bad code."
+    }
+  },
+  {
+    "id": "devops_006",
+    "domain": "Cloud & DevOps",
+    "subdomain": "Architecture",
+    "question": "What is Serverless Architecture (e.g., AWS Lambda)?",
+    "keywords": [
+      "without thinking about servers",
+      "dynamically manages",
+      "pay for compute time",
+      "auto-scaling to zero",
+      "cold starts",
+      "vendor lock-in"
+    ],
+    "common_mistakes": [
+      "Assuming there are literally no servers involved"
+    ],
+    "followups": [
+      "What is a cold start and how do you mitigate it?",
+      "When would a long-running EC2 instance be cheaper than Lambda?"
+    ],
+    "roasts": {
+      "angry_staff": "There ARE servers in Serverless. You just don't manage them.",
+      "strict_prof": "Function-as-a-Service (FaaS) introduces high latency on initial invocations due to container spin-up.",
+      "faang_bar": "Good. How do you manage state in a purely serverless architecture?",
+      "startup_cto": "Serverless is amazing for event-driven tasks, but can get pricey for constant, heavy workloads."
+    }
+  },
+  {
+    "id": "devops_007",
+    "domain": "Cloud & DevOps",
+    "subdomain": "Observability",
+    "question": "What are the three pillars of Observability?",
+    "keywords": [
+      "Logs",
+      "Metrics",
+      "Traces",
+      "events",
+      "measured over time",
+      "end-to-end journey",
+      "distributed system"
+    ],
+    "common_mistakes": [
+      "Confusing observability with just monitoring (monitoring tells you a system is broken, observability tells you why)"
+    ],
+    "followups": [
+      "What tools are used for distributed tracing?",
+      "What is Prometheus used for?"
+    ],
+    "roasts": {
+      "angry_staff": "Just printing to stdout isn't enough when you have 50 microservices. You need distributed tracing!",
+      "strict_prof": "Observability is a measure of how well internal states of a system can be inferred from knowledge of its external outputs.",
+      "faang_bar": "Good. How do you implement correlation IDs to link logs across services?",
+      "startup_cto": "Set up Datadog or New Relic immediately. Flying blind is unacceptable."
+    }
+  },
+  {
+    "id": "devops_008",
+    "domain": "Cloud & DevOps",
+    "subdomain": "SRE",
+    "question": "Explain SLI, SLO, and SLA.",
+    "keywords": [
+      "quantitative measure",
+      "target value",
+      "business contract",
+      "consequences",
+      "reliability"
+    ],
+    "common_mistakes": [
+      "Using SLA and SLO interchangeably"
+    ],
+    "followups": [
+      "What is an Error Budget?",
+      "How do Error Budgets affect development speed?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know your SLOs, you don't know if your service is actually healthy.",
+      "strict_prof": "Error budgets align development and operations incentives by mathematically dictating when release velocity must be slowed.",
+      "faang_bar": "Good. How would you design an SLI for a background data processing pipeline?",
+      "startup_cto": "Keep the SLA loose so we don't get sued, but make the SLO tight to keep quality high."
+    }
+  },
+  {
+    "id": "devops_009",
+    "domain": "Cloud & DevOps",
+    "subdomain": "AWS Basics",
+    "question": "What is the difference between AWS EC2, S3, and RDS?",
+    "keywords": [
+      "Virtual servers",
+      "Object storage",
+      "Managed relational database"
+    ],
+    "common_mistakes": [
+      "Trying to run a database directly on EC2 instead of using RDS (without a good reason)"
+    ],
+    "followups": [
+      "What is the difference between Block Storage (EBS) and Object Storage (S3)?",
+      "What is Amazon Aurora?"
+    ],
+    "roasts": {
+      "angry_staff": "Don't store user avatars in your database! Put them in S3 and save the DB links.",
+      "strict_prof": "S3 provides a flat namespace and eventual consistency for overwrites, unlike POSIX-compliant EBS.",
+      "faang_bar": "Good. Explain the consistency model of Amazon S3.",
+      "startup_cto": "These three services are the holy trinity of cloud startups. Master them."
+    }
+  },
+  {
+    "id": "devops_010",
+    "domain": "Cloud & DevOps",
+    "subdomain": "Continuous Integration",
+    "question": "What are the key components of a robust CI/CD pipeline?",
+    "keywords": [
+      "Source Control",
+      "Build",
+      "Automated Testing",
+      "Artifact repository",
+      "Deployment",
+      "Smoke tests"
+    ],
+    "common_mistakes": [
+      "Deploying without automated tests in the pipeline"
+    ],
+    "followups": [
+      "What is GitOps?",
+      "How do you handle secrets in a CI/CD pipeline?"
+    ],
+    "roasts": {
+      "angry_staff": "A CI pipeline without tests is just a script that automatically ships your bugs to production.",
+      "strict_prof": "A true deployment pipeline requires deterministic artifact generation and immutable deployments.",
+      "faang_bar": "Good. Explain how to implement a rollback mechanism in your CD pipeline.",
+      "startup_cto": "Every manual step in a deployment is a chance for a human error. Automate it."
+    }
+  },
+  {
+    "id": "docker_922m0dk",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What is Docker ?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_qpx021t",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What are the Features of Docker?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_apoehu7",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What are the Pros and Cons of Docker?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_gh01ifr",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Name and Explain the Components of Docker.",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_5l7fxlx",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Name and Explain the State of a Docker Container.",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_get68fe",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Can You tell What is the Functionality of a Hypervisor?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_bi187h0",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Difference between Docker and Virtualization?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_nh9a1fu",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "On What Circumstances Will You Lose Data Stored in a Container?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_pywsnby",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What is Docker Hub?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_39exmw7",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What Command Can You Run to Export a Docker Image As an Archive?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_b4q74pc",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What Command Can Be Run to Import a Pre-Exported Docker Image Into Another Docker Host?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_i35jkuz",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Can a Paused Container Be Removed From Docker?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_5zd66oe",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "How Do You get the Number Of Containers Running, Paused, and Stopped?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_yefzcc2",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "How to Start, Stop, and Kill a Container?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_wwc8mkm",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Can You Tell the Difference Between CMD and ENTRYPOINT?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_phpqdpw",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What are the Key Distinctions Between Daemon Level Logging and Container Level Logging in Docker?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_tgfd603",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What Does the Docker Info Command Do?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_x8qy87f",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Where are Docker Volumes Stored in Docker?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_spme29p",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Can You Tell the Differences Between a Docker Image and Layer?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_k912dps",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Can a Container Restart By Itself?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_kwwc37v",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Name the Essential Docker Commands and What They Do.",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_nruxdaj",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What are Docker Object Labels?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_rtehdeh",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "How Do You Check the Versions of Docker Client and Server?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_qvsxmqr",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Why is Docker System Prune Used? What Does It Do?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_4lcx6hs",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What is Docker Swarm?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_dncx15h",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "How Do You Scale Docker Containers Horizontally?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_8fisk8s",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What Is the Difference Between Docker Restart Policies \"no\", \"on-failure,\" And \"always\"?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_iean2ce",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "How Do You Inspect the Metadata of a Docker Image?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_n0gz7yo",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "How Do You Limit the CPU and Memory Usage of a Docker Container?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_ge7rlog",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What Is the Purpose of the \"docker checkpoint\" Command?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_o31nvsr",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Can We Use JSON Instead Of YAML While Developing a Docker-Compose File in Docker?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_co8qenu",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Describe the Lifecycle of a Docker Container.",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_cer5rkq",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "How Will You Ensure Container 1 Runs Before Container 2 While Using docker-compose?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_yoklv4r",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "How Does Docker Handle Container Isolation and Security?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_s41rmfs",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "How do the Docker Daemon and the Docker Client Communicate With Each Other?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_u8smpb1",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Can You Implement Continuous Development (CD) and Continuous Integration (CI) in Docker?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_q93nm4u",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Is it a Good Practice to Run Stateful Applications on Docker?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_pffx3in",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What Is the Purpose of Docker Secrets?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_eq99z10",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "How Do You Create a Multi-stage Build in Docker?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_8yvvcjm",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "How Do You Update a Docker Container Without Losing Data?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_zltlt4q",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "How Do You Manage Network Connectivity Between Docker Containers And the Host Machine?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_d16gxqf",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "How Do You Debug Issues in a Docker Container?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_jh7mexk",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "How Does Docker Handle Service Discovery in Swarm Mode?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_vzi485s",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Which Is the Preferred Method for Removing a Container: Using the \"docker stop\" Command Followed By the \"docker rm\" Command, or Simply Using the \"docker rm\" Command By Itself?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_6c1gzk3",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Suppose You Have 3 Containers Running, and Out Of These, You Wish to Access One Of Them. How Do You Access a Running Container?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_4sv1num",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Considering a Server With 16 GB RAM and a Quad-core CPU, What Factors Determine the Maximum Number Of Containers You Can Run on the Host for a Microservices App?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_46sdmjo",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "How Will You Monitor Docker in Production?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_1tuw3ty",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Are You Aware of Load Balancing Across Containers And Hosts? How Does It Work?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_h7kujfh",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "How Do You Share Data Between Containers in Docker?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_ft7943d",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "How Do You Perform a Live Migration Of Docker Containers Between Hosts?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_nqnw0mj",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "How many Docker components are there?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_yi1ek57",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What are docker images?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_we2ufr3",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What is a DockerFile?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_r00osjh",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Can you tell what is the functionality of a hypervisor?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_82djobh",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What can you tell about Docker Compose?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_zr5vosm",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Can you tell something about docker namespace?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_d856pnx",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What is the docker command that lists the status of all docker containers?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_x1ocfwr",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "On what circumstances will you lose data stored in a container?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_oqwivoh",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What is docker image registry?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_tkyplu8",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Can you tell something about docker container?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_azstqxf",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What is a Docker Hub?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_3zx529x",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What command can you run to export a docker image as an archive?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_916uydb",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What command can be run to import a pre-exported Docker image into another Docker host?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_qlriyub",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Can a paused container be removed from Docker?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_h2t3zit",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What command is used to check for the version of docker client and server?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_r1rlzhv",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What is the way to establish communication between docker host and Linux host?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_0obkp6y",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What is the purpose of the volume parameter in a docker run command?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_exg3c65",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Where are docker volumes stored in docker?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_9c7ihav",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What does the docker info command do?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_hg9a0af",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Can you tell the what are the purposes of up, run, and start commands of docker compose?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_i5d3znt",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What are the basic requirements for the docker to run on any system?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_efk46be",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Can you tell the approach to login to the docker registry?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_d5xvinx",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "List the most commonly used instructions in Dockerfile?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_tzhrifs",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Can you differentiate between Daemon Logging and Container Logging?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_3ed86ie",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Can you tell the differences between a docker Image and Layer?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_q19e40o",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "What is the best way of deleting a container?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_t659bbp",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Can you tell the difference between CMD and ENTRYPOINT?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_qchs00r",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Differentiate between virtualization and containerization.",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_hgzjtch",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Differentiate between COPY and ADD commands that are used in a Dockerfile?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_iss6q3o",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Can a container restart by itself?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_aoqrxhn",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Can we use JSON instead of YAML while developing docker-compose file in Docker?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_ygeol34",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "How many containers you can run in docker and what are the factors influencing this limit?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_8smlbnp",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Describe the lifecycle of Docker Container?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_qr0y6aq",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "How to use docker for multiple application environments?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_udbs7rn",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "How will you ensure that a container 1 runs before container 2 while using docker compose?",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "docker_1p4i0zz",
+    "domain": "Docker",
+    "subdomain": "General",
+    "question": "Conclusion",
+    "keywords": [
+      "concept",
+      "docker"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Docker concept?",
+      "strict_prof": "A textbook definition is not enough for Docker.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_bhco46p",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "Explain Kubernetes Architecture.",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_wmy675b",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "Explain the concept of Container Orchestration.",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_b8c5827",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "How does Kubernetes handle container scaling?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_93we2wu",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "What is Sidecar-Container.",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_vppeum2",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "Explain the difference between a StatefulSet and a Deployment.",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_bq23bn8",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "What is the relationship between a Deployment, ReplicaSet, and Pod?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_wfhp7z6",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "What are ConfigMaps and Secrets in Kubernetes, and how do they differ?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_06pscwm",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "Explain the concept of Ingress in Kubernetes.",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_p6mei2e",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "How does Kubernetes enforce communication boundaries between Pods?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_spyzons",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "Describe the role of etcd in Kubernetes.",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_8twpci2",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "How do rolling updates work in a Deployment?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_sev2e4h",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "You're managing a Kubernetes cluster shared by multiple teams working on different projects. How would you isolate their resources and avoid naming conflicts?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_adkuthp",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "Explain the use of Labels and Selectors in Kubernetes.",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_49t65h2",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "Describe the role of a Proxy in Kubernetes.",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_7pnqje6",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "Explain the differences between a DaemonSet and a ReplicaSet.",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_sy82fee",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "How can you achieve communication between Pods in different Nodes?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_gimvi8r",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "How the Kubernetes Scheduler Assigns Pods to Nodes",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_nnrcnk3",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "You're deploying a mix of latency-sensitive services and batch jobs in a Kubernetes cluster. How would you ensure each workload is scheduled appropriately?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_lkx5p8d",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "Describe how a Horizontal Pod Autoscaler (HPA) works.",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_r7pengs",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "Explain the concept of Custom Resources in Kubernetes.",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_73umgtp",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "What is a Network Policy in Kubernetes?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_110jhvt",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "Describe the role of a kube-proxy in the cluster.",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_06fruo0",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "What is a Helm chart, and how is it used?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_ofmk3xt",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "Explain the concept of Taints and Tolerations in Kubernetes.",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_6gsb66g",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "How does Kubernetes manage storage orchestration?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_99dr9k8",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "Describe the use of init containers in Kubernetes.",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_60mdhwf",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "In Kubernetes, what are the various services available?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_tpqv80h",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "Explain the concept of a Custom Operator in Kubernetes.",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_t4453od",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "What is the purpose of the Kubernetes API server?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_vgzzag5",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "How does Kubernetes handle node failures and resiliency?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_nkavj3j",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "Explain how to set up and use Role-Based Access Control (RBAC) in Kubernetes.",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_9zqqhu8",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "How to do maintenance activity on the K8 node?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_9rmspzn",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "How to get the central logs from POD?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_u4t89kz",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "How to monitor the Kubernetes cluster?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_eofrmnf",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "What are the various things that can be done to increase Kubernetes security?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_eg9dnd6",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "What is the role of Load Balance in Kubernetes?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_m7wq5v0",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "What’s the init container and when it can be used?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_vhhgh72",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "What is PDB (Pod Disruption Budget)?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_hjw3w7b",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "What are the various K8's services running on nodes and describe the role of each service?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_4bq6n3g",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "How do we control the resource usage of POD?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_k2ugsft",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "What is Ingress Default Backend?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_3d78o3i",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "What is GKE?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_dcivco5",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "What is the purpose of operators?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_1amzf81",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "What is an Operator?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_dluth9k",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "What service and namespace are referred to in the following file?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_0ams0yb",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "Why should namespaces be used? How does using the default namespace cause problems?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_yfwuxl6",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "How should TLS be configured with Ingress?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_uvqbvuq",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "Complete the following configurationspec file to make it Ingress",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_ozpcuib",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "How to turn the service defined below in the spec into an external one?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_8s2727b",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "How to troubleshoot if the POD is not getting scheduled?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_q5x0vap",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "How can we forward the port '8080 (container) -> 8080 (service) -> 8080 (ingress) -> 80 (browser)and how it can be done?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_ocr80f4",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "What are the different ways to provide external network connectivity to K8?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_9eyjj7t",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "How to run a POD on a particular node?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_qqaggyq",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "Can you explain the differences between Docker Swarm and Kubernetes?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_cycwtcu",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "What the following in the Deployment configuration file mean?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_mo0cmxn",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "What is Kubernetes Load Balancing?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "kubernetes_ge0z60g",
+    "domain": "Kubernetes",
+    "subdomain": "General",
+    "question": "How to run Kubernetes locally?",
+    "keywords": [
+      "concept",
+      "kubernetes"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Kubernetes concept?",
+      "strict_prof": "A textbook definition is not enough for Kubernetes.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_qkx28ik",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What is EC2?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_8pgj6lf",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What is SnowBall?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_868k8pg",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What is CloudWatch?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_600ds8h",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What is Elastic Transcoder?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_jn4ojx0",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What do you understand by VPC?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_72f8m28",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "DNS and Load Balancer Services come under which type of Cloud Service?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_ky10tip",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What are the Storage Classes available in Amazon S3?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_lp97mqe",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "Explain what T2 instances are?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_ucw1a05",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What are Key-Pairs in AWS?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_5zxkijo",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "How many Subnets can you have per VPC?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_8ndzps9",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "List different types of Cloud Services.",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_orxchfw",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "Explain what S3 is?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_pvrz8w8",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "How does Amazon Route 53 provide high availability and low latency?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_9qkiwcj",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "How can you send a request to Amazon S3?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_qxusx17",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What does AMI include?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_63umixk",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What are the different types of Instances?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_g6k0x4l",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What is the relation between the Availability Zone and Region?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_vv74u69",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "How do you monitor Amazon VPC?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_ugvhl8n",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What are the different types of EC2 instances based on their costs?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_wuaxde6",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What do you understand by stopping and terminating an EC2 Instance?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_g0kq8x6",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What are the consistency models for modern DBs offered by AWS?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_6v6cmx1",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What is Geo-Targeting in CloudFront?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_qkm1i78",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What are the advantages of AWS IAM?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_lo28uu9",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What do you understand by a Security Group?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_l5rs8ow",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What are Spot Instances and On-Demand Instances?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_trcc6qf",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "Explain Connection Draining.",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_8nkv4zw",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What is a Stateful and a Stateless Firewall?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_ajewxgl",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What is a Power User Access in AWS?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_lbarcwc",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What is an Instance Store Volume and an EBS Volume?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_7kyye2v",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What are Recovery Time Objective and Recovery Point Objective in AWS?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_4vef36u",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "Is there a way to upload a file that is greater than 100 Megabytes in Amazon S3?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_jwufyd5",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "Can you change the Private IP Address of an EC2 instance while it is running or in a stopped state?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_ezf3u7w",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What is the use of lifecycle hooks is Autoscaling?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "aws_iplxb5v",
+    "domain": "AWS",
+    "subdomain": "General",
+    "question": "What are the policies that you can set for your user’s passwords?",
+    "keywords": [
+      "concept",
+      "aws"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic AWS concept?",
+      "strict_prof": "A textbook definition is not enough for AWS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  }
+]

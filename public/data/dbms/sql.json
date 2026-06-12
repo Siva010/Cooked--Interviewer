@@ -1,0 +1,300 @@
+[
+  {
+    "id": "dbms_sql_001",
+    "domain": "DBMS",
+    "subdomain": "SQL",
+    "question": "What is the difference between WHERE and HAVING?",
+    "keywords": [
+      "GROUP BY",
+      "aggregate",
+      "filter rows",
+      "filter groups",
+      "COUNT",
+      "HAVING",
+      "WHERE"
+    ],
+    "common_mistakes": [
+      "Using HAVING to filter non-aggregated rows (inefficient, use WHERE instead)"
+    ],
+    "followups": [
+      "Can you use HAVING without GROUP BY?",
+      "What is the SQL query execution order?",
+      "Can WHERE use subqueries?"
+    ],
+    "roasts": {
+      "angry_staff": "WHERE filters ROWS, HAVING filters GROUPS. If you don't know the execution order, you'll write slow queries.",
+      "strict_prof": "The formal distinction follows from SQL's logical query processing order: WHERE→GROUP BY→HAVING.",
+      "faang_bar": "Good. What is SQL's logical processing order and why does it matter for query optimization?",
+      "startup_cto": "Show me a query that incorrectly uses HAVING where WHERE should be used and explain the performance impact."
+    }
+  },
+  {
+    "id": "dbms_sql_002",
+    "domain": "DBMS",
+    "subdomain": "SQL",
+    "question": "What is the difference between INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN?",
+    "keywords": [
+      "INNER JOIN",
+      "LEFT JOIN",
+      "NULL",
+      "matching",
+      "all rows",
+      "FULL OUTER"
+    ],
+    "common_mistakes": [
+      "Confusing LEFT JOIN result set with INNER JOIN"
+    ],
+    "followups": [
+      "What is a CROSS JOIN?",
+      "What is a self join?",
+      "How do NULL values affect JOIN results?"
+    ],
+    "roasts": {
+      "angry_staff": "You said LEFT JOIN returns matching rows only. It returns ALL left rows. NULLs for non-matches.",
+      "strict_prof": "Each join type has a formal set-theoretic definition. FULL OUTER is the union of LEFT and RIGHT joins.",
+      "faang_bar": "Good. How do NULL values in join columns affect INNER JOIN vs LEFT JOIN results?",
+      "startup_cto": "Write a query to find all users who have NOT placed any orders using a LEFT JOIN."
+    }
+  },
+  {
+    "id": "dbms_sql_003",
+    "domain": "DBMS",
+    "subdomain": "SQL",
+    "question": "What is a subquery and what are its types?",
+    "keywords": [
+      "nested query",
+      "scalar",
+      "correlated",
+      "EXISTS",
+      "IN",
+      "re-executed",
+      "outer query"
+    ],
+    "common_mistakes": [
+      "Using correlated subquery instead of JOIN (performance issue)",
+      "Using IN with NULL values (causes unexpected results)"
+    ],
+    "followups": [
+      "When is EXISTS faster than IN?",
+      "What is a lateral join?",
+      "How do correlated subqueries affect performance?"
+    ],
+    "roasts": {
+      "angry_staff": "A correlated subquery re-executes for EVERY outer row. For 1M rows, that's 1M subquery executions.",
+      "strict_prof": "The correlated subquery's dependency on the outer query's current row is its defining formal property.",
+      "faang_bar": "Good. When would EXISTS be faster than IN and why?",
+      "startup_cto": "Rewrite this correlated subquery as a JOIN: SELECT * FROM orders WHERE amount = (SELECT MAX(amount) FROM orders o2 WHERE o2.user_id = orders.user_id)"
+    }
+  },
+  {
+    "id": "dbms_sql_004",
+    "domain": "DBMS",
+    "subdomain": "SQL",
+    "question": "What are window functions and how do they differ from aggregate functions?",
+    "keywords": [
+      "OVER",
+      "PARTITION BY",
+      "ORDER BY",
+      "ROW_NUMBER",
+      "RANK",
+      "LAG",
+      "LEAD",
+      "running total",
+      "no collapsing"
+    ],
+    "common_mistakes": [
+      "Thinking window functions group rows like GROUP BY (they don't collapse rows)"
+    ],
+    "followups": [
+      "What is ROWS vs RANGE in window frame?",
+      "What is the difference between RANK and DENSE_RANK?",
+      "How do you compute a running total with window functions?"
+    ],
+    "roasts": {
+      "angry_staff": "Window functions do NOT collapse rows. If you think they're like GROUP BY, you've never actually used them.",
+      "strict_prof": "Window functions use the OVER clause with an optional window frame — formally distinct from set-based aggregation.",
+      "faang_bar": "Good. Write a query to compute a 7-day moving average of sales using window functions.",
+      "startup_cto": "Write a query to rank users by total spending within each country using RANK() OVER."
+    }
+  },
+  {
+    "id": "dbms_sql_005",
+    "domain": "DBMS",
+    "subdomain": "SQL",
+    "question": "What is a CTE (Common Table Expression) and when would you use it?",
+    "keywords": [
+      "WITH clause",
+      "temporary result",
+      "recursive",
+      "hierarchical",
+      "readable",
+      "multiple reference",
+      "non-recursive"
+    ],
+    "common_mistakes": [
+      "Thinking CTEs are always materialized/cached (in PostgreSQL, they may not be)"
+    ],
+    "followups": [
+      "What is a recursive CTE?",
+      "Are CTEs materialized in PostgreSQL?",
+      "When would you use a CTE vs a temporary table?"
+    ],
+    "roasts": {
+      "angry_staff": "CTEs are NOT always cached or materialized. PostgreSQL may inline them. Check the docs for your version.",
+      "strict_prof": "Recursive CTEs implement fixed-point iteration — formally different from non-recursive CTEs which are syntactic sugar.",
+      "faang_bar": "Good. Write a recursive CTE to traverse an employee hierarchy (employee_id, manager_id) and find all reports.",
+      "startup_cto": "Rewrite this triple-nested subquery as a CTE to improve readability: [complex query]"
+    }
+  },
+  {
+    "id": "dbms_sql_006",
+    "domain": "DBMS",
+    "subdomain": "SQL",
+    "question": "What is the difference between UNION and UNION ALL?",
+    "keywords": [
+      "duplicate removal",
+      "DISTINCT",
+      "UNION ALL",
+      "faster",
+      "compatible columns",
+      "combined result"
+    ],
+    "common_mistakes": [
+      "Using UNION when UNION ALL is correct (unnecessary dedup overhead)"
+    ],
+    "followups": [
+      "When would UNION be slower than a JOIN?",
+      "What is an INTERSECT?",
+      "What is an EXCEPT/MINUS?"
+    ],
+    "roasts": {
+      "angry_staff": "You used UNION when you should have used UNION ALL. You're doing an unnecessary sort+deduplicate.",
+      "strict_prof": "UNION implicitly applies DISTINCT to the combined set — the performance cost of hashing or sorting.",
+      "faang_bar": "Good. What is the algorithmic difference between how databases implement UNION deduplication vs UNION ALL?",
+      "startup_cto": "Your report query uses UNION to combine sales from two regions. Are duplicates possible? If not, what should you use?"
+    }
+  },
+  {
+    "id": "dbms_sql_007",
+    "domain": "DBMS",
+    "subdomain": "SQL",
+    "question": "What is query execution order in SQL?",
+    "keywords": [
+      "FROM",
+      "WHERE",
+      "GROUP BY",
+      "HAVING",
+      "SELECT",
+      "ORDER BY",
+      "LIMIT",
+      "logical order",
+      "alias"
+    ],
+    "common_mistakes": [
+      "Trying to use SELECT column aliases in WHERE clause",
+      "Using aggregate functions in WHERE instead of HAVING"
+    ],
+    "followups": [
+      "Why can't you use SELECT aliases in WHERE?",
+      "When can you use aliases in ORDER BY?",
+      "How does the physical execution order differ from logical?"
+    ],
+    "roasts": {
+      "angry_staff": "WHERE runs before SELECT. Your SELECT alias doesn't exist yet in WHERE. That's why you get an error.",
+      "strict_prof": "The logical query processing order is distinct from the physical execution order the optimizer may choose.",
+      "faang_bar": "Good. Why can some databases use SELECT aliases in ORDER BY but not in WHERE?",
+      "startup_cto": "Your query: SELECT COUNT(*) as cnt FROM orders WHERE cnt > 5 fails. Why and how do you fix it?"
+    }
+  },
+  {
+    "id": "dbms_sql_008",
+    "domain": "DBMS",
+    "subdomain": "SQL",
+    "question": "What is the difference between DELETE, TRUNCATE, and DROP?",
+    "keywords": [
+      "WHERE condition",
+      "logged",
+      "triggers",
+      "auto-increment",
+      "rollback",
+      "table structure",
+      "fast",
+      "DDL",
+      "DML"
+    ],
+    "common_mistakes": [
+      "Using DELETE to clear a large table (slow)",
+      "Thinking TRUNCATE always supports ROLLBACK (MySQL InnoDB does, TRUNCATE in PostgreSQL also does)"
+    ],
+    "followups": [
+      "Is TRUNCATE transactional in PostgreSQL?",
+      "What is the performance difference between DELETE and TRUNCATE?",
+      "What is a soft delete?"
+    ],
+    "roasts": {
+      "angry_staff": "DELETE on a 100M row table without WHERE is the slowest way to clear a table. Use TRUNCATE.",
+      "strict_prof": "DELETE is DML (logged, reversible); TRUNCATE is DDL-like (minimal logging); DROP removes schema objects.",
+      "faang_bar": "Good. Is TRUNCATE transactional and rollbackable in PostgreSQL? What about MySQL?",
+      "startup_cto": "You need to clear a 500M row staging table before reload. Which command and why?"
+    }
+  },
+  {
+    "id": "dbms_sql_009",
+    "domain": "DBMS",
+    "subdomain": "SQL",
+    "question": "What is a stored procedure?",
+    "keywords": [
+      "precompiled",
+      "named",
+      "reusable",
+      "network overhead",
+      "EXECUTE",
+      "query plan",
+      "coupling"
+    ],
+    "common_mistakes": [
+      "Putting all business logic in stored procedures (maintenance nightmare)"
+    ],
+    "followups": [
+      "What is the difference between a stored procedure and a function?",
+      "What is a trigger?",
+      "When would you use a stored procedure?"
+    ],
+    "roasts": {
+      "angry_staff": "Stored procedures in every table operation? Your codebase is now impossible to test or version control.",
+      "strict_prof": "The precompilation and query plan caching are the formal performance advantages of stored procedures.",
+      "faang_bar": "Good. What are the operational trade-offs of stored procedures in a microservices architecture?",
+      "startup_cto": "Your team wants to move all business logic to stored procs. What are your concerns?"
+    }
+  },
+  {
+    "id": "dbms_sql_010",
+    "domain": "DBMS",
+    "subdomain": "SQL",
+    "question": "What is an SQL view?",
+    "keywords": [
+      "virtual table",
+      "stored query",
+      "no data storage",
+      "simplify",
+      "security",
+      "materialized view",
+      "refresh",
+      "stale"
+    ],
+    "common_mistakes": [
+      "Thinking regular views improve performance (they don't — query runs every time)"
+    ],
+    "followups": [
+      "What is a materialized view?",
+      "Can you INSERT into a view?",
+      "What is an updatable view?"
+    ],
+    "roasts": {
+      "angry_staff": "Views don't cache data. They run the query every time. If performance is your goal, use a materialized view.",
+      "strict_prof": "A view is a named query expression; its evaluation occurs at each access — formally a virtual relation.",
+      "faang_bar": "Good. How does PostgreSQL implement materialized view refresh (REFRESH MATERIALIZED VIEW CONCURRENTLY)?",
+      "startup_cto": "Your reporting team uses a view over 5 large tables and it takes 30 seconds. What's the fix?"
+    }
+  }
+]

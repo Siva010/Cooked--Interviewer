@@ -1,0 +1,3654 @@
+[
+  {
+    "id": "operating_systems_0pw5ncu",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is a process and process table?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_dq9hbm0",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are the different states of the process?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_3n5bsto",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is a Thread?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_4v5tb55",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are the differences between process and thread?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_jf22rrb",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are the benefits of multithreaded programming?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_cku3b8j",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is Thrashing?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_vxclh3w",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is Buffer?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_r4jdq9n",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is virtual memory?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_kan452c",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Explain the main purpose of an operating system?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_qjgt7u2",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is demand paging and how it works?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_ils8kop",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is a kernel?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_jo64oxi",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are the different scheduling algorithms?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_cfc05cq",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Describe the objective of multi-programming?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_sbblskc",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is the time-sharing system?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_imw3a02",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What problem we face in computer system without OS?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_7ejxq2i",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Give some benefits of multithreaded programming?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_h9s088u",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Briefly explain FCFS?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_nmwck94",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is the RR scheduling algorithm?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_aekk1iw",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Enumerate the different RAID levels?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_viqsw11",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is Banker's algorithm?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_2kt7et6",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "State the main difference between logical and physical address space?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_t2y2zz1",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "How does dynamic loading aid in better memory space utilization?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_ef6c1fc",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are overlays?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_i1sl953",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is fragmentation?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_76tmp29",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is the basic function of paging?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_p57tzep",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "How does swapping result in better memory management?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_temaodn",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Write a name of classic synchronization problems?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_f85cuuh",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is the Direct Access Method?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_7pri4hd",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "When does thrashing occur?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_bv22gbr",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is the best page size when designing an operating system?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_2fcyzju",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is multitasking?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_di8krza",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is caching?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_k9owzk7",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is spooling?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_bklc9t1",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is the functionality of an Assembler?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_s9b1fmv",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are interrupts?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_sot65m1",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is GUI?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_b3okoo3",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is preemptive multitasking?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_rnsgtwd",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is a pipe and when is it used?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_5wni5z4",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are the advantages of semaphores?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_268o55n",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is a bootstrap program in the OS?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_e5t0ul3",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is IPC?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_tasqrwx",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are the different IPC mechanisms?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_91oh8vx",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is the difference between preemptive and non-preemptive scheduling?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_1q6hm23",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is the zombie process?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_g7h5j7m",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are orphan processes?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_pqb1d6w",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are starvation and aging in OS?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_8ch1eqp",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Write about monolithic kernel?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_ydqdq2t",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is Context Switching?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_38lfedl",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is the difference between the Operating system and kernel?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_sktbh8d",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is the difference between process and thread?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_l1fn7ym",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is PCB?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_xvk578h",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "When is a system in a safe state?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_s4agtk7",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is Cycle Stealing?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_2c9lelw",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are a Trap and Trapdoor?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_cvyeoqy",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Write a difference between program and process?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_ctucwh5",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is a dispatcher?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_53jyja1",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Define the term dispatch latency?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_oxjibnd",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are the goals of CPU scheduling?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_vjnmigf",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is a critical- section?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_4hw0p77",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Write the name of synchronization techniques?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_ars566e",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Write down the advantages of multithreading?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_ekdkqkt",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Difference between Multithreading and Multitasking?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_fh4kf70",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are the drawbacks of semaphores?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_9acmsew",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is Peterson's approach?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_6r5rezl",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Define the term Bounded waiting?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_qnv6r3p",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are the solutions to the critical section problem?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_53wi5cp",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is a Banker's algorithm?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_svfzune",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is concurrency?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_l0a2z1b",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Write a drawback of concurrency?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_62saamj",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are the necessary conditions which can lead to a deadlock in a system?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_yzllg4p",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are the issues related to concurrency?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_ljtip2o",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Why do we use precedence graphs?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_zoer6hv",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Explain the resource allocation graph?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_kub9can",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is a deadlock?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_ty9ma58",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is the goal and functionality of memory management?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_mh8so3x",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Write a difference between physical address and logical address?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_bfkqfl0",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Explain address binding?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_q1fjd3o",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Write different types of address binding?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_u7qo13m",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Write an advantage of dynamic allocation algorithms?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_98ch1b9",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Write a difference between internal fragmentation and external fragmentation?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_3apq10u",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Define the Compaction?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_n8s0j6g",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Write about the advantages and disadvantages of a hashed-page table?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_fv4kduf",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Write a difference between paging and segmentation?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_rggfo80",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Write a definition of Associative Memory and Cache Memory?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_5g83qsu",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is \"Locality of reference\"?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_3ei6v8h",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Write down the advantages of virtual memory?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_xnucjrl",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "How to calculate performance in virtual memory?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_wovuid1",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Write down the basic concept of the file system?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_xbqn2tj",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Write the names of different operations on file?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_jycp56i",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Define the term Bit-Vector?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_slt61an",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is a File allocation table?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_0skiew5",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is rotational latency?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_85wv0fg",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is seek time?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_a3qse0f",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is Belady's Anomaly?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_1jlg5q5",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What happens if a non-recursive mutex is locked more than once?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_sgjdi2w",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are the advantages of a multiprocessor system?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_a64sw77",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are real-time systems?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_lnfo574",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "How to recover from a deadlock?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_5otz7dn",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What factors determine whether a detection algorithm must be utilized in a deadlock avoidance system?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_x62dypj",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What's the main purpose of an OS? What are the different types of OS?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_s3g8ps2",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Why is the operating system important?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_4seufio",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are the benefits of a multiprocessor system?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_nr9207i",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is RAID structure in OS? What are the different levels of RAID configuration?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_t74e94c",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is a Pipe and when it is used?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_hfi9a50",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are the different kinds of operations that are possible on semaphore?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_gj0eank",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is a bootstrap program in OS?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_dj5hkjm",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Explain demand paging?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_f6p20pl",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What do you mean by RTOS?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_56ch83g",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What do you mean by process synchronization?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_g33tqs8",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is IPC? What are the different IPC mechanisms?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_7vhg94v",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is different between main memory and secondary memory.",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_o6j39jm",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What do you mean by overlays in OS?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_2w3j2ig",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Write top 10 examples of OS?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_rh1b76r",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is time sharing, and how does it help users?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_332e3mi",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is latency, and why does it matter in an operating system?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_hhnjbdv",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is context switching in simple terms?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_i7gtwb2",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is the difference between an interrupt, a trap, and an exception?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_h7gg6lr",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is the difference between a system call and a library call?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_grogq3n",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is a system call, and why is it needed?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_dgjdj09",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is the difference between user mode and kernel mode?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_hlsi3jh",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is Reentrancy?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_5f4uu59",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is a Scheduling Algorithm? Name different types of scheduling algorithms.",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_32l8iho",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is the difference between paging and segmentation?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_7qzsf0h",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is thrashing in OS?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_ndr1ijk",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is the main objective of multiprogramming?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_d1hh7ym",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What do you mean by asymmetric clustering?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_wn0i0j8",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is the difference between multitasking and multiprocessing OS?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_adcz863",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What do you mean by Sockets in OS?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_lfagv1w",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Explain zombie process?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_h1x2iid",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What do you mean by cascading termination?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_ipgs3p6",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is starvation and aging in OS?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_fj4xtjy",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is a process? What are the different states of a process?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_ue904wy",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What do you mean by FCFS?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_tbmd40y",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is thread in OS?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_8jwruvt",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is Round Robin scheduling, and how does time quantum affect performance?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_t91dfjq",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is the difference between a process context switch and a thread context switch?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_2uirga7",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is preemptive vs non-preemptive scheduling?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_zt7obpy",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is the difference between page size and frame size?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_es3rw91",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is copy-on-write, and where is it used?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_z7qhrrr",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is internal vs external fragmentation?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_rexxi78",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is priority inversion, and how can it be solved?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_65uv3yv",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Explain the producer-consumer problem.",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_pofixx5",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is a monitor in operating systems?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_38d4lp2",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is the difference between a mutex and a semaphore?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_fya87l4",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is Kernel and write its main functions?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_ubtmhi2",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What do you mean by Semaphore in OS? Why is it used?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_5ebqr3h",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are different types of Kernel?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_s1txjig",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Write difference between micro kernel and monolithic kernel?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_u4llmtb",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is SMP (Symmetric Multiprocessing)?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_abxlqg0",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is a time-sharing system?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_l7cbvag",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is difference between Kernel and OS?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_za84b3f",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is difference between process and thread?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_lkgbcsp",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What are various sections of the process?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_ji55ivx",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is a deadlock in OS? What are the necessary conditions for a deadlock?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_fc6qnag",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What do you mean by Belady’s Anomaly?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_lqgf1ao",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is spooling in OS?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_y36ier3",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What happens inside the OS when a process crashes unexpectedly?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_i6vb82p",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "How does an operating system ensure memory protection between processes?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_wnbdwx0",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is the difference between a hard link and a soft link?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_zo82awo",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is an inode in a file system?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_3s40dbf",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is NUMA architecture, and how is it different from SMP?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_b7qo3a2",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "How does the OS handle deadlock detection vs deadlock prevention?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_ph1dmw6",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is Belady’s anomaly, and why does it occur?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_0w03ryz",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "Compare FIFO, LRU, and Optimal page replacement algorithms.",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_0q62e6a",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "How does a Translation Lookaside Buffer (TLB) improve performance?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "operating_systems_fonan8y",
+    "domain": "Operating Systems",
+    "subdomain": "General",
+    "question": "What is Multi-Level Feedback Queue (MLFQ) scheduling?",
+    "keywords": [
+      "concept",
+      "operating systems"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Operating Systems concept?",
+      "strict_prof": "A textbook definition is not enough for Operating Systems.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  }
+]

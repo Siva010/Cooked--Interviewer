@@ -1,0 +1,903 @@
+[
+  {
+    "id": "se_001",
+    "domain": "Software Engineering",
+    "subdomain": "Methodologies",
+    "question": "What is the difference between Agile and Waterfall methodologies?",
+    "keywords": [
+      "linear",
+      "sequential",
+      "iterative",
+      "incremental",
+      "continuous delivery",
+      "flexibility"
+    ],
+    "common_mistakes": [
+      "Assuming Agile means no planning or documentation"
+    ],
+    "followups": [
+      "When would Waterfall be preferred over Agile?",
+      "What are the core values of the Agile Manifesto?"
+    ],
+    "roasts": {
+      "angry_staff": "Agile doesn't mean you can change the requirements the day before release!",
+      "strict_prof": "Waterfall is suitable for highly critical systems with immutable requirements, unlike most modern software.",
+      "faang_bar": "Good. How do you integrate user feedback into sprints?",
+      "startup_cto": "Move fast and break things. We're Agile."
+    }
+  },
+  {
+    "id": "se_002",
+    "domain": "Software Engineering",
+    "subdomain": "Version Control",
+    "question": "Explain the GitFlow branching strategy.",
+    "keywords": [
+      "main",
+      "develop",
+      "feature branches",
+      "release branches",
+      "hotfix branches"
+    ],
+    "common_mistakes": [
+      "Merging features directly into main",
+      "Forgetting to merge hotfixes back to develop"
+    ],
+    "followups": [
+      "What is Trunk-Based Development and how does it compare?",
+      "Why use a release branch?"
+    ],
+    "roasts": {
+      "angry_staff": "Stop force pushing to main!",
+      "strict_prof": "GitFlow provides a rigorous structure but can introduce merge hell compared to continuous integration strategies.",
+      "faang_bar": "Good. Why do many modern teams prefer Trunk-Based Development over GitFlow?",
+      "startup_cto": "Just use a main branch and deploy on every commit."
+    }
+  },
+  {
+    "id": "se_003",
+    "domain": "Software Engineering",
+    "subdomain": "Testing",
+    "question": "What is TDD (Test-Driven Development)?",
+    "keywords": [
+      "Red-Green-Refactor",
+      "failing test",
+      "minimum code",
+      "test coverage",
+      "design first"
+    ],
+    "common_mistakes": [
+      "Writing the code first and the tests later",
+      "Writing overly complex tests initially"
+    ],
+    "followups": [
+      "What is BDD?",
+      "What are the drawbacks of TDD?"
+    ],
+    "roasts": {
+      "angry_staff": "Writing tests after the code is not TDD, it's just testing.",
+      "strict_prof": "TDD inextricably links specification, validation, and design into a single atomic workflow.",
+      "faang_bar": "Good. How do you apply TDD to UI components?",
+      "startup_cto": "TDD slows us down too much. Just write good code."
+    }
+  },
+  {
+    "id": "se_004",
+    "domain": "Software Engineering",
+    "subdomain": "Design Patterns",
+    "question": "Explain the Singleton design pattern and its drawbacks.",
+    "keywords": [
+      "one instance",
+      "global point of access",
+      "private constructor",
+      "global state",
+      "testing difficult"
+    ],
+    "common_mistakes": [
+      "Using Singletons as glorified global variables",
+      "Not making it thread-safe in multi-threaded environments"
+    ],
+    "followups": [
+      "How do you make a Singleton thread-safe?",
+      "What is Dependency Injection as an alternative?"
+    ],
+    "roasts": {
+      "angry_staff": "Singletons are just global variables in disguise!",
+      "strict_prof": "The Singleton pattern couples code to a specific instance, hindering modularity and testing.",
+      "faang_bar": "Good. How do you implement a thread-safe Singleton using double-checked locking?",
+      "startup_cto": "Just use a database connection pool instead of a Singleton."
+    }
+  },
+  {
+    "id": "se_005",
+    "domain": "Software Engineering",
+    "subdomain": "Principles",
+    "question": "Explain the SOLID principles.",
+    "keywords": [
+      "Single Responsibility",
+      "Open/Closed",
+      "Liskov Substitution",
+      "Interface Segregation",
+      "Dependency Inversion"
+    ],
+    "common_mistakes": [
+      "Confusing Dependency Inversion with Dependency Injection"
+    ],
+    "followups": [
+      "Give an example of violating the Liskov Substitution Principle."
+    ],
+    "roasts": {
+      "angry_staff": "Your class does 50 different things. Have you ever heard of the Single Responsibility Principle?",
+      "strict_prof": "SOLID principles provide a foundation for maintainable and scalable object-oriented design.",
+      "faang_bar": "Good. How does the Dependency Inversion Principle facilitate unit testing?",
+      "startup_cto": "SOLID is great, but don't over-engineer a simple script."
+    }
+  },
+  {
+    "id": "se_006",
+    "domain": "Software Engineering",
+    "subdomain": "Concepts",
+    "question": "What is Technical Debt?",
+    "keywords": [
+      "implied cost",
+      "future reworking",
+      "easy solution",
+      "interest",
+      "refactoring"
+    ],
+    "common_mistakes": [
+      "Thinking technical debt is always bad (sometimes it's a strategic choice for time-to-market)"
+    ],
+    "followups": [
+      "How do you measure technical debt?",
+      "How do you convince management to allocate time to pay down tech debt?"
+    ],
+    "roasts": {
+      "angry_staff": "Copy-pasting code is a great way to double your technical debt instantly.",
+      "strict_prof": "Deliberate technical debt can be a rational economic decision, but inadvertent debt is purely detrimental.",
+      "faang_bar": "Good. How do you prioritize which technical debt to address first?",
+      "startup_cto": "Ship it now, fix it later. That's a problem for tomorrow."
+    }
+  },
+  {
+    "id": "se_007",
+    "domain": "Software Engineering",
+    "subdomain": "Architecture",
+    "question": "Describe the MVC (Model-View-Controller) architecture.",
+    "keywords": [
+      "Model",
+      "View",
+      "Controller",
+      "separation of concerns",
+      "decouples data access"
+    ],
+    "common_mistakes": [
+      "Putting business logic in the Controller or View"
+    ],
+    "followups": [
+      "What is MVVM and how does it differ?",
+      "In a web framework, where does routing fit in MVC?"
+    ],
+    "roasts": {
+      "angry_staff": "Why is there an SQL query in your HTML template?!",
+      "strict_prof": "MVC enforces a strict separation of concerns, fundamentally improving modularity.",
+      "faang_bar": "Good. Explain the flow of data in a strict MVC pattern versus a more relaxed variant.",
+      "startup_cto": "MVC is standard. Just follow the framework's conventions."
+    }
+  },
+  {
+    "id": "se_008",
+    "domain": "Software Engineering",
+    "subdomain": "Practices",
+    "question": "Why are Code Reviews important?",
+    "keywords": [
+      "code quality",
+      "catch bugs",
+      "knowledge sharing",
+      "mentorship",
+      "collective ownership"
+    ],
+    "common_mistakes": [
+      "Using code reviews to attack the author rather than improve the code",
+      "Rubber-stamping without reading"
+    ],
+    "followups": [
+      "What should you look for in a code review?",
+      "How do you handle disagreements during a code review?"
+    ],
+    "roasts": {
+      "angry_staff": "LGTM means 'Looks Good To Me', not 'Let's Get This Merged' without reading it!",
+      "strict_prof": "Peer review is an essential mechanism for validating software correctness and design integrity.",
+      "faang_bar": "Good. How can you automate parts of the code review process?",
+      "startup_cto": "Just push it to production. Our users are our testers."
+    }
+  },
+  {
+    "id": "se_009",
+    "domain": "Software Engineering",
+    "subdomain": "Concepts",
+    "question": "What is CI/CD?",
+    "keywords": [
+      "Continuous Integration",
+      "Continuous Delivery",
+      "automated builds",
+      "automated tests",
+      "release process"
+    ],
+    "common_mistakes": [
+      "Confusing Continuous Delivery (requires manual approval) with Continuous Deployment (fully automated to prod)"
+    ],
+    "followups": [
+      "What is the difference between Continuous Delivery and Continuous Deployment?",
+      "What tools do you use for CI/CD?"
+    ],
+    "roasts": {
+      "angry_staff": "If merging takes a week, you are NOT doing Continuous Integration.",
+      "strict_prof": "CI/CD pipelines reduce integration risk and decrease time-to-market by automating validation.",
+      "faang_bar": "Good. How do you handle database migrations in a CI/CD pipeline?",
+      "startup_cto": "Automate everything. I don't want to manually deploy ever again."
+    }
+  },
+  {
+    "id": "se_010",
+    "domain": "Software Engineering",
+    "subdomain": "Design Patterns",
+    "question": "Explain the Observer pattern.",
+    "keywords": [
+      "Subject",
+      "Observers",
+      "state changes",
+      "one-to-many dependency",
+      "event handling"
+    ],
+    "common_mistakes": [
+      "Not unregistering observers, leading to memory leaks (lapsed listener problem)"
+    ],
+    "followups": [
+      "What is the difference between the Observer pattern and Pub/Sub?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't unregister your observers, your app will leak memory until it crashes.",
+      "strict_prof": "The Observer pattern enables loose coupling between the subject and its observers.",
+      "faang_bar": "Good. How would you implement this pattern asynchronously?",
+      "startup_cto": "Just use a state management library."
+    }
+  },
+  {
+    "id": "software_engineering_ih74bqd",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What is baseline in Software Development?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_l8px45x",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What do you mean by Software Re-engineering?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_7n5am7n",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What are Verification and Validation?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_csxwd7q",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What are CASE tools?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_oq96291",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What is SRS?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_hl0e74c",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What are the various categories of software?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_chspe0p",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What are the drawbacks of the spiral model?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_9tj9g3n",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What is Software prototyping and POC?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_ua1h3o4",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What are the merits of the incremental model?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_sqrr10d",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What is Software scope?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_aixbclo",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What is the waterfall method and what are its use cases?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_hu3ck5c",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What does a software product manager do?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_8cqn7nb",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What is Debugging?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_tl0gof0",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "Which SDLC model is the best?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_scrxit7",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What are different SDLC models available?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_1a71514",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "Describe the Software Development Process in Brief.",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_j25dmay",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What is the main difference between a computer program and computer software?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_i85pc55",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What is a framework?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_ubi48tk",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What are the characteristics of software?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_xc8ar9b",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What is the difference between Quality Assurance and Quality control?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_10ov2vm",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What are functional and non-functional requirements?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_5jk4270",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What is Software Configuration Management?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_ld2bi8w",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "Explain the concept of modularization.",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_ubmx5nd",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What is Data Flow Diagram?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_l71mxld",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What is the difference between cohesion and coupling?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_h2i9vy1",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What are Software Metrics?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_8sx70mn",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What is Concurrency?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_60yif46",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "Define black box testing and white box testing?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "software_engineering_36j50l9",
+    "domain": "Software Engineering",
+    "subdomain": "General",
+    "question": "What is the feasibility study?",
+    "keywords": [
+      "concept",
+      "software engineering"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Software Engineering concept?",
+      "strict_prof": "A textbook definition is not enough for Software Engineering.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  }
+]

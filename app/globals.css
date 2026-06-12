@@ -1,26 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Open+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F3F4F6;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F9FAFB;
+  --border: rgba(17, 24, 39, 0.1);
+  --border-bright: rgba(17, 24, 39, 0.2);
+  --text-primary: #111827;
+  --text-secondary: #4B5563;
+  --text-muted: #9CA3AF;
+  
+  --primary: #3B82F6;
+  --secondary: #8B5CF6;
+  --success: #16A34A;
+  --surface: #FFFFFF;
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --btn-primary-hover: #374151;
+  --btn-secondary-bg: rgba(17, 24, 39, 0.05);
+  --btn-secondary-hover: rgba(17, 24, 39, 0.1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --bg-primary: #111827;
+  --bg-secondary: #1F2937;
+  --bg-card: #1F2937;
+  --bg-card-hover: #374151;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-bright: rgba(255, 255, 255, 0.2);
+  --text-primary: #F9FAFB;
+  --text-secondary: #D1D5DB;
+  --text-muted: #9CA3AF;
+  
+  --primary: #3B82F6;
+  --secondary: #8B5CF6;
+  --success: #22C55E;
+  --surface: #1F2937;
+  --glass-bg: rgba(31, 41, 55, 0.8);
+  --btn-primary-hover: #D1D5DB;
+  --btn-secondary-bg: rgba(255, 255, 255, 0.05);
+  --btn-secondary-hover: rgba(255, 255, 255, 0.1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Open Sans', system-ui, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .display-font {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+code, pre, .mono-font {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ── Selection ───────────────────────────────────────────────── */
+::selection { background: var(--primary); color: #fff; }
+
+/* ── Glass card ──────────────────────────────────────────────── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 8px; /* updated border radius from DESIGN.md */
+}
+
+/* ── Animated background (Dithered Pattern) ──────────────────── */
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--bg-primary);
+  /* A nice subtle dot pattern for the dithered look */
+  background-image: radial-gradient(var(--border) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+}
+
+/* ── Button ──────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 4px; /* from DESIGN.md: rounded: sm */
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+.btn-primary:hover { background: var(--btn-primary-hover); }
+
+.btn-secondary {
+  background: var(--btn-secondary-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+.btn-secondary:hover {
+  background: var(--btn-secondary-hover);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+}
+.btn-ghost:hover { color: var(--text-primary); }
+
+.btn-lg { padding: 12px 24px; font-size: 16px; border-radius: 8px; }
+.btn-sm { padding: 6px 12px; font-size: 14px; border-radius: 4px; }
+
+/* ── Pulse animation ─────────────────────────────────────────── */
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.pulse-dot {
+  position: relative;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-muted);
+}
+
+/* ── Slide animations ────────────────────────────────────────── */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up { animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+/* ── Tag chip ────────────────────────────────────────────────── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  font-family: 'IBM Plex Mono', monospace; /* mono font for labels */
+}
+.chip:hover {
+  background: var(--border);
+  color: var(--text-primary);
+}
+
+/* ── Progress bar ────────────────────────────────────────────── */
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 4px;
+  transition: width 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* ── Input ───────────────────────────────────────────────────── */
+.input {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border-bright);
+  border-radius: 4px;
+  padding: 12px 16px;
+  color: var(--text-primary);
+  font-size: 16px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input::placeholder { color: var(--text-muted); }
+.input:focus { border-color: var(--primary); }
+
+/* ── Card hover lift ─────────────────────────────────────────── */
+.card-lift {
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.card-lift:hover { 
+  border-color: var(--border-bright); 
+  background: var(--bg-card-hover);
+}
+
+/* ── Divider ─────────────────────────────────────────────────── */
+.divider { height: 1px; background: var(--border); }
+
+/* ── Nav ─────────────────────────────────────────────────────── */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-link:hover { color: var(--text-primary); }
+.nav-link.active { color: var(--text-primary); }
+
+.text-gradient {
+  background: var(--primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Markdown Content ────────────────────────────────────────── */
+.markdown-content {
+  color: var(--text-primary);
+}
+.markdown-content p {
+  margin-bottom: 1em;
+}
+.markdown-content strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.markdown-content em {
+  font-style: italic;
+}
+.markdown-content ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+.markdown-content ol {
+  list-style-type: decimal;
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+.markdown-content li {
+  margin-bottom: 0.5em;
+}
+.markdown-content h1, .markdown-content h2, .markdown-content h3, .markdown-content h4 {
+  font-weight: 700;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: var(--text-primary);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+.markdown-content h1 { font-size: 1.5em; }
+.markdown-content h2 { font-size: 1.3em; }
+.markdown-content h3 { font-size: 1.1em; }
+.markdown-content code {
+  background: var(--bg-secondary);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.9em;
+}
+.markdown-content pre {
+  background: var(--bg-secondary);
+  padding: 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 1em;
+  border: 1px solid var(--border);
+}
+.markdown-content pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+.markdown-content blockquote {
+  border-left: 3px solid var(--primary);
+  padding-left: 1em;
+  color: var(--text-secondary);
+  margin-bottom: 1em;
+  font-style: italic;
 }

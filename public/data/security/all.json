@@ -1,0 +1,2366 @@
+[
+  {
+    "id": "sec_001",
+    "domain": "Security",
+    "subdomain": "Web Vulnerabilities",
+    "question": "What is SQL Injection and how do you prevent it?",
+    "keywords": [
+      "arbitrary SQL",
+      "Prepared Statements",
+      "Parameterized Queries",
+      "ORM",
+      "input as data"
+    ],
+    "common_mistakes": [
+      "Believing escaping quotes is a complete solution",
+      "Not understanding how prepared statements work"
+    ],
+    "followups": [
+      "What is a Blind SQL Injection?",
+      "How does a WAF help with SQLi?"
+    ],
+    "roasts": {
+      "angry_staff": "Concatenating user input into SQL? Enjoy having your database dropped by Little Bobby Tables.",
+      "strict_prof": "Prepared statements decouple query structure from data parameters, fundamentally eliminating the vulnerability class.",
+      "faang_bar": "Good. Can SQL injection occur in stored procedures?",
+      "startup_cto": "Just use an ORM. Writing raw SQL is too risky."
+    }
+  },
+  {
+    "id": "sec_002",
+    "domain": "Security",
+    "subdomain": "Web Vulnerabilities",
+    "question": "Explain XSS (Cross-Site Scripting).",
+    "keywords": [
+      "inject malicious scripts",
+      "Stored",
+      "Reflected",
+      "DOM-based",
+      "output encoding",
+      "CSP",
+      "HttpOnly"
+    ],
+    "common_mistakes": [
+      "Confusing XSS with CSRF",
+      "Trying to filter input instead of encoding output"
+    ],
+    "followups": [
+      "What is the difference between Stored and Reflected XSS?",
+      "How does CSP mitigate XSS?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't encode user input on display, anyone can steal your users' session cookies.",
+      "strict_prof": "XSS exploits the browser's trust in the content received from the server. Output encoding breaks this trust.",
+      "faang_bar": "Good. How would you craft a CSP header to prevent inline scripts?",
+      "startup_cto": "React handles XSS automatically mostly, just don't use dangerouslySetInnerHTML."
+    }
+  },
+  {
+    "id": "sec_003",
+    "domain": "Security",
+    "subdomain": "Web Vulnerabilities",
+    "question": "What is CSRF (Cross-Site Request Forgery) and how is it mitigated?",
+    "keywords": [
+      "unwanted actions",
+      "authenticated",
+      "forged request",
+      "Anti-CSRF tokens",
+      "SameSite attribute"
+    ],
+    "common_mistakes": [
+      "Thinking CSRF allows the attacker to read the response (it doesn't, due to Same-Origin Policy)"
+    ],
+    "followups": [
+      "How does the SameSite=Strict cookie attribute prevent CSRF?",
+      "Why are REST APIs using JWTs in Authorization headers often immune to CSRF?"
+    ],
+    "roasts": {
+      "angry_staff": "If you use GET requests to change state, CSRF protection won't save you. Use POST/PUT/DELETE appropriately.",
+      "strict_prof": "CSRF exploits the browser's automatic inclusion of ambient credentials. Anti-CSRF tokens require attacker knowledge they cannot possess.",
+      "faang_bar": "Good. Explain the Double Submit Cookie pattern for CSRF defense.",
+      "startup_cto": "Set SameSite=Lax and you're mostly protected from CSRF these days."
+    }
+  },
+  {
+    "id": "sec_004",
+    "domain": "Security",
+    "subdomain": "Cryptography",
+    "question": "What is the difference between Encoding, Encryption, and Hashing?",
+    "keywords": [
+      "safe transport",
+      "easily reversible",
+      "keep it secret",
+      "requires a key",
+      "one-way",
+      "integrity"
+    ],
+    "common_mistakes": [
+      "Using Base64 encoding for security",
+      "Encrypting passwords instead of hashing them"
+    ],
+    "followups": [
+      "Why is hashing preferred over encryption for storing passwords?",
+      "What is a cryptographic salt?"
+    ],
+    "roasts": {
+      "angry_staff": "Base64 is NOT encryption! My grandmother can decode it.",
+      "strict_prof": "Hashing provides a fixed-size pre-image resistant mapping. Encryption provides confidentiality via a reversible transformation under a key.",
+      "faang_bar": "Good. Can you explain the difference between symmetric and asymmetric encryption?",
+      "startup_cto": "Hash passwords with bcrypt. That's all you need to know for day one."
+    }
+  },
+  {
+    "id": "sec_005",
+    "domain": "Security",
+    "subdomain": "Network Security",
+    "question": "How does HTTPS work?",
+    "keywords": [
+      "TLS/SSL",
+      "public key",
+      "digital certificate",
+      "handshake",
+      "symmetric session key",
+      "asymmetric encryption"
+    ],
+    "common_mistakes": [
+      "Thinking asymmetric encryption is used for the entire session (it's too slow)"
+    ],
+    "followups": [
+      "What is the role of a Certificate Authority (CA)?",
+      "What is Man-in-the-Middle (MitM) attack and how does HTTPS prevent it?"
+    ],
+    "roasts": {
+      "angry_staff": "Without HTTPS, your passwords are being sent in plain text over public Wi-Fi.",
+      "strict_prof": "TLS provides confidentiality via symmetric encryption, authenticity via certificates, and integrity via MACs.",
+      "faang_bar": "Good. Detail the steps of the TLS 1.3 handshake.",
+      "startup_cto": "Let's Encrypt makes HTTPS free and automatic. There's zero excuse not to use it."
+    }
+  },
+  {
+    "id": "sec_006",
+    "domain": "Security",
+    "subdomain": "Authentication",
+    "question": "What is OAuth 2.0?",
+    "keywords": [
+      "authorization framework",
+      "limited access",
+      "without password",
+      "Resource Owner",
+      "Client",
+      "Access Token"
+    ],
+    "common_mistakes": [
+      "Confusing OAuth (authorization) with OpenID Connect (authentication)"
+    ],
+    "followups": [
+      "What is an Authorization Grant?",
+      "What is the difference between OAuth 2.0 and OpenID Connect?"
+    ],
+    "roasts": {
+      "angry_staff": "OAuth is for AUTHORIZATION. Use OpenID Connect if you want to know WHO the user is.",
+      "strict_prof": "OAuth 2.0 delegates access rights by issuing tokens rather than sharing credentials.",
+      "faang_bar": "Good. Explain the Authorization Code Flow with PKCE.",
+      "startup_cto": "Just use a service like Auth0 or Clerk. Rolling your own OAuth is a nightmare."
+    }
+  },
+  {
+    "id": "sec_007",
+    "domain": "Security",
+    "subdomain": "Cryptography",
+    "question": "Why do we salt passwords before hashing?",
+    "keywords": [
+      "random data",
+      "different hashes",
+      "dictionary attacks",
+      "Rainbow Tables",
+      "unique salt per user"
+    ],
+    "common_mistakes": [
+      "Using the same salt for all users",
+      "Keeping the salt secret (it doesn't need to be secret, just unique)"
+    ],
+    "followups": [
+      "What makes a good hashing algorithm for passwords? (e.g., bcrypt, Argon2)",
+      "Why is MD5 bad for passwords?"
+    ],
+    "roasts": {
+      "angry_staff": "Using MD5 without a salt? Have fun explaining to users why their accounts were compromised in 5 seconds.",
+      "strict_prof": "Salting increases the search space for pre-computation attacks exponentially relative to the salt length.",
+      "faang_bar": "Good. Explain the concept of key stretching or work factors in algorithms like bcrypt.",
+      "startup_cto": "Bcrypt handles the salting for you automatically. Use it."
+    }
+  },
+  {
+    "id": "sec_008",
+    "domain": "Security",
+    "subdomain": "Web Vulnerabilities",
+    "question": "What is the Same-Origin Policy (SOP)?",
+    "keywords": [
+      "restricts interaction",
+      "protocol",
+      "port",
+      "host",
+      "malicious scripts",
+      "accessing sensitive data"
+    ],
+    "common_mistakes": [
+      "Assuming SOP prevents the request from being sent (it often just blocks reading the response)"
+    ],
+    "followups": [
+      "How do you bypass SOP legitimately? (CORS)",
+      "What happens if domains match but subdomains differ?"
+    ],
+    "roasts": {
+      "angry_staff": "Without SOP, any website you visit could just read your bank account data in another tab.",
+      "strict_prof": "SOP enforces isolation between web contexts, forming the foundation of web security.",
+      "faang_bar": "Good. How does JSONP historically bypass SOP and what are its risks?",
+      "startup_cto": "SOP is the reason you need to configure CORS on your backend."
+    }
+  },
+  {
+    "id": "sec_009",
+    "domain": "Security",
+    "subdomain": "Network Security",
+    "question": "How do you mitigate DDoS (Distributed Denial of Service) attacks?",
+    "keywords": [
+      "overwhelm",
+      "Rate limiting",
+      "WAF",
+      "CDN",
+      "Anycast routing",
+      "absorb volumetric attacks"
+    ],
+    "common_mistakes": [
+      "Thinking a powerful single server can withstand a large DDoS"
+    ],
+    "followups": [
+      "What is an amplification attack?",
+      "Layer 3/4 vs Layer 7 DDoS?"
+    ],
+    "roasts": {
+      "angry_staff": "Your single EC2 instance will melt in 2 seconds against a botnet. Put Cloudflare in front of it.",
+      "strict_prof": "Mitigation requires detecting anomalous traffic patterns and absorbing or dropping malicious packets before they reach the origin infrastructure.",
+      "faang_bar": "Good. Explain how a SYN flood attack works and how SYN cookies mitigate it.",
+      "startup_cto": "Pay for Cloudflare Enterprise and sleep well."
+    }
+  },
+  {
+    "id": "sec_010",
+    "domain": "Security",
+    "subdomain": "Authentication",
+    "question": "What are the security concerns with using JWTs (JSON Web Tokens)?",
+    "keywords": [
+      "revoke",
+      "token blacklists",
+      "localStorage",
+      "HttpOnly",
+      "signature verification",
+      "none algorithm",
+      "payload is base64"
+    ],
+    "common_mistakes": [
+      "Putting PII in the JWT payload",
+      "Implementing token revocation poorly"
+    ],
+    "followups": [
+      "How do you securely store a JWT on the client side?",
+      "What is the 'none' algorithm vulnerability?"
+    ],
+    "roasts": {
+      "angry_staff": "If an attacker gets your JWT from localStorage via XSS, they ARE that user until the token expires.",
+      "strict_prof": "JWTs trade immediate revocability for stateless scalability. This trade-off must be explicitly managed.",
+      "faang_bar": "Good. How would you design a highly scalable token revocation system?",
+      "startup_cto": "Use short-lived access tokens and longer-lived refresh tokens. It's the standard."
+    }
+  },
+  {
+    "id": "security_n87a0cf",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What are the common Cyberattacks?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_v6dh8d5",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What are the elements of cyber security?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_0r0slhz",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Define DNS",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_ae53t1w",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is a Firewall?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_wuqn696",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is a VPN?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_sne4wet",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What are the different sources of malware?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_ujixsyx",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "How does email work?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_4dwh0qo",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is the difference between active and passive cyber attacks?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_023omly",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Explain Zero Trust Model",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_722h0jc",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Who are black hat, white hat and grey hat hackers?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_92v2vi5",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Define encryption and decryption?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_0binq3g",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is the difference between plaintext and cleartext?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_sx2l2qw",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is a block cipher?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_tqg6xg7",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is the CIA Triad?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_g87q1r3",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is the Three-way handshake?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_3yqslm3",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "How can identity theft be prevented?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_9fdnijd",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What are some common Hashing functions?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_h7jp8lq",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What do you mean by two-factor authentication?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_dsrzmi3",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What does XSS stand for? How can it be prevented?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_f8fscx4",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What do you mean by Shoulder Surfing?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_dulyilp",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is the difference between hashing and encryption?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_91rzgj9",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Differentiate between Information security and information assurance.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_bkamebo",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Write a difference between HTTPS and SSL.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_7kxse59",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What do you mean by System Hardening?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_3xhepgy",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Differentiate between spear phishing and phishing.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_b6oypd8",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What do you mean by Perfect Forward Secrecy?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_hb5oxar",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "How to prevent MITM?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_mv1ldu7",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Differentiate EDR and XDR",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_8odeky1",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is Public Key Infrastructure?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_uep67i8",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is Spoofing?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_4uf6wwb",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What are the steps involved in hacking a server or network?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_u8fw8op",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What are the various sniffing tools?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_enhlkgj",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is SQL injection?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_p2jw3hz",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is a Distributed Denial of Service attack (DDoS)?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_ps77nu2",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "How to avoid ARP poisoning?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_257qygw",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is a proxy firewall?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_ebnyi9f",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Explain SSL Encryption.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_0z5ua5y",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What do you mean by penetration testing?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_ug81q73",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What are the risks associated with public Wi-Fi?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_7ycbxoc",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Explain the main difference between Diffie-Hellman and RSA.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_i1h38b7",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Give some examples of asymmetric encryption algorithms.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_a08vs6k",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Explain social engineering and its attacks.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_n4rhy9s",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "State the difference between a virus and worm.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_99io1go",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Explain the concept of session hijacking.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_ag4njaw",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Explain the honeypot and its types.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_tbqa5tq",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What do you mean by a Null Session?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_gs1ujlt",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is IP blocklisting?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_gy9dlxz",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What are Polymorphic viruses?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_ac0d16k",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is Replay Attack?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_8a3zrkk",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is an Eavesdropping Attack?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_47aafax",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is the man-in-the-middle attack?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_brf9f6s",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is a traceroute? Why is it used?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_dj9eohc",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is the difference between HIDS and NIDS?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_1fyq045",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is the difference between VA (Vulnerability Assessment) and PT (Penetration Testing)?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_hi4sp8c",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is RSA?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_5q5d09t",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is the Blowfish algorithm?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_f61170n",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is the difference between a vulnerability and an exploit?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_5qvsagx",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What do you understand by Risk, Vulnerability and threat in a network?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_fa6xgw3",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Explain Phishing and how to prevent it.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_fe9nf67",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Define Cloud Security",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_wttpj34",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Differentiate between threat, vulnerability and risk.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_a3l3vwk",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Define VPN.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_i91ufj7",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Who are Black Hat, White Hat and Grey Hat Hackers?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_z0ngkv8",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What are the types of Cyber Security?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_ycqy3lw",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What are the benefits of Cyber Security?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_4h46q0r",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What do you mean by a botnet?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_38bs1bk",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What do you mean by honeypots?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_mktyvf6",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Differentiate between Vulnerability Assessment and Penetration Testing.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_77kg4e2",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is the main objective of Cyber Security?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_z113d85",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What are the common types of cyber security attacks?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_uqbwrnt",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What do you mean by brute force in the context of Cyber Security?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_c59o6gk",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What do you mean by Phishing?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_2990bhg",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Differentiate between hashing and encryption.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_8smhqvi",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "How can you avoid a brute force attack?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_4hof9jw",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What do you mean by Man-in-the-Middle Attack?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_747iiu2",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Differentiate between Information protection and information assurance.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_ltfdmg8",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Differentiate between Stream Cipher and Block Cipher.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_ayin20v",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What do you mean by perimeter-based and data-based protection?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_srtib2n",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Which is more reliable: SSL or HTTPS?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_uu1eugu",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Differentiate between Symmetric and Asymmetric Encryption.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_7rv3idf",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What do you mean by a DDoS attack? How can you prevent it?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_5rjbpsc",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Differentiate between IDS and IPS in the context of Cyber Security.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_632k9i2",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What do you mean by Network Sniffing?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_yb385io",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Differentiate between Black Box Testing and White Box Testing.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_9jpy7db",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Differentiate between HIDS and NIDS.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_wnoyy08",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What do you mean by Domain Name System (DNS) Attack?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_sv4bsi0",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Differentiate between VPN and VLAN.",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_uqouoi2",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "Differentiate between spear phishing and phishing?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_tozfpvc",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What do you mean by ARP poisoning?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_0l2ast7",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What do you mean by SQL Injection? How do you prevent it?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_rnxd6u6",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What is the difference between virus and worm?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_zmn4q1d",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What form of cookie might be used in a spyware attack?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_ya433ha",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "How do you decide the placement of the encryption function?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_mziocet",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What do you mean by Active reconnaissance?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "security_0ntwxay",
+    "domain": "Security",
+    "subdomain": "General",
+    "question": "What do you mean by Forward Secrecy and how does it work?",
+    "keywords": [
+      "concept",
+      "security"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Security concept?",
+      "strict_prof": "A textbook definition is not enough for Security.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  }
+]

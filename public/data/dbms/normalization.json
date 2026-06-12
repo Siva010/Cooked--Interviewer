@@ -1,0 +1,572 @@
+[
+  {
+    "id": "dbms_norm_001",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is database normalization?",
+    "keywords": [
+      "redundancy",
+      "integrity",
+      "decompose",
+      "normal forms",
+      "update anomalies",
+      "functional dependency"
+    ],
+    "common_mistakes": [
+      "Thinking normalization always improves performance (it can require more joins)"
+    ],
+    "followups": [
+      "What is 1NF?",
+      "What is denormalization?",
+      "What are update anomalies?"
+    ],
+    "roasts": {
+      "angry_staff": "You said normalization 'organizes data.' It REMOVES REDUNDANCY. That's the technical purpose.",
+      "strict_prof": "The reduction of update anomalies through functional dependency analysis is the formal objective.",
+      "faang_bar": "Good. When would you intentionally denormalize a database schema?",
+      "startup_cto": "Your MySQL table has 50 columns including city, state, and zip. What normalization issue does this suggest?"
+    }
+  },
+  {
+    "id": "dbms_norm_002",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is First Normal Form (1NF)?",
+    "keywords": [
+      "atomic",
+      "indivisible",
+      "repeating groups",
+      "unique column names",
+      "no arrays"
+    ],
+    "common_mistakes": [
+      "Thinking 1NF only requires a primary key"
+    ],
+    "followups": [
+      "What is the difference between 1NF and 2NF?",
+      "How do you handle multi-valued attributes in 1NF?",
+      "What is a repeating group?"
+    ],
+    "roasts": {
+      "angry_staff": "You said 1NF means 'has a primary key.' 1NF is about ATOMIC values. Primary key is basic table design.",
+      "strict_prof": "Atomic values and elimination of repeating groups are the formal 1NF requirements.",
+      "faang_bar": "Good. How do JSON columns in PostgreSQL violate 1NF and when is that acceptable?",
+      "startup_cto": "Show me a table that violates 1NF and how you'd fix it."
+    }
+  },
+  {
+    "id": "dbms_norm_003",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is Second Normal Form (2NF)?",
+    "keywords": [
+      "partial dependency",
+      "composite key",
+      "non-key attribute",
+      "full functional dependency",
+      "1NF"
+    ],
+    "common_mistakes": [
+      "Thinking 2NF applies to single-column primary keys (it only matters for composite keys)"
+    ],
+    "followups": [
+      "What is a partial dependency?",
+      "Give an example of a 2NF violation",
+      "What is a functional dependency?"
+    ],
+    "roasts": {
+      "angry_staff": "2NF violations only occur with composite keys. If you have a single PK, you're trivially in 2NF.",
+      "strict_prof": "Partial functional dependency from a non-key attribute to part of the composite key is the defining violation.",
+      "faang_bar": "Good. Give me a concrete table example that violates 2NF and show the decomposition.",
+      "startup_cto": "Your orders table has (order_id, product_id) as PK but also stores product_name. What's the 2NF issue?"
+    }
+  },
+  {
+    "id": "dbms_norm_004",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is Third Normal Form (3NF)?",
+    "keywords": [
+      "transitive dependency",
+      "non-key to non-key",
+      "2NF",
+      "decompose",
+      "functional dependency"
+    ],
+    "common_mistakes": [
+      "Confusing transitive dependency with partial dependency"
+    ],
+    "followups": [
+      "What is the difference between 2NF and 3NF?",
+      "What is BCNF?",
+      "Give an example of a transitive dependency"
+    ],
+    "roasts": {
+      "angry_staff": "Transitive and partial dependencies are DIFFERENT THINGS. 2NF fixes partial, 3NF fixes transitive.",
+      "strict_prof": "A transitive dependency is A→B→C where B and C are non-prime attributes. State it formally.",
+      "faang_bar": "Good. Give me a table that's in 2NF but not 3NF and show the decomposition.",
+      "startup_cto": "Your customers table has zip_code and city — what normalization issue does this present?"
+    }
+  },
+  {
+    "id": "dbms_norm_005",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is BCNF (Boyce-Codd Normal Form) and how does it differ from 3NF?",
+    "keywords": [
+      "superkey",
+      "candidate key",
+      "prime attribute",
+      "functional dependency",
+      "3NF",
+      "stronger",
+      "dependency preservation"
+    ],
+    "common_mistakes": [
+      "Thinking BCNF is always achievable without losing dependency preservation"
+    ],
+    "followups": [
+      "Give an example where 3NF is in but not BCNF",
+      "What is a lossless decomposition?",
+      "What is dependency preservation?"
+    ],
+    "roasts": {
+      "angry_staff": "BCNF ≠ 3NF. BCNF is STRICTER. Not every 3NF decomposition is lossless dependency-preserving in BCNF.",
+      "strict_prof": "The formal distinction: in BCNF, every determinant must be a superkey, with no exceptions for prime attributes.",
+      "faang_bar": "Good. Give a concrete table that's in 3NF but not BCNF and show why BCNF decomposition loses a dependency.",
+      "startup_cto": "When would you stop at 3NF instead of going to BCNF in a production database?"
+    }
+  },
+  {
+    "id": "dbms_norm_006",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is denormalization and when is it used?",
+    "keywords": [
+      "redundancy",
+      "joins",
+      "read performance",
+      "OLAP",
+      "update anomalies",
+      "trade-off",
+      "aggregate"
+    ],
+    "common_mistakes": [
+      "Thinking denormalization is always bad",
+      "Not knowing when it's the right choice"
+    ],
+    "followups": [
+      "How does denormalization affect write performance?",
+      "What is a materialized view?",
+      "When would you use a wide table?"
+    ],
+    "roasts": {
+      "angry_staff": "You said denormalization is always wrong. It's a deliberate trade-off. OLAP databases are denormalized by design.",
+      "strict_prof": "The trade-off between read efficiency and update anomaly risk must be articulated.",
+      "faang_bar": "Good. How does a columnar store like Redshift use denormalization for analytical queries?",
+      "startup_cto": "Your analytics dashboard query takes 30 seconds with 8 joins. How would you denormalize to fix it?"
+    }
+  },
+  {
+    "id": "dbms_norm_007",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is a functional dependency?",
+    "keywords": [
+      "determines",
+      "unique mapping",
+      "Armstrong axioms",
+      "trivial",
+      "non-trivial",
+      "closure",
+      "tuple"
+    ],
+    "common_mistakes": [
+      "Thinking functional dependency means B always uniquely determines A (it doesn't unless A→B and B→A)"
+    ],
+    "followups": [
+      "What are Armstrong's axioms?",
+      "What is an attribute closure?",
+      "What is a candidate key?"
+    ],
+    "roasts": {
+      "angry_staff": "FD is not 'A relates to B.' It means A UNIQUELY DETERMINES B. One-way relationship.",
+      "strict_prof": "Armstrong's axioms — reflexivity, augmentation, transitivity — are the formal inference rules for FDs.",
+      "faang_bar": "Good. What is the attribute closure algorithm and how does it find candidate keys?",
+      "startup_cto": "How do you use functional dependencies to identify redundancy in a schema?"
+    }
+  },
+  {
+    "id": "dbms_norm_008",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is a candidate key vs primary key?",
+    "keywords": [
+      "minimal superkey",
+      "unique identifier",
+      "multiple candidate keys",
+      "alternate key",
+      "primary key"
+    ],
+    "common_mistakes": [
+      "Thinking a table can have only one candidate key"
+    ],
+    "followups": [
+      "What is a superkey vs candidate key?",
+      "What is a surrogate key?",
+      "What is a composite key?"
+    ],
+    "roasts": {
+      "angry_staff": "A table can have MULTIPLE candidate keys. You only get one primary key. They're not the same.",
+      "strict_prof": "A candidate key is a minimal superkey — the minimality constraint is what makes it a candidate key.",
+      "faang_bar": "Good. When would you choose a surrogate key over a natural candidate key?",
+      "startup_cto": "Your users table uses email as primary key. What are the trade-offs vs using a UUID?"
+    }
+  },
+  {
+    "id": "dbms_norm_009",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is 4NF and what multi-valued dependency does it address?",
+    "keywords": [
+      "multi-valued dependency",
+      "MVD",
+      "BCNF",
+      "independent sets",
+      "combinatorial",
+      "decompose"
+    ],
+    "common_mistakes": [
+      "Confusing multi-valued dependency with multi-valued columns"
+    ],
+    "followups": [
+      "What is 5NF?",
+      "What is the difference between FD and MVD?",
+      "When does 4NF violation cause redundancy?"
+    ],
+    "roasts": {
+      "angry_staff": "Multi-valued dependency ≠ multi-valued column. MVD is about independent sets of values for same key.",
+      "strict_prof": "A multi-valued dependency A↠B implies A↠C for all other attributes C — the formal symmetric property.",
+      "faang_bar": "Good. Give a concrete table violating 4NF and show the decomposition.",
+      "startup_cto": "When in practice would you encounter a 4NF violation in a real application schema?"
+    }
+  },
+  {
+    "id": "dbms_norm_010",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What are update anomalies and how does normalization prevent them?",
+    "keywords": [
+      "insert anomaly",
+      "delete anomaly",
+      "update anomaly",
+      "redundancy",
+      "dependency",
+      "decomposition"
+    ],
+    "common_mistakes": [
+      "Only naming one type of anomaly"
+    ],
+    "followups": [
+      "Give a concrete example of a delete anomaly",
+      "How does 3NF prevent update anomalies?",
+      "What is the trade-off of normalization vs anomalies?"
+    ],
+    "roasts": {
+      "angry_staff": "Three anomalies. Insert, delete, update. You named one. List all three with examples.",
+      "strict_prof": "Each anomaly type has a formal definition — the inability to perform an operation without side effects.",
+      "faang_bar": "Good. Give me a concrete denormalized table and show all three anomaly types.",
+      "startup_cto": "Your schema causes a delete anomaly that loses vendor data. How do you fix it?"
+    }
+  },
+  {
+    "id": "dbms_norm_011",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is a primary key constraint?",
+    "keywords": [
+      "unique",
+      "NOT NULL",
+      "row identification",
+      "index",
+      "natural key",
+      "surrogate key"
+    ],
+    "common_mistakes": [
+      "Thinking primary key columns can be NULL"
+    ],
+    "followups": [
+      "What is the difference between PRIMARY KEY and UNIQUE constraint?",
+      "What is a surrogate key?",
+      "Can a primary key be a composite key?"
+    ],
+    "roasts": {
+      "angry_staff": "Primary key cannot be NULL. That's the first rule. You forgot it.",
+      "strict_prof": "The two constraints — uniqueness and non-nullability — are the formal definition of a primary key.",
+      "faang_bar": "Good. When would you use a composite primary key over a surrogate key?",
+      "startup_cto": "Your payments table uses a UUID primary key. What are the write performance implications?"
+    }
+  },
+  {
+    "id": "dbms_norm_012",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is a foreign key constraint?",
+    "keywords": [
+      "referential integrity",
+      "orphan records",
+      "CASCADE",
+      "RESTRICT",
+      "SET NULL",
+      "parent",
+      "child"
+    ],
+    "common_mistakes": [
+      "Not knowing about cascade actions",
+      "Thinking foreign keys are always required for relationships"
+    ],
+    "followups": [
+      "What is a cascading delete?",
+      "Should you always use foreign key constraints?",
+      "What is an orphan record?"
+    ],
+    "roasts": {
+      "angry_staff": "You said foreign key 'links tables.' It enforces REFERENTIAL INTEGRITY. Know what it actually does.",
+      "strict_prof": "The referential integrity constraint and its enforcement actions (CASCADE, RESTRICT, SET NULL) are core.",
+      "faang_bar": "Good. Why do high-scale applications sometimes drop foreign key constraints?",
+      "startup_cto": "Your cascade delete accidentally wiped 50K order records. What went wrong and how do you prevent it?"
+    }
+  },
+  {
+    "id": "dbms_norm_013",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is a lossless join decomposition?",
+    "keywords": [
+      "spurious tuples",
+      "natural join",
+      "R1 intersection R2",
+      "candidate key",
+      "lossless",
+      "lossy",
+      "decomposition"
+    ],
+    "common_mistakes": [
+      "Thinking all decompositions are lossless"
+    ],
+    "followups": [
+      "What is the condition for lossless join?",
+      "Can a lossless decomposition fail to preserve dependencies?",
+      "What is a dependency-preserving decomposition?"
+    ],
+    "roasts": {
+      "angry_staff": "Not all decompositions are lossless. That's literally the whole point of lossless join theory.",
+      "strict_prof": "The formal condition: R1∩R2 must be a superkey of R1 or R2 for lossless join.",
+      "faang_bar": "Good. Can a decomposition be lossless but not dependency-preserving? Give an example.",
+      "startup_cto": "When would a lossy decomposition cause real data problems in production?"
+    }
+  },
+  {
+    "id": "dbms_norm_014",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is the difference between OLTP and OLAP databases?",
+    "keywords": [
+      "OLTP",
+      "OLAP",
+      "row-oriented",
+      "column-oriented",
+      "normalized",
+      "denormalized",
+      "star schema",
+      "ETL"
+    ],
+    "common_mistakes": [
+      "Trying to use OLTP databases for analytical queries at scale"
+    ],
+    "followups": [
+      "What is a star schema?",
+      "What is column-oriented storage?",
+      "What is a data warehouse?"
+    ],
+    "roasts": {
+      "angry_staff": "Running analytical queries on your MySQL database is why your ops dashboard is slow. Use an OLAP system.",
+      "strict_prof": "The storage orientation (row vs column) is the fundamental architectural difference, not just the schema.",
+      "faang_bar": "Good. Why does column-oriented storage dramatically outperform row-oriented storage for aggregation queries?",
+      "startup_cto": "Your MySQL is slow because the BI team runs full-table scans. What's the right fix?"
+    }
+  },
+  {
+    "id": "dbms_norm_015",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is a composite key?",
+    "keywords": [
+      "multiple columns",
+      "combination unique",
+      "partial dependency",
+      "foreign key",
+      "order_items"
+    ],
+    "common_mistakes": [
+      "Thinking each column in a composite key must be unique"
+    ],
+    "followups": [
+      "How does a composite key relate to 2NF?",
+      "What are the disadvantages of composite primary keys?",
+      "When should you use a surrogate key instead?"
+    ],
+    "roasts": {
+      "angry_staff": "Individual columns in a composite key don't need to be unique. The COMBINATION must be unique.",
+      "strict_prof": "The composite key's relationship to partial dependencies (2NF) is the key normalization implication.",
+      "faang_bar": "Good. What are the foreign key implications of using composite primary keys across many tables?",
+      "startup_cto": "Your junction table uses a composite PK. Should you add a surrogate ID column? What's the trade-off?"
+    }
+  },
+  {
+    "id": "dbms_norm_016",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is a star schema and when is it used?",
+    "keywords": [
+      "fact table",
+      "dimension table",
+      "measures",
+      "denormalized",
+      "OLAP",
+      "data warehouse",
+      "snowflake schema"
+    ],
+    "common_mistakes": [
+      "Confusing star schema with OLTP normalized schema"
+    ],
+    "followups": [
+      "What is a snowflake schema?",
+      "What is a fact table vs dimension table?",
+      "Why is star schema faster for aggregation?"
+    ],
+    "roasts": {
+      "angry_staff": "Star schema is for DATA WAREHOUSES, not your transactional app. Context matters.",
+      "strict_prof": "Fact tables contain additive measures; dimension tables contain descriptive attributes. This distinction is formal.",
+      "faang_bar": "Good. What are slowly changing dimensions (SCD) and how do you handle them in a star schema?",
+      "startup_cto": "You need to add historical dimension data to your star schema without losing reporting accuracy. How?"
+    }
+  },
+  {
+    "id": "dbms_norm_017",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is a surrogate key vs natural key?",
+    "keywords": [
+      "natural key",
+      "surrogate key",
+      "UUID",
+      "auto-increment",
+      "stable",
+      "business meaning",
+      "index size"
+    ],
+    "common_mistakes": [
+      "Using email as a primary key (can change, long, hashing needed for indexes)"
+    ],
+    "followups": [
+      "What are the performance implications of UUID vs INT primary keys?",
+      "What is a natural key violation?",
+      "When would you use a natural key?"
+    ],
+    "roasts": {
+      "angry_staff": "Using email as a PK? What happens when a user changes their email? Cascading update nightmare.",
+      "strict_prof": "Stability and index efficiency are the formal criteria for evaluating natural vs surrogate keys.",
+      "faang_bar": "Good. How does using UUID v4 primary keys affect B-tree index fragmentation vs sequential integer keys?",
+      "startup_cto": "Your table has UUID primary keys and INSERT performance is degrading. What's happening and how do you fix it?"
+    }
+  },
+  {
+    "id": "dbms_norm_018",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is referential integrity?",
+    "keywords": [
+      "foreign key",
+      "parent",
+      "child",
+      "orphan records",
+      "CASCADE",
+      "RESTRICT",
+      "consistency"
+    ],
+    "common_mistakes": [
+      "Thinking referential integrity is automatically maintained without constraints"
+    ],
+    "followups": [
+      "What happens when you insert a row that violates referential integrity?",
+      "How do you fix orphan records?",
+      "Does referential integrity hurt performance?"
+    ],
+    "roasts": {
+      "angry_staff": "Referential integrity doesn't enforce itself. You need FK constraints. Without them, orphan records accumulate.",
+      "strict_prof": "Referential integrity is a database constraint ensuring every FK value references an existing PK.",
+      "faang_bar": "Good. Why do some high-scale systems (like Facebook) drop FK constraints and enforce integrity at application level?",
+      "startup_cto": "Your data migration left 50K orphan records in the orders table. How do you find and clean them?"
+    }
+  },
+  {
+    "id": "dbms_norm_019",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is domain integrity?",
+    "keywords": [
+      "data type",
+      "CHECK constraint",
+      "NOT NULL",
+      "ENUM",
+      "DEFAULT",
+      "valid values",
+      "domain"
+    ],
+    "common_mistakes": [
+      "Relying only on application-level validation without database constraints"
+    ],
+    "followups": [
+      "What is a CHECK constraint?",
+      "What is domain integrity vs entity integrity?",
+      "How does ENUM enforce domain integrity?"
+    ],
+    "roasts": {
+      "angry_staff": "Validating only in the application? What about direct SQL inserts? Database constraints are the last defense.",
+      "strict_prof": "Domain integrity, entity integrity, and referential integrity are the three types of database integrity.",
+      "faang_bar": "Good. What is the difference between CHECK constraints in PostgreSQL vs MySQL (historically)?",
+      "startup_cto": "Your age column has -5 stored in 200 rows. What constraint should you have added?"
+    }
+  },
+  {
+    "id": "dbms_norm_020",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is schema migration and how do you handle it in production?",
+    "keywords": [
+      "versioned",
+      "Flyway",
+      "Liquibase",
+      "zero-downtime",
+      "backward compatible",
+      "ghost table",
+      "expand-contract",
+      "ALTER TABLE lock"
+    ],
+    "common_mistakes": [
+      "Running ALTER TABLE on a large production table without considering locking"
+    ],
+    "followups": [
+      "What is the expand-contract pattern?",
+      "How does gh-ost enable zero-downtime schema changes?",
+      "What is online DDL in MySQL?"
+    ],
+    "roasts": {
+      "angry_staff": "ALTER TABLE on a 500GB table in production? That locks the table for hours. Use gh-ost.",
+      "strict_prof": "The expand-contract pattern enables backward-compatible schema changes in multi-version deployments.",
+      "faang_bar": "Good. How does gh-ost implement zero-downtime ALTER TABLE for MySQL?",
+      "startup_cto": "You need to add a non-nullable column to a table with 100M rows. How do you do it without downtime?"
+    }
+  }
+]

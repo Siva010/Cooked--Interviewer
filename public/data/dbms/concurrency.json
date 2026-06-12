@@ -1,0 +1,298 @@
+[
+  {
+    "id": "dbms_con_001",
+    "domain": "DBMS",
+    "subdomain": "Concurrency",
+    "question": "What is a dirty read, non-repeatable read, and phantom read?",
+    "keywords": [
+      "uncommitted",
+      "UPDATE between reads",
+      "INSERT between reads",
+      "range query",
+      "isolation level",
+      "row",
+      "same query"
+    ],
+    "common_mistakes": [
+      "Confusing non-repeatable read with phantom read"
+    ],
+    "followups": [
+      "Which isolation level prevents each anomaly?",
+      "What is write skew?",
+      "How does MVCC prevent non-repeatable reads?"
+    ],
+    "roasts": {
+      "angry_staff": "Three anomalies. Three definitions. Non-repeatable is UPDATE between reads. Phantom is INSERT/DELETE between range queries. Know the difference.",
+      "strict_prof": "Each anomaly is formally defined by what operation between transactions causes the inconsistency.",
+      "faang_bar": "Good. What anomaly does Snapshot Isolation NOT prevent despite preventing the other two?",
+      "startup_cto": "Your API returns different user counts on two calls within the same request. What anomaly is this?"
+    }
+  },
+  {
+    "id": "dbms_con_002",
+    "domain": "DBMS",
+    "subdomain": "Concurrency",
+    "question": "What is write skew anomaly?",
+    "keywords": [
+      "snapshot isolation",
+      "constraint violation",
+      "concurrent reads",
+      "combined effect",
+      "individually valid",
+      "serializable prevents"
+    ],
+    "common_mistakes": [
+      "Thinking snapshot isolation prevents all anomalies (it doesn't prevent write skew)"
+    ],
+    "followups": [
+      "How does Serializable Snapshot Isolation (SSI) prevent write skew?",
+      "What is a lost update vs write skew?",
+      "How does SELECT FOR UPDATE prevent write skew?"
+    ],
+    "roasts": {
+      "angry_staff": "Snapshot isolation allows write skew. This is NOT widely known. If you don't know this, you can ship bugs.",
+      "strict_prof": "Write skew is formally: concurrent transactions T1, T2 where each is individually consistent but their serialization is not.",
+      "faang_bar": "Good. How does PostgreSQL's Serializable Snapshot Isolation detect and prevent write skew?",
+      "startup_cto": "Your hospital scheduling app has a bug: no doctors are ever on call after a certain pattern of edits. This is write skew. How do you fix it?"
+    }
+  },
+  {
+    "id": "dbms_con_003",
+    "domain": "DBMS",
+    "subdomain": "Concurrency",
+    "question": "What is lock granularity in databases?",
+    "keywords": [
+      "row-level",
+      "table-level",
+      "concurrency",
+      "overhead",
+      "InnoDB",
+      "MyISAM",
+      "attribute",
+      "page-level"
+    ],
+    "common_mistakes": [
+      "Not knowing that InnoDB defaults to row-level while MyISAM does table-level locking"
+    ],
+    "followups": [
+      "What is lock escalation?",
+      "What is an intention lock?",
+      "When does row-level locking degrade to table-level?"
+    ],
+    "roasts": {
+      "angry_staff": "MyISAM uses TABLE locks. InnoDB uses ROW locks. That's why MyISAM is terrible for concurrent writes.",
+      "strict_prof": "Lock granularity involves a formal trade-off: finer granularity = higher concurrency, higher overhead.",
+      "faang_bar": "Good. What are intention locks and why does InnoDB need them for hierarchical lock management?",
+      "startup_cto": "Your MySQL table has 100 concurrent write transactions and they're all blocking each other. What's the first thing you check?"
+    }
+  },
+  {
+    "id": "dbms_con_004",
+    "domain": "DBMS",
+    "subdomain": "Concurrency",
+    "question": "What is lock escalation?",
+    "keywords": [
+      "row to table",
+      "overhead reduction",
+      "contention",
+      "automatic",
+      "SQL Server",
+      "memory overhead",
+      "page lock"
+    ],
+    "common_mistakes": [
+      "Not knowing which databases perform lock escalation"
+    ],
+    "followups": [
+      "Which databases implement lock escalation?",
+      "How do you prevent lock escalation in SQL Server?",
+      "What is the trade-off of lock escalation?"
+    ],
+    "roasts": {
+      "angry_staff": "SQL Server does lock escalation. PostgreSQL doesn't. Know your database before designing for it.",
+      "strict_prof": "Lock escalation reduces memory overhead for lock tracking at the cost of increased contention.",
+      "faang_bar": "Good. How do you diagnose and prevent unwanted lock escalation in SQL Server?",
+      "startup_cto": "Your SQL Server batch update is causing table locks that block all readers. What's causing this?"
+    }
+  },
+  {
+    "id": "dbms_con_005",
+    "domain": "DBMS",
+    "subdomain": "Concurrency",
+    "question": "What is a gap lock in MySQL InnoDB?",
+    "keywords": [
+      "range lock",
+      "phantom reads",
+      "Repeatable Read",
+      "INSERT prevention",
+      "index range",
+      "FOR UPDATE",
+      "Read Committed disables"
+    ],
+    "common_mistakes": [
+      "Not knowing gap locks are disabled in Read Committed"
+    ],
+    "followups": [
+      "What is a next-key lock?",
+      "How do gap locks cause deadlocks?",
+      "How do you disable gap locks?"
+    ],
+    "roasts": {
+      "angry_staff": "Gap locks prevent phantom reads in InnoDB at Repeatable Read. They cause more deadlocks. Know the trade-off.",
+      "strict_prof": "Gap locks formally lock the open interval between index values to prevent phantom reads.",
+      "faang_bar": "Good. How does switching from Repeatable Read to Read Committed affect gap lock behavior and phantom read risk?",
+      "startup_cto": "Your high-concurrency service has unexplained deadlocks. You suspect gap locks. How do you diagnose?"
+    }
+  },
+  {
+    "id": "dbms_con_006",
+    "domain": "DBMS",
+    "subdomain": "Concurrency",
+    "question": "What is a transaction isolation level and how does it affect performance?",
+    "keywords": [
+      "anomalies",
+      "concurrency",
+      "throughput",
+      "Read Committed",
+      "Serializable",
+      "MVCC",
+      "predicate lock",
+      "trade-off"
+    ],
+    "common_mistakes": [
+      "Always using Serializable 'to be safe' (kills throughput)",
+      "Using Read Uncommitted for performance gains in financial systems"
+    ],
+    "followups": [
+      "What isolation level does PostgreSQL use by default?",
+      "What is the performance cost of Serializable?",
+      "When should you use Read Committed vs Repeatable Read?"
+    ],
+    "roasts": {
+      "angry_staff": "Serializable everywhere? Your throughput drops 60%. Read Committed is fine for most OLTP.",
+      "strict_prof": "The formal trade-off: stronger isolation = fewer anomalies = reduced concurrency degree.",
+      "faang_bar": "Good. What is the performance overhead of PostgreSQL's Serializable Snapshot Isolation vs Read Committed?",
+      "startup_cto": "You're building a payment processing system. What isolation level would you use and why?"
+    }
+  },
+  {
+    "id": "dbms_con_007",
+    "domain": "DBMS",
+    "subdomain": "Concurrency",
+    "question": "What is the difference between optimistic, pessimistic, and multi-version concurrency control?",
+    "keywords": [
+      "pessimistic",
+      "optimistic",
+      "MVCC",
+      "versions",
+      "snapshot",
+      "no blocking",
+      "retry",
+      "validate"
+    ],
+    "common_mistakes": [
+      "Thinking MVCC eliminates all locking (writes still need some coordination)"
+    ],
+    "followups": [
+      "How does MVCC handle write-write conflicts?",
+      "What is the version chain in MVCC?",
+      "Why does MVCC cause table bloat?"
+    ],
+    "roasts": {
+      "angry_staff": "MVCC doesn't eliminate locks entirely. Write-write conflicts still need coordination. Don't oversimplify.",
+      "strict_prof": "MVCC formally provides snapshot isolation to readers at the cost of version chain management and garbage collection.",
+      "faang_bar": "Good. How does PostgreSQL handle write-write conflicts in MVCC and what transaction aborts?",
+      "startup_cto": "Your read-heavy API is bottlenecked by read-write lock contention. MVCC would solve this. How do you explain that to your team?"
+    }
+  },
+  {
+    "id": "dbms_con_008",
+    "domain": "DBMS",
+    "subdomain": "Concurrency",
+    "question": "What is a shared lock vs exclusive lock in databases?",
+    "keywords": [
+      "S-lock",
+      "X-lock",
+      "read lock",
+      "write lock",
+      "compatibility",
+      "multiple readers",
+      "single writer",
+      "blocks"
+    ],
+    "common_mistakes": [
+      "Thinking shared lock allows only one reader"
+    ],
+    "followups": [
+      "What is a shared intent lock?",
+      "How does SELECT FOR SHARE work?",
+      "What is lock compatibility matrix?"
+    ],
+    "roasts": {
+      "angry_staff": "Shared locks allow MULTIPLE concurrent readers. You're thinking of exclusive locks.",
+      "strict_prof": "The lock compatibility matrix — S+S compatible, S+X incompatible, X+X incompatible — is the formal definition.",
+      "faang_bar": "Good. What are intention locks (IS, IX, SIX) and why do databases need them for hierarchical locking?",
+      "startup_cto": "Your read-heavy endpoint is being blocked by a long-running write. What lock type is causing this?"
+    }
+  },
+  {
+    "id": "dbms_con_009",
+    "domain": "DBMS",
+    "subdomain": "Concurrency",
+    "question": "What is transaction management?",
+    "keywords": [
+      "BEGIN",
+      "COMMIT",
+      "ROLLBACK",
+      "ACID",
+      "locking",
+      "WAL",
+      "recovery",
+      "auto-commit"
+    ],
+    "common_mistakes": [
+      "Forgetting to explicitly commit transactions in application code"
+    ],
+    "followups": [
+      "What is auto-commit?",
+      "What happens if you forget to commit?",
+      "How does the DBMS recover uncommitted transactions after a crash?"
+    ],
+    "roasts": {
+      "angry_staff": "Auto-commit is a trap. Beginners forget to BEGIN and every statement is its own transaction. Know your driver's behavior.",
+      "strict_prof": "Transaction management formally coordinates the four ACID properties through locking, logging, and recovery mechanisms.",
+      "faang_bar": "Good. What happens to an open transaction when the database server crashes? How is it recovered?",
+      "startup_cto": "Your Python code opens a transaction and the server process crashes. What happens to the data?"
+    }
+  },
+  {
+    "id": "dbms_con_010",
+    "domain": "DBMS",
+    "subdomain": "Concurrency",
+    "question": "What is SERIALIZABLE isolation and how is it implemented?",
+    "keywords": [
+      "serial execution",
+      "strict 2PL",
+      "SSI",
+      "write skew",
+      "predicate lock",
+      "PostgreSQL",
+      "cycle detection",
+      "commit abort"
+    ],
+    "common_mistakes": [
+      "Thinking Repeatable Read = Serializable (phantom reads and write skew are still possible in Repeatable Read)"
+    ],
+    "followups": [
+      "What is SSI (Serializable Snapshot Isolation)?",
+      "How does SSI detect serialization conflicts?",
+      "What is the performance overhead of SSI?"
+    ],
+    "roasts": {
+      "angry_staff": "Repeatable Read ≠ Serializable. Write skew is still possible in Repeatable Read. Different level.",
+      "strict_prof": "Serializability is formally defined as equivalence to some serial execution order — all three anomaly types prevented.",
+      "faang_bar": "Good. How does PostgreSQL's SSI use SIREAD locks and dependency tracking to detect serialization failures?",
+      "startup_cto": "You need true Serializable isolation but can't afford the throughput hit. What are your options?"
+    }
+  }
+]

@@ -1,0 +1,907 @@
+[
+  {
+    "id": "sys_des_001",
+    "domain": "System Design",
+    "subdomain": "Scalability",
+    "question": "What is the difference between vertical and horizontal scaling?",
+    "keywords": [
+      "vertical scaling",
+      "horizontal scaling",
+      "scale up",
+      "scale out",
+      "single point of failure",
+      "distributed systems"
+    ],
+    "common_mistakes": [
+      "Assuming vertical scaling has no limits",
+      "Ignoring the software complexity introduced by horizontal scaling"
+    ],
+    "followups": [
+      "How does load balancing fit into horizontal scaling?"
+    ],
+    "roasts": {
+      "angry_staff": "Just buy a bigger server? What happens when the server dies? You need horizontal scaling.",
+      "strict_prof": "Vertical scaling is bounded by hardware limits. Horizontal scaling allows theoretically infinite capacity expansion.",
+      "faang_bar": "Good. How do you handle database horizontal scaling?",
+      "startup_cto": "We can't afford a $10k server. Scale it out with cheap EC2 instances."
+    }
+  },
+  {
+    "id": "sys_des_002",
+    "domain": "System Design",
+    "subdomain": "Distributed Systems",
+    "question": "Explain the CAP Theorem.",
+    "keywords": [
+      "Consistency",
+      "Availability",
+      "Partition Tolerance",
+      "network failures",
+      "CP",
+      "AP"
+    ],
+    "common_mistakes": [
+      "Believing you can achieve all three in a real network",
+      "Confusing ACID consistency with CAP consistency"
+    ],
+    "followups": [
+      "Give an example of an AP system vs a CP system.",
+      "What is PACELC theorem?"
+    ],
+    "roasts": {
+      "angry_staff": "You can't have CA! The network WILL partition. Don't fight physics.",
+      "strict_prof": "Brewer's conjecture formalized by Gilbert and Lynch dictates network partitions are inevitable.",
+      "faang_bar": "Good. Explain the PACELC extension to CAP.",
+      "startup_cto": "I just want the database to stay up when AWS goes down. Is that AP or CP?"
+    }
+  },
+  {
+    "id": "sys_des_003",
+    "domain": "System Design",
+    "subdomain": "Load Balancing",
+    "question": "What is a Load Balancer and what algorithms do they use?",
+    "keywords": [
+      "distributes traffic",
+      "Round Robin",
+      "Least Connections",
+      "IP Hash",
+      "Layer 4",
+      "Layer 7"
+    ],
+    "common_mistakes": [
+      "Confusing Layer 4 and Layer 7 load balancing"
+    ],
+    "followups": [
+      "When would you use IP Hash?",
+      "How do you avoid a load balancer becoming a single point of failure?"
+    ],
+    "roasts": {
+      "angry_staff": "Round robin is garbage if your requests take different times. Use least connections.",
+      "strict_prof": "Load balancers operate at different OSI layers, providing varying degrees of application awareness.",
+      "faang_bar": "Good. How does consistent hashing improve load balancing for stateful services?",
+      "startup_cto": "Put an Nginx box in front of it. Boom, load balanced."
+    }
+  },
+  {
+    "id": "sys_des_004",
+    "domain": "System Design",
+    "subdomain": "Caching",
+    "question": "Describe different caching update strategies.",
+    "keywords": [
+      "Cache-aside",
+      "Write-through",
+      "Write-behind",
+      "synchronous",
+      "asynchronous",
+      "staleness"
+    ],
+    "common_mistakes": [
+      "Thinking write-behind is synchronous",
+      "Ignoring cache invalidation strategies"
+    ],
+    "followups": [
+      "What is the thundering herd problem?",
+      "How do you handle cache eviction?"
+    ],
+    "roasts": {
+      "angry_staff": "Write-behind without persistence means losing data on a power outage. Enjoy explaining that to users.",
+      "strict_prof": "Cache coherence requires strict invalidation protocols, often the hardest part of distributed systems.",
+      "faang_bar": "Good. Explain how a distributed cache cluster maintains consensus.",
+      "startup_cto": "Just use Redis and set a 5-minute TTL. Easy."
+    }
+  },
+  {
+    "id": "sys_des_005",
+    "domain": "System Design",
+    "subdomain": "Databases",
+    "question": "What is Database Sharding?",
+    "keywords": [
+      "horizontal partitioning",
+      "shard key",
+      "hotspots",
+      "complex queries",
+      "throughput"
+    ],
+    "common_mistakes": [
+      "Confusing sharding with replication",
+      "Choosing a poor shard key"
+    ],
+    "followups": [
+      "How do you choose a good shard key?",
+      "How do you handle queries across multiple shards?"
+    ],
+    "roasts": {
+      "angry_staff": "If you pick a bad shard key, one database will get 90% of the traffic and melt down.",
+      "strict_prof": "Sharding sacrifices ACID guarantees across partitions, forcing distributed transactions.",
+      "faang_bar": "Good. How does consistent hashing mitigate shard rebalancing?",
+      "startup_cto": "We have 10k users. We don't need sharding yet, calm down."
+    }
+  },
+  {
+    "id": "sys_des_006",
+    "domain": "System Design",
+    "subdomain": "Databases",
+    "question": "Explain Master-Slave vs Master-Master replication.",
+    "keywords": [
+      "Master-Slave",
+      "Master-Master",
+      "replication",
+      "read-heavy",
+      "conflict resolution",
+      "single point of failure"
+    ],
+    "common_mistakes": [
+      "Assuming Master-Master has no downside"
+    ],
+    "followups": [
+      "How is replication lag handled?",
+      "How do you resolve conflicts in Master-Master?"
+    ],
+    "roasts": {
+      "angry_staff": "Master-Master sounds great until two nodes update the same row at the exact same millisecond.",
+      "strict_prof": "Replication latency introduces eventual consistency, violating strict serializability.",
+      "faang_bar": "Good. How does synchronous replication differ from asynchronous in terms of availability?",
+      "startup_cto": "Read replicas for the win. Just don't let them drift too far behind the master."
+    }
+  },
+  {
+    "id": "sys_des_007",
+    "domain": "System Design",
+    "subdomain": "Networking",
+    "question": "What is a CDN and how does it work?",
+    "keywords": [
+      "proxy servers",
+      "static content",
+      "latency",
+      "origin server",
+      "Push CDN",
+      "Pull CDN"
+    ],
+    "common_mistakes": [
+      "Using a CDN for dynamic, user-specific data"
+    ],
+    "followups": [
+      "How does a CDN know which edge server to route a user to?",
+      "How to invalidate CDN cache?"
+    ],
+    "roasts": {
+      "angry_staff": "Why are you serving 5MB images from your application server? Put it on Cloudfront!",
+      "strict_prof": "CDNs utilize Anycast routing to direct client requests to the topologically nearest edge node.",
+      "faang_bar": "Good. Can you use a CDN for dynamic content delivery (Dynamic Site Acceleration)?",
+      "startup_cto": "Everything static goes in the S3 bucket behind the CDN. Standard procedure."
+    }
+  },
+  {
+    "id": "sys_des_008",
+    "domain": "System Design",
+    "subdomain": "Architecture",
+    "question": "What is the difference between Monolithic and Microservices architecture?",
+    "keywords": [
+      "tightly coupled",
+      "independent services",
+      "APIs",
+      "scalable",
+      "distributed system complexity"
+    ],
+    "common_mistakes": [
+      "Believing microservices are always better than a monolith"
+    ],
+    "followups": [
+      "When would you choose a monolith?",
+      "How do microservices communicate?"
+    ],
+    "roasts": {
+      "angry_staff": "Microservices? You just replaced a monolith with a distributed monolith. Now you have network latency.",
+      "strict_prof": "Conway's Law suggests system architecture will mirror organizational communication structures.",
+      "faang_bar": "Good. How do you manage distributed transactions across microservices? Saga pattern?",
+      "startup_cto": "Start with a monolith. Don't build microservices until the monolith causes real pain."
+    }
+  },
+  {
+    "id": "sys_des_009",
+    "domain": "System Design",
+    "subdomain": "Messaging",
+    "question": "Why use a Message Queue (e.g., Kafka, RabbitMQ)?",
+    "keywords": [
+      "asynchronous",
+      "decoupling",
+      "buffering",
+      "traffic spikes",
+      "background processing"
+    ],
+    "common_mistakes": [
+      "Using queues for synchronous operations expecting immediate responses"
+    ],
+    "followups": [
+      "Pub/Sub vs Point-to-Point?",
+      "How do you guarantee exactly-once delivery?"
+    ],
+    "roasts": {
+      "angry_staff": "Don't make the user wait 10 seconds for an email to send. Put it in a queue!",
+      "strict_prof": "Queues act as temporal shock absorbers in distributed system architectures.",
+      "faang_bar": "Good. Contrast Kafka's log-based approach with RabbitMQ's traditional queueing.",
+      "startup_cto": "RabbitMQ for simple tasks. Kafka when you need to retain data and scale massively."
+    }
+  },
+  {
+    "id": "sys_des_010",
+    "domain": "System Design",
+    "subdomain": "Algorithms",
+    "question": "What is Consistent Hashing?",
+    "keywords": [
+      "hash ring",
+      "minimizing data movement",
+      "modulo hashing",
+      "node addition/removal"
+    ],
+    "common_mistakes": [
+      "Not understanding why simple modulo hashing fails at scale"
+    ],
+    "followups": [
+      "How do virtual nodes help in consistent hashing?"
+    ],
+    "roasts": {
+      "angry_staff": "If you use modulo hashing and add a server, your entire cache gets invalidated. Disaster.",
+      "strict_prof": "Consistent hashing bounds the reassignment of keys to K/N, where K is total keys and N is nodes.",
+      "faang_bar": "Good. Explain how DynamoDB implements consistent hashing with virtual nodes.",
+      "startup_cto": "Essential for any large-scale distributed cache cluster."
+    }
+  },
+  {
+    "id": "system_design_djl9ete",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "What is CAP theorem?",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_rd2mded",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "How is Horizontal scaling different from Vertical scaling?",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_pt8cwgl",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "What do you understand by load balancing? Why is it important in system design?",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_ykppj8v",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "What do you understand by Latency, throughput, and availability of a system?",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_wt4fm4y",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "What is Sharding?",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_4ipa9v8",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "How is NoSQL database different from SQL databases?",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_wezr9ix",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "How is sharding different from partitioning?",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_c8dzn35",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "How is performance and scalability related to each other?",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_gzzeida",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "What is Caching? What are the various cache update strategies available in caching?",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_ubj7py5",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "What are the various Consistency patterns available in system design?",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_2sozc1k",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "What do you understand by Content delivery network?",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_rhx3edk",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "What do you understand by Leader Election?",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_dwxjrkn",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "How do you answer system design interview questions?",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_zuxkgtk",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "What are some of the design issues in distributed systems?",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_ao11pqg",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "Design Uber, Ola or Lyft type of systems.",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_c0anh2s",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "Design ATM system.",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_jpf1agg",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "Design Web Crawler.",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_h4omr0d",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "Design a traffic control system.",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_mzcp165",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "Design Tic-Tac-Toe game.",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_l7ivq3r",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "Design Netflix.",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_spa7kp9",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "Design a type-ahead search engine service.",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_ryfrgl1",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "How do you design global file storage and file sharing services like Google Drive, Dropbox etc?",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_slk7afu",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "Design an API Rate Limiter system for GitHub or Firebase sites.",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_cw1a5t6",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "How do you design a recommendation system?",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_xha8wbp",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "Design a parking lot system?",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_pgt3iwn",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "Design Facebook’s newsfeed system.",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_pc7w04k",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "Design a forum-like systems like Quora, Reddit or HackerNews.",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_gqlobzf",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "How do you design a URL shortening service like TinyURL or bit.ly?",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "system_design_clk0anw",
+    "domain": "System Design",
+    "subdomain": "General",
+    "question": "Design a global chat service like Whatsapp or a facebook messenger.",
+    "keywords": [
+      "concept",
+      "system design"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic System Design concept?",
+      "strict_prof": "A textbook definition is not enough for System Design.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  }
+]

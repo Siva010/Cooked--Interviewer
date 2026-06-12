@@ -1,0 +1,269 @@
+[
+  {
+    "id": "fe_001",
+    "domain": "Frontend / Web",
+    "subdomain": "JavaScript",
+    "question": "What is a Closure in JavaScript?",
+    "keywords": [
+      "inner function",
+      "outer function's variables",
+      "scope chain",
+      "retains access"
+    ],
+    "common_mistakes": [
+      "Thinking closures are only created when returning a function (they are created every time a function is created)"
+    ],
+    "followups": [
+      "Give an example of a practical use for closures. (e.g., Data privacy/encapsulation)",
+      "What is lexical scoping?"
+    ],
+    "roasts": {
+      "angry_staff": "Closures aren't magic, they're just functions remembering where they were born!",
+      "strict_prof": "Closures form the basis for stateful functions and module patterns in pre-ES6 JavaScript.",
+      "faang_bar": "Good. Explain how closures can lead to memory leaks if not handled carefully.",
+      "startup_cto": "Learn closures. It's the only way to write decent React hooks."
+    }
+  },
+  {
+    "id": "fe_002",
+    "domain": "Frontend / Web",
+    "subdomain": "DOM",
+    "question": "Explain Event Delegation and Event Bubbling.",
+    "keywords": [
+      "handlers on parent",
+      "all the way up",
+      "single event listener",
+      "dynamically added ones",
+      "performance"
+    ],
+    "common_mistakes": [
+      "Confusing Event Bubbling with Event Capturing (trickling)"
+    ],
+    "followups": [
+      "How do you stop event bubbling?",
+      "What is event.target vs event.currentTarget?"
+    ],
+    "roasts": {
+      "angry_staff": "Adding 1000 event listeners to a list of 1000 items? Your page is going to freeze. Delegate!",
+      "strict_prof": "Event delegation optimizes memory utilization by exploiting the DOM's hierarchical event propagation model.",
+      "faang_bar": "Good. Give a scenario where event bubbling is intentionally suppressed using stopPropagation().",
+      "startup_cto": "Delegation is just standard practice. Don't blow up my browser."
+    }
+  },
+  {
+    "id": "fe_003",
+    "domain": "Frontend / Web",
+    "subdomain": "CSS",
+    "question": "Explain the CSS Box Model.",
+    "keywords": [
+      "Content",
+      "Padding",
+      "Border",
+      "Margin",
+      "box-sizing",
+      "border-box"
+    ],
+    "common_mistakes": [
+      "Forgetting that margins collapse vertically"
+    ],
+    "followups": [
+      "What is margin collapsing?",
+      "Why do most developers use `box-sizing: border-box`?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't use `box-sizing: border-box`, your 100% width div with 10px padding will break the layout.",
+      "strict_prof": "The W3C box model dictates spatial geometry, where margins dictate interpersonal element spacing.",
+      "faang_bar": "Good. Explain the difference between display: none and visibility: hidden in relation to the box model.",
+      "startup_cto": "Just use a CSS reset and Flexbox. Don't waste time on float layouts."
+    }
+  },
+  {
+    "id": "fe_004",
+    "domain": "Frontend / Web",
+    "subdomain": "JavaScript",
+    "question": "What are Promises and how do they differ from callbacks?",
+    "keywords": [
+      "eventual completion",
+      "asynchronous operation",
+      "callback hell",
+      "chaining",
+      "Pending",
+      "Fulfilled",
+      "Rejected"
+    ],
+    "common_mistakes": [
+      "Not returning the inner promise in a .then() chain"
+    ],
+    "followups": [
+      "What is Promise.all()?",
+      "How does the Event Loop handle Promises vs setTimeout?"
+    ],
+    "roasts": {
+      "angry_staff": "Stop writing pyramid-of-doom callbacks! Use async/await like it's 2024.",
+      "strict_prof": "Promises provide a monad-like structure for abstracting asynchronous control flow.",
+      "faang_bar": "Good. Explain the difference between the microtask queue (Promises) and the macrotask queue (setTimeout).",
+      "startup_cto": "If you block the main thread with synchronous network requests, you're fired."
+    }
+  },
+  {
+    "id": "fe_005",
+    "domain": "Frontend / Web",
+    "subdomain": "React",
+    "question": "What is the Virtual DOM and how does React use it?",
+    "keywords": [
+      "in-memory representation",
+      "Diffing",
+      "Reconciliation",
+      "minimum number of changes",
+      "batches these updates"
+    ],
+    "common_mistakes": [
+      "Thinking the Virtual DOM is faster than the Real DOM (the VDOM is just a tool to batch slow Real DOM updates)"
+    ],
+    "followups": [
+      "Why do you need the 'key' prop when rendering lists in React?",
+      "What is Fiber in React?"
+    ],
+    "roasts": {
+      "angry_staff": "The real DOM isn't slow, repainting the browser is slow. The Virtual DOM minimizes repaints.",
+      "strict_prof": "Reconciliation transforms an O(n^3) tree comparison problem into a heuristic O(n) algorithm.",
+      "faang_bar": "Good. How does React's concurrent mode change the way the Virtual DOM is updated?",
+      "startup_cto": "React's magic is great, but don't re-render your entire app on every keystroke."
+    }
+  },
+  {
+    "id": "fe_006",
+    "domain": "Frontend / Web",
+    "subdomain": "CSS",
+    "question": "Explain CSS Specificity.",
+    "keywords": [
+      "multiple rules",
+      "hierarchy",
+      "!important",
+      "Inline styles",
+      "IDs",
+      "Classes"
+    ],
+    "common_mistakes": [
+      "Using !important to fix layout bugs, leading to specificity wars"
+    ],
+    "followups": [
+      "How do you override an !important rule?",
+      "Where do CSS variables fit into specificity?"
+    ],
+    "roasts": {
+      "angry_staff": "If I see !important in your CSS, I'm rejecting the PR. Write better selectors.",
+      "strict_prof": "Specificity is a weighting system; maintaining low specificity ensures modularity and maintainability.",
+      "faang_bar": "Good. Explain the BEM (Block Element Modifier) methodology and how it avoids specificity issues.",
+      "startup_cto": "Just use Tailwind CSS. Specificity problems solved."
+    }
+  },
+  {
+    "id": "fe_007",
+    "domain": "Frontend / Web",
+    "subdomain": "React",
+    "question": "Explain the useEffect hook in React.",
+    "keywords": [
+      "side effects",
+      "fetching data",
+      "dependency array",
+      "on mount",
+      "cleanup"
+    ],
+    "common_mistakes": [
+      "Omitting dependencies from the dependency array, causing stale closures",
+      "Creating infinite loops by updating state inside useEffect without correct dependencies"
+    ],
+    "followups": [
+      "What is a stale closure in React?",
+      "Difference between useEffect and useLayoutEffect?"
+    ],
+    "roasts": {
+      "angry_staff": "Infinite re-renders! You put the state update in useEffect without a dependency array!",
+      "strict_prof": "useEffect synchronizes the component state with external systems outside the React tree.",
+      "faang_bar": "Good. Explain how to fetch data safely in useEffect to avoid race conditions.",
+      "startup_cto": "Hooks are great, but don't put 500 lines of logic inside a single useEffect."
+    }
+  },
+  {
+    "id": "fe_008",
+    "domain": "Frontend / Web",
+    "subdomain": "Performance",
+    "question": "What is the Critical Rendering Path?",
+    "keywords": [
+      "DOM",
+      "CSSOM",
+      "Render Tree",
+      "Layout",
+      "Paint",
+      "First Contentful Paint"
+    ],
+    "common_mistakes": [
+      "Not knowing that synchronous JS blocks the DOM parser"
+    ],
+    "followups": [
+      "How do `async` and `defer` attributes on script tags help?",
+      "What triggers a Reflow vs a Repaint?"
+    ],
+    "roasts": {
+      "angry_staff": "Putting a massive synchronous JS file in the `<head>`? The user will stare at a white screen for 5 seconds.",
+      "strict_prof": "Minimizing critical resources and critical path length is essential for performant web applications.",
+      "faang_bar": "Good. How do CSS animations on the 'transform' property differ from 'margin' in terms of the rendering pipeline?",
+      "startup_cto": "Load times affect revenue. Optimize the critical path or lose customers."
+    }
+  },
+  {
+    "id": "fe_009",
+    "domain": "Frontend / Web",
+    "subdomain": "HTML",
+    "question": "What is Semantic HTML and why is it important?",
+    "keywords": [
+      "meaning",
+      "structure",
+      "Accessibility",
+      "screen readers",
+      "SEO",
+      "code readability"
+    ],
+    "common_mistakes": [
+      "Using buttons as links or links as buttons"
+    ],
+    "followups": [
+      "What is ARIA?",
+      "Why shouldn't you use a `<div>` with an onClick handler instead of a `<button>`?"
+    ],
+    "roasts": {
+      "angry_staff": "Stop making everything a `<div>`! A screen reader doesn't know your div is a button just because you made it blue.",
+      "strict_prof": "Semantic markup forms the foundational layer of web accessibility compliance (WCAG).",
+      "faang_bar": "Good. Describe the accessibility implications of the tabindex attribute.",
+      "startup_cto": "Good semantics equals good SEO. Do it right."
+    }
+  },
+  {
+    "id": "fe_010",
+    "domain": "Frontend / Web",
+    "subdomain": "JavaScript",
+    "question": "Explain 'this' keyword in JavaScript.",
+    "keywords": [
+      "how a function is called",
+      "Object method",
+      "Constructor",
+      "Explicit binding",
+      "lexically",
+      "arrow functions"
+    ],
+    "common_mistakes": [
+      "Losing 'this' context when passing a method as a callback (e.g., to setTimeout)"
+    ],
+    "followups": [
+      "What is the difference between call, apply, and bind?",
+      "Why do we use arrow functions in React class components?"
+    ],
+    "roasts": {
+      "angry_staff": "'this' is undefined again? Use an arrow function or bind it in the constructor!",
+      "strict_prof": "Dynamic scoping of the 'this' keyword is a frequent source of runtime errors in pre-ES6 codebases.",
+      "faang_bar": "Good. How does strict mode ('use strict') affect the default binding of 'this'?",
+      "startup_cto": "Just use arrow functions everywhere unless you have a very specific reason not to."
+    }
+  }
+]

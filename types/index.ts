@@ -1,26 +1,15 @@
 // ─── Question ──────────────────────────────────────────────────────────────
 
-export type Difficulty = "easy" | "medium" | "hard";
-export type Domain =
-  | "Operating Systems"
-  | "DBMS"
-  | "Computer Networks"
-  | "OOP"
-  | "DSA";
+export type Domain = string;
 
-export type PersonalityId =
-  | "angry_staff"
-  | "strict_prof"
-  | "faang_bar"
-  | "startup_cto";
+export type PersonalityId = "angry_staff";
 
 export interface Question {
   id: string;
   domain: Domain;
   subdomain: string;
-  difficulty: Difficulty;
   question: string;
-  ideal_answer: string;
+  ideal_answer?: string;
   keywords: string[];
   common_mistakes: string[];
   followups: string[];
@@ -39,6 +28,9 @@ export interface EvaluationResult {
   strong_points?: string[];
   weak_points?: string[];
   needs_followup: boolean;
+  is_fallback?: boolean;
+  dynamic_followup?: string;
+  rag_failed?: boolean;
 }
 
 // ─── Session ────────────────────────────────────────────────────────────────
@@ -54,7 +46,6 @@ export interface SessionQuestion {
 export interface Session {
   id: string;
   domain: Domain | "All Domains";
-  difficulty: Difficulty | "adaptive";
   personality: PersonalityId;
   started_at: number;
   ended_at?: number;
@@ -67,12 +58,12 @@ export interface QuestionProgress {
   question_id: string;
   domain: Domain;
   subdomain: string;
-  difficulty: Difficulty;
   attempts: number;
   correct_attempts: number;
   last_score: number;
   last_seen: number;
   mastered: boolean;
+  question_text?: string;
 }
 
 export interface TopicMastery {
@@ -86,14 +77,25 @@ export interface TopicMastery {
 // ─── Settings ───────────────────────────────────────────────────────────────
 
 export interface AppSettings {
+  llm_provider: "gemini" | "ollama" | "custom";
   gemini_api_key: string;
+  custom_endpoint: string;
+  custom_model: string;
   personality: PersonalityId;
   voice_enabled: boolean;
+  tts_provider: "browser" | "custom";
+  custom_tts_endpoint: string;
+  custom_tts_voice: string;
+  stt_provider: "browser" | "custom";
+  custom_stt_endpoint: string;
+  stt_streaming: boolean;
   voice_speed: number;
   voice_pitch: number;
   selected_voice: string;
-  adaptive_difficulty: boolean;
+  reference_voice: string;
   show_hints: boolean;
+  crawl4ai_endpoint: string;
+  theme?: "light" | "dark" | "system";
 }
 
 // ─── Analytics ──────────────────────────────────────────────────────────────
@@ -108,6 +110,9 @@ export interface AnalyticsSnapshot {
   recent_mistakes: QuestionProgress[];
   streak: number;
   improvement_curve: { date: string; score: number }[];
+  poor_responses: QuestionProgress[];
+  satisfied_responses: QuestionProgress[];
+  perfect_responses: QuestionProgress[];
 }
 
 export interface DomainStat {
@@ -122,6 +127,8 @@ export interface DomainStat {
 
 export type InterviewPhase =
   | "idle"
+  | "loading"
+  | "ready"
   | "asking"
   | "answering"
   | "evaluating"

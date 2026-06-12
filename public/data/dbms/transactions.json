@@ -1,0 +1,583 @@
+[
+  {
+    "id": "dbms_tx_001",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What are the ACID properties?",
+    "keywords": [
+      "atomicity",
+      "consistency",
+      "isolation",
+      "durability",
+      "rollback",
+      "commit",
+      "WAL"
+    ],
+    "common_mistakes": [
+      "Confusing isolation levels with full isolation",
+      "Not knowing what durability means at the hardware level"
+    ],
+    "followups": [
+      "What are transaction isolation levels?",
+      "How does WAL implement durability?",
+      "What is the difference between consistency in ACID and CAP theorem?"
+    ],
+    "roasts": {
+      "angry_staff": "You said ACID is 'database safety.' That tells me nothing. Name and define all four.",
+      "strict_prof": "Each property has a formal definition. 'All-or-nothing' is acceptable for atomicity but the others need precision.",
+      "faang_bar": "Good. How does PostgreSQL implement each ACID property?",
+      "startup_cto": "Your payment service crashes mid-transaction. Which ACID property ensures no partial charges?"
+    }
+  },
+  {
+    "id": "dbms_tx_002",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What are transaction isolation levels and what anomalies do they prevent?",
+    "keywords": [
+      "read uncommitted",
+      "read committed",
+      "repeatable read",
+      "serializable",
+      "dirty read",
+      "phantom read",
+      "non-repeatable read"
+    ],
+    "common_mistakes": [
+      "Not knowing which anomaly each level prevents",
+      "Confusing repeatable read and serializable"
+    ],
+    "followups": [
+      "What is MVCC?",
+      "What is a phantom read vs non-repeatable read?",
+      "What isolation level does PostgreSQL use by default?"
+    ],
+    "roasts": {
+      "angry_staff": "You listed isolation levels but not the anomalies they prevent. That's the whole point.",
+      "strict_prof": "Four levels, three anomaly types — you must map each level to what it prevents and allows.",
+      "faang_bar": "Good. How does MySQL's Repeatable Read actually prevent phantom reads differently from the SQL standard?",
+      "startup_cto": "Your e-commerce checkout has a double-spend bug. Which isolation level would prevent it?"
+    }
+  },
+  {
+    "id": "dbms_tx_003",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is MVCC (Multi-Version Concurrency Control)?",
+    "keywords": [
+      "version",
+      "snapshot",
+      "transaction ID",
+      "readers don't block writers",
+      "vacuum",
+      "PostgreSQL",
+      "InnoDB"
+    ],
+    "common_mistakes": [
+      "Thinking MVCC is the same as optimistic locking",
+      "Not knowing about vacuum/purge overhead"
+    ],
+    "followups": [
+      "What is VACUUM in PostgreSQL?",
+      "How does MVCC cause table bloat?",
+      "How does MVCC implement snapshot isolation?"
+    ],
+    "roasts": {
+      "angry_staff": "You think MVCC means 'multiple copies.' It's about transaction snapshots. Define it properly.",
+      "strict_prof": "The mechanism — read your own snapshot, writers create new versions — must be described precisely.",
+      "faang_bar": "Good. What is table bloat in PostgreSQL and how does VACUUM address the MVCC version accumulation?",
+      "startup_cto": "Your PostgreSQL database has a table with 10GB of dead tuples. What happened and how do you fix it?"
+    }
+  },
+  {
+    "id": "dbms_tx_004",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is a deadlock in databases and how are they handled?",
+    "keywords": [
+      "wait-for graph",
+      "cycle",
+      "victim",
+      "rollback",
+      "lock",
+      "circular dependency"
+    ],
+    "common_mistakes": [
+      "Not knowing databases detect rather than prevent deadlocks",
+      "Not mentioning victim selection"
+    ],
+    "followups": [
+      "How does MySQL detect deadlocks?",
+      "What is a wait-die scheme?",
+      "How can you write code to minimize deadlock risk?"
+    ],
+    "roasts": {
+      "angry_staff": "You said 'wait for a timeout.' Databases detect deadlocks via wait-for graphs. Don't guess.",
+      "strict_prof": "The wait-for graph cycle detection algorithm is the formal mechanism — not timeout-based detection.",
+      "faang_bar": "Good. How does MySQL's deadlock detection decide which transaction to abort as the victim?",
+      "startup_cto": "Your app gets periodic 'Deadlock found when trying to get lock' errors. How do you fix the code?"
+    }
+  },
+  {
+    "id": "dbms_tx_005",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is a savepoint in a transaction?",
+    "keywords": [
+      "named point",
+      "partial rollback",
+      "ROLLBACK TO",
+      "SAVEPOINT",
+      "nested transaction",
+      "error recovery"
+    ],
+    "common_mistakes": [
+      "Thinking rollback to savepoint commits changes before the savepoint"
+    ],
+    "followups": [
+      "How do ORMs use savepoints for nested transactions?",
+      "What is the difference between a savepoint and a nested transaction?",
+      "How does Django use savepoints?"
+    ],
+    "roasts": {
+      "angry_staff": "You said savepoints are 'checkpoints.' They're rollback points within a transaction. Different concept.",
+      "strict_prof": "The SAVEPOINT/ROLLBACK TO/RELEASE sequence must be clearly articulated.",
+      "faang_bar": "Good. How does SQLAlchemy use savepoints to implement nested transactions?",
+      "startup_cto": "In your ORM, when would you explicitly create a savepoint vs just using a full rollback?"
+    }
+  },
+  {
+    "id": "dbms_tx_006",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is a dirty read?",
+    "keywords": [
+      "uncommitted",
+      "rollback",
+      "Read Uncommitted",
+      "Read Committed",
+      "isolation level"
+    ],
+    "common_mistakes": [
+      "Confusing dirty read with non-repeatable read"
+    ],
+    "followups": [
+      "What isolation level allows dirty reads?",
+      "What is a non-repeatable read?",
+      "When would you use Read Uncommitted despite dirty reads?"
+    ],
+    "roasts": {
+      "angry_staff": "You said 'reading wrong data.' A dirty read specifically reads UNCOMMITTED data. Be precise.",
+      "strict_prof": "The formal definition requires specifying the uncommitted state and what happens if the writer rolls back.",
+      "faang_bar": "Good. Is there any practical use case for Read Uncommitted isolation level despite dirty reads?",
+      "startup_cto": "Which isolation level does your PostgreSQL use by default and does it prevent dirty reads?"
+    }
+  },
+  {
+    "id": "dbms_tx_007",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is two-phase locking (2PL)?",
+    "keywords": [
+      "growing phase",
+      "shrinking phase",
+      "serializability",
+      "Strict 2PL",
+      "cascading rollback",
+      "deadlock"
+    ],
+    "common_mistakes": [
+      "Confusing 2PL with two-phase commit (2PC)",
+      "Not knowing what 'strict' adds to 2PL"
+    ],
+    "followups": [
+      "What is the difference between 2PL and 2PC?",
+      "Why does 2PL prevent serializability conflicts?",
+      "What is conservative 2PL?"
+    ],
+    "roasts": {
+      "angry_staff": "2PL and 2PC are DIFFERENT PROTOCOLS. Don't confuse them. 2PL is about locks, 2PC is about distributed commits.",
+      "strict_prof": "The formal two-phase structure — growing then shrinking — with its implications for serializability must be stated.",
+      "faang_bar": "Good. Why does strict 2PL prevent cascading rollbacks while basic 2PL does not?",
+      "startup_cto": "If 2PL can cause deadlocks, why do databases still use it?"
+    }
+  },
+  {
+    "id": "dbms_tx_008",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is two-phase commit (2PC) in distributed databases?",
+    "keywords": [
+      "coordinator",
+      "participants",
+      "prepare",
+      "commit",
+      "abort",
+      "blocking problem",
+      "vote",
+      "distributed"
+    ],
+    "common_mistakes": [
+      "Confusing 2PC with 2PL",
+      "Not knowing the blocking problem of 2PC"
+    ],
+    "followups": [
+      "What is the blocking problem in 2PC?",
+      "How does 3PC address 2PC's blocking issue?",
+      "What does Google Spanner use instead of 2PC?"
+    ],
+    "roasts": {
+      "angry_staff": "2PC and 2PL are NOT the same. One is locks, one is distributed commit coordination.",
+      "strict_prof": "The blocking problem — participants stuck in uncertain state when coordinator fails — is the critical limitation.",
+      "faang_bar": "Good. Why is 2PC called 'blocking' and how does Paxos-based commit address this?",
+      "startup_cto": "Your microservice uses distributed transactions with 2PC. The coordinator crashes. What happens?"
+    }
+  },
+  {
+    "id": "dbms_tx_009",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is the difference between optimistic and pessimistic concurrency control?",
+    "keywords": [
+      "locks",
+      "conflict",
+      "validation",
+      "version",
+      "high contention",
+      "low contention",
+      "abort retry",
+      "MVCC"
+    ],
+    "common_mistakes": [
+      "Thinking OCC is always better (bad for high contention)",
+      "Not knowing MVCC is optimistic"
+    ],
+    "followups": [
+      "What is the validation phase in OCC?",
+      "How does write skew occur in OCC?",
+      "When does OCC outperform pessimistic locking?"
+    ],
+    "roasts": {
+      "angry_staff": "MVCC is optimistic CC. If you know MVCC but not OCC, you know it without knowing you know it.",
+      "strict_prof": "The three phases of OCC — read, validate, write — are the formal definition.",
+      "faang_bar": "Good. How can write skew anomaly occur in optimistic concurrency control?",
+      "startup_cto": "Your inventory system has high contention on stock counts. Optimistic or pessimistic CC?"
+    }
+  },
+  {
+    "id": "dbms_tx_010",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is write-ahead logging (WAL) and how does it ensure durability?",
+    "keywords": [
+      "sequential log",
+      "fsync",
+      "checkpoint",
+      "replay",
+      "crash recovery",
+      "redo",
+      "undo",
+      "data page"
+    ],
+    "common_mistakes": [
+      "Thinking WAL and data pages are fsynced together on every commit"
+    ],
+    "followups": [
+      "What is checkpointing in WAL?",
+      "What is the redo log vs undo log in MySQL?",
+      "How does WAL enable point-in-time recovery?"
+    ],
+    "roasts": {
+      "angry_staff": "You said WAL 'logs changes.' The KEY insight is it's sequential and allows crash recovery. Explain that.",
+      "strict_prof": "The guarantee: log is fsynced before data page modification, enabling redo/undo recovery.",
+      "faang_bar": "Good. How does PostgreSQL use WAL for streaming replication to a standby?",
+      "startup_cto": "Your PostgreSQL crashes. The data directory is intact but WAL is corrupted. What's recoverable?"
+    }
+  },
+  {
+    "id": "dbms_tx_011",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is a transaction rollback?",
+    "keywords": [
+      "undo",
+      "revert",
+      "state before",
+      "error",
+      "ROLLBACK",
+      "undo log",
+      "locks released"
+    ],
+    "common_mistakes": [
+      "Thinking rollback is just erasing data (it uses undo logs)"
+    ],
+    "followups": [
+      "How does an undo log enable rollback?",
+      "What is the difference between rollback and rollforward?",
+      "When does a database auto-rollback?"
+    ],
+    "roasts": {
+      "angry_staff": "You said rollback 'deletes the changes.' It uses UNDO LOGS to reverse them. There's a difference.",
+      "strict_prof": "Rollback is implemented via undo log traversal, not deletion. The mechanism matters.",
+      "faang_bar": "Good. What happens to in-flight queries when a long-running transaction is rolled back?",
+      "startup_cto": "Your app rolled back a payment transaction but the user still got charged. What went wrong?"
+    }
+  },
+  {
+    "id": "dbms_tx_012",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is the difference between serializable and snapshot isolation?",
+    "keywords": [
+      "serializable",
+      "snapshot",
+      "write skew",
+      "SSI",
+      "read snapshot",
+      "concurrent writes",
+      "anomaly"
+    ],
+    "common_mistakes": [
+      "Thinking snapshot isolation = serializable (write skew is possible in snapshot isolation)"
+    ],
+    "followups": [
+      "What is write skew?",
+      "How does PostgreSQL's SSI work?",
+      "What is a lost update vs write skew?"
+    ],
+    "roasts": {
+      "angry_staff": "Snapshot isolation ≠ serializable. Write skew. Look it up.",
+      "strict_prof": "Write skew — the defining anomaly allowed in snapshot but not serializable — was absent.",
+      "faang_bar": "Good. Give me a concrete write skew example with two concurrent transactions.",
+      "startup_cto": "Your hospital app uses snapshot isolation for scheduling. A write skew bug double-books a surgeon. Explain."
+    }
+  },
+  {
+    "id": "dbms_tx_013",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is a checkpoint in database recovery?",
+    "keywords": [
+      "dirty pages",
+      "buffer pool",
+      "WAL position",
+      "recovery time",
+      "flush",
+      "fuzzy checkpoint"
+    ],
+    "common_mistakes": [
+      "Thinking checkpoints eliminate all WAL since the beginning"
+    ],
+    "followups": [
+      "What is a fuzzy checkpoint?",
+      "How does checkpoint frequency affect recovery time?",
+      "How does PostgreSQL implement checkpoints?"
+    ],
+    "roasts": {
+      "angry_staff": "You said checkpoint 'saves the database.' It flushes dirty pages and marks WAL position. Be precise.",
+      "strict_prof": "A checkpoint formally bounds the WAL replay window during crash recovery.",
+      "faang_bar": "Good. What is the tradeoff between checkpoint frequency and I/O overhead vs recovery time?",
+      "startup_cto": "Your PostgreSQL checkpoint_completion_target is 0.5. Should it be higher or lower and why?"
+    }
+  },
+  {
+    "id": "dbms_tx_014",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is a lock in a database?",
+    "keywords": [
+      "shared lock",
+      "exclusive lock",
+      "row-level",
+      "table-level",
+      "concurrency",
+      "S-lock",
+      "X-lock"
+    ],
+    "common_mistakes": [
+      "Thinking all databases use table-level locking"
+    ],
+    "followups": [
+      "What is an intention lock?",
+      "What is a gap lock in MySQL?",
+      "What is lock escalation?"
+    ],
+    "roasts": {
+      "angry_staff": "You said 'lock prevents access.' Shared locks allow concurrent reads. Learn the difference.",
+      "strict_prof": "Shared vs exclusive lock semantics and their compatibility matrix must be addressed.",
+      "faang_bar": "Good. What is MySQL InnoDB's gap lock and when is it acquired?",
+      "startup_cto": "Your SELECT statement is blocking updates. What lock type is it holding?"
+    }
+  },
+  {
+    "id": "dbms_tx_015",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is a phantom read and how does Serializable isolation prevent it?",
+    "keywords": [
+      "range query",
+      "new rows",
+      "phantom",
+      "predicate locking",
+      "gap lock",
+      "Serializable",
+      "insert"
+    ],
+    "common_mistakes": [
+      "Confusing phantom reads with non-repeatable reads (phantom = new rows, non-repeatable = changed existing rows)"
+    ],
+    "followups": [
+      "What is predicate locking?",
+      "How does MySQL's gap lock prevent phantom reads?",
+      "What is a next-key lock?"
+    ],
+    "roasts": {
+      "angry_staff": "Non-repeatable reads change EXISTING rows. Phantom reads add NEW rows. Different things.",
+      "strict_prof": "The formal distinction: phantoms arise from INSERT/DELETE by others, non-repeatable from UPDATE.",
+      "faang_bar": "Good. How does MySQL InnoDB use next-key locks to prevent phantom reads at Repeatable Read level?",
+      "startup_cto": "Your report query runs twice in a transaction and gets different row counts. What anomaly is this?"
+    }
+  },
+  {
+    "id": "dbms_tx_016",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is a lost update and how is it prevented?",
+    "keywords": [
+      "overwrite",
+      "SELECT FOR UPDATE",
+      "version number",
+      "optimistic locking",
+      "atomic operation",
+      "concurrent update"
+    ],
+    "common_mistakes": [
+      "Thinking Read Committed prevents lost updates (it doesn't fully)"
+    ],
+    "followups": [
+      "Does Repeatable Read prevent lost updates?",
+      "How does SELECT FOR UPDATE work?",
+      "What is an atomic increment in SQL?"
+    ],
+    "roasts": {
+      "angry_staff": "You said 'use a transaction.' A plain transaction doesn't prevent lost updates. You need locks or versions.",
+      "strict_prof": "Lost update requires either pessimistic lock (SELECT FOR UPDATE) or optimistic version check at write time.",
+      "faang_bar": "Good. Does PostgreSQL Repeatable Read prevent lost updates? Explain why or why not.",
+      "startup_cto": "Your bank transfer code has a lost update bug. Show me the wrong query and the fix."
+    }
+  },
+  {
+    "id": "dbms_tx_017",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is a non-repeatable read?",
+    "keywords": [
+      "same row",
+      "different value",
+      "modified",
+      "committed",
+      "Repeatable Read",
+      "inconsistent"
+    ],
+    "common_mistakes": [
+      "Confusing with phantom reads (phantom = new rows, non-repeatable = changed existing row)"
+    ],
+    "followups": [
+      "What isolation level prevents non-repeatable reads?",
+      "How is a non-repeatable read different from a phantom read?",
+      "How does MVCC prevent non-repeatable reads?"
+    ],
+    "roasts": {
+      "angry_staff": "Phantom reads add new rows. Non-repeatable reads change existing rows. Not the same anomaly.",
+      "strict_prof": "The formal definition: same-row, same-transaction read returning different committed values.",
+      "faang_bar": "Good. How does MVCC implement Repeatable Read to prevent this anomaly?",
+      "startup_cto": "Your dashboard query shows different user counts when refreshed within the same report job. What anomaly?"
+    }
+  },
+  {
+    "id": "dbms_tx_018",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is SELECT FOR UPDATE?",
+    "keywords": [
+      "exclusive lock",
+      "pessimistic",
+      "concurrent update",
+      "wait",
+      "commit",
+      "lost update prevention"
+    ],
+    "common_mistakes": [
+      "Using SELECT FOR UPDATE for read-only operations (unnecessary overhead)"
+    ],
+    "followups": [
+      "What is SELECT FOR SHARE?",
+      "What happens if SELECT FOR UPDATE times out?",
+      "How do you avoid deadlocks with SELECT FOR UPDATE?"
+    ],
+    "roasts": {
+      "angry_staff": "You use SELECT FOR UPDATE on every select? That's a performance disaster. Use it only when writing.",
+      "strict_prof": "The exclusive lock semantics and its necessity for preventing concurrent write conflicts must be stated.",
+      "faang_bar": "Good. How would you use SELECT FOR UPDATE in a ticket booking system to prevent double-booking?",
+      "startup_cto": "Your SELECT FOR UPDATE is causing a 10-second lock wait. What's the likely cause?"
+    }
+  },
+  {
+    "id": "dbms_tx_019",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is distributed transaction management and what are its challenges?",
+    "keywords": [
+      "2PC",
+      "Saga",
+      "CAP theorem",
+      "network partition",
+      "coordinator",
+      "compensating transaction",
+      "Spanner"
+    ],
+    "common_mistakes": [
+      "Thinking 2PC fully solves distributed transactions (it has blocking failure mode)"
+    ],
+    "followups": [
+      "What is the Saga pattern?",
+      "How does Google Spanner achieve distributed ACID?",
+      "What is the XA protocol?"
+    ],
+    "roasts": {
+      "angry_staff": "2PC doesn't fully solve it. Coordinator failure = blocking. That's why Saga and Spanner exist.",
+      "strict_prof": "The CAP theorem fundamentally limits ACID guarantees in the presence of network partitions.",
+      "faang_bar": "Good. How does the Saga pattern handle partial failures without distributed locks?",
+      "startup_cto": "Your microservices use the Saga pattern for order fulfillment. How do you handle the compensation step failing?"
+    }
+  },
+  {
+    "id": "dbms_tx_020",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is the difference between optimistic locking and pessimistic locking in practice?",
+    "keywords": [
+      "SELECT FOR UPDATE",
+      "version column",
+      "retry",
+      "conflict",
+      "block",
+      "scalable",
+      "high contention"
+    ],
+    "common_mistakes": [
+      "Using optimistic locking for high-contention rows (infinite retries)"
+    ],
+    "followups": [
+      "How does Hibernate implement optimistic locking?",
+      "What is the maximum retry limit for optimistic locking?",
+      "When does optimistic locking cause a 'thundering herd'?"
+    ],
+    "roasts": {
+      "angry_staff": "Optimistic locking with high contention = infinite retry storms. Context matters.",
+      "strict_prof": "The version column check and its conditional UPDATE are the formal implementation of optimistic locking.",
+      "faang_bar": "Good. How does Spring's @Version annotation implement optimistic locking in JPA/Hibernate?",
+      "startup_cto": "Your flash sale has 10K users hitting the same inventory row. Optimistic or pessimistic? Why?"
+    }
+  }
+]

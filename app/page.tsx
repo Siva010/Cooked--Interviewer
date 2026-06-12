@@ -1,65 +1,82 @@
-import Image from "next/image";
+import fs from "fs";
+import path from "path";
+import LandingClient from "./LandingClient";
+import type { Domain } from "@/types";
 
-export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+export const dynamic = "force-dynamic";
+
+const domainMap: Record<string, string[]> = {
+  "Operating Systems": ["os"],
+  "DBMS & SQL": ["dbms"],
+  "Languages": ["languages"],
+  "Cloud & DevOps": ["cloud_devops"],
+  "AI & ML": ["ai_llms"],
+  "Security": ["security"],
+  "Computer Networks": ["cn"],
+  "OOP": ["oop"],
+  "System Design": ["system_design"],
+  "Software Engineering": ["software_engineering"],
+  "DSA": ["dsa"],
+  "Backend": ["backend"]
+};
+
+function countQuestions(dir: string, counts: Record<string, number>): number {
+    let total = 0;
+    try {
+        const entries = fs.readdirSync(dir, { withFileTypes: true });
+        for (const entry of entries) {
+            const fullPath = path.join(dir, entry.name);
+            if (entry.isDirectory()) {
+                total += countQuestions(fullPath, counts);
+            } else if (entry.isFile() && fullPath.endsWith('.json')) {
+                try {
+                    const arr = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+                    if (Array.isArray(arr)) {
+                        total += arr.length;
+                        const dirname = path.basename(dir);
+                        for (const [dom, folders] of Object.entries(domainMap)) {
+                            if (folders.includes(dirname)) {
+                                counts[dom] += arr.length;
+                            }
+                        }
+                    }
+                } catch(e) {}
+            }
+        }
+    } catch(e) {}
+    return total;
+}
+
+export default async function LandingPage() {
+  const counts: Record<string, number> = {};
+  for (const k of Object.keys(domainMap)) counts[k] = 0;
+
+  const dataDir = path.join(process.cwd(), "public", "data");
+  const totalCount = countQuestions(dataDir, counts);
+
+  const DOMAINS: { id: Domain | "All Domains"; label: string; emoji: string; count: number; color: string }[] = [
+    { id: "Operating Systems", label: "Operating Systems", emoji: "⚙️", count: counts["Operating Systems"] || 0, color: "#8866ff" },
+    { id: "DBMS & SQL", label: "DBMS & SQL", emoji: "🗄️", count: counts["DBMS & SQL"] || 0, color: "#4488ff" },
+    { id: "Languages", label: "Languages", emoji: "💻", count: counts["Languages"] || 0, color: "#ff8800" },
+    { id: "Cloud & DevOps", label: "Cloud & DevOps", emoji: "☁️", count: counts["Cloud & DevOps"] || 0, color: "#00ccff" },
+    { id: "AI & ML", label: "AI & ML", emoji: "🤖", count: counts["AI & ML"] || 0, color: "#ff44cc" },
+    { id: "Security", label: "Security", emoji: "🛡️", count: counts["Security"] || 0, color: "#44aa44" },
+    { id: "Computer Networks", label: "Networks", emoji: "🌐", count: counts["Computer Networks"] || 0, color: "#22ffaa" },
+    { id: "OOP", label: "OOP", emoji: "🧩", count: counts["OOP"] || 0, color: "#ffaa22" },
+    { id: "System Design", label: "System Design", emoji: "🏗️", count: counts["System Design"] || 0, color: "#66ccff" },
+    { id: "Software Engineering", label: "Software Eng", emoji: "📐", count: counts["Software Engineering"] || 0, color: "#cc44ff" },
+    { id: "DSA", label: "DSA", emoji: "📊", count: counts["DSA"] || 0, color: "#ff4466" },
+    { id: "Backend", label: "Backend", emoji: "🔌", count: counts["Backend"] || 0, color: "#cccccc" },
+    { id: "All Domains", label: "All Domains", emoji: "🎯", count: totalCount, color: "#aa44ff" },
+  ];
+
+  const roundedTotal = Math.floor(totalCount / 100) * 100;
+  const STATS = [
+    { value: `${roundedTotal}+`, label: "Questions", icon: "📚" },
+    { value: "12", label: "Domains", icon: "🎯" },
+    { value: "4", label: "Personalities", icon: "🎭" },
+    { value: "∞", label: "Sessions", icon: "🔄" },
+  ];
+
+  return <LandingClient DOMAINS={DOMAINS} STATS={STATS} />;
 }

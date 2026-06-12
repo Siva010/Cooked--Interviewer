@@ -1,0 +1,549 @@
+[
+  {
+    "id": "dsa_arr_001",
+    "domain": "DSA",
+    "subdomain": "Arrays",
+    "question": "What is the time complexity of common array operations?",
+    "keywords": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "contiguous",
+      "amortized",
+      "binary search",
+      "shift"
+    ],
+    "common_mistakes": [
+      "Insert at beginning is O(n) not O(1)"
+    ],
+    "followups": [
+      "Why is array access O(1)?",
+      "What is amortized analysis?"
+    ],
+    "roasts": {
+      "angry_staff": "Insert at beginning = O(n). You shift everything.",
+      "strict_prof": "Array memory contiguity enables O(1) random access: base_address + index * size.",
+      "faang_bar": "Good. Amortized O(1) push_back using potential method?",
+      "startup_cto": "Fast insert at both ends AND index access. Array or deque?"
+    }
+  },
+  {
+    "id": "dsa_arr_002",
+    "domain": "DSA",
+    "subdomain": "Arrays",
+    "question": "What is the two-pointer technique?",
+    "keywords": [
+      "two pointers",
+      "inward",
+      "opposite ends",
+      "O(n)",
+      "sorted",
+      "pairs"
+    ],
+    "common_mistakes": [
+      "Not sorting first when needed"
+    ],
+    "followups": [
+      "Find pairs summing to K?",
+      "Two pointers vs sliding window?"
+    ],
+    "roasts": {
+      "angry_staff": "Two-pointer on unsorted for pair sum? Sort first.",
+      "strict_prof": "Two pointer exploits monotonicity — valid only on ordered structures.",
+      "faang_bar": "Good. Three-sum in O(n²) with careful dedup?",
+      "startup_cto": "Find two numbers in sorted array summing to target. O(n) time, O(1) space."
+    }
+  },
+  {
+    "id": "dsa_arr_003",
+    "domain": "DSA",
+    "subdomain": "Arrays",
+    "question": "What is the sliding window technique?",
+    "keywords": [
+      "contiguous subarray",
+      "expand",
+      "shrink",
+      "O(n)",
+      "fixed window",
+      "variable window"
+    ],
+    "common_mistakes": [
+      "Using O(n²) when sliding window gives O(n)"
+    ],
+    "followups": [
+      "When expand vs shrink?",
+      "Minimum window substring?"
+    ],
+    "roasts": {
+      "angry_staff": "Nested loops for subarray? Sliding window is O(n).",
+      "strict_prof": "Sliding window maintains invariant using monotonic shrink condition on left pointer.",
+      "faang_bar": "Good. Implement minimum window substring.",
+      "startup_cto": "Max sum of subarray of size k in O(n). Explain implementation."
+    }
+  },
+  {
+    "id": "dsa_arr_004",
+    "domain": "DSA",
+    "subdomain": "Arrays",
+    "question": "What is Kadane's algorithm?",
+    "keywords": [
+      "maximum subarray",
+      "O(n)",
+      "maxEndingHere",
+      "maxSoFar",
+      "dynamic programming"
+    ],
+    "common_mistakes": [
+      "Not handling all-negative input"
+    ],
+    "followups": [
+      "Extend for subarray indices?",
+      "Circular subarray max sum?"
+    ],
+    "roasts": {
+      "angry_staff": "Brute O(n³) for max subarray? Kadane is O(n).",
+      "strict_prof": "Kadane is 1D DP: dp[i] = max subarray sum ending at index i.",
+      "faang_bar": "Good. Kadane for circular subarray?",
+      "startup_cto": "Trace Kadane on [-2,1,-3,4,-1,2,1,-5,4]. Expected: 6."
+    }
+  },
+  {
+    "id": "dsa_arr_005",
+    "domain": "DSA",
+    "subdomain": "Arrays",
+    "question": "What is prefix sum?",
+    "keywords": [
+      "cumulative sum",
+      "range query",
+      "O(1) query",
+      "O(n) precompute",
+      "subarray sum K",
+      "hashmap"
+    ],
+    "common_mistakes": [
+      "Recomputing range sum each time"
+    ],
+    "followups": [
+      "Subarray sum equals K?",
+      "2D prefix sum?"
+    ],
+    "roasts": {
+      "angry_staff": "Recomputing range sum each time is O(n). Prefix sum gives O(1).",
+      "strict_prof": "Prefix sum transforms range queries from O(n) to O(1) algebraic computation.",
+      "faang_bar": "Good. Subarray sum equals K using prefix sum + hashmap in O(n)?",
+      "startup_cto": "1000 range sum queries on array. What do you precompute?"
+    }
+  },
+  {
+    "id": "dsa_tree_001",
+    "domain": "DSA",
+    "subdomain": "Trees",
+    "question": "What is a Binary Search Tree?",
+    "keywords": [
+      "left < parent < right",
+      "O(h)",
+      "balanced",
+      "AVL",
+      "Red-Black",
+      "in-order sorted"
+    ],
+    "common_mistakes": [
+      "Assuming BST is always O(log n)"
+    ],
+    "followups": [
+      "AVL vs Red-Black?",
+      "Check if tree is BST?"
+    ],
+    "roasts": {
+      "angry_staff": "Unbalanced BST is O(n). Always say O(h).",
+      "strict_prof": "BST maintains binary search property for O(h) operations.",
+      "faang_bar": "Good. AVL vs Red-Black rotation strategies and trade-offs?",
+      "startup_cto": "BST for sorted set. Inserting sorted data makes it O(n). How to prevent?"
+    }
+  },
+  {
+    "id": "dsa_tree_002",
+    "domain": "DSA",
+    "subdomain": "Trees",
+    "question": "What is BFS vs DFS?",
+    "keywords": [
+      "queue",
+      "stack",
+      "level-order",
+      "O(V+E)",
+      "shortest path",
+      "cycle detection",
+      "topological sort"
+    ],
+    "common_mistakes": [
+      "Using DFS for shortest path"
+    ],
+    "followups": [
+      "When does BFS use more memory?",
+      "Topological sort?"
+    ],
+    "roasts": {
+      "angry_staff": "DFS for shortest path is WRONG. BFS guarantees shortest unweighted path.",
+      "strict_prof": "BFS uses FIFO queue; DFS uses LIFO stack or recursion.",
+      "faang_bar": "Good. Bidirectional BFS improvement?",
+      "startup_cto": "Level-order traversal printing each level on separate line."
+    }
+  },
+  {
+    "id": "dsa_dp_001",
+    "domain": "DSA",
+    "subdomain": "Dynamic Programming",
+    "question": "What is dynamic programming?",
+    "keywords": [
+      "optimal substructure",
+      "overlapping subproblems",
+      "memoization",
+      "tabulation",
+      "top-down",
+      "bottom-up"
+    ],
+    "common_mistakes": [
+      "Confusing D&C with DP (D&C has no overlapping subproblems)"
+    ],
+    "followups": [
+      "Memoization vs tabulation?",
+      "DP vs greedy?"
+    ],
+    "roasts": {
+      "angry_staff": "Divide-and-conquer has no overlapping subproblems. DP does. Different paradigm.",
+      "strict_prof": "DP requires both optimal substructure and overlapping subproblems.",
+      "faang_bar": "Good. DP vs greedy identification?",
+      "startup_cto": "Coin change with DP. Why does greedy fail for some coin sets?"
+    }
+  },
+  {
+    "id": "dsa_sort_001",
+    "domain": "DSA",
+    "subdomain": "Sorting",
+    "question": "What are common sorting algorithms and complexities?",
+    "keywords": [
+      "O(n log n)",
+      "O(n²)",
+      "stable",
+      "QuickSort",
+      "MergeSort",
+      "TimSort",
+      "in-place"
+    ],
+    "common_mistakes": [
+      "Claiming QuickSort is always O(n log n)"
+    ],
+    "followups": [
+      "MergeSort vs QuickSort?",
+      "What is TimSort?"
+    ],
+    "roasts": {
+      "angry_staff": "QuickSort worst case is O(n²). On sorted input with bad pivot.",
+      "strict_prof": "QuickSort has O(n log n) expected; O(n²) worst case.",
+      "faang_bar": "Good. Why does QuickSort outperform MergeSort in practice?",
+      "startup_cto": "Sort 1 billion records with 1GB RAM. Which algorithm?"
+    }
+  },
+  {
+    "id": "dsa_graph_001",
+    "domain": "DSA",
+    "subdomain": "Graphs",
+    "question": "What is Dijkstra's algorithm and when does it fail?",
+    "keywords": [
+      "min-heap",
+      "O((V+E) log V)",
+      "greedy",
+      "negative weights",
+      "Bellman-Ford",
+      "relaxation"
+    ],
+    "common_mistakes": [
+      "Using Dijkstra on negative weights"
+    ],
+    "followups": [
+      "Why negative weights fail?",
+      "What is Bellman-Ford?"
+    ],
+    "roasts": {
+      "angry_staff": "Dijkstra on negative weights = WRONG answers. Use Bellman-Ford.",
+      "strict_prof": "Dijkstra relies on invariant: once finalized, distance is optimal — invalid with negative edges.",
+      "faang_bar": "Good. Counterexample showing Dijkstra fails on negative edges?",
+      "startup_cto": "Implement Dijkstra for ride-sharing routing. Priority queue data structure?"
+    }
+  },
+  {
+    "id": "dsa_hash_001",
+    "domain": "DSA",
+    "subdomain": "Arrays",
+    "question": "What is a hash table and how does it work?",
+    "keywords": [
+      "hash function",
+      "bucket",
+      "collision",
+      "chaining",
+      "open addressing",
+      "load factor",
+      "O(1) average"
+    ],
+    "common_mistakes": [
+      "Assuming hash table always O(1)"
+    ],
+    "followups": [
+      "Good hash function?",
+      "HashMap vs TreeMap?"
+    ],
+    "roasts": {
+      "angry_staff": "Hash table is O(1) AVERAGE. With collisions, O(n).",
+      "strict_prof": "Average O(1) assumes uniform hash distribution; worst case O(n) under adversarial keys.",
+      "faang_bar": "Good. Consistent hashing for distributed systems?",
+      "startup_cto": "HashMap degraded to O(n) lookups. First metric to check?"
+    }
+  },
+  {
+    "id": "dsa_heap_001",
+    "domain": "DSA",
+    "subdomain": "Trees",
+    "question": "What is a heap and its operations?",
+    "keywords": [
+      "complete binary tree",
+      "heap property",
+      "array representation",
+      "O(log n)",
+      "O(n) build",
+      "priority queue"
+    ],
+    "common_mistakes": [
+      "Claiming build heap is O(n log n)"
+    ],
+    "followups": [
+      "Why build heap O(n)?",
+      "Heap sort?"
+    ],
+    "roasts": {
+      "angry_staff": "Build heap is O(n), not O(n log n). Most people get this wrong.",
+      "strict_prof": "Build heap O(n) from summing heapify costs: Σ(n/2^i)*i = O(n) by series convergence.",
+      "faang_bar": "Good. Prove repeated insertions give O(n log n) vs heapify O(n).",
+      "startup_cto": "Find k-th largest element in O(n log k)."
+    }
+  },
+  {
+    "id": "dsa_tree_003",
+    "domain": "DSA",
+    "subdomain": "Trees",
+    "question": "What is time and space complexity of recursive tree traversals?",
+    "keywords": [
+      "O(n)",
+      "O(h)",
+      "recursion stack",
+      "balanced",
+      "skewed",
+      "stack overflow",
+      "iterative"
+    ],
+    "common_mistakes": [
+      "Saying space is O(1) for recursive traversal"
+    ],
+    "followups": [
+      "Iterative inorder?",
+      "Morris traversal?"
+    ],
+    "roasts": {
+      "angry_staff": "Recursive traversal is NOT O(1) space. Recursion stack = O(h).",
+      "strict_prof": "Space O(h): O(log n) balanced, O(n) skewed — formally from call stack depth.",
+      "faang_bar": "Good. Morris traversal for O(1) space inorder?",
+      "startup_cto": "Recursive DFS crashes on deep tree. Cause and fix?"
+    }
+  },
+  {
+    "id": "dsa_graph_002",
+    "domain": "DSA",
+    "subdomain": "Graphs",
+    "question": "What is topological sort?",
+    "keywords": [
+      "DAG",
+      "in-degree",
+      "Kahn",
+      "DFS",
+      "dependency",
+      "O(V+E)",
+      "cycle detection"
+    ],
+    "common_mistakes": [
+      "Thinking it works on cyclic graphs"
+    ],
+    "followups": [
+      "Kahn's cycle detection?",
+      "DFS topological sort?"
+    ],
+    "roasts": {
+      "angry_staff": "Topological sort on cyclic graph = impossible.",
+      "strict_prof": "Topological ordering exists iff the graph is a DAG.",
+      "faang_bar": "Good. How does npm use topological sort?",
+      "startup_cto": "Course scheduler with prerequisites. Implement topological sort."
+    }
+  },
+  {
+    "id": "dsa_dp_002",
+    "domain": "DSA",
+    "subdomain": "Dynamic Programming",
+    "question": "What is memoization vs tabulation?",
+    "keywords": [
+      "top-down",
+      "bottom-up",
+      "cache",
+      "recursion",
+      "table",
+      "stack overflow",
+      "space optimization"
+    ],
+    "common_mistakes": [
+      "Thinking memoization is always better"
+    ],
+    "followups": [
+      "When prefer tabulation?",
+      "Space optimization in tabulation?"
+    ],
+    "roasts": {
+      "angry_staff": "Memoization can cause stack overflow. Tabulation avoids recursion stack entirely.",
+      "strict_prof": "Memoization computes demanded subsets; tabulation computes full space iteratively.",
+      "faang_bar": "Good. Space optimize 0/1 knapsack from O(nW) to O(W).",
+      "startup_cto": "LCS: memoization or tabulation and why?"
+    }
+  },
+  {
+    "id": "dsa_graph_003",
+    "domain": "DSA",
+    "subdomain": "Graphs",
+    "question": "What is Union-Find?",
+    "keywords": [
+      "α(n)",
+      "amortized",
+      "path compression",
+      "union by rank",
+      "find",
+      "component",
+      "Kruskal"
+    ],
+    "common_mistakes": [
+      "Not implementing path compression"
+    ],
+    "followups": [
+      "What is α(n)?",
+      "Cycle detection with Union-Find?"
+    ],
+    "roasts": {
+      "angry_staff": "Without path compression it is O(log n) not O(α(n)). Both optimizations needed.",
+      "strict_prof": "Amortized O(α(n)) requires both path compression AND union by rank simultaneously.",
+      "faang_bar": "Good. Why union by rank alone gives O(log n) and why both are needed for O(α(n))?",
+      "startup_cto": "Implement Union-Find with path compression to detect cycles."
+    }
+  },
+  {
+    "id": "dsa_sort_002",
+    "domain": "DSA",
+    "subdomain": "Sorting",
+    "question": "What is merge sort and why preferred for linked lists?",
+    "keywords": [
+      "divide and conquer",
+      "O(n log n)",
+      "stable",
+      "merge",
+      "linked list",
+      "pointer manipulation"
+    ],
+    "common_mistakes": [
+      "Thinking MergeSort preferred for arrays"
+    ],
+    "followups": [
+      "Why QuickSort faster for arrays?",
+      "External merge sort?"
+    ],
+    "roasts": {
+      "angry_staff": "QuickSort for arrays, MergeSort for linked lists. Different access patterns.",
+      "strict_prof": "MergeSort guarantees O(n log n) worst case; QuickSort has better cache behavior for arrays.",
+      "faang_bar": "Good. External merge sort for files larger than memory?",
+      "startup_cto": "Sort singly linked list in O(n log n) without converting to array."
+    }
+  },
+  {
+    "id": "dsa_tree_004",
+    "domain": "DSA",
+    "subdomain": "Trees",
+    "question": "What is a Trie?",
+    "keywords": [
+      "prefix tree",
+      "O(L)",
+      "autocomplete",
+      "prefix search",
+      "alphabet size"
+    ],
+    "common_mistakes": [
+      "Thinking Trie has same memory efficiency as hashmap"
+    ],
+    "followups": [
+      "Compressed trie?",
+      "Trie vs hashmap?"
+    ],
+    "roasts": {
+      "angry_staff": "Trie uses much more memory than hashmap for sparse data.",
+      "strict_prof": "Trie space: O(ALPHABET_SIZE * avg_length * num_strings) — branching factor is critical.",
+      "faang_bar": "Good. Compressed trie (radix tree) memory reduction?",
+      "startup_cto": "Autocomplete for 1M queries. Why Trie over binary search?"
+    }
+  },
+  {
+    "id": "dsa_dp_003",
+    "domain": "DSA",
+    "subdomain": "Dynamic Programming",
+    "question": "What is Longest Common Subsequence (LCS)?",
+    "keywords": [
+      "subsequence",
+      "gaps allowed",
+      "O(mn)",
+      "dp table",
+      "git diff",
+      "LCS substring"
+    ],
+    "common_mistakes": [
+      "Confusing LCS with Longest Common Substring"
+    ],
+    "followups": [
+      "Space-optimized LCS?",
+      "LCS vs edit distance?"
+    ],
+    "roasts": {
+      "angry_staff": "LCS allows gaps. Common SUBSTRING does not. Different problem, different recurrence.",
+      "strict_prof": "LCS formally: subsequence Z preserves relative order in both X and Y, no contiguity required.",
+      "faang_bar": "Good. Relationship between LCS and Levenshtein edit distance?",
+      "startup_cto": "Implement LCS and use it to build a simplified diff tool."
+    }
+  },
+  {
+    "id": "dsa_graph_004",
+    "domain": "DSA",
+    "subdomain": "Graphs",
+    "question": "What is Prim's vs Kruskal's algorithm?",
+    "keywords": [
+      "MST",
+      "minimum spanning tree",
+      "greedy",
+      "priority queue",
+      "Union-Find",
+      "dense",
+      "sparse"
+    ],
+    "common_mistakes": [
+      "Not knowing dense vs sparse preference"
+    ],
+    "followups": [
+      "What is Union-Find?",
+      "MST vs shortest path?"
+    ],
+    "roasts": {
+      "angry_staff": "Prim for dense, Kruskal for sparse. Different profiles.",
+      "strict_prof": "Prim grows MST vertex-by-vertex; Kruskal edge-by-edge with cycle detection.",
+      "faang_bar": "Good. Implement Union-Find with path compression for Kruskal.",
+      "startup_cto": "Lay cable between 1000 offices minimizing total length. MST. Which algorithm?"
+    }
+  }
+]

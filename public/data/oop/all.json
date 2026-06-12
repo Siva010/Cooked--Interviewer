@@ -1,0 +1,1410 @@
+[
+  {
+    "id": "object_oriented_programming_phbf6e8",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What other paradigms of programming exist besides OOPs?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_o2mk9ue",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What are the advantages and disadvantages of OOPs?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_m9yf54j",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is a Class?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_bg6pkzc",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "Can we overload the constructor in a class?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_1rdhsf9",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "Can we overload the destructor in a class?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_icjhwnk",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What are friend functions and friend classes?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_2kae0u8",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is the virtual function and pure virtual function?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_tdvol0q",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is an abstract class?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_qlq38ed",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is the need for OOPs?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_l6568ri",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is meant by the term OOPs?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_dge6qr9",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What are some major Object Oriented Programming languages?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_0r16oa6",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What are some other programming paradigms other than OOPs?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_3oh1w2z",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is meant by Structured Programming?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_lgpd6us",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What are the main features of OOPs?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_81ogdnb",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What are some advantages of using OOPs?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_08gqhy3",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "Why is OOPs so popular?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_a4y758p",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What are access specifiers and what is their significance?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_i2fopuj",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "Are there any limitations of Inheritance?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_gxlcsp6",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What are the various types of inheritance?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_z7f6875",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is a subclass?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_54lqyyf",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "Define a superclass?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_axnycia",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is an interface?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_25ai25n",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is meant by static polymorphism?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_dri4iou",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is meant by dynamic polymorphism?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_st9mqab",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is the difference between overloading and overriding?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_70ictn7",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "How is data abstraction accomplished?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_ltqcca3",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "How is an abstract class different from an interface?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_laeq80t",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is an exception?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_fkxj085",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is meant by exception handling?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_g9a88fs",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is meant by Garbage Collection in OOPs world?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_t1ndewv",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "Can we run a Java application without implementing the OOPs concept?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_5qdsc7l",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "Are class and structure the same? If not, what's the difference between a class and a structure?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_92v7ir7",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is a class?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_llfse58",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is an object?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_j1r0gd3",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is encapsulation?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_m1zchju",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is Polymorphism?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_yk7d2pn",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "How does C++ support Polymorphism?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_9mymssn",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is Compile time Polymorphism and how is it different from Runtime Polymorphism?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_qqup8ou",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "Explain Inheritance with an example?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_0vhb0hl",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is a destructor?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_io8mogh",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is a copy constructor?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_kpc4w70",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What are the various types of constructors in C++?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_mxexvgn",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is a constructor?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_vavide6",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "Is it always necessary to create objects from class?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_mq6eixb",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "How much memory does a class occupy?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_o9qpxt5",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is Abstraction?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_av5ier3",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is meant by Inheritance?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_cm1q1e6",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is the output of the below code?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_lrgipqv",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What will be the output of the below code?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_iwxteib",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "Predict the output?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_4rqvw8g",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What will be the output in below code?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_2cu6jvt",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is the output of the below program?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_8x1glwh",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is Method Resolution Order (MRO) in Python?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_cl1sbtj",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "Why should a base class destructor be virtual in C++?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_4h8yspk",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is the diamond problem in OOPs?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_ec0vwyd",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is the difference between abstraction and encapsulation?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_922zouw",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is the difference between OOP and procedural programming?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_e095c56",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "How do you apply OOPs in a real world design problem?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_h5as70a",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What are SOLID principles in OOPs?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_civk410",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is association, aggregation, and composition in OOPs?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_ontd22o",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "What is the difference between inheritance and composition in OOPs?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_4h6l6ry",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "Why does Java not support multiple inheritance using classes?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_zcls28j",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "Can static methods be overridden in Java?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "object_oriented_programming_lcxqo13",
+    "domain": "Object Oriented Programming",
+    "subdomain": "General",
+    "question": "How does Java achieve runtime polymorphism?",
+    "keywords": [
+      "concept",
+      "object oriented programming"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Object Oriented Programming concept?",
+      "strict_prof": "A textbook definition is not enough for Object Oriented Programming.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  }
+]

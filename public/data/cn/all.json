@@ -1,0 +1,1925 @@
+[
+  {
+    "id": "network_001",
+    "domain": "Computer Networks",
+    "subdomain": "Network Devices",
+    "question": "What is the difference between a switch, router, and bridge?",
+    "keywords": [
+      "Layer 2",
+      "Layer 3",
+      "MAC address",
+      "IP address",
+      "routing table",
+      "Data Link",
+      "Network"
+    ],
+    "common_mistakes": [
+      "Thinking switches use IP addresses",
+      "Confusing routers with switches"
+    ],
+    "followups": [
+      "What is a Layer 3 switch?",
+      "How does a router decide where to send a packet?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know the difference between a MAC address and an IP address, you shouldn't be here.",
+      "strict_prof": "A bridge is largely obsolete. Focus on understanding why switches replaced them.",
+      "faang_bar": "Good. Can you explain how a router handles a packet whose destination IP is unknown?",
+      "startup_cto": "As long as you know a router connects us to the internet, you're fine."
+    }
+  },
+  {
+    "id": "network_002",
+    "domain": "Computer Networks",
+    "subdomain": "Performance",
+    "question": "What are the different types of network delays? Explain them.",
+    "keywords": [
+      "Propagation delay",
+      "Transmission delay",
+      "Processing delay",
+      "Queuing delay",
+      "Latency",
+      "Bandwidth"
+    ],
+    "common_mistakes": [
+      "Confusing bandwidth with latency",
+      "Forgetting about queuing delay"
+    ],
+    "followups": [
+      "Which of these delays is the most unpredictable?",
+      "How do CDNs help reduce propagation delay?"
+    ],
+    "roasts": {
+      "angry_staff": "Queuing delay is literally the reason your ping spikes. Don't forget it.",
+      "strict_prof": "Bandwidth is the width of the pipe, latency is the length. Never confuse the two.",
+      "faang_bar": "Correct. How would you minimize transmission delay for large files?",
+      "startup_cto": "Just use a CDN and call it a day."
+    }
+  },
+  {
+    "id": "network_003",
+    "domain": "Computer Networks",
+    "subdomain": "Protocols",
+    "question": "How does SSL/TLS work? Explain the TLS handshake.",
+    "keywords": [
+      "ClientHello",
+      "ServerHello",
+      "Digital Certificate",
+      "Symmetric encryption",
+      "Asymmetric encryption",
+      "Session key",
+      "CA"
+    ],
+    "common_mistakes": [
+      "Thinking asymmetric encryption is used for everything",
+      "Forgetting the role of Certificate Authorities"
+    ],
+    "followups": [
+      "Why do we switch to symmetric encryption after the handshake?",
+      "What is TLS 1.3?"
+    ],
+    "roasts": {
+      "angry_staff": "If you try to encrypt all your data asymmetrically, your server will melt.",
+      "strict_prof": "You must understand that the public key only encrypts the symmetric session key.",
+      "faang_bar": "Good. How does Forward Secrecy work in modern TLS?",
+      "startup_cto": "Just let Cloudflare handle the SSL certs."
+    }
+  },
+  {
+    "id": "network_004",
+    "domain": "Computer Networks",
+    "subdomain": "Security & Addressing",
+    "question": "What is NAT (Network Address Translation) and why is it used?",
+    "keywords": [
+      "Private IP",
+      "Public IP",
+      "IPv4 exhaustion",
+      "PAT",
+      "Port Address Translation",
+      "Router"
+    ],
+    "common_mistakes": [
+      "Thinking NAT provides ultimate security",
+      "Confusing NAT with a firewall"
+    ],
+    "followups": [
+      "What is the difference between Static NAT and Dynamic NAT?",
+      "Why does IPv6 make NAT unnecessary?"
+    ],
+    "roasts": {
+      "angry_staff": "NAT was a band-aid for IPv4 exhaustion. It is not a security feature.",
+      "strict_prof": "Understand PAT. Nobody maps 1:1 public IPs for a whole office.",
+      "faang_bar": "Correct. How does NAT traversal work for peer-to-peer applications like WebRTC?",
+      "startup_cto": "NAT is the reason we can connect 100 laptops to one router."
+    }
+  },
+  {
+    "id": "network_005",
+    "domain": "Computer Networks",
+    "subdomain": "Subnetting",
+    "question": "Explain subnetting and CIDR notation with an example.",
+    "keywords": [
+      "CIDR",
+      "Subnet mask",
+      "Network address",
+      "Broadcast address",
+      "Usable hosts"
+    ],
+    "common_mistakes": [
+      "Thinking a /24 subnet has 256 usable hosts",
+      "Not knowing the difference between network and broadcast addresses"
+    ],
+    "followups": [
+      "If you change to a /25 subnet, how many usable hosts do you get?",
+      "What is a /32 mask used for?"
+    ],
+    "roasts": {
+      "angry_staff": "Always subtract 2 for the network and broadcast address! Always!",
+      "strict_prof": "CIDR replaced the outdated Class A/B/C system. Know the difference.",
+      "faang_bar": "Good. Can you calculate the subnet mask for a /27 network?",
+      "startup_cto": "AWS forces you to know CIDR blocks to set up a VPC, so learn it."
+    }
+  },
+  {
+    "id": "network_6",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "How are Network types classified?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_7",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What are Private and Special IP addresses?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_8",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is an IPv4 address? What are the different classes of IPv4?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_9",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Define different types of network topology",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_10",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is the network topology?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_11",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What are nodes and links?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_12",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What are the different types of VPN?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_13",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What are the advantages of using a VPN?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_14",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Tell me something about VPN (Virtual Private Network)",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_15",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Explain LAN (Local Area Network)",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_16",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Explain different types of networks.",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_17",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Differentiate OSI Reference Model with TCP/IP Reference Model",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_18",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is the use of a router and how is it different from a gateway?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_19",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is the DNS?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_20",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is the SMTP protocol?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_21",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What are the HTTP and the HTTPS protocol?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_22",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Define the 4 different layers of the TCP/IP Reference Model",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_23",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Describe the TCP/IP Reference Model",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_24",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Define the 7 different layers of the OSI Reference Model",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_25",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Describe the OSI Reference Model",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_27",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What are the different types of network delays?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_28",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is a ping command? What is TTL?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_29",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "How does SSL/TLS work? What happens during a TLS handshake?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_30",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is a VLAN (Virtual LAN)? Why is it used?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_31",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is a proxy server? Forward proxy vs reverse proxy.",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_32",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What are port numbers? What are well-known ports?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_34",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is NAT (Network Address Translation)? Why is it used?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_35",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Explain the TCP three-way handshake in detail.",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_36",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is IPv6? How is it different from IPv4?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_6",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Name two technologies by which you would connect two offices in remote locations.",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_7",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is internetworking?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_8",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Name of the software layers or User support layer in the OSI model.",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_9",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Name the hardware layers or network support layers in the OSI model.",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_10",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Define HTTPS protocol?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_11",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Name some services provided by the application layer in the Internet model?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_12",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "In which OSI layer is the header and trailer added?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_13",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What happens in the OSI model, as a data packet moves from the lower to upper layers?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_14",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What happens in the OSI model, as a data packet moves from the upper to lower layers?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_15",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is a zone-based firewall?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_16",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is a server farm?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_17",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Name the three means of user authentication.",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_18",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is Confidentiality, Integrity & Availability?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_19",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is VPN?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_20",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is Symmetric and Asymmetric Encryption?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_21",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "At what layer IPsec works?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_22",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is a Tunnel mode?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_23",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Define Digital Signatures?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_24",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is Authorization?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_25",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is the difference between IPS and a firewall?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_26",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is the meaning of threat, vulnerability, and risk?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_27",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is the main purpose of a DNS server?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_28",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is the position of the transmission media in the OSI model?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_29",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is the importance of twisting in the twisted-pair cable?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_30",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What kind of error is undetectable by the checksum?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_31",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Which multiplexing technique is used in the Fiber-optic links?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_32",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What are the Advantages of Fiber Optics?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_33",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Which of the multiplexing techniques are used to combine analog signals?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_34",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Which of the multiplexing techniques is used to combine digital signals?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_35",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Can IP Multicast be load-balanced?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_36",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is CGMP(Cisco Group Management Protocol)?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_37",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is the difference between Bluetooth and Wi-Fi?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_38",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is a reverse proxy?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_39",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is the role of address in a packet traveling through a datagram network?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_40",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Can a routing table in the datagram network have two entries with the same destination address?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_41",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What kind of arithmetic is used to add data items in checksum calculation?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_42",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Define piggybacking?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_43",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What are the advantages and disadvantages of piggybacking?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_44",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Which technique is used in byte-oriented protocols?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_45",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Define the term OFDM?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_46",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is a transparent bridge?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_47",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What is the minimum size of the icmpV4 packet what is the maximum size of the icmpv4 packet?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_48",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Why do we OSPF a protocol that is faster than our RIP?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_49",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "What are the two main categories of DNS messages?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_50",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Why do we need the pop3 protocol for e-mail?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_51",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Define the term Jitter?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_52",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Why Bandwidth is important to network performance parameters?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_53",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "How do I Identify When an IP Address is Private or Public?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_54",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "How To Get an IP Address from Domain Name?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_55",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "Which Diffie Hellman Group is Most Secure?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_56",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "How Flow Control is Achieved in TCP?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough. You must understand the underlying principles.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "network_57",
+    "domain": "Computer Networks",
+    "subdomain": "General",
+    "question": "How To Find Your Port Number ?",
+    "keywords": [
+      "network",
+      "concept"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't know this, what are you doing here?",
+      "strict_prof": "A textbook definition is not enough.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  }
+]

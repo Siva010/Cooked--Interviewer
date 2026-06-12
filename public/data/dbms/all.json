@@ -1,0 +1,4028 @@
+[
+  {
+    "id": "dbms_5ig2xos",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "What is DBMS and what is its utility? Explain RDBMS with examples.",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_rjvdyf6",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "What is a Database?",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_z4s9smq",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "Mention the issues with traditional file-based systems that make DBMS a better choice?",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_53x228r",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "Explain a few advantages of a DBMS.",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_gc6swkz",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "Explain different languages present in DBMS.",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_gf5uqx9",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "What is meant by ACID properties in DBMS?",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_3fv49wu",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "Are NULL values in a database the same as that of blank space or zero?",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_p1hy4bg",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "What is meant by normalization and denormalization?",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_z4bajr5",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "What is a lock. Explain the major difference between a shared lock and an exclusive lock during a transaction in a database.",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_jkuq1yx",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "What is Data Warehousing?",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_ccushix",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "Explain different levels of data abstraction in a DBMS.",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_9jtsi8r",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "What is meant by an entity-relationship (E-R) model? Explain the terms Entity, Entity Type, and Entity Set in DBMS.",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_05h781q",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "Explain different types of relationships amongst tables in a DBMS.",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_xgbbpu2",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "Explain the difference between intension and extension in a database.",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_dacurmt",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "Explain the difference between the DELETE and TRUNCATE command in a DBMS.",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_prvxit6",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "Explain the difference between a 2-tier and 3-tier architecture in a DBMS.",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_hx9lise",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "Explain different types of keys in a database.",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_7ownrfk",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "Explain different types of Normalization forms in a DBMS.",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_fo7x600",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "What is a materialized view and its trade-offs",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_0to21ed",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "What is a VIEW and when should you avoid it",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_57m2wgy",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "What is a CTE and how it differs from a subquery",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_zi5evpv",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "How to write Top-N per group queries",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_5e56wu6",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "UNION vs UNION ALL from a performance viewpoint",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_1qxqyoq",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "What is a correlated subquery, and when is slower than a JOIN",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_d7qxiag",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "What causes duplicate rows after a JOIN, and how to fix it",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_3fp6o87",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "INNER JOIN vs LEFT JOIN and when LEFT JOIN behaves like INNER JOIN",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_lh7mzyp",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "Difference between WHERE and HAVING",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_yezwyvu",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "What is an index in DBMS? What are the types?",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_4y6fb6b",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "What is a view in DBMS?",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_ssue07j",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "Explain transaction isolation levels and concurrency problems.",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_axg1my9",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "What are constraints in SQL?",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_jt7f4h1",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "SQL vs NoSQL databases.",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_9j4wh25",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "What are stored procedures and functions?",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_fh8p9fi",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "What is a deadlock? How does a DBMS handle it?",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_k1t77wa",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "What is a cursor?",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_tcj3sqz",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "DELETE vs TRUNCATE vs DROP.",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_7ts3khi",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "Primary key vs unique key.",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_pbt42xo",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "What are triggers?",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_q26g7j2",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "What is a schema in DBMS?",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_hioerol",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "Explain SQL subqueries. What is a correlated subquery?",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_5sik6f0",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "GROUP BY, HAVING, and aggregate functions. How does WHERE differ from HAVING?",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "dbms_hrftx6c",
+    "domain": "DBMS",
+    "subdomain": "General",
+    "question": "What are SQL JOINs? Explain the different types with examples.",
+    "keywords": [
+      "concept",
+      "dbms"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic DBMS concept?",
+      "strict_prof": "A textbook definition is not enough for DBMS.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_i3sbpc6",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the difference between CHAR and VARCHAR2?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_dxfoaae",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a view in SQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_gyvv2hq",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the purpose of the UNIQUE constraint?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_tlgokq7",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a composite primary key?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_99gu0te",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are SQL joins and what are the differences between INNER, LEFT, RIGHT and FULL joins?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_9amx40s",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a CTE (Common Table Expression) and when would you use it?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_y5rqs1q",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "Explain normalization and briefly describe the different normal forms",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_nrxjk5q",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "How do clustered and non‑clustered indexes differ and when should each be used?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_b8j4bw2",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "How do you perform pattern matching in SQL",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_cgqo33b",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "How would you calculate the running total of sales for each product?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_jvtto0p",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "Explain correlated subqueries and provide an example use case",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_hudai3x",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are EXISTS and NOT EXISTS and how do they differ from IN",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_ruil1qj",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "Explain anti‑joins",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_m7wmocf",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "Explain the difference between RANK(), DENSE_RANK() and ROW_NUMBER()",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_20fiji7",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "Explain the purpose of LAG and LEAD functions",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_h00vlfd",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a cross join and how does it differ from an inner join?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_yt4r1f5",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "Explain foreign keys and how they enforce referential integrity",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_6yoq6o3",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "Describe set operations like UNION, INTERSECT and EXCEPT and when each is useful",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_2u4uggk",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "How would you optimize a slow query?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_y7nipkt",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a query in SQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_mys4s72",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a subquery?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_5o1nyco",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "Explain database partitioning",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_oz24fbs",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What strategies can protect a web application from SQL injection?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_9m8bo3c",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are the main types of SQL commands?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_ghlssgn",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the purpose of the DEFAULT constraint?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_am9iv25",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is denormalizationdenormalization and when is it used?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_wxdinvq",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are the different operators available in SQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_18990ut",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are the different types of joins in SQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_twigeta",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are aggregate functions in SQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_zfx19q2",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are indexes and why are they used?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_9fl8o7m",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the difference between DELETE and TRUNCATE commands?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_ab7ae0x",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are the differences between SQL and NoSQL databases?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_pnoeww3",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are the types of constraints in SQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_kw909pf",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a cursor in SQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_1t65hxs",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a trigger in SQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_0klwugz",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the purpose of the SQL SELECT statement?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_93uxap3",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the purpose of the ORDER BY clause?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_wjs8rb4",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a table in SQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_a2prrm7",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are NULL values in SQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_xz4pqyf",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a stored procedure?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_ulblpyw",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the difference between DDL and DML commands?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_zo0x9hs",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the purpose of the ALTER command in SQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_h07nczn",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "How is data integrity maintained in SQL databases?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_r7w0zi6",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "How does the CASE statement work in SQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_jccekzi",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the purpose of the COALESCE function?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_f8ku6v5",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are the differences between SQL’s COUNT() and SUM() functions?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_usu9vfx",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the difference between the NVL and NVL2 functions?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_xchf1vd",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are scalar functions in SQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_pti5zg3",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are window functions and how are they used?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_0vdyjwa",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the difference between an index and a key in SQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_ueo7e9f",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "How does indexing improve query performance?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_3eg34zz",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are the trade-offs of using indexes in SQL databases?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_nbaaord",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are temporary tables and how are they used?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_lxrcfuw",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a sequence in SQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_m4v6j3k",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are the advantages of using sequences over identity columns?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_yu8mjta",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "How do constraints improve database integrity?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_b4pm5sb",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the difference between a local and a global temporary table?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_58dcgxb",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the purpose of the SQL MERGE statement?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_sndwxli",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "How can you handle duplicates in a query without using DISTINCT?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_ytwboef",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are the ACID properties of a transaction?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_lwcfvm1",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are the differences between isolation levels in SQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_ymk5nhm",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the purpose of the WITH (NOLOCK) hint in SQL Server?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_a5pkljv",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "How do you handle deadlocks in SQL databases?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_by2ofog",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a database snapshot and how is it used?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_l23cmt3",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are the differences between OLTP and OLAP systems?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_3d7ec54",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a live lock and how does it differ from a deadlock?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_u5aio1x",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the purpose of the SQL EXCEPT operator?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_gn52xb2",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "How do you implement dynamic SQL and what are its advantages and risks?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_oy1y4ho",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the difference between horizontal and vertical partitioning?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_kxki6gr",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are the considerations for indexing very large tables?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_sid7gfe",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the difference between database sharding and partitioning?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_yzkbgyr",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are the best practices for writing optimized SQL queries?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_dmdguwf",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "How can you monitor query performance in a production database?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_e2qnihq",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are the trade-offs of using indexing versus denormalization?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_edmcp59",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the purpose of the SQL PIVOT operator?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_32pf8oi",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is Pattern Matching in SQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_3yv8x6d",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "How to create empty tables with the same structure as another table?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_wwcqku0",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a Recursive Stored Procedure?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_m21myld",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a Stored Procedure?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_ost373f",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is Collation? What are the different types of Collation Sensitivity?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_aq4ohqo",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are the differences between OLTP and OLAP?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_u8er6y9",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is OLTP?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_7ioasgp",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is User-defined function? What are its various types?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_da4s1r1",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a UNIQUE constraint?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_mn93mwa",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a Query?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_8idfsct",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is Data Integrity?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_o24zi2h",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the difference between Clustered and Non-clustered index?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_g6k84iv",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is an Index? Explain its different types.",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_800vsey",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a Cross-Join?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_f4pz9dj",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a Self-Join?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_vn6ci7i",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a Join? List its different types.",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_j93zcaf",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a Foreign Key?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_teac2ma",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a Subquery? What are its types?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_gow9s8i",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a Primary Key?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_nrt2yxa",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are Constraints in SQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_uwbxj2b",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are Tables and Fields?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_3fz2wex",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the difference between SQL and MySQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_hbo76ma",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is SQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_p6kjitk",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is RDBMS? How is it different from DBMS?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_4z19a8m",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is DBMS?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_guy4z2z",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is Database?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_oexp5ry",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the SELECT statement?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_80rjh1y",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are some common clauses used with SELECT query in SQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_ypcghby",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are UNION, MINUS and INTERSECT commands?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_pbffrai",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is Cursor? How to use a Cursor?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_s2vhj0s",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are Entities and Relationships?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_h4ay9zc",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "List the different types of relationships in SQL.",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_ztm5bfq",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is an Alias in SQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_kuot194",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is a View?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_r6yl86y",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is Normalization?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_1o15fa4",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is Denormalization?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_lbmixl9",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are the various forms of Normalization?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_zeik9yo",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are the TRUNCATE, DELETE and DROP statements?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_w9g4107",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the difference between DROP and TRUNCATE statements?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_sg3pxdp",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the difference between DELETE and TRUNCATE statements?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_qc7qqyj",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are Aggregate and Scalar functions?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_im0fkf6",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is PostgreSQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_rg16tzl",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the capacity of a table in PostgreSQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_90uj1mq",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the importance of the TRUNCATE statement?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_sprojuh",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "Define tokens in PostgreSQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_xfhbn01",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are partitioned tables called in PostgreSQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_49vfdc3",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "How can we start, restart and stop the PostgreSQL server?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_5sy978q",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the command used for creating a database in PostgreSQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_zvuga88",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "How will you change the datatype of a column?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_t7jow9l",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "How do you define Indexes in PostgreSQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_fg16fwi",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "Define sequence.",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_pd6b8c1",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are string constants in PostgreSQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_eyl7et6",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "How can you get a list of all databases in PostgreSQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_n76ybkt",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "How can you delete a database in PostgreSQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_so0kbwm",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are ACID properties? Is PostgreSQL compliant with ACID?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_jtl4ujn",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "Can you explain the architecture of PostgreSQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_xsn1qo8",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What do you understand by multi-version concurrency control?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_0cmbjns",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What do you understand by command enable-debug?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_84tmdxa",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "How do you check the rows affected as part of previous transactions?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_45oy1g6",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What can you tell about WAL (Write Ahead Logging)?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_cj12s4d",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What is the main disadvantage of deleting data from an existing table using the DROP TABLE command?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_l57t21x",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "How do you perform case-insensitive searches using regular expressions in PostgreSQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_9rsfxgn",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "How will you take backup of the database in PostgreSQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_jorjhv7",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "Does PostgreSQL support full text search?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_mmw2ty4",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "What are parallel queries in PostgreSQL?",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "sql_mbd8n7m",
+    "domain": "SQL",
+    "subdomain": "General",
+    "question": "Differentiate between commit and checkpoint.",
+    "keywords": [
+      "concept",
+      "sql"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic SQL concept?",
+      "strict_prof": "A textbook definition is not enough for SQL.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  }
+]

@@ -1,0 +1,3546 @@
+[
+  {
+    "id": "ai_001",
+    "domain": "AI & LLMs",
+    "subdomain": "Fundamentals",
+    "question": "What is a Large Language Model (LLM)?",
+    "keywords": [
+      "massive text data",
+      "Transformers",
+      "predict the next word",
+      "token sequence",
+      "deep learning"
+    ],
+    "common_mistakes": [
+      "Thinking LLMs possess true reasoning or sentience (they are statistical next-word predictors)"
+    ],
+    "followups": [
+      "What is a token?",
+      "What is pre-training vs fine-tuning?"
+    ],
+    "roasts": {
+      "angry_staff": "It's not magic, it's just fancy autocomplete powered by billions of parameters.",
+      "strict_prof": "LLMs map sequences of discrete tokens to probability distributions over a vocabulary using self-attention mechanisms.",
+      "faang_bar": "Good. Explain the difference between an autoregressive model and a masked language model.",
+      "startup_cto": "Just use the OpenAI API. Training your own foundational model will bankrupt us."
+    }
+  },
+  {
+    "id": "ai_002",
+    "domain": "AI & LLMs",
+    "subdomain": "Architecture",
+    "question": "Explain the core mechanism of the Transformer architecture.",
+    "keywords": [
+      "Self-Attention",
+      "weigh importance",
+      "long-range dependencies",
+      "parallelization",
+      "RNNs/LSTMs"
+    ],
+    "common_mistakes": [
+      "Thinking Transformers process text sequentially like RNNs (they process tokens in parallel)"
+    ],
+    "followups": [
+      "What is Multi-Head Attention?",
+      "Why are positional encodings necessary in Transformers?"
+    ],
+    "roasts": {
+      "angry_staff": "Attention is all you need. Literally the title of the paper. Read it.",
+      "strict_prof": "Self-attention computes a weighted sum of values based on queries and keys via dot products.",
+      "faang_bar": "Good. Explain the computational complexity of self-attention with respect to sequence length.",
+      "startup_cto": "I don't care how it works as long as it writes my marketing copy."
+    }
+  },
+  {
+    "id": "ai_003",
+    "domain": "AI & LLMs",
+    "subdomain": "Optimization",
+    "question": "Prompt Engineering vs Fine-Tuning vs RAG. When to use which?",
+    "keywords": [
+      "crafting inputs",
+      "injecting external data",
+      "dynamic data",
+      "retraining",
+      "specific style",
+      "task behavior"
+    ],
+    "common_mistakes": [
+      "Fine-tuning an LLM just to give it new factual knowledge (RAG is better for this)"
+    ],
+    "followups": [
+      "Why is fine-tuning bad for updating factual knowledge?",
+      "What is PEFT (Parameter-Efficient Fine-Tuning)?"
+    ],
+    "roasts": {
+      "angry_staff": "Stop trying to fine-tune GPT-4 with your company wiki! Use RAG!",
+      "strict_prof": "Fine-tuning updates the parametric memory, whereas RAG utilizes non-parametric memory, effectively mitigating knowledge obsolescence.",
+      "faang_bar": "Good. Explain how LoRA (Low-Rank Adaptation) works for fine-tuning.",
+      "startup_cto": "Just write a better prompt. Fine-tuning takes too much engineering time."
+    }
+  },
+  {
+    "id": "ai_004",
+    "domain": "AI & LLMs",
+    "subdomain": "RAG Architecture",
+    "question": "How does RAG (Retrieval-Augmented Generation) work?",
+    "keywords": [
+      "vector embeddings",
+      "Vector DB",
+      "semantic search",
+      "append chunks",
+      "injected context"
+    ],
+    "common_mistakes": [
+      "Passing entire documents into the prompt (exceeds context window limit)"
+    ],
+    "followups": [
+      "What is semantic search vs keyword search?",
+      "How do you handle chunking strategies?"
+    ],
+    "roasts": {
+      "angry_staff": "If you don't chunk your documents properly, your RAG system will just return garbage context.",
+      "strict_prof": "RAG reduces hallucinations by grounding the generative model's output in retrieved, verifiable facts.",
+      "faang_bar": "Good. Explain how you would implement a re-ranking step in a RAG pipeline.",
+      "startup_cto": "RAG is the only way to make the AI stop making up lies about our product."
+    }
+  },
+  {
+    "id": "ai_005",
+    "domain": "AI & LLMs",
+    "subdomain": "Embeddings",
+    "question": "What are Vector Embeddings?",
+    "keywords": [
+      "mathematical representations",
+      "high-dimensional vectors",
+      "similar meanings",
+      "closer together",
+      "semantic comparisons",
+      "cosine similarity"
+    ],
+    "common_mistakes": [
+      "Thinking an embedding contains the actual text data"
+    ],
+    "followups": [
+      "What is cosine similarity?",
+      "How are embeddings generated?"
+    ],
+    "roasts": {
+      "angry_staff": "King - Man + Woman = Queen. That's embeddings 101. If you don't get that, you're doomed.",
+      "strict_prof": "Embeddings map discrete categorical variables to continuous dense vectors in an n-dimensional space.",
+      "faang_bar": "Good. How does the choice of embedding model affect your RAG performance?",
+      "startup_cto": "Turn all our docs into vectors and shove them in Pinecone. Boom. AI."
+    }
+  },
+  {
+    "id": "ai_006",
+    "domain": "AI & LLMs",
+    "subdomain": "Fundamentals",
+    "question": "What is Tokenization in LLMs?",
+    "keywords": [
+      "breaking down text",
+      "smaller units",
+      "subword",
+      "vocabulary limit",
+      "context window"
+    ],
+    "common_mistakes": [
+      "Assuming 1 token = 1 word (usually 1 token ≈ 0.75 words in English)"
+    ],
+    "followups": [
+      "Why do LLMs use subword tokenization instead of word-level?",
+      "What is BPE (Byte Pair Encoding)?"
+    ],
+    "roasts": {
+      "angry_staff": "You can't just pass a raw string into a neural net! It only understands numbers!",
+      "strict_prof": "Subword tokenization balances vocabulary size and sequence length, mitigating the out-of-vocabulary problem.",
+      "faang_bar": "Good. How does tokenization affect an LLM's ability to perform character-level tasks like spelling or rhyming?",
+      "startup_cto": "Watch the token count! Every token costs us money in the API."
+    }
+  },
+  {
+    "id": "ai_007",
+    "domain": "AI & LLMs",
+    "subdomain": "Generation",
+    "question": "Explain Temperature and Top-P in LLM generation.",
+    "keywords": [
+      "randomness",
+      "scales probabilities",
+      "deterministic",
+      "creative",
+      "cumulative probability",
+      "Nucleus sampling"
+    ],
+    "common_mistakes": [
+      "Using high temperature for tasks requiring factual accuracy"
+    ],
+    "followups": [
+      "What happens if Temperature is set to 0?",
+      "Should you adjust both Temperature and Top-P simultaneously?"
+    ],
+    "roasts": {
+      "angry_staff": "Setting temperature to 1.5 for a code generation task? The AI is just going to hallucinate syntax.",
+      "strict_prof": "Temperature scales the logits before the softmax function, flattening or sharpening the probability distribution.",
+      "faang_bar": "Good. Contrast Top-P sampling with Top-K sampling.",
+      "startup_cto": "Keep temperature at 0 for the customer service bot. I don't want it getting creative with refund policies."
+    }
+  },
+  {
+    "id": "ai_008",
+    "domain": "AI & LLMs",
+    "subdomain": "Safety",
+    "question": "What are AI Hallucinations and how can you mitigate them?",
+    "keywords": [
+      "factually incorrect",
+      "not grounded",
+      "RAG",
+      "Prompt Engineering",
+      "lowering temperature",
+      "self-consistency"
+    ],
+    "common_mistakes": [
+      "Assuming the LLM is 'lying' rather than just statistically predicting an incorrect sequence"
+    ],
+    "followups": [
+      "How can you evaluate an LLM's hallucination rate?",
+      "What is few-shot prompting?"
+    ],
+    "roasts": {
+      "angry_staff": "The AI doesn't 'know' anything. It's just guessing the next word. Of course it hallucinates!",
+      "strict_prof": "Hallucinations are an inherent byproduct of generative models optimizing for fluency over factual accuracy.",
+      "faang_bar": "Good. Discuss the role of RLHF (Reinforcement Learning from Human Feedback) in reducing hallucinations.",
+      "startup_cto": "If the AI hallucinates legal advice, we're getting sued. Fix it."
+    }
+  },
+  {
+    "id": "ai_009",
+    "domain": "AI & LLMs",
+    "subdomain": "Infrastructure",
+    "question": "What is a Vector Database?",
+    "keywords": [
+      "store high-dimensional vectors",
+      "embeddings",
+      "Approximate Nearest Neighbor",
+      "ANN",
+      "similar to a query",
+      "semantic search"
+    ],
+    "common_mistakes": [
+      "Thinking a standard SQL database with JSON columns is as fast as a dedicated Vector DB for similarity search"
+    ],
+    "followups": [
+      "Give examples of Vector Databases (e.g., Pinecone, Milvus, pgvector).",
+      "What is an ANN algorithm like HNSW?"
+    ],
+    "roasts": {
+      "angry_staff": "Doing a cosine similarity scan over 10 million rows in Postgres without an index? Enjoy the timeout.",
+      "strict_prof": "Vector databases index embeddings using spatial data structures to achieve sub-linear query time complexities.",
+      "faang_bar": "Good. Explain the trade-offs between HNSW and IVF-PQ indexing methods.",
+      "startup_cto": "Just use Pinecone so we don't have to manage infrastructure."
+    }
+  },
+  {
+    "id": "ai_010",
+    "domain": "AI & LLMs",
+    "subdomain": "Evaluation",
+    "question": "How do you evaluate the performance of an LLM application?",
+    "keywords": [
+      "LLM-as-a-judge",
+      "rubrics",
+      "human evaluation",
+      "standard benchmarks",
+      "RAGAS framework",
+      "faithfulness"
+    ],
+    "common_mistakes": [
+      "Relying solely on BLEU or ROUGE scores for complex generative tasks"
+    ],
+    "followups": [
+      "What are BLEU and ROUGE scores?",
+      "What is the RAGAS framework?"
+    ],
+    "roasts": {
+      "angry_staff": "BLEU scores for creative writing? That's completely useless. Use an LLM as a judge.",
+      "strict_prof": "Evaluating open-ended generation remains an open research problem, necessitating a multi-faceted approach.",
+      "faang_bar": "Good. How do you prevent self-bias when using an LLM to evaluate its own outputs?",
+      "startup_cto": "I don't care about MMLU scores. Does it actually solve our customers' problems?"
+    }
+  },
+  {
+    "id": "machine_learning_dd6coqn",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Regularization?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_p5jojmo",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain Lasso and Ridge Regularization. How do they help in Elastic Net Regularization?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_ozrxi04",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What are different Model Evaluation Techniques in Machine Learning?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_mpnhpoc",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain Confusion Matrix.",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_w0te3eu",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is the difference between precision and recall? How F1 combines both?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_r0omp9f",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Different Loss Functions in Machine Learning",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_d7m0ba4",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is AUC–ROC Curve?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_yiocqji",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Cross-Validation?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_h33e2au",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain k-Fold Cross-Validation, Leave-One-Out (LOO) and Hold-Out Method.",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_l7b769g",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Difference Between Regularization, Standardization and Normalization",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_4pm7w8z",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Feature Engineering in Machine Learning?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_d0djobl",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Difference between Feature Engineering and Feature Selection?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_qy9cv80",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Dimensionality Reduction in Machine Learning?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_5ct2l3w",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Categorical Data and how to handle it?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_0b8pyd6",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Difference between label encoding and one hot encoding?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_w7cklrk",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Upsampling and Downsampling?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_e2ikagw",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What are outliers and how to handle them?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_jfbgf6z",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Different Hypothesis in Machine Learning?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_nhakuhn",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Bias-Variance tradeoff?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_o3cs55v",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Hyperparameter Tuning in Machine Learning?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_g3kphbx",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Linear Regression? What are its Assumption?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_cx1k2hq",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain how sigmoid function work in Logistic Regression and why it is not a Regrresion Model even though it name has it?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_lubrc37",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Multicollinearity and Why is it a Problem?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_tqo5g1h",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Variance Inflation Factor?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_o63bteq",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Pruning in Decision Trees?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_ed0pysu",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain ID3 and CART",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_nujd877",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain Naive Bayes and Bayes’ Theorem.",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_ixgw6hh",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What are the assumptions of Naive Bayes?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_qpfyvtu",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What are the types of Naive Bayes algorithm?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_10adovc",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain K-Nearest Neighbors (KNN) working.",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_0bi8ypi",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Why is KNN a lazy algorithm?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_jqwq9h1",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "How does the K value affect KNN?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_op50b0p",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What are the different distance metrics in Machine Learning?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_9upj61w",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "How to find the optimal value of K in KNN?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_i92q95r",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Does SVM only work with linear data points?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_s1zstqh",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is the kernel trick?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_l7ffhkp",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Ensemble Learning",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_6wtwsqt",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain Bagging and Boosting.",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_1dyfcws",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Random Forest?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_1dq54hg",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Bootstrapping?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_863ry34",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain AdaBoost, XGBoost and CatBoost.",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_deizepp",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is the difference between Gradient Boosting and CatBoost?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_sik0vt3",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain K-Means Clustering",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_baok0h8",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is the advanced version of K-Means?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_bz5b6kz",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain K-Means++ and Fuzzy C-Means",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_gmkrnad",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Hierarchical Clustering?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_zgn2vkj",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain Linkage Methods in Hierarchical Clustering",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_588a2t5",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain DBSCAN and OPTICS",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_kbuem5p",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain GMM, DPMM and Affinity Propagation",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_ga3ta6c",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain Association Rule Mining",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_76p2pg1",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain Apriori Algorithm and FP-Growth Algorithm",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_jijy3n3",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain Content-Based and Collaborative Filtering Recommendation Systems",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_dw7cc06",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain the EM Algorithm",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_cvqr7g5",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain Markov Model and Hidden Markov Model (HMM)",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_vz33jn6",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain PCA (Principal Component Analysis)",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_gv6f3an",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain NMF, LDA and t-SNE",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_gk5mztn",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain Manifold Learning and Its Techniques",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_6cp2btr",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain Time Series Analysis and Forecasting",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_w7gcr7a",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain ARIMA and SARIMA Models",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_4ho02xi",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain Exponential Smoothing in Time Series",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_m870y36",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is the concept drift in ML?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_hkibjxw",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Reinforcement Learning?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_kk14m2d",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is a Markov Decision Process (MDP)?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_rpbjg22",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is an Optimal Policy?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_7310v0g",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain Value Iteration and Policy Iteration in Reinforcement Learning.",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_ptixd4y",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Why was Machine Learning Introduced?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_ayyt3de",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain the Difference Between Classification and Regression?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_6flhwbm",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Bias in Machine Learning?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_3weinwj",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What are Different Kernels in SVM?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_s2v0raj",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What are Support Vectors in SVM?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_33zc8t1",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is PCA? When do you use it?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_4mdo6v3",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What are Different Types of Machine Learning algorithms?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_fo91g9r",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Supervised Learning?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_a1w14nk",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Unsupervised Learning?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_n2tltar",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is ‘Naive’ in a Naive Bayes?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_o78qdr7",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain SVM Algorithm in Detail",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_c310ke5",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is F1 score? How would you use it?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_ojl4155",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Define Precision and Recall?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_i76lzun",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "How to Tackle Overfitting and Underfitting?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_7w6o7xl",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is a Neural Network?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_9o9dgkc",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What are Loss Function and Cost Functions? Explain the key Difference Between them?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_8z5w12t",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Ensemble learning?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_plyet4r",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "How do you make sure which Machine Learning Algorithm to use?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_10g2l43",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "How to Handle Outlier Values?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_3di8537",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is a Random Forest? How does it work?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_5ivz5xh",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Collaborative Filtering? And Content-Based Filtering?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_6r0e87h",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is Clustering?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_czdtui5",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "How can you select K for K-means Clustering?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_5roj87m",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What are Recommender Systems?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_a38ut17",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "How do check the Normality of a dataset?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_2brbqc8",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Can logistic regression use for more than 2 classes?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_cil31md",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain Correlation and Covariance?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_tkq19a7",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is P-value?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_8ss66ww",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What are Parametric and Non-Parametric Models?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_xhh86be",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Difference Between Sigmoid and Softmax functions?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_e7mpi0d",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is feature engineering? What are the most important techniques?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_1rm5p04",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What are ensemble methods? Compare bagging (Random Forest) vs boosting (XGBoost).",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_0wvmqwb",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain the confusion matrix. What are precision, recall, F1-score, and AUC-ROC?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_k0gktke",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is cross-validation? Why is k-fold preferred over a simple train/test split?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_l6kuwok",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is regularization? Compare L1 (Lasso) and L2 (Ridge) regularization.",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_6945hy3",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is gradient descent? Explain batch, mini-batch, and stochastic variants.",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_7f1huq4",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "Explain the bias-variance tradeoff. How do underfitting and overfitting relate to it?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_6po7aw5",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is the difference between supervised, unsupervised, and reinforcement learning?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_03h53p9",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "How do you save and load a trained ML model in Python for production deployment?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_lltm3w5",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is data leakage in ML? What are the most common ways it occurs in Python code?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_tteiomu",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "How would you train and evaluate a classification model using scikit-learn? Walk through the code.",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_dflipas",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What is the difference between StandardScaler and MinMaxScaler? When do you skip scaling?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_bf2i8qy",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "How does a scikit-learn Pipeline work? Why should you always use one?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_n9sgyg5",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "How do you handle missing values in a dataset before training an ML model in Python?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "machine_learning_kupvf6p",
+    "domain": "Machine Learning",
+    "subdomain": "General",
+    "question": "What are the most important Python libraries for machine learning? What does each do?",
+    "keywords": [
+      "concept",
+      "machine learning"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Machine Learning concept?",
+      "strict_prof": "A textbook definition is not enough for Machine Learning.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_3q3mni0",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What are the misconceptions about Artificial Intelligence?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_pd6fnxp",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What are some real-life applications of Artificial Intelligence?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_rgw7zbu",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What are different platforms for Artificial Intelligence (AI) development?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_sbmrrvu",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What are the programming languages used for Artificial Intelligence?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_5oru5dz",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What is the future of Artificial Intelligence?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_rkbkbzq",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What are the types of Artificial Intelligence?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_7602i3d",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What is the difference between Artificial Intelligence, Machine learning, and Deep learning?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_ffyjzen",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "How are Artificial Intelligence and Machine Learning related?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_8p4z00a",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What is Deep Learning?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_g273e6d",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What are different types of Machine Learning?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_s9eta93",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What is Artificial Intelligence?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_ejemund",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What are the different components of an expert system?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_s8kemig",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "Explain the Hidden Markov Model.",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_kakcxs1",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What is the difference between parametric and non-parametric models?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_ous6b6l",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What do you understand by hyperparameters?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_4l3sc7q",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What is Overfitting?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_ctmeq40",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What are the techniques used to avoid overfitting?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_uqg3ng5",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What is Natural Language Processing?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_1ypkvaj",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What is the difference between Natural language processing and text mining?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_fkdmnzq",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What is Fuzzy logic?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_lrjdpqw",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What is the difference between eigenvalues and eigenvectors?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_bh2qxnt",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What do you understand by reward maximization?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_jq2ne1u",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What are some differences between classification and regression?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_xedw76i",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What is an Artificial Neural Network? What are some commonly used Artificial Neural networks?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_m0c9due",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What is a rational agent, and what is rationality?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_xlx03en",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What Is Game Theory?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_e0s47pl",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What is Q-learning?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_dj4ecvc",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What is the difference between a strong AI and a weak AI?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_d3fqdx9",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "Which assessment is used to test the intelligence of a machine? Explain it.",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_vfcgapa",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What is Computer Vision in AI?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_15xbzpy",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What are Bayesian networks?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_cqszrc8",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What is Reinforcement learning, and how does it work?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_zmczstn",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "How many types of agents are there in Artificial Intelligence?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_220sbyk",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "Explain Markov’s decision process.",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_pamljgk",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "If you are starting a new business, how will you use AI to promote your business?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_h5h6jcp",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "Suppose you know a farmer. He tells you that despite working hard in the fields, his crop yield is deteriorating. How can AI help him?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_1tkee9a",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "“Customers who bought this also bought this”, you might have seen this when shopping on Amazon. How do you think this works?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_sx4n6wy",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "What is a Chatbot? How can they help to deliver the best customer support to the customers?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  },
+  {
+    "id": "artificial_intelligence_6lks9e2",
+    "domain": "Artificial Intelligence",
+    "subdomain": "General",
+    "question": "Suppose you have to explain to a beginner how a face detection system works. How would you do that?",
+    "keywords": [
+      "concept",
+      "artificial intelligence"
+    ],
+    "common_mistakes": [
+      "Vague definitions"
+    ],
+    "followups": [
+      "Can you elaborate?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know this basic Artificial Intelligence concept?",
+      "strict_prof": "A textbook definition is not enough for Artificial Intelligence.",
+      "faang_bar": "Good, let's move to something more complex.",
+      "startup_cto": "Just give me the TL;DR so we can ship."
+    }
+  }
+]
