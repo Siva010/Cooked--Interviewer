@@ -98,7 +98,7 @@ function InterviewCore({ domain, personalityId, targetQuestionId }: { domain: Do
 
         setQuestions(qs);
 
-        let first = targetQuestionId ? qs.find(q => q.id === targetQuestionId) : undefined;
+        let first: Question | null | undefined = targetQuestionId ? qs.find(q => q.id === targetQuestionId) : undefined;
         if (!first) {
           const topicMastery = await getAllTopicMastery();
           first = selectNextQuestion(qs, new Set(), topicMastery, false);
