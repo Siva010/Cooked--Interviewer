@@ -4024,5 +4024,2348 @@
       "faang_bar": "Good, let's move to something more complex.",
       "startup_cto": "Just give me the TL;DR so we can ship."
     }
+  },
+  {
+    "id": "dbms_con_001",
+    "domain": "DBMS",
+    "subdomain": "Concurrency",
+    "question": "What is a dirty read, non-repeatable read, and phantom read?",
+    "keywords": [
+      "uncommitted",
+      "UPDATE between reads",
+      "INSERT between reads",
+      "range query",
+      "isolation level",
+      "row",
+      "same query"
+    ],
+    "common_mistakes": [
+      "Confusing non-repeatable read with phantom read"
+    ],
+    "followups": [
+      "Which isolation level prevents each anomaly?",
+      "What is write skew?",
+      "How does MVCC prevent non-repeatable reads?"
+    ],
+    "roasts": {
+      "angry_staff": "Three anomalies. Three definitions. Non-repeatable is UPDATE between reads. Phantom is INSERT/DELETE between range queries. Know the difference.",
+      "strict_prof": "Each anomaly is formally defined by what operation between transactions causes the inconsistency.",
+      "faang_bar": "Good. What anomaly does Snapshot Isolation NOT prevent despite preventing the other two?",
+      "startup_cto": "Your API returns different user counts on two calls within the same request. What anomaly is this?"
+    }
+  },
+  {
+    "id": "dbms_con_002",
+    "domain": "DBMS",
+    "subdomain": "Concurrency",
+    "question": "What is write skew anomaly?",
+    "keywords": [
+      "snapshot isolation",
+      "constraint violation",
+      "concurrent reads",
+      "combined effect",
+      "individually valid",
+      "serializable prevents"
+    ],
+    "common_mistakes": [
+      "Thinking snapshot isolation prevents all anomalies (it doesn't prevent write skew)"
+    ],
+    "followups": [
+      "How does Serializable Snapshot Isolation (SSI) prevent write skew?",
+      "What is a lost update vs write skew?",
+      "How does SELECT FOR UPDATE prevent write skew?"
+    ],
+    "roasts": {
+      "angry_staff": "Snapshot isolation allows write skew. This is NOT widely known. If you don't know this, you can ship bugs.",
+      "strict_prof": "Write skew is formally: concurrent transactions T1, T2 where each is individually consistent but their serialization is not.",
+      "faang_bar": "Good. How does PostgreSQL's Serializable Snapshot Isolation detect and prevent write skew?",
+      "startup_cto": "Your hospital scheduling app has a bug: no doctors are ever on call after a certain pattern of edits. This is write skew. How do you fix it?"
+    }
+  },
+  {
+    "id": "dbms_con_003",
+    "domain": "DBMS",
+    "subdomain": "Concurrency",
+    "question": "What is lock granularity in databases?",
+    "keywords": [
+      "row-level",
+      "table-level",
+      "concurrency",
+      "overhead",
+      "InnoDB",
+      "MyISAM",
+      "attribute",
+      "page-level"
+    ],
+    "common_mistakes": [
+      "Not knowing that InnoDB defaults to row-level while MyISAM does table-level locking"
+    ],
+    "followups": [
+      "What is lock escalation?",
+      "What is an intention lock?",
+      "When does row-level locking degrade to table-level?"
+    ],
+    "roasts": {
+      "angry_staff": "MyISAM uses TABLE locks. InnoDB uses ROW locks. That's why MyISAM is terrible for concurrent writes.",
+      "strict_prof": "Lock granularity involves a formal trade-off: finer granularity = higher concurrency, higher overhead.",
+      "faang_bar": "Good. What are intention locks and why does InnoDB need them for hierarchical lock management?",
+      "startup_cto": "Your MySQL table has 100 concurrent write transactions and they're all blocking each other. What's the first thing you check?"
+    }
+  },
+  {
+    "id": "dbms_con_004",
+    "domain": "DBMS",
+    "subdomain": "Concurrency",
+    "question": "What is lock escalation?",
+    "keywords": [
+      "row to table",
+      "overhead reduction",
+      "contention",
+      "automatic",
+      "SQL Server",
+      "memory overhead",
+      "page lock"
+    ],
+    "common_mistakes": [
+      "Not knowing which databases perform lock escalation"
+    ],
+    "followups": [
+      "Which databases implement lock escalation?",
+      "How do you prevent lock escalation in SQL Server?",
+      "What is the trade-off of lock escalation?"
+    ],
+    "roasts": {
+      "angry_staff": "SQL Server does lock escalation. PostgreSQL doesn't. Know your database before designing for it.",
+      "strict_prof": "Lock escalation reduces memory overhead for lock tracking at the cost of increased contention.",
+      "faang_bar": "Good. How do you diagnose and prevent unwanted lock escalation in SQL Server?",
+      "startup_cto": "Your SQL Server batch update is causing table locks that block all readers. What's causing this?"
+    }
+  },
+  {
+    "id": "dbms_con_005",
+    "domain": "DBMS",
+    "subdomain": "Concurrency",
+    "question": "What is a gap lock in MySQL InnoDB?",
+    "keywords": [
+      "range lock",
+      "phantom reads",
+      "Repeatable Read",
+      "INSERT prevention",
+      "index range",
+      "FOR UPDATE",
+      "Read Committed disables"
+    ],
+    "common_mistakes": [
+      "Not knowing gap locks are disabled in Read Committed"
+    ],
+    "followups": [
+      "What is a next-key lock?",
+      "How do gap locks cause deadlocks?",
+      "How do you disable gap locks?"
+    ],
+    "roasts": {
+      "angry_staff": "Gap locks prevent phantom reads in InnoDB at Repeatable Read. They cause more deadlocks. Know the trade-off.",
+      "strict_prof": "Gap locks formally lock the open interval between index values to prevent phantom reads.",
+      "faang_bar": "Good. How does switching from Repeatable Read to Read Committed affect gap lock behavior and phantom read risk?",
+      "startup_cto": "Your high-concurrency service has unexplained deadlocks. You suspect gap locks. How do you diagnose?"
+    }
+  },
+  {
+    "id": "dbms_con_006",
+    "domain": "DBMS",
+    "subdomain": "Concurrency",
+    "question": "What is a transaction isolation level and how does it affect performance?",
+    "keywords": [
+      "anomalies",
+      "concurrency",
+      "throughput",
+      "Read Committed",
+      "Serializable",
+      "MVCC",
+      "predicate lock",
+      "trade-off"
+    ],
+    "common_mistakes": [
+      "Always using Serializable 'to be safe' (kills throughput)",
+      "Using Read Uncommitted for performance gains in financial systems"
+    ],
+    "followups": [
+      "What isolation level does PostgreSQL use by default?",
+      "What is the performance cost of Serializable?",
+      "When should you use Read Committed vs Repeatable Read?"
+    ],
+    "roasts": {
+      "angry_staff": "Serializable everywhere? Your throughput drops 60%. Read Committed is fine for most OLTP.",
+      "strict_prof": "The formal trade-off: stronger isolation = fewer anomalies = reduced concurrency degree.",
+      "faang_bar": "Good. What is the performance overhead of PostgreSQL's Serializable Snapshot Isolation vs Read Committed?",
+      "startup_cto": "You're building a payment processing system. What isolation level would you use and why?"
+    }
+  },
+  {
+    "id": "dbms_con_007",
+    "domain": "DBMS",
+    "subdomain": "Concurrency",
+    "question": "What is the difference between optimistic, pessimistic, and multi-version concurrency control?",
+    "keywords": [
+      "pessimistic",
+      "optimistic",
+      "MVCC",
+      "versions",
+      "snapshot",
+      "no blocking",
+      "retry",
+      "validate"
+    ],
+    "common_mistakes": [
+      "Thinking MVCC eliminates all locking (writes still need some coordination)"
+    ],
+    "followups": [
+      "How does MVCC handle write-write conflicts?",
+      "What is the version chain in MVCC?",
+      "Why does MVCC cause table bloat?"
+    ],
+    "roasts": {
+      "angry_staff": "MVCC doesn't eliminate locks entirely. Write-write conflicts still need coordination. Don't oversimplify.",
+      "strict_prof": "MVCC formally provides snapshot isolation to readers at the cost of version chain management and garbage collection.",
+      "faang_bar": "Good. How does PostgreSQL handle write-write conflicts in MVCC and what transaction aborts?",
+      "startup_cto": "Your read-heavy API is bottlenecked by read-write lock contention. MVCC would solve this. How do you explain that to your team?"
+    }
+  },
+  {
+    "id": "dbms_con_008",
+    "domain": "DBMS",
+    "subdomain": "Concurrency",
+    "question": "What is a shared lock vs exclusive lock in databases?",
+    "keywords": [
+      "S-lock",
+      "X-lock",
+      "read lock",
+      "write lock",
+      "compatibility",
+      "multiple readers",
+      "single writer",
+      "blocks"
+    ],
+    "common_mistakes": [
+      "Thinking shared lock allows only one reader"
+    ],
+    "followups": [
+      "What is a shared intent lock?",
+      "How does SELECT FOR SHARE work?",
+      "What is lock compatibility matrix?"
+    ],
+    "roasts": {
+      "angry_staff": "Shared locks allow MULTIPLE concurrent readers. You're thinking of exclusive locks.",
+      "strict_prof": "The lock compatibility matrix — S+S compatible, S+X incompatible, X+X incompatible — is the formal definition.",
+      "faang_bar": "Good. What are intention locks (IS, IX, SIX) and why do databases need them for hierarchical locking?",
+      "startup_cto": "Your read-heavy endpoint is being blocked by a long-running write. What lock type is causing this?"
+    }
+  },
+  {
+    "id": "dbms_con_009",
+    "domain": "DBMS",
+    "subdomain": "Concurrency",
+    "question": "What is transaction management?",
+    "keywords": [
+      "BEGIN",
+      "COMMIT",
+      "ROLLBACK",
+      "ACID",
+      "locking",
+      "WAL",
+      "recovery",
+      "auto-commit"
+    ],
+    "common_mistakes": [
+      "Forgetting to explicitly commit transactions in application code"
+    ],
+    "followups": [
+      "What is auto-commit?",
+      "What happens if you forget to commit?",
+      "How does the DBMS recover uncommitted transactions after a crash?"
+    ],
+    "roasts": {
+      "angry_staff": "Auto-commit is a trap. Beginners forget to BEGIN and every statement is its own transaction. Know your driver's behavior.",
+      "strict_prof": "Transaction management formally coordinates the four ACID properties through locking, logging, and recovery mechanisms.",
+      "faang_bar": "Good. What happens to an open transaction when the database server crashes? How is it recovered?",
+      "startup_cto": "Your Python code opens a transaction and the server process crashes. What happens to the data?"
+    }
+  },
+  {
+    "id": "dbms_con_010",
+    "domain": "DBMS",
+    "subdomain": "Concurrency",
+    "question": "What is SERIALIZABLE isolation and how is it implemented?",
+    "keywords": [
+      "serial execution",
+      "strict 2PL",
+      "SSI",
+      "write skew",
+      "predicate lock",
+      "PostgreSQL",
+      "cycle detection",
+      "commit abort"
+    ],
+    "common_mistakes": [
+      "Thinking Repeatable Read = Serializable (phantom reads and write skew are still possible in Repeatable Read)"
+    ],
+    "followups": [
+      "What is SSI (Serializable Snapshot Isolation)?",
+      "How does SSI detect serialization conflicts?",
+      "What is the performance overhead of SSI?"
+    ],
+    "roasts": {
+      "angry_staff": "Repeatable Read ≠ Serializable. Write skew is still possible in Repeatable Read. Different level.",
+      "strict_prof": "Serializability is formally defined as equivalence to some serial execution order — all three anomaly types prevented.",
+      "faang_bar": "Good. How does PostgreSQL's SSI use SIREAD locks and dependency tracking to detect serialization failures?",
+      "startup_cto": "You need true Serializable isolation but can't afford the throughput hit. What are your options?"
+    }
+  },
+  {
+    "id": "dbms_idx_001",
+    "domain": "DBMS",
+    "subdomain": "Indexing",
+    "question": "What is a database index and how does it work?",
+    "keywords": [
+      "B-tree",
+      "row location",
+      "read speed",
+      "write overhead",
+      "equality",
+      "range",
+      "scan",
+      "sequential"
+    ],
+    "common_mistakes": [
+      "Thinking indexes only speed up reads without write overhead",
+      "Not knowing B-tree vs hash index differences"
+    ],
+    "followups": [
+      "What is a clustered vs non-clustered index?",
+      "What is a covering index?",
+      "When does an index hurt performance?"
+    ],
+    "roasts": {
+      "angry_staff": "Indexes don't come free. Every INSERT updates every index on that table. You skipped that cost.",
+      "strict_prof": "The B-tree structure and its log(n) lookup time vs full table scan O(n) must be stated.",
+      "faang_bar": "Good. How does a covering index eliminate a separate table lookup?",
+      "startup_cto": "Your table has 20 indexes. What happens to your INSERT throughput?"
+    }
+  },
+  {
+    "id": "dbms_idx_002",
+    "domain": "DBMS",
+    "subdomain": "Indexing",
+    "question": "What is a clustered index?",
+    "keywords": [
+      "physical order",
+      "primary key",
+      "one per table",
+      "range query",
+      "sequential I/O",
+      "page split",
+      "InnoDB"
+    ],
+    "common_mistakes": [
+      "Thinking all indexes are clustered",
+      "Not knowing that MySQL InnoDB always uses PK as clustered index"
+    ],
+    "followups": [
+      "What is a page split in B-tree?",
+      "What is a heap table?",
+      "Why is UUID a bad clustered index key?"
+    ],
+    "roasts": {
+      "angry_staff": "Only ONE clustered index per table. InnoDB uses the PK. Did you know that?",
+      "strict_prof": "The clustered index determines the physical storage order — this is the fundamental distinguishing property.",
+      "faang_bar": "Good. Why does using UUID as InnoDB primary key cause severe page split fragmentation?",
+      "startup_cto": "Your InnoDB table has random UUID primary keys. Insert performance is degrading. Why and how do you fix it?"
+    }
+  },
+  {
+    "id": "dbms_idx_003",
+    "domain": "DBMS",
+    "subdomain": "Indexing",
+    "question": "What is a B-tree index and how does it handle range queries?",
+    "keywords": [
+      "balanced",
+      "leaf nodes",
+      "linked list",
+      "O(log n)",
+      "sorted",
+      "range scan",
+      "self-balancing",
+      "height"
+    ],
+    "common_mistakes": [
+      "Confusing B-tree with binary search tree",
+      "Not knowing about the leaf node linked list"
+    ],
+    "followups": [
+      "What is the difference between B-tree and B+ tree?",
+      "How does a B-tree index handle ORDER BY?",
+      "What is an index merge?"
+    ],
+    "roasts": {
+      "angry_staff": "B-tree is NOT a binary search tree. B-tree nodes have many children. Know the difference.",
+      "strict_prof": "The doubly-linked leaf node list enabling sequential range scans is the key B+ tree innovation.",
+      "faang_bar": "Good. What is the difference between B-tree and B+ tree and why do databases prefer B+ tree?",
+      "startup_cto": "Your range query on date column is slow despite having an index. What do you check?"
+    }
+  },
+  {
+    "id": "dbms_idx_004",
+    "domain": "DBMS",
+    "subdomain": "Indexing",
+    "question": "What is a covering index?",
+    "keywords": [
+      "all columns in index",
+      "no table lookup",
+      "index-only scan",
+      "I/O reduction",
+      "composite index",
+      "SELECT columns"
+    ],
+    "common_mistakes": [
+      "Thinking a single-column index can cover multi-column queries"
+    ],
+    "followups": [
+      "What is the Include clause in SQL Server indexes?",
+      "How do you verify an index-only scan in EXPLAIN?",
+      "When does adding more columns to an index hurt?"
+    ],
+    "roasts": {
+      "angry_staff": "A covering index means ALL your SELECT columns are in the index. One column doesn't cover a 5-column SELECT.",
+      "strict_prof": "Index-only scan occurs when all projected and filtered columns are satisfied by the index alone.",
+      "faang_bar": "Good. How does EXPLAIN ANALYZE show whether a covering index is being used in PostgreSQL?",
+      "startup_cto": "Show me how to create a covering index for this query: SELECT name, created_at FROM orders WHERE status='pending'"
+    }
+  },
+  {
+    "id": "dbms_idx_005",
+    "domain": "DBMS",
+    "subdomain": "Indexing",
+    "question": "What is index selectivity and why does it matter?",
+    "keywords": [
+      "cardinality",
+      "distinct values",
+      "ratio",
+      "query optimizer",
+      "low selectivity",
+      "full table scan",
+      "discriminating"
+    ],
+    "common_mistakes": [
+      "Indexing columns with few distinct values (low cardinality)",
+      "Thinking more indexes = always better"
+    ],
+    "followups": [
+      "How does the query optimizer use statistics for selectivity estimation?",
+      "What is a partial index?",
+      "What is index cardinality?"
+    ],
+    "roasts": {
+      "angry_staff": "You indexed a boolean column. The optimizer will ignore that index 90% of the time. Low cardinality.",
+      "strict_prof": "Selectivity = distinct values / total rows. Optimizer uses this to decide between index scan and sequential scan.",
+      "faang_bar": "Good. How does PostgreSQL's statistics (pg_statistic) estimate selectivity for query planning?",
+      "startup_cto": "Your index on 'status' column (3 values) isn't being used. How do you diagnose and fix this?"
+    }
+  },
+  {
+    "id": "dbms_idx_006",
+    "domain": "DBMS",
+    "subdomain": "Indexing",
+    "question": "What is a composite index and what is the leftmost prefix rule?",
+    "keywords": [
+      "leftmost prefix",
+      "column order",
+      "WHERE clause",
+      "multi-column",
+      "range condition",
+      "prefix matching"
+    ],
+    "common_mistakes": [
+      "Thinking composite index can be used starting from the middle",
+      "Putting range condition column in the wrong position"
+    ],
+    "followups": [
+      "What happens if the leftmost column has a range condition?",
+      "How do you choose column order in a composite index?",
+      "What is an index skip scan?"
+    ],
+    "roasts": {
+      "angry_staff": "Index on (A,B,C). Query filters on B only. Index is USELESS. Leftmost prefix. Learn it.",
+      "strict_prof": "The leftmost prefix property derives from the B-tree's sorted key ordering — the formal mechanism.",
+      "faang_bar": "Good. What happens when the first column in a composite index has a range condition (BETWEEN/LIKE)?",
+      "startup_cto": "You have INDEX(created_at, user_id). Query: WHERE user_id=5 AND created_at > '2024-01-01'. Is the index used?"
+    }
+  },
+  {
+    "id": "dbms_idx_007",
+    "domain": "DBMS",
+    "subdomain": "Indexing",
+    "question": "What is a partial index?",
+    "keywords": [
+      "WHERE condition",
+      "subset",
+      "smaller",
+      "selective",
+      "skewed data",
+      "filtered index",
+      "PostgreSQL"
+    ],
+    "common_mistakes": [
+      "Not knowing MySQL lacks native partial index support"
+    ],
+    "followups": [
+      "When would you use a partial index vs a composite index?",
+      "How does a partial index improve write performance?",
+      "What is an expression index?"
+    ],
+    "roasts": {
+      "angry_staff": "MySQL doesn't have partial indexes. If you're on MySQL, you need a different approach.",
+      "strict_prof": "A partial index is formally defined as an index with a predicate that restricts the indexed subset.",
+      "faang_bar": "Good. How would you implement equivalent functionality to partial indexes in MySQL?",
+      "startup_cto": "Your unprocessed_orders table has 100M rows but only 10K unprocessed. How does a partial index help?"
+    }
+  },
+  {
+    "id": "dbms_idx_008",
+    "domain": "DBMS",
+    "subdomain": "Indexing",
+    "question": "When should you NOT create an index?",
+    "keywords": [
+      "low cardinality",
+      "small table",
+      "write-heavy",
+      "rarely queried",
+      "storage overhead",
+      "optimizer confusion",
+      "bulk load"
+    ],
+    "common_mistakes": [
+      "Adding indexes to every column 'just in case'"
+    ],
+    "followups": [
+      "How many indexes is too many?",
+      "What is index bloat?",
+      "How do unused indexes hurt databases?"
+    ],
+    "roasts": {
+      "angry_staff": "You indexed every column. Every INSERT now updates 20 indexes. Your write throughput is destroyed.",
+      "strict_prof": "The marginal cost of each additional index — write amplification and storage overhead — must be evaluated.",
+      "faang_bar": "Good. How do you identify unused indexes in PostgreSQL and safely drop them?",
+      "startup_cto": "Your table has 15 indexes and INSERTs are slow. How do you figure out which indexes to remove?"
+    }
+  },
+  {
+    "id": "dbms_idx_009",
+    "domain": "DBMS",
+    "subdomain": "Indexing",
+    "question": "What is a hash index and when would you use it?",
+    "keywords": [
+      "hash bucket",
+      "O(1)",
+      "equality only",
+      "no range",
+      "no ORDER BY",
+      "collision",
+      "point lookup"
+    ],
+    "common_mistakes": [
+      "Using hash index for range queries (doesn't work)",
+      "Not knowing hash indexes don't support LIKE prefix"
+    ],
+    "followups": [
+      "How does PostgreSQL implement hash indexes?",
+      "What is the difference between B-tree and hash index performance for equality?",
+      "When would a hash join outperform a nested loop?"
+    ],
+    "roasts": {
+      "angry_staff": "Hash index for a range query? It stores HASHES. There's no ordering. Range queries are impossible.",
+      "strict_prof": "Hash indexes sacrifice ordering for O(1) equality lookup — the fundamental algorithmic trade-off.",
+      "faang_bar": "Good. How does PostgreSQL's hash join operation relate to hash index design principles?",
+      "startup_cto": "Your user lookup by UUID is your hottest query. B-tree or hash index? Why?"
+    }
+  },
+  {
+    "id": "dbms_idx_010",
+    "domain": "DBMS",
+    "subdomain": "Indexing",
+    "question": "What is EXPLAIN and how do you use it to analyze queries?",
+    "keywords": [
+      "execution plan",
+      "Seq Scan",
+      "Index Scan",
+      "rows estimate",
+      "actual rows",
+      "cost",
+      "nested loop",
+      "hash join"
+    ],
+    "common_mistakes": [
+      "Not running EXPLAIN ANALYZE (only EXPLAIN shows estimates, not actual)",
+      "Not understanding the difference between cost estimate and actual time"
+    ],
+    "followups": [
+      "What is the difference between EXPLAIN and EXPLAIN ANALYZE?",
+      "What is a nested loop join vs hash join?",
+      "What is the cost unit in PostgreSQL EXPLAIN?"
+    ],
+    "roasts": {
+      "angry_staff": "EXPLAIN without ANALYZE shows ESTIMATES. Run EXPLAIN ANALYZE to see ACTUAL performance.",
+      "strict_prof": "The EXPLAIN output is a tree of plan nodes with cost estimates; ANALYZE adds actual timing and row counts.",
+      "faang_bar": "Good. How do you use pg_stat_statements to identify the slowest queries in PostgreSQL?",
+      "startup_cto": "Your query runs slower than EXPLAIN estimated. What does that tell you about the statistics?"
+    }
+  },
+  {
+    "id": "dbms_idx_011",
+    "domain": "DBMS",
+    "subdomain": "Indexing",
+    "question": "What is a unique index?",
+    "keywords": [
+      "no duplicates",
+      "UNIQUE constraint",
+      "nullable",
+      "multiple per table",
+      "integrity",
+      "INSERT rejection"
+    ],
+    "common_mistakes": [
+      "Confusing UNIQUE with PRIMARY KEY (UNIQUE can be nullable, PK cannot)"
+    ],
+    "followups": [
+      "What happens when you INSERT a duplicate into a UNIQUE column?",
+      "Can a UNIQUE index span multiple columns?",
+      "What is INSERT ON CONFLICT in PostgreSQL?"
+    ],
+    "roasts": {
+      "angry_staff": "UNIQUE ≠ PRIMARY KEY. UNIQUE allows NULLs; primary key does not. Important difference.",
+      "strict_prof": "The constraint properties — uniqueness with nullable semantics — distinguish unique indexes from primary keys.",
+      "faang_bar": "Good. How does PostgreSQL handle multiple NULL values in a UNIQUE column?",
+      "startup_cto": "Show me how to implement upsert logic using INSERT ON CONFLICT DO UPDATE in PostgreSQL."
+    }
+  },
+  {
+    "id": "dbms_idx_012",
+    "domain": "DBMS",
+    "subdomain": "Indexing",
+    "question": "What is index bloat and how do you fix it?",
+    "keywords": [
+      "dead tuples",
+      "MVCC",
+      "VACUUM",
+      "REINDEX CONCURRENTLY",
+      "space",
+      "pg_stat_user_indexes",
+      "pgstattuple"
+    ],
+    "common_mistakes": [
+      "Not monitoring index bloat proactively",
+      "Using VACUUM FULL during business hours (it locks the table)"
+    ],
+    "followups": [
+      "What is autovacuum in PostgreSQL?",
+      "How does bloat affect query performance?",
+      "What is fillfactor?"
+    ],
+    "roasts": {
+      "angry_staff": "You said 'just rebuild the index.' REINDEX CONCURRENTLY exists for a reason — REINDEX alone locks.",
+      "strict_prof": "MVCC dead tuple accumulation without VACUUM is the formal cause of index bloat in PostgreSQL.",
+      "faang_bar": "Good. What is the fillfactor parameter and how does it trade index size for update performance?",
+      "startup_cto": "Your pg_indexes_size shows your index is 3x larger than the table. How do you diagnose and fix this?"
+    }
+  },
+  {
+    "id": "dbms_idx_013",
+    "domain": "DBMS",
+    "subdomain": "Indexing",
+    "question": "What is a full-text index and how does it differ from a regular index?",
+    "keywords": [
+      "inverted index",
+      "stemming",
+      "stop words",
+      "TF-IDF",
+      "tsvector",
+      "FULLTEXT",
+      "relevance ranking",
+      "LIKE inefficiency"
+    ],
+    "common_mistakes": [
+      "Using LIKE '%keyword%' expecting index usage (it can't use B-tree)"
+    ],
+    "followups": [
+      "How does tsvector work in PostgreSQL?",
+      "When would you use Elasticsearch over PostgreSQL full-text search?",
+      "What is TF-IDF ranking?"
+    ],
+    "roasts": {
+      "angry_staff": "LIKE '%keyword%' with leading wildcard cannot use a B-tree index. Ever. Use a full-text index.",
+      "strict_prof": "The inverted index structure — term-to-document mapping — is the fundamental full-text search data structure.",
+      "faang_bar": "Good. What are the limitations of PostgreSQL full-text search vs Elasticsearch at scale?",
+      "startup_cto": "Your product search uses LIKE '%coffee%' on 10M rows and takes 5 seconds. How do you fix it?"
+    }
+  },
+  {
+    "id": "dbms_idx_014",
+    "domain": "DBMS",
+    "subdomain": "Indexing",
+    "question": "What is a GiST index and when is it used?",
+    "keywords": [
+      "geometric",
+      "spatial",
+      "PostGIS",
+      "range types",
+      "containment",
+      "overlap",
+      "GIN",
+      "nearest-neighbor"
+    ],
+    "common_mistakes": [
+      "Not knowing GiST exists for spatial/geometric queries"
+    ],
+    "followups": [
+      "What is the difference between GiST and GIN indexes?",
+      "When would you use a GIN index?",
+      "What is PostGIS?"
+    ],
+    "roasts": {
+      "angry_staff": "You'd use a B-tree index for polygon containment queries? GiST was invented specifically for this.",
+      "strict_prof": "GiST is a framework for extensible indexing supporting non-standard operators like &&, @>, <@.",
+      "faang_bar": "Good. What is the difference between GiST and GIN and when would you choose each?",
+      "startup_cto": "Your ride-sharing app needs to find all drivers within 5km of a location. Which index type?"
+    }
+  },
+  {
+    "id": "dbms_idx_015",
+    "domain": "DBMS",
+    "subdomain": "Indexing",
+    "question": "What is index-organized table (IOT) / clustered table?",
+    "keywords": [
+      "heap table",
+      "leaf nodes",
+      "primary key",
+      "no heap lookup",
+      "page split",
+      "secondary index",
+      "Oracle",
+      "MySQL InnoDB"
+    ],
+    "common_mistakes": [
+      "Not knowing that MySQL InnoDB IS index-organized by default"
+    ],
+    "followups": [
+      "How does MySQL InnoDB's clustered index differ from Oracle's IOT?",
+      "What are the disadvantages of index-organized tables?",
+      "How do secondary indexes work in InnoDB?"
+    ],
+    "roasts": {
+      "angry_staff": "MySQL InnoDB IS an index-organized table. Every InnoDB table stores data in primary key B-tree.",
+      "strict_prof": "In an IOT, the leaf nodes of the B-tree contain the actual row data — no separate heap file exists.",
+      "faang_bar": "Good. How do secondary indexes in MySQL InnoDB store row references differently from heap tables?",
+      "startup_cto": "Why does adding many secondary indexes to InnoDB tables hurt performance more than in heap-based databases?"
+    }
+  },
+  {
+    "id": "dbms_idx_016",
+    "domain": "DBMS",
+    "subdomain": "Indexing",
+    "question": "What is query optimization?",
+    "keywords": [
+      "execution plan",
+      "statistics",
+      "join order",
+      "hash join",
+      "nested loop",
+      "access method",
+      "cardinality",
+      "optimizer"
+    ],
+    "common_mistakes": [
+      "Thinking the optimizer always makes the perfect choice"
+    ],
+    "followups": [
+      "How do you force an index in MySQL?",
+      "What are query hints?",
+      "How do you update statistics in PostgreSQL?"
+    ],
+    "roasts": {
+      "angry_staff": "The optimizer makes mistakes. Stale statistics = wrong row estimates = bad plan. Know this.",
+      "strict_prof": "The query optimizer employs cost-based optimization using statistical metadata to minimize estimated I/O cost.",
+      "faang_bar": "Good. How do you force the optimizer to use a specific index and when is that appropriate?",
+      "startup_cto": "EXPLAIN shows your query is doing a sequential scan on a 100M row table despite having an index. Why?"
+    }
+  },
+  {
+    "id": "dbms_idx_017",
+    "domain": "DBMS",
+    "subdomain": "Indexing",
+    "question": "What is a GIN index?",
+    "keywords": [
+      "inverted index",
+      "JSONB",
+      "array",
+      "tsvector",
+      "@>",
+      "contains",
+      "multi-valued",
+      "element to rows"
+    ],
+    "common_mistakes": [
+      "Using B-tree for JSONB queries (won't use the index for containment operators)"
+    ],
+    "followups": [
+      "When would you choose GIN over GiST?",
+      "How does GIN index JSONB data?",
+      "What is a GIN index's fastupdate mode?"
+    ],
+    "roasts": {
+      "angry_staff": "B-tree index on JSONB? The @> operator requires a GIN index. B-tree can't handle containment queries.",
+      "strict_prof": "GIN maps each element to its set of containing rows — the inverted index structure for multi-valued attributes.",
+      "faang_bar": "Good. What is GIN's fastupdate mode and what are its trade-offs?",
+      "startup_cto": "Your JSONB column query: WHERE data @> '{\"status\": \"active\"}' is slow. Which index type do you add?"
+    }
+  },
+  {
+    "id": "dbms_idx_018",
+    "domain": "DBMS",
+    "subdomain": "Indexing",
+    "question": "What are index statistics and how do they affect query planning?",
+    "keywords": [
+      "histogram",
+      "pg_statistic",
+      "ANALYZE",
+      "autovacuum",
+      "cardinality estimate",
+      "row estimate",
+      "stale statistics",
+      "distribution"
+    ],
+    "common_mistakes": [
+      "Not running ANALYZE after large data loads",
+      "Trusting query plans without checking if statistics are current"
+    ],
+    "followups": [
+      "How often does autovacuum run ANALYZE?",
+      "What is a histogram in pg_statistic?",
+      "How do you manually run ANALYZE?"
+    ],
+    "roasts": {
+      "angry_staff": "Stale statistics = bad estimates = wrong query plan. ANALYZE after bulk loads. Basic maintenance.",
+      "strict_prof": "The histogram captures value distribution, enabling selectivity estimation beyond simple cardinality.",
+      "faang_bar": "Good. How do you detect statistics staleness causing poor query plans in PostgreSQL?",
+      "startup_cto": "After loading 10M rows, your queries are slow. What's the first maintenance command to run?"
+    }
+  },
+  {
+    "id": "dbms_idx_019",
+    "domain": "DBMS",
+    "subdomain": "Indexing",
+    "question": "What is an expression index?",
+    "keywords": [
+      "function",
+      "expression",
+      "immutable",
+      "lower()",
+      "case-insensitive",
+      "exact expression",
+      "computed",
+      "transformed"
+    ],
+    "common_mistakes": [
+      "Using a different expression in the query than in the index (index is not used)"
+    ],
+    "followups": [
+      "What does immutable mean for index functions?",
+      "How do you create an index on JSONB field access?",
+      "What is a partial expression index?"
+    ],
+    "roasts": {
+      "angry_staff": "The WHERE clause must use the EXACT same expression as the index. lower(email) ≠ LOWER(email) on some systems.",
+      "strict_prof": "The function must be declared immutable — same inputs must always produce same outputs — for correctness.",
+      "faang_bar": "Good. How do you create an expression index to efficiently query a JSONB field without a GIN index?",
+      "startup_cto": "Show me how to create an index that allows case-insensitive email login queries efficiently."
+    }
+  },
+  {
+    "id": "dbms_idx_020",
+    "domain": "DBMS",
+    "subdomain": "Indexing",
+    "question": "What is a BRIN index?",
+    "keywords": [
+      "block range",
+      "min/max",
+      "physical order",
+      "correlation",
+      "small size",
+      "timestamp",
+      "auto-increment",
+      "PostgreSQL"
+    ],
+    "common_mistakes": [
+      "Using BRIN on randomly ordered data (useless)",
+      "Choosing BRIN over B-tree when data isn't correlated with physical order"
+    ],
+    "followups": [
+      "When is BRIN better than B-tree?",
+      "How does physical correlation affect BRIN effectiveness?",
+      "What is pages_per_range?"
+    ],
+    "roasts": {
+      "angry_staff": "BRIN on randomly inserted data is USELESS. Physical correlation is the entire assumption of BRIN.",
+      "strict_prof": "BRIN effectiveness depends on the Pearson correlation between column values and physical page ordering.",
+      "faang_bar": "Good. For a time-series table with timestamp insertion order, compare BRIN vs B-tree index size and performance.",
+      "startup_cto": "Your audit_log table has 1B rows with timestamp. Would you use BRIN or B-tree? Why?"
+    }
+  },
+  {
+    "id": "dbms_norm_001",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is database normalization?",
+    "keywords": [
+      "redundancy",
+      "integrity",
+      "decompose",
+      "normal forms",
+      "update anomalies",
+      "functional dependency"
+    ],
+    "common_mistakes": [
+      "Thinking normalization always improves performance (it can require more joins)"
+    ],
+    "followups": [
+      "What is 1NF?",
+      "What is denormalization?",
+      "What are update anomalies?"
+    ],
+    "roasts": {
+      "angry_staff": "You said normalization 'organizes data.' It REMOVES REDUNDANCY. That's the technical purpose.",
+      "strict_prof": "The reduction of update anomalies through functional dependency analysis is the formal objective.",
+      "faang_bar": "Good. When would you intentionally denormalize a database schema?",
+      "startup_cto": "Your MySQL table has 50 columns including city, state, and zip. What normalization issue does this suggest?"
+    }
+  },
+  {
+    "id": "dbms_norm_002",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is First Normal Form (1NF)?",
+    "keywords": [
+      "atomic",
+      "indivisible",
+      "repeating groups",
+      "unique column names",
+      "no arrays"
+    ],
+    "common_mistakes": [
+      "Thinking 1NF only requires a primary key"
+    ],
+    "followups": [
+      "What is the difference between 1NF and 2NF?",
+      "How do you handle multi-valued attributes in 1NF?",
+      "What is a repeating group?"
+    ],
+    "roasts": {
+      "angry_staff": "You said 1NF means 'has a primary key.' 1NF is about ATOMIC values. Primary key is basic table design.",
+      "strict_prof": "Atomic values and elimination of repeating groups are the formal 1NF requirements.",
+      "faang_bar": "Good. How do JSON columns in PostgreSQL violate 1NF and when is that acceptable?",
+      "startup_cto": "Show me a table that violates 1NF and how you'd fix it."
+    }
+  },
+  {
+    "id": "dbms_norm_003",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is Second Normal Form (2NF)?",
+    "keywords": [
+      "partial dependency",
+      "composite key",
+      "non-key attribute",
+      "full functional dependency",
+      "1NF"
+    ],
+    "common_mistakes": [
+      "Thinking 2NF applies to single-column primary keys (it only matters for composite keys)"
+    ],
+    "followups": [
+      "What is a partial dependency?",
+      "Give an example of a 2NF violation",
+      "What is a functional dependency?"
+    ],
+    "roasts": {
+      "angry_staff": "2NF violations only occur with composite keys. If you have a single PK, you're trivially in 2NF.",
+      "strict_prof": "Partial functional dependency from a non-key attribute to part of the composite key is the defining violation.",
+      "faang_bar": "Good. Give me a concrete table example that violates 2NF and show the decomposition.",
+      "startup_cto": "Your orders table has (order_id, product_id) as PK but also stores product_name. What's the 2NF issue?"
+    }
+  },
+  {
+    "id": "dbms_norm_004",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is Third Normal Form (3NF)?",
+    "keywords": [
+      "transitive dependency",
+      "non-key to non-key",
+      "2NF",
+      "decompose",
+      "functional dependency"
+    ],
+    "common_mistakes": [
+      "Confusing transitive dependency with partial dependency"
+    ],
+    "followups": [
+      "What is the difference between 2NF and 3NF?",
+      "What is BCNF?",
+      "Give an example of a transitive dependency"
+    ],
+    "roasts": {
+      "angry_staff": "Transitive and partial dependencies are DIFFERENT THINGS. 2NF fixes partial, 3NF fixes transitive.",
+      "strict_prof": "A transitive dependency is A→B→C where B and C are non-prime attributes. State it formally.",
+      "faang_bar": "Good. Give me a table that's in 2NF but not 3NF and show the decomposition.",
+      "startup_cto": "Your customers table has zip_code and city — what normalization issue does this present?"
+    }
+  },
+  {
+    "id": "dbms_norm_005",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is BCNF (Boyce-Codd Normal Form) and how does it differ from 3NF?",
+    "keywords": [
+      "superkey",
+      "candidate key",
+      "prime attribute",
+      "functional dependency",
+      "3NF",
+      "stronger",
+      "dependency preservation"
+    ],
+    "common_mistakes": [
+      "Thinking BCNF is always achievable without losing dependency preservation"
+    ],
+    "followups": [
+      "Give an example where 3NF is in but not BCNF",
+      "What is a lossless decomposition?",
+      "What is dependency preservation?"
+    ],
+    "roasts": {
+      "angry_staff": "BCNF ≠ 3NF. BCNF is STRICTER. Not every 3NF decomposition is lossless dependency-preserving in BCNF.",
+      "strict_prof": "The formal distinction: in BCNF, every determinant must be a superkey, with no exceptions for prime attributes.",
+      "faang_bar": "Good. Give a concrete table that's in 3NF but not BCNF and show why BCNF decomposition loses a dependency.",
+      "startup_cto": "When would you stop at 3NF instead of going to BCNF in a production database?"
+    }
+  },
+  {
+    "id": "dbms_norm_006",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is denormalization and when is it used?",
+    "keywords": [
+      "redundancy",
+      "joins",
+      "read performance",
+      "OLAP",
+      "update anomalies",
+      "trade-off",
+      "aggregate"
+    ],
+    "common_mistakes": [
+      "Thinking denormalization is always bad",
+      "Not knowing when it's the right choice"
+    ],
+    "followups": [
+      "How does denormalization affect write performance?",
+      "What is a materialized view?",
+      "When would you use a wide table?"
+    ],
+    "roasts": {
+      "angry_staff": "You said denormalization is always wrong. It's a deliberate trade-off. OLAP databases are denormalized by design.",
+      "strict_prof": "The trade-off between read efficiency and update anomaly risk must be articulated.",
+      "faang_bar": "Good. How does a columnar store like Redshift use denormalization for analytical queries?",
+      "startup_cto": "Your analytics dashboard query takes 30 seconds with 8 joins. How would you denormalize to fix it?"
+    }
+  },
+  {
+    "id": "dbms_norm_007",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is a functional dependency?",
+    "keywords": [
+      "determines",
+      "unique mapping",
+      "Armstrong axioms",
+      "trivial",
+      "non-trivial",
+      "closure",
+      "tuple"
+    ],
+    "common_mistakes": [
+      "Thinking functional dependency means B always uniquely determines A (it doesn't unless A→B and B→A)"
+    ],
+    "followups": [
+      "What are Armstrong's axioms?",
+      "What is an attribute closure?",
+      "What is a candidate key?"
+    ],
+    "roasts": {
+      "angry_staff": "FD is not 'A relates to B.' It means A UNIQUELY DETERMINES B. One-way relationship.",
+      "strict_prof": "Armstrong's axioms — reflexivity, augmentation, transitivity — are the formal inference rules for FDs.",
+      "faang_bar": "Good. What is the attribute closure algorithm and how does it find candidate keys?",
+      "startup_cto": "How do you use functional dependencies to identify redundancy in a schema?"
+    }
+  },
+  {
+    "id": "dbms_norm_008",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is a candidate key vs primary key?",
+    "keywords": [
+      "minimal superkey",
+      "unique identifier",
+      "multiple candidate keys",
+      "alternate key",
+      "primary key"
+    ],
+    "common_mistakes": [
+      "Thinking a table can have only one candidate key"
+    ],
+    "followups": [
+      "What is a superkey vs candidate key?",
+      "What is a surrogate key?",
+      "What is a composite key?"
+    ],
+    "roasts": {
+      "angry_staff": "A table can have MULTIPLE candidate keys. You only get one primary key. They're not the same.",
+      "strict_prof": "A candidate key is a minimal superkey — the minimality constraint is what makes it a candidate key.",
+      "faang_bar": "Good. When would you choose a surrogate key over a natural candidate key?",
+      "startup_cto": "Your users table uses email as primary key. What are the trade-offs vs using a UUID?"
+    }
+  },
+  {
+    "id": "dbms_norm_009",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is 4NF and what multi-valued dependency does it address?",
+    "keywords": [
+      "multi-valued dependency",
+      "MVD",
+      "BCNF",
+      "independent sets",
+      "combinatorial",
+      "decompose"
+    ],
+    "common_mistakes": [
+      "Confusing multi-valued dependency with multi-valued columns"
+    ],
+    "followups": [
+      "What is 5NF?",
+      "What is the difference between FD and MVD?",
+      "When does 4NF violation cause redundancy?"
+    ],
+    "roasts": {
+      "angry_staff": "Multi-valued dependency ≠ multi-valued column. MVD is about independent sets of values for same key.",
+      "strict_prof": "A multi-valued dependency A↠B implies A↠C for all other attributes C — the formal symmetric property.",
+      "faang_bar": "Good. Give a concrete table violating 4NF and show the decomposition.",
+      "startup_cto": "When in practice would you encounter a 4NF violation in a real application schema?"
+    }
+  },
+  {
+    "id": "dbms_norm_010",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What are update anomalies and how does normalization prevent them?",
+    "keywords": [
+      "insert anomaly",
+      "delete anomaly",
+      "update anomaly",
+      "redundancy",
+      "dependency",
+      "decomposition"
+    ],
+    "common_mistakes": [
+      "Only naming one type of anomaly"
+    ],
+    "followups": [
+      "Give a concrete example of a delete anomaly",
+      "How does 3NF prevent update anomalies?",
+      "What is the trade-off of normalization vs anomalies?"
+    ],
+    "roasts": {
+      "angry_staff": "Three anomalies. Insert, delete, update. You named one. List all three with examples.",
+      "strict_prof": "Each anomaly type has a formal definition — the inability to perform an operation without side effects.",
+      "faang_bar": "Good. Give me a concrete denormalized table and show all three anomaly types.",
+      "startup_cto": "Your schema causes a delete anomaly that loses vendor data. How do you fix it?"
+    }
+  },
+  {
+    "id": "dbms_norm_011",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is a primary key constraint?",
+    "keywords": [
+      "unique",
+      "NOT NULL",
+      "row identification",
+      "index",
+      "natural key",
+      "surrogate key"
+    ],
+    "common_mistakes": [
+      "Thinking primary key columns can be NULL"
+    ],
+    "followups": [
+      "What is the difference between PRIMARY KEY and UNIQUE constraint?",
+      "What is a surrogate key?",
+      "Can a primary key be a composite key?"
+    ],
+    "roasts": {
+      "angry_staff": "Primary key cannot be NULL. That's the first rule. You forgot it.",
+      "strict_prof": "The two constraints — uniqueness and non-nullability — are the formal definition of a primary key.",
+      "faang_bar": "Good. When would you use a composite primary key over a surrogate key?",
+      "startup_cto": "Your payments table uses a UUID primary key. What are the write performance implications?"
+    }
+  },
+  {
+    "id": "dbms_norm_012",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is a foreign key constraint?",
+    "keywords": [
+      "referential integrity",
+      "orphan records",
+      "CASCADE",
+      "RESTRICT",
+      "SET NULL",
+      "parent",
+      "child"
+    ],
+    "common_mistakes": [
+      "Not knowing about cascade actions",
+      "Thinking foreign keys are always required for relationships"
+    ],
+    "followups": [
+      "What is a cascading delete?",
+      "Should you always use foreign key constraints?",
+      "What is an orphan record?"
+    ],
+    "roasts": {
+      "angry_staff": "You said foreign key 'links tables.' It enforces REFERENTIAL INTEGRITY. Know what it actually does.",
+      "strict_prof": "The referential integrity constraint and its enforcement actions (CASCADE, RESTRICT, SET NULL) are core.",
+      "faang_bar": "Good. Why do high-scale applications sometimes drop foreign key constraints?",
+      "startup_cto": "Your cascade delete accidentally wiped 50K order records. What went wrong and how do you prevent it?"
+    }
+  },
+  {
+    "id": "dbms_norm_013",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is a lossless join decomposition?",
+    "keywords": [
+      "spurious tuples",
+      "natural join",
+      "R1 intersection R2",
+      "candidate key",
+      "lossless",
+      "lossy",
+      "decomposition"
+    ],
+    "common_mistakes": [
+      "Thinking all decompositions are lossless"
+    ],
+    "followups": [
+      "What is the condition for lossless join?",
+      "Can a lossless decomposition fail to preserve dependencies?",
+      "What is a dependency-preserving decomposition?"
+    ],
+    "roasts": {
+      "angry_staff": "Not all decompositions are lossless. That's literally the whole point of lossless join theory.",
+      "strict_prof": "The formal condition: R1∩R2 must be a superkey of R1 or R2 for lossless join.",
+      "faang_bar": "Good. Can a decomposition be lossless but not dependency-preserving? Give an example.",
+      "startup_cto": "When would a lossy decomposition cause real data problems in production?"
+    }
+  },
+  {
+    "id": "dbms_norm_014",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is the difference between OLTP and OLAP databases?",
+    "keywords": [
+      "OLTP",
+      "OLAP",
+      "row-oriented",
+      "column-oriented",
+      "normalized",
+      "denormalized",
+      "star schema",
+      "ETL"
+    ],
+    "common_mistakes": [
+      "Trying to use OLTP databases for analytical queries at scale"
+    ],
+    "followups": [
+      "What is a star schema?",
+      "What is column-oriented storage?",
+      "What is a data warehouse?"
+    ],
+    "roasts": {
+      "angry_staff": "Running analytical queries on your MySQL database is why your ops dashboard is slow. Use an OLAP system.",
+      "strict_prof": "The storage orientation (row vs column) is the fundamental architectural difference, not just the schema.",
+      "faang_bar": "Good. Why does column-oriented storage dramatically outperform row-oriented storage for aggregation queries?",
+      "startup_cto": "Your MySQL is slow because the BI team runs full-table scans. What's the right fix?"
+    }
+  },
+  {
+    "id": "dbms_norm_015",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is a composite key?",
+    "keywords": [
+      "multiple columns",
+      "combination unique",
+      "partial dependency",
+      "foreign key",
+      "order_items"
+    ],
+    "common_mistakes": [
+      "Thinking each column in a composite key must be unique"
+    ],
+    "followups": [
+      "How does a composite key relate to 2NF?",
+      "What are the disadvantages of composite primary keys?",
+      "When should you use a surrogate key instead?"
+    ],
+    "roasts": {
+      "angry_staff": "Individual columns in a composite key don't need to be unique. The COMBINATION must be unique.",
+      "strict_prof": "The composite key's relationship to partial dependencies (2NF) is the key normalization implication.",
+      "faang_bar": "Good. What are the foreign key implications of using composite primary keys across many tables?",
+      "startup_cto": "Your junction table uses a composite PK. Should you add a surrogate ID column? What's the trade-off?"
+    }
+  },
+  {
+    "id": "dbms_norm_016",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is a star schema and when is it used?",
+    "keywords": [
+      "fact table",
+      "dimension table",
+      "measures",
+      "denormalized",
+      "OLAP",
+      "data warehouse",
+      "snowflake schema"
+    ],
+    "common_mistakes": [
+      "Confusing star schema with OLTP normalized schema"
+    ],
+    "followups": [
+      "What is a snowflake schema?",
+      "What is a fact table vs dimension table?",
+      "Why is star schema faster for aggregation?"
+    ],
+    "roasts": {
+      "angry_staff": "Star schema is for DATA WAREHOUSES, not your transactional app. Context matters.",
+      "strict_prof": "Fact tables contain additive measures; dimension tables contain descriptive attributes. This distinction is formal.",
+      "faang_bar": "Good. What are slowly changing dimensions (SCD) and how do you handle them in a star schema?",
+      "startup_cto": "You need to add historical dimension data to your star schema without losing reporting accuracy. How?"
+    }
+  },
+  {
+    "id": "dbms_norm_017",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is a surrogate key vs natural key?",
+    "keywords": [
+      "natural key",
+      "surrogate key",
+      "UUID",
+      "auto-increment",
+      "stable",
+      "business meaning",
+      "index size"
+    ],
+    "common_mistakes": [
+      "Using email as a primary key (can change, long, hashing needed for indexes)"
+    ],
+    "followups": [
+      "What are the performance implications of UUID vs INT primary keys?",
+      "What is a natural key violation?",
+      "When would you use a natural key?"
+    ],
+    "roasts": {
+      "angry_staff": "Using email as a PK? What happens when a user changes their email? Cascading update nightmare.",
+      "strict_prof": "Stability and index efficiency are the formal criteria for evaluating natural vs surrogate keys.",
+      "faang_bar": "Good. How does using UUID v4 primary keys affect B-tree index fragmentation vs sequential integer keys?",
+      "startup_cto": "Your table has UUID primary keys and INSERT performance is degrading. What's happening and how do you fix it?"
+    }
+  },
+  {
+    "id": "dbms_norm_018",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is referential integrity?",
+    "keywords": [
+      "foreign key",
+      "parent",
+      "child",
+      "orphan records",
+      "CASCADE",
+      "RESTRICT",
+      "consistency"
+    ],
+    "common_mistakes": [
+      "Thinking referential integrity is automatically maintained without constraints"
+    ],
+    "followups": [
+      "What happens when you insert a row that violates referential integrity?",
+      "How do you fix orphan records?",
+      "Does referential integrity hurt performance?"
+    ],
+    "roasts": {
+      "angry_staff": "Referential integrity doesn't enforce itself. You need FK constraints. Without them, orphan records accumulate.",
+      "strict_prof": "Referential integrity is a database constraint ensuring every FK value references an existing PK.",
+      "faang_bar": "Good. Why do some high-scale systems (like Facebook) drop FK constraints and enforce integrity at application level?",
+      "startup_cto": "Your data migration left 50K orphan records in the orders table. How do you find and clean them?"
+    }
+  },
+  {
+    "id": "dbms_norm_019",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is domain integrity?",
+    "keywords": [
+      "data type",
+      "CHECK constraint",
+      "NOT NULL",
+      "ENUM",
+      "DEFAULT",
+      "valid values",
+      "domain"
+    ],
+    "common_mistakes": [
+      "Relying only on application-level validation without database constraints"
+    ],
+    "followups": [
+      "What is a CHECK constraint?",
+      "What is domain integrity vs entity integrity?",
+      "How does ENUM enforce domain integrity?"
+    ],
+    "roasts": {
+      "angry_staff": "Validating only in the application? What about direct SQL inserts? Database constraints are the last defense.",
+      "strict_prof": "Domain integrity, entity integrity, and referential integrity are the three types of database integrity.",
+      "faang_bar": "Good. What is the difference between CHECK constraints in PostgreSQL vs MySQL (historically)?",
+      "startup_cto": "Your age column has -5 stored in 200 rows. What constraint should you have added?"
+    }
+  },
+  {
+    "id": "dbms_norm_020",
+    "domain": "DBMS",
+    "subdomain": "Normalization",
+    "question": "What is schema migration and how do you handle it in production?",
+    "keywords": [
+      "versioned",
+      "Flyway",
+      "Liquibase",
+      "zero-downtime",
+      "backward compatible",
+      "ghost table",
+      "expand-contract",
+      "ALTER TABLE lock"
+    ],
+    "common_mistakes": [
+      "Running ALTER TABLE on a large production table without considering locking"
+    ],
+    "followups": [
+      "What is the expand-contract pattern?",
+      "How does gh-ost enable zero-downtime schema changes?",
+      "What is online DDL in MySQL?"
+    ],
+    "roasts": {
+      "angry_staff": "ALTER TABLE on a 500GB table in production? That locks the table for hours. Use gh-ost.",
+      "strict_prof": "The expand-contract pattern enables backward-compatible schema changes in multi-version deployments.",
+      "faang_bar": "Good. How does gh-ost implement zero-downtime ALTER TABLE for MySQL?",
+      "startup_cto": "You need to add a non-nullable column to a table with 100M rows. How do you do it without downtime?"
+    }
+  },
+  {
+    "id": "dbms_sql_001",
+    "domain": "DBMS",
+    "subdomain": "SQL",
+    "question": "What is the difference between WHERE and HAVING?",
+    "keywords": [
+      "GROUP BY",
+      "aggregate",
+      "filter rows",
+      "filter groups",
+      "COUNT",
+      "HAVING",
+      "WHERE"
+    ],
+    "common_mistakes": [
+      "Using HAVING to filter non-aggregated rows (inefficient, use WHERE instead)"
+    ],
+    "followups": [
+      "Can you use HAVING without GROUP BY?",
+      "What is the SQL query execution order?",
+      "Can WHERE use subqueries?"
+    ],
+    "roasts": {
+      "angry_staff": "WHERE filters ROWS, HAVING filters GROUPS. If you don't know the execution order, you'll write slow queries.",
+      "strict_prof": "The formal distinction follows from SQL's logical query processing order: WHERE→GROUP BY→HAVING.",
+      "faang_bar": "Good. What is SQL's logical processing order and why does it matter for query optimization?",
+      "startup_cto": "Show me a query that incorrectly uses HAVING where WHERE should be used and explain the performance impact."
+    }
+  },
+  {
+    "id": "dbms_sql_002",
+    "domain": "DBMS",
+    "subdomain": "SQL",
+    "question": "What is the difference between INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN?",
+    "keywords": [
+      "INNER JOIN",
+      "LEFT JOIN",
+      "NULL",
+      "matching",
+      "all rows",
+      "FULL OUTER"
+    ],
+    "common_mistakes": [
+      "Confusing LEFT JOIN result set with INNER JOIN"
+    ],
+    "followups": [
+      "What is a CROSS JOIN?",
+      "What is a self join?",
+      "How do NULL values affect JOIN results?"
+    ],
+    "roasts": {
+      "angry_staff": "You said LEFT JOIN returns matching rows only. It returns ALL left rows. NULLs for non-matches.",
+      "strict_prof": "Each join type has a formal set-theoretic definition. FULL OUTER is the union of LEFT and RIGHT joins.",
+      "faang_bar": "Good. How do NULL values in join columns affect INNER JOIN vs LEFT JOIN results?",
+      "startup_cto": "Write a query to find all users who have NOT placed any orders using a LEFT JOIN."
+    }
+  },
+  {
+    "id": "dbms_sql_003",
+    "domain": "DBMS",
+    "subdomain": "SQL",
+    "question": "What is a subquery and what are its types?",
+    "keywords": [
+      "nested query",
+      "scalar",
+      "correlated",
+      "EXISTS",
+      "IN",
+      "re-executed",
+      "outer query"
+    ],
+    "common_mistakes": [
+      "Using correlated subquery instead of JOIN (performance issue)",
+      "Using IN with NULL values (causes unexpected results)"
+    ],
+    "followups": [
+      "When is EXISTS faster than IN?",
+      "What is a lateral join?",
+      "How do correlated subqueries affect performance?"
+    ],
+    "roasts": {
+      "angry_staff": "A correlated subquery re-executes for EVERY outer row. For 1M rows, that's 1M subquery executions.",
+      "strict_prof": "The correlated subquery's dependency on the outer query's current row is its defining formal property.",
+      "faang_bar": "Good. When would EXISTS be faster than IN and why?",
+      "startup_cto": "Rewrite this correlated subquery as a JOIN: SELECT * FROM orders WHERE amount = (SELECT MAX(amount) FROM orders o2 WHERE o2.user_id = orders.user_id)"
+    }
+  },
+  {
+    "id": "dbms_sql_004",
+    "domain": "DBMS",
+    "subdomain": "SQL",
+    "question": "What are window functions and how do they differ from aggregate functions?",
+    "keywords": [
+      "OVER",
+      "PARTITION BY",
+      "ORDER BY",
+      "ROW_NUMBER",
+      "RANK",
+      "LAG",
+      "LEAD",
+      "running total",
+      "no collapsing"
+    ],
+    "common_mistakes": [
+      "Thinking window functions group rows like GROUP BY (they don't collapse rows)"
+    ],
+    "followups": [
+      "What is ROWS vs RANGE in window frame?",
+      "What is the difference between RANK and DENSE_RANK?",
+      "How do you compute a running total with window functions?"
+    ],
+    "roasts": {
+      "angry_staff": "Window functions do NOT collapse rows. If you think they're like GROUP BY, you've never actually used them.",
+      "strict_prof": "Window functions use the OVER clause with an optional window frame — formally distinct from set-based aggregation.",
+      "faang_bar": "Good. Write a query to compute a 7-day moving average of sales using window functions.",
+      "startup_cto": "Write a query to rank users by total spending within each country using RANK() OVER."
+    }
+  },
+  {
+    "id": "dbms_sql_005",
+    "domain": "DBMS",
+    "subdomain": "SQL",
+    "question": "What is a CTE (Common Table Expression) and when would you use it?",
+    "keywords": [
+      "WITH clause",
+      "temporary result",
+      "recursive",
+      "hierarchical",
+      "readable",
+      "multiple reference",
+      "non-recursive"
+    ],
+    "common_mistakes": [
+      "Thinking CTEs are always materialized/cached (in PostgreSQL, they may not be)"
+    ],
+    "followups": [
+      "What is a recursive CTE?",
+      "Are CTEs materialized in PostgreSQL?",
+      "When would you use a CTE vs a temporary table?"
+    ],
+    "roasts": {
+      "angry_staff": "CTEs are NOT always cached or materialized. PostgreSQL may inline them. Check the docs for your version.",
+      "strict_prof": "Recursive CTEs implement fixed-point iteration — formally different from non-recursive CTEs which are syntactic sugar.",
+      "faang_bar": "Good. Write a recursive CTE to traverse an employee hierarchy (employee_id, manager_id) and find all reports.",
+      "startup_cto": "Rewrite this triple-nested subquery as a CTE to improve readability: [complex query]"
+    }
+  },
+  {
+    "id": "dbms_sql_006",
+    "domain": "DBMS",
+    "subdomain": "SQL",
+    "question": "What is the difference between UNION and UNION ALL?",
+    "keywords": [
+      "duplicate removal",
+      "DISTINCT",
+      "UNION ALL",
+      "faster",
+      "compatible columns",
+      "combined result"
+    ],
+    "common_mistakes": [
+      "Using UNION when UNION ALL is correct (unnecessary dedup overhead)"
+    ],
+    "followups": [
+      "When would UNION be slower than a JOIN?",
+      "What is an INTERSECT?",
+      "What is an EXCEPT/MINUS?"
+    ],
+    "roasts": {
+      "angry_staff": "You used UNION when you should have used UNION ALL. You're doing an unnecessary sort+deduplicate.",
+      "strict_prof": "UNION implicitly applies DISTINCT to the combined set — the performance cost of hashing or sorting.",
+      "faang_bar": "Good. What is the algorithmic difference between how databases implement UNION deduplication vs UNION ALL?",
+      "startup_cto": "Your report query uses UNION to combine sales from two regions. Are duplicates possible? If not, what should you use?"
+    }
+  },
+  {
+    "id": "dbms_sql_007",
+    "domain": "DBMS",
+    "subdomain": "SQL",
+    "question": "What is query execution order in SQL?",
+    "keywords": [
+      "FROM",
+      "WHERE",
+      "GROUP BY",
+      "HAVING",
+      "SELECT",
+      "ORDER BY",
+      "LIMIT",
+      "logical order",
+      "alias"
+    ],
+    "common_mistakes": [
+      "Trying to use SELECT column aliases in WHERE clause",
+      "Using aggregate functions in WHERE instead of HAVING"
+    ],
+    "followups": [
+      "Why can't you use SELECT aliases in WHERE?",
+      "When can you use aliases in ORDER BY?",
+      "How does the physical execution order differ from logical?"
+    ],
+    "roasts": {
+      "angry_staff": "WHERE runs before SELECT. Your SELECT alias doesn't exist yet in WHERE. That's why you get an error.",
+      "strict_prof": "The logical query processing order is distinct from the physical execution order the optimizer may choose.",
+      "faang_bar": "Good. Why can some databases use SELECT aliases in ORDER BY but not in WHERE?",
+      "startup_cto": "Your query: SELECT COUNT(*) as cnt FROM orders WHERE cnt > 5 fails. Why and how do you fix it?"
+    }
+  },
+  {
+    "id": "dbms_sql_008",
+    "domain": "DBMS",
+    "subdomain": "SQL",
+    "question": "What is the difference between DELETE, TRUNCATE, and DROP?",
+    "keywords": [
+      "WHERE condition",
+      "logged",
+      "triggers",
+      "auto-increment",
+      "rollback",
+      "table structure",
+      "fast",
+      "DDL",
+      "DML"
+    ],
+    "common_mistakes": [
+      "Using DELETE to clear a large table (slow)",
+      "Thinking TRUNCATE always supports ROLLBACK (MySQL InnoDB does, TRUNCATE in PostgreSQL also does)"
+    ],
+    "followups": [
+      "Is TRUNCATE transactional in PostgreSQL?",
+      "What is the performance difference between DELETE and TRUNCATE?",
+      "What is a soft delete?"
+    ],
+    "roasts": {
+      "angry_staff": "DELETE on a 100M row table without WHERE is the slowest way to clear a table. Use TRUNCATE.",
+      "strict_prof": "DELETE is DML (logged, reversible); TRUNCATE is DDL-like (minimal logging); DROP removes schema objects.",
+      "faang_bar": "Good. Is TRUNCATE transactional and rollbackable in PostgreSQL? What about MySQL?",
+      "startup_cto": "You need to clear a 500M row staging table before reload. Which command and why?"
+    }
+  },
+  {
+    "id": "dbms_sql_009",
+    "domain": "DBMS",
+    "subdomain": "SQL",
+    "question": "What is a stored procedure?",
+    "keywords": [
+      "precompiled",
+      "named",
+      "reusable",
+      "network overhead",
+      "EXECUTE",
+      "query plan",
+      "coupling"
+    ],
+    "common_mistakes": [
+      "Putting all business logic in stored procedures (maintenance nightmare)"
+    ],
+    "followups": [
+      "What is the difference between a stored procedure and a function?",
+      "What is a trigger?",
+      "When would you use a stored procedure?"
+    ],
+    "roasts": {
+      "angry_staff": "Stored procedures in every table operation? Your codebase is now impossible to test or version control.",
+      "strict_prof": "The precompilation and query plan caching are the formal performance advantages of stored procedures.",
+      "faang_bar": "Good. What are the operational trade-offs of stored procedures in a microservices architecture?",
+      "startup_cto": "Your team wants to move all business logic to stored procs. What are your concerns?"
+    }
+  },
+  {
+    "id": "dbms_sql_010",
+    "domain": "DBMS",
+    "subdomain": "SQL",
+    "question": "What is an SQL view?",
+    "keywords": [
+      "virtual table",
+      "stored query",
+      "no data storage",
+      "simplify",
+      "security",
+      "materialized view",
+      "refresh",
+      "stale"
+    ],
+    "common_mistakes": [
+      "Thinking regular views improve performance (they don't — query runs every time)"
+    ],
+    "followups": [
+      "What is a materialized view?",
+      "Can you INSERT into a view?",
+      "What is an updatable view?"
+    ],
+    "roasts": {
+      "angry_staff": "Views don't cache data. They run the query every time. If performance is your goal, use a materialized view.",
+      "strict_prof": "A view is a named query expression; its evaluation occurs at each access — formally a virtual relation.",
+      "faang_bar": "Good. How does PostgreSQL implement materialized view refresh (REFRESH MATERIALIZED VIEW CONCURRENTLY)?",
+      "startup_cto": "Your reporting team uses a view over 5 large tables and it takes 30 seconds. What's the fix?"
+    }
+  },
+  {
+    "id": "dbms_tx_001",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What are the ACID properties?",
+    "keywords": [
+      "atomicity",
+      "consistency",
+      "isolation",
+      "durability",
+      "rollback",
+      "commit",
+      "WAL"
+    ],
+    "common_mistakes": [
+      "Confusing isolation levels with full isolation",
+      "Not knowing what durability means at the hardware level"
+    ],
+    "followups": [
+      "What are transaction isolation levels?",
+      "How does WAL implement durability?",
+      "What is the difference between consistency in ACID and CAP theorem?"
+    ],
+    "roasts": {
+      "angry_staff": "You said ACID is 'database safety.' That tells me nothing. Name and define all four.",
+      "strict_prof": "Each property has a formal definition. 'All-or-nothing' is acceptable for atomicity but the others need precision.",
+      "faang_bar": "Good. How does PostgreSQL implement each ACID property?",
+      "startup_cto": "Your payment service crashes mid-transaction. Which ACID property ensures no partial charges?"
+    }
+  },
+  {
+    "id": "dbms_tx_002",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What are transaction isolation levels and what anomalies do they prevent?",
+    "keywords": [
+      "read uncommitted",
+      "read committed",
+      "repeatable read",
+      "serializable",
+      "dirty read",
+      "phantom read",
+      "non-repeatable read"
+    ],
+    "common_mistakes": [
+      "Not knowing which anomaly each level prevents",
+      "Confusing repeatable read and serializable"
+    ],
+    "followups": [
+      "What is MVCC?",
+      "What is a phantom read vs non-repeatable read?",
+      "What isolation level does PostgreSQL use by default?"
+    ],
+    "roasts": {
+      "angry_staff": "You listed isolation levels but not the anomalies they prevent. That's the whole point.",
+      "strict_prof": "Four levels, three anomaly types — you must map each level to what it prevents and allows.",
+      "faang_bar": "Good. How does MySQL's Repeatable Read actually prevent phantom reads differently from the SQL standard?",
+      "startup_cto": "Your e-commerce checkout has a double-spend bug. Which isolation level would prevent it?"
+    }
+  },
+  {
+    "id": "dbms_tx_003",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is MVCC (Multi-Version Concurrency Control)?",
+    "keywords": [
+      "version",
+      "snapshot",
+      "transaction ID",
+      "readers don't block writers",
+      "vacuum",
+      "PostgreSQL",
+      "InnoDB"
+    ],
+    "common_mistakes": [
+      "Thinking MVCC is the same as optimistic locking",
+      "Not knowing about vacuum/purge overhead"
+    ],
+    "followups": [
+      "What is VACUUM in PostgreSQL?",
+      "How does MVCC cause table bloat?",
+      "How does MVCC implement snapshot isolation?"
+    ],
+    "roasts": {
+      "angry_staff": "You think MVCC means 'multiple copies.' It's about transaction snapshots. Define it properly.",
+      "strict_prof": "The mechanism — read your own snapshot, writers create new versions — must be described precisely.",
+      "faang_bar": "Good. What is table bloat in PostgreSQL and how does VACUUM address the MVCC version accumulation?",
+      "startup_cto": "Your PostgreSQL database has a table with 10GB of dead tuples. What happened and how do you fix it?"
+    }
+  },
+  {
+    "id": "dbms_tx_004",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is a deadlock in databases and how are they handled?",
+    "keywords": [
+      "wait-for graph",
+      "cycle",
+      "victim",
+      "rollback",
+      "lock",
+      "circular dependency"
+    ],
+    "common_mistakes": [
+      "Not knowing databases detect rather than prevent deadlocks",
+      "Not mentioning victim selection"
+    ],
+    "followups": [
+      "How does MySQL detect deadlocks?",
+      "What is a wait-die scheme?",
+      "How can you write code to minimize deadlock risk?"
+    ],
+    "roasts": {
+      "angry_staff": "You said 'wait for a timeout.' Databases detect deadlocks via wait-for graphs. Don't guess.",
+      "strict_prof": "The wait-for graph cycle detection algorithm is the formal mechanism — not timeout-based detection.",
+      "faang_bar": "Good. How does MySQL's deadlock detection decide which transaction to abort as the victim?",
+      "startup_cto": "Your app gets periodic 'Deadlock found when trying to get lock' errors. How do you fix the code?"
+    }
+  },
+  {
+    "id": "dbms_tx_005",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is a savepoint in a transaction?",
+    "keywords": [
+      "named point",
+      "partial rollback",
+      "ROLLBACK TO",
+      "SAVEPOINT",
+      "nested transaction",
+      "error recovery"
+    ],
+    "common_mistakes": [
+      "Thinking rollback to savepoint commits changes before the savepoint"
+    ],
+    "followups": [
+      "How do ORMs use savepoints for nested transactions?",
+      "What is the difference between a savepoint and a nested transaction?",
+      "How does Django use savepoints?"
+    ],
+    "roasts": {
+      "angry_staff": "You said savepoints are 'checkpoints.' They're rollback points within a transaction. Different concept.",
+      "strict_prof": "The SAVEPOINT/ROLLBACK TO/RELEASE sequence must be clearly articulated.",
+      "faang_bar": "Good. How does SQLAlchemy use savepoints to implement nested transactions?",
+      "startup_cto": "In your ORM, when would you explicitly create a savepoint vs just using a full rollback?"
+    }
+  },
+  {
+    "id": "dbms_tx_006",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is a dirty read?",
+    "keywords": [
+      "uncommitted",
+      "rollback",
+      "Read Uncommitted",
+      "Read Committed",
+      "isolation level"
+    ],
+    "common_mistakes": [
+      "Confusing dirty read with non-repeatable read"
+    ],
+    "followups": [
+      "What isolation level allows dirty reads?",
+      "What is a non-repeatable read?",
+      "When would you use Read Uncommitted despite dirty reads?"
+    ],
+    "roasts": {
+      "angry_staff": "You said 'reading wrong data.' A dirty read specifically reads UNCOMMITTED data. Be precise.",
+      "strict_prof": "The formal definition requires specifying the uncommitted state and what happens if the writer rolls back.",
+      "faang_bar": "Good. Is there any practical use case for Read Uncommitted isolation level despite dirty reads?",
+      "startup_cto": "Which isolation level does your PostgreSQL use by default and does it prevent dirty reads?"
+    }
+  },
+  {
+    "id": "dbms_tx_007",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is two-phase locking (2PL)?",
+    "keywords": [
+      "growing phase",
+      "shrinking phase",
+      "serializability",
+      "Strict 2PL",
+      "cascading rollback",
+      "deadlock"
+    ],
+    "common_mistakes": [
+      "Confusing 2PL with two-phase commit (2PC)",
+      "Not knowing what 'strict' adds to 2PL"
+    ],
+    "followups": [
+      "What is the difference between 2PL and 2PC?",
+      "Why does 2PL prevent serializability conflicts?",
+      "What is conservative 2PL?"
+    ],
+    "roasts": {
+      "angry_staff": "2PL and 2PC are DIFFERENT PROTOCOLS. Don't confuse them. 2PL is about locks, 2PC is about distributed commits.",
+      "strict_prof": "The formal two-phase structure — growing then shrinking — with its implications for serializability must be stated.",
+      "faang_bar": "Good. Why does strict 2PL prevent cascading rollbacks while basic 2PL does not?",
+      "startup_cto": "If 2PL can cause deadlocks, why do databases still use it?"
+    }
+  },
+  {
+    "id": "dbms_tx_008",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is two-phase commit (2PC) in distributed databases?",
+    "keywords": [
+      "coordinator",
+      "participants",
+      "prepare",
+      "commit",
+      "abort",
+      "blocking problem",
+      "vote",
+      "distributed"
+    ],
+    "common_mistakes": [
+      "Confusing 2PC with 2PL",
+      "Not knowing the blocking problem of 2PC"
+    ],
+    "followups": [
+      "What is the blocking problem in 2PC?",
+      "How does 3PC address 2PC's blocking issue?",
+      "What does Google Spanner use instead of 2PC?"
+    ],
+    "roasts": {
+      "angry_staff": "2PC and 2PL are NOT the same. One is locks, one is distributed commit coordination.",
+      "strict_prof": "The blocking problem — participants stuck in uncertain state when coordinator fails — is the critical limitation.",
+      "faang_bar": "Good. Why is 2PC called 'blocking' and how does Paxos-based commit address this?",
+      "startup_cto": "Your microservice uses distributed transactions with 2PC. The coordinator crashes. What happens?"
+    }
+  },
+  {
+    "id": "dbms_tx_009",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is the difference between optimistic and pessimistic concurrency control?",
+    "keywords": [
+      "locks",
+      "conflict",
+      "validation",
+      "version",
+      "high contention",
+      "low contention",
+      "abort retry",
+      "MVCC"
+    ],
+    "common_mistakes": [
+      "Thinking OCC is always better (bad for high contention)",
+      "Not knowing MVCC is optimistic"
+    ],
+    "followups": [
+      "What is the validation phase in OCC?",
+      "How does write skew occur in OCC?",
+      "When does OCC outperform pessimistic locking?"
+    ],
+    "roasts": {
+      "angry_staff": "MVCC is optimistic CC. If you know MVCC but not OCC, you know it without knowing you know it.",
+      "strict_prof": "The three phases of OCC — read, validate, write — are the formal definition.",
+      "faang_bar": "Good. How can write skew anomaly occur in optimistic concurrency control?",
+      "startup_cto": "Your inventory system has high contention on stock counts. Optimistic or pessimistic CC?"
+    }
+  },
+  {
+    "id": "dbms_tx_010",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is write-ahead logging (WAL) and how does it ensure durability?",
+    "keywords": [
+      "sequential log",
+      "fsync",
+      "checkpoint",
+      "replay",
+      "crash recovery",
+      "redo",
+      "undo",
+      "data page"
+    ],
+    "common_mistakes": [
+      "Thinking WAL and data pages are fsynced together on every commit"
+    ],
+    "followups": [
+      "What is checkpointing in WAL?",
+      "What is the redo log vs undo log in MySQL?",
+      "How does WAL enable point-in-time recovery?"
+    ],
+    "roasts": {
+      "angry_staff": "You said WAL 'logs changes.' The KEY insight is it's sequential and allows crash recovery. Explain that.",
+      "strict_prof": "The guarantee: log is fsynced before data page modification, enabling redo/undo recovery.",
+      "faang_bar": "Good. How does PostgreSQL use WAL for streaming replication to a standby?",
+      "startup_cto": "Your PostgreSQL crashes. The data directory is intact but WAL is corrupted. What's recoverable?"
+    }
+  },
+  {
+    "id": "dbms_tx_011",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is a transaction rollback?",
+    "keywords": [
+      "undo",
+      "revert",
+      "state before",
+      "error",
+      "ROLLBACK",
+      "undo log",
+      "locks released"
+    ],
+    "common_mistakes": [
+      "Thinking rollback is just erasing data (it uses undo logs)"
+    ],
+    "followups": [
+      "How does an undo log enable rollback?",
+      "What is the difference between rollback and rollforward?",
+      "When does a database auto-rollback?"
+    ],
+    "roasts": {
+      "angry_staff": "You said rollback 'deletes the changes.' It uses UNDO LOGS to reverse them. There's a difference.",
+      "strict_prof": "Rollback is implemented via undo log traversal, not deletion. The mechanism matters.",
+      "faang_bar": "Good. What happens to in-flight queries when a long-running transaction is rolled back?",
+      "startup_cto": "Your app rolled back a payment transaction but the user still got charged. What went wrong?"
+    }
+  },
+  {
+    "id": "dbms_tx_012",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is the difference between serializable and snapshot isolation?",
+    "keywords": [
+      "serializable",
+      "snapshot",
+      "write skew",
+      "SSI",
+      "read snapshot",
+      "concurrent writes",
+      "anomaly"
+    ],
+    "common_mistakes": [
+      "Thinking snapshot isolation = serializable (write skew is possible in snapshot isolation)"
+    ],
+    "followups": [
+      "What is write skew?",
+      "How does PostgreSQL's SSI work?",
+      "What is a lost update vs write skew?"
+    ],
+    "roasts": {
+      "angry_staff": "Snapshot isolation ≠ serializable. Write skew. Look it up.",
+      "strict_prof": "Write skew — the defining anomaly allowed in snapshot but not serializable — was absent.",
+      "faang_bar": "Good. Give me a concrete write skew example with two concurrent transactions.",
+      "startup_cto": "Your hospital app uses snapshot isolation for scheduling. A write skew bug double-books a surgeon. Explain."
+    }
+  },
+  {
+    "id": "dbms_tx_013",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is a checkpoint in database recovery?",
+    "keywords": [
+      "dirty pages",
+      "buffer pool",
+      "WAL position",
+      "recovery time",
+      "flush",
+      "fuzzy checkpoint"
+    ],
+    "common_mistakes": [
+      "Thinking checkpoints eliminate all WAL since the beginning"
+    ],
+    "followups": [
+      "What is a fuzzy checkpoint?",
+      "How does checkpoint frequency affect recovery time?",
+      "How does PostgreSQL implement checkpoints?"
+    ],
+    "roasts": {
+      "angry_staff": "You said checkpoint 'saves the database.' It flushes dirty pages and marks WAL position. Be precise.",
+      "strict_prof": "A checkpoint formally bounds the WAL replay window during crash recovery.",
+      "faang_bar": "Good. What is the tradeoff between checkpoint frequency and I/O overhead vs recovery time?",
+      "startup_cto": "Your PostgreSQL checkpoint_completion_target is 0.5. Should it be higher or lower and why?"
+    }
+  },
+  {
+    "id": "dbms_tx_014",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is a lock in a database?",
+    "keywords": [
+      "shared lock",
+      "exclusive lock",
+      "row-level",
+      "table-level",
+      "concurrency",
+      "S-lock",
+      "X-lock"
+    ],
+    "common_mistakes": [
+      "Thinking all databases use table-level locking"
+    ],
+    "followups": [
+      "What is an intention lock?",
+      "What is a gap lock in MySQL?",
+      "What is lock escalation?"
+    ],
+    "roasts": {
+      "angry_staff": "You said 'lock prevents access.' Shared locks allow concurrent reads. Learn the difference.",
+      "strict_prof": "Shared vs exclusive lock semantics and their compatibility matrix must be addressed.",
+      "faang_bar": "Good. What is MySQL InnoDB's gap lock and when is it acquired?",
+      "startup_cto": "Your SELECT statement is blocking updates. What lock type is it holding?"
+    }
+  },
+  {
+    "id": "dbms_tx_015",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is a phantom read and how does Serializable isolation prevent it?",
+    "keywords": [
+      "range query",
+      "new rows",
+      "phantom",
+      "predicate locking",
+      "gap lock",
+      "Serializable",
+      "insert"
+    ],
+    "common_mistakes": [
+      "Confusing phantom reads with non-repeatable reads (phantom = new rows, non-repeatable = changed existing rows)"
+    ],
+    "followups": [
+      "What is predicate locking?",
+      "How does MySQL's gap lock prevent phantom reads?",
+      "What is a next-key lock?"
+    ],
+    "roasts": {
+      "angry_staff": "Non-repeatable reads change EXISTING rows. Phantom reads add NEW rows. Different things.",
+      "strict_prof": "The formal distinction: phantoms arise from INSERT/DELETE by others, non-repeatable from UPDATE.",
+      "faang_bar": "Good. How does MySQL InnoDB use next-key locks to prevent phantom reads at Repeatable Read level?",
+      "startup_cto": "Your report query runs twice in a transaction and gets different row counts. What anomaly is this?"
+    }
+  },
+  {
+    "id": "dbms_tx_016",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is a lost update and how is it prevented?",
+    "keywords": [
+      "overwrite",
+      "SELECT FOR UPDATE",
+      "version number",
+      "optimistic locking",
+      "atomic operation",
+      "concurrent update"
+    ],
+    "common_mistakes": [
+      "Thinking Read Committed prevents lost updates (it doesn't fully)"
+    ],
+    "followups": [
+      "Does Repeatable Read prevent lost updates?",
+      "How does SELECT FOR UPDATE work?",
+      "What is an atomic increment in SQL?"
+    ],
+    "roasts": {
+      "angry_staff": "You said 'use a transaction.' A plain transaction doesn't prevent lost updates. You need locks or versions.",
+      "strict_prof": "Lost update requires either pessimistic lock (SELECT FOR UPDATE) or optimistic version check at write time.",
+      "faang_bar": "Good. Does PostgreSQL Repeatable Read prevent lost updates? Explain why or why not.",
+      "startup_cto": "Your bank transfer code has a lost update bug. Show me the wrong query and the fix."
+    }
+  },
+  {
+    "id": "dbms_tx_017",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is a non-repeatable read?",
+    "keywords": [
+      "same row",
+      "different value",
+      "modified",
+      "committed",
+      "Repeatable Read",
+      "inconsistent"
+    ],
+    "common_mistakes": [
+      "Confusing with phantom reads (phantom = new rows, non-repeatable = changed existing row)"
+    ],
+    "followups": [
+      "What isolation level prevents non-repeatable reads?",
+      "How is a non-repeatable read different from a phantom read?",
+      "How does MVCC prevent non-repeatable reads?"
+    ],
+    "roasts": {
+      "angry_staff": "Phantom reads add new rows. Non-repeatable reads change existing rows. Not the same anomaly.",
+      "strict_prof": "The formal definition: same-row, same-transaction read returning different committed values.",
+      "faang_bar": "Good. How does MVCC implement Repeatable Read to prevent this anomaly?",
+      "startup_cto": "Your dashboard query shows different user counts when refreshed within the same report job. What anomaly?"
+    }
+  },
+  {
+    "id": "dbms_tx_018",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is SELECT FOR UPDATE?",
+    "keywords": [
+      "exclusive lock",
+      "pessimistic",
+      "concurrent update",
+      "wait",
+      "commit",
+      "lost update prevention"
+    ],
+    "common_mistakes": [
+      "Using SELECT FOR UPDATE for read-only operations (unnecessary overhead)"
+    ],
+    "followups": [
+      "What is SELECT FOR SHARE?",
+      "What happens if SELECT FOR UPDATE times out?",
+      "How do you avoid deadlocks with SELECT FOR UPDATE?"
+    ],
+    "roasts": {
+      "angry_staff": "You use SELECT FOR UPDATE on every select? That's a performance disaster. Use it only when writing.",
+      "strict_prof": "The exclusive lock semantics and its necessity for preventing concurrent write conflicts must be stated.",
+      "faang_bar": "Good. How would you use SELECT FOR UPDATE in a ticket booking system to prevent double-booking?",
+      "startup_cto": "Your SELECT FOR UPDATE is causing a 10-second lock wait. What's the likely cause?"
+    }
+  },
+  {
+    "id": "dbms_tx_019",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is distributed transaction management and what are its challenges?",
+    "keywords": [
+      "2PC",
+      "Saga",
+      "CAP theorem",
+      "network partition",
+      "coordinator",
+      "compensating transaction",
+      "Spanner"
+    ],
+    "common_mistakes": [
+      "Thinking 2PC fully solves distributed transactions (it has blocking failure mode)"
+    ],
+    "followups": [
+      "What is the Saga pattern?",
+      "How does Google Spanner achieve distributed ACID?",
+      "What is the XA protocol?"
+    ],
+    "roasts": {
+      "angry_staff": "2PC doesn't fully solve it. Coordinator failure = blocking. That's why Saga and Spanner exist.",
+      "strict_prof": "The CAP theorem fundamentally limits ACID guarantees in the presence of network partitions.",
+      "faang_bar": "Good. How does the Saga pattern handle partial failures without distributed locks?",
+      "startup_cto": "Your microservices use the Saga pattern for order fulfillment. How do you handle the compensation step failing?"
+    }
+  },
+  {
+    "id": "dbms_tx_020",
+    "domain": "DBMS",
+    "subdomain": "Transactions",
+    "question": "What is the difference between optimistic locking and pessimistic locking in practice?",
+    "keywords": [
+      "SELECT FOR UPDATE",
+      "version column",
+      "retry",
+      "conflict",
+      "block",
+      "scalable",
+      "high contention"
+    ],
+    "common_mistakes": [
+      "Using optimistic locking for high-contention rows (infinite retries)"
+    ],
+    "followups": [
+      "How does Hibernate implement optimistic locking?",
+      "What is the maximum retry limit for optimistic locking?",
+      "When does optimistic locking cause a 'thundering herd'?"
+    ],
+    "roasts": {
+      "angry_staff": "Optimistic locking with high contention = infinite retry storms. Context matters.",
+      "strict_prof": "The version column check and its conditional UPDATE are the formal implementation of optimistic locking.",
+      "faang_bar": "Good. How does Spring's @Version annotation implement optimistic locking in JPA/Hibernate?",
+      "startup_cto": "Your flash sale has 10K users hitting the same inventory row. Optimistic or pessimistic? Why?"
+    }
   }
 ]

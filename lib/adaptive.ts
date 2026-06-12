@@ -5,24 +5,10 @@ import { Question, Domain, TopicMastery } from "@/types";
 const questionCache: Map<string, Question[]> = new Map();
 
 const DOMAIN_FILES: Record<string, string[]> = {
-  "Operating Systems": [
-    "/data/os/all.json",
-    "/data/os/memory.json",
-    "/data/os/processes.json",
-    "/data/os/scheduling.json",
-    "/data/os/synchronization.json",
-    "/data/os/io.json",
-  ],
-  "DBMS & SQL": [
-    "/data/dbms/all.json",
-    "/data/dbms/transactions.json",
-    "/data/dbms/normalization.json",
-    "/data/dbms/indexing.json",
-    "/data/dbms/sql.json",
-    "/data/dbms/concurrency.json",
-  ],
-  "Computer Networks": ["/data/cn/all.json", "/data/cn/osi.json"],
-  "OOP": ["/data/oop/all.json", "/data/oop/principles.json"],
+  "Operating Systems": ["/data/os/all.json"],
+  "DBMS & SQL": ["/data/dbms/all.json"],
+  "Computer Networks": ["/data/cn/all.json"],
+  "OOP": ["/data/oop/all.json"],
   "DSA": ["/data/dsa/all.json"],
   "Software Engineering": ["/data/software_engineering/all.json"],
   "System Design": ["/data/system_design/all.json"],

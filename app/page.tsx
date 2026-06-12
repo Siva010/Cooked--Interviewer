@@ -28,7 +28,7 @@ async function countQuestions(dir: string, counts: Record<string, number>): Prom
             const fullPath = path.join(dir, entry.name);
             if (entry.isDirectory()) {
                 return await countQuestions(fullPath, counts);
-            } else if (entry.isFile() && fullPath.endsWith('.json')) {
+            } else if (entry.isFile() && entry.name === 'all.json') {
                 try {
                     const content = await fs.promises.readFile(fullPath, 'utf8');
                     const arr = JSON.parse(content);

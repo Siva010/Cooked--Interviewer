@@ -3650,5 +3650,2987 @@
       "faang_bar": "Good, let's move to something more complex.",
       "startup_cto": "Just give me the TL;DR so we can ship."
     }
+  },
+  {
+    "id": "os_io_001",
+    "domain": "Operating Systems",
+    "subdomain": "I/O Systems",
+    "question": "What is the difference between synchronous and asynchronous I/O?",
+    "keywords": [
+      "blocking",
+      "non-blocking",
+      "callback",
+      "notification",
+      "io_uring",
+      "IOCP",
+      "event loop",
+      "CPU utilization"
+    ],
+    "common_mistakes": [
+      "Confusing async I/O with non-blocking I/O (they're related but distinct)"
+    ],
+    "followups": [
+      "What is io_uring and why is it faster than epoll?",
+      "How does Node.js implement async I/O?",
+      "What is the difference between async I/O and non-blocking I/O?"
+    ],
+    "roasts": {
+      "angry_staff": "You confused async with non-blocking. Non-blocking means the call returns immediately. Async means the OS notifies you when done.",
+      "strict_prof": "The notification mechanism (callback vs poll vs signal) distinguishes async I/O implementations.",
+      "faang_bar": "Good. How does io_uring improve on epoll for high-throughput I/O?",
+      "startup_cto": "Your API server does 10K concurrent requests. Would you use sync or async I/O? Why?"
+    }
+  },
+  {
+    "id": "os_io_002",
+    "domain": "Operating Systems",
+    "subdomain": "I/O Systems",
+    "question": "What is DMA (Direct Memory Access) and why is it important?",
+    "keywords": [
+      "peripheral",
+      "RAM",
+      "CPU-free transfer",
+      "interrupt",
+      "DMA controller",
+      "throughput",
+      "polling"
+    ],
+    "common_mistakes": [
+      "Thinking DMA means no CPU involvement at all (CPU still sets it up and handles completion)"
+    ],
+    "followups": [
+      "What is IOMMU and how does it protect against DMA attacks?",
+      "What is zero-copy I/O?",
+      "How does DMA interact with CPU caches?"
+    ],
+    "roasts": {
+      "angry_staff": "DMA doesn't eliminate CPU involvement. Setup and interrupt handling still require it.",
+      "strict_prof": "The DMA controller as a separate hardware unit must be identified as the transfer agent.",
+      "faang_bar": "Good. How does IOMMU protect against malicious DMA attacks (e.g., from PCIe devices)?",
+      "startup_cto": "How does DMA relate to zero-copy networking in your high-throughput service?"
+    }
+  },
+  {
+    "id": "os_io_003",
+    "domain": "Operating Systems",
+    "subdomain": "I/O Systems",
+    "question": "What is buffered I/O vs unbuffered I/O?",
+    "keywords": [
+      "buffer",
+      "syscall overhead",
+      "fread",
+      "O_DIRECT",
+      "page cache",
+      "flush",
+      "libc"
+    ],
+    "common_mistakes": [
+      "Thinking buffered I/O is always better",
+      "Not knowing about O_DIRECT for bypassing the page cache"
+    ],
+    "followups": [
+      "What is O_DIRECT and why do databases use it?",
+      "What happens if you don't flush a buffered output stream?",
+      "How does the kernel page cache relate to buffered I/O?"
+    ],
+    "roasts": {
+      "angry_staff": "You didn't mention O_DIRECT. Databases use it for a reason. Why?",
+      "strict_prof": "The distinction between libc-level buffering and kernel-level page caching is crucial.",
+      "faang_bar": "Good. Why does PostgreSQL use O_DIRECT in some configurations?",
+      "startup_cto": "Your service writes logs to disk. Buffered or unbuffered? What's the failure mode of each?"
+    }
+  },
+  {
+    "id": "os_io_004",
+    "domain": "Operating Systems",
+    "subdomain": "I/O Systems",
+    "question": "What is epoll and how does it improve on select/poll?",
+    "keywords": [
+      "O(n)",
+      "O(1)",
+      "event table",
+      "ready events",
+      "epoll_ctl",
+      "epoll_wait",
+      "edge-triggered",
+      "level-triggered"
+    ],
+    "common_mistakes": [
+      "Not explaining why select/poll scale poorly",
+      "Forgetting edge-triggered vs level-triggered modes"
+    ],
+    "followups": [
+      "What is edge-triggered vs level-triggered epoll?",
+      "What is kqueue on BSD/macOS?",
+      "How does io_uring compare to epoll?"
+    ],
+    "roasts": {
+      "angry_staff": "You said epoll is 'faster.' Explain WHY it's O(ready events) not O(total FDs). That's the reason.",
+      "strict_prof": "The algorithmic complexity difference (O(n) vs O(ready)) is the formal justification.",
+      "faang_bar": "Good. What is edge-triggered epoll and how can it cause bugs if not handled correctly?",
+      "startup_cto": "Nginx uses epoll for 10K connections. How does it interact with the event loop architecture?"
+    }
+  },
+  {
+    "id": "os_io_005",
+    "domain": "Operating Systems",
+    "subdomain": "I/O Systems",
+    "question": "What is zero-copy I/O and how does sendfile() implement it?",
+    "keywords": [
+      "kernel buffer",
+      "user space",
+      "copy",
+      "sendfile",
+      "socket buffer",
+      "context switch",
+      "DMA"
+    ],
+    "common_mistakes": [
+      "Thinking zero-copy means NO copying (kernel-to-kernel copy may still occur)"
+    ],
+    "followups": [
+      "What is splice() and how does it relate to sendfile()?",
+      "How does Kafka use zero-copy for message delivery?",
+      "What is the difference between sendfile() and mmap()+write()?"
+    ],
+    "roasts": {
+      "angry_staff": "Zero-copy doesn't mean ZERO copies. It means zero user-space copies. There's a difference.",
+      "strict_prof": "The formal mechanism requires specifying what copies are eliminated and which may remain.",
+      "faang_bar": "Good. How does Kafka's sendfile() usage help it achieve millions of messages/second?",
+      "startup_cto": "How would you verify that your file-serving code is actually using zero-copy?"
+    }
+  },
+  {
+    "id": "os_io_006",
+    "domain": "Operating Systems",
+    "subdomain": "I/O Systems",
+    "question": "What is the kernel page cache?",
+    "keywords": [
+      "cache",
+      "dirty pages",
+      "write-back",
+      "memory pressure",
+      "O_DIRECT",
+      "storage",
+      "RAM",
+      "reclaim"
+    ],
+    "common_mistakes": [
+      "Thinking the page cache is separate from RAM",
+      "Not knowing about dirty pages and write-back"
+    ],
+    "followups": [
+      "What is writeback and fsync()?",
+      "What is /proc/sys/vm/dirty_ratio?",
+      "How does the OS reclaim page cache under memory pressure?"
+    ],
+    "roasts": {
+      "angry_staff": "You didn't mention dirty pages. Where do writes go when the page cache is involved?",
+      "strict_prof": "The write-back mechanism with dirty page tracking is central to page cache correctness.",
+      "faang_bar": "Good. What happens if a system crashes with dirty pages before fsync?",
+      "startup_cto": "Your service uses 50GB of RAM but only 10GB is your app — where did the rest go?"
+    }
+  },
+  {
+    "id": "os_io_007",
+    "domain": "Operating Systems",
+    "subdomain": "I/O Systems",
+    "question": "What is fsync() and why is it important for data durability?",
+    "keywords": [
+      "durability",
+      "dirty pages",
+      "flush",
+      "ACID",
+      "crash",
+      "transaction commit",
+      "fdatasync",
+      "storage"
+    ],
+    "common_mistakes": [
+      "Thinking write() guarantees data is on disk",
+      "Forgetting that fsync() is expensive"
+    ],
+    "followups": [
+      "What is the difference between fsync() and fdatasync()?",
+      "What is write-ahead logging?",
+      "How does PostgreSQL use fsync() for durability?"
+    ],
+    "roasts": {
+      "angry_staff": "You said write() writes to disk. It writes to the PAGE CACHE. fsync() is what hits the disk.",
+      "strict_prof": "The durability guarantee of fsync() vs the unreliability of plain write() must be contrasted.",
+      "faang_bar": "Good. What happens to database durability if fsync() is disabled during benchmarking?",
+      "startup_cto": "Your database server has a power outage. Which data is lost if you didn't use fsync?"
+    }
+  },
+  {
+    "id": "os_io_008",
+    "domain": "Operating Systems",
+    "subdomain": "I/O Systems",
+    "question": "What is io_uring and how does it differ from epoll?",
+    "keywords": [
+      "ring buffer",
+      "submission queue",
+      "completion queue",
+      "SQPOLL",
+      "batch",
+      "network and file",
+      "zero syscall"
+    ],
+    "common_mistakes": [
+      "Thinking io_uring is just 'faster epoll' (it's architecturally different)"
+    ],
+    "followups": [
+      "What is SQPOLL mode in io_uring?",
+      "How does io_uring support file I/O where epoll cannot?",
+      "What security vulnerabilities have been found in io_uring?"
+    ],
+    "roasts": {
+      "angry_staff": "io_uring is NOT 'faster epoll.' The architecture is completely different. Explain the ring buffers.",
+      "strict_prof": "The submission/completion queue model and its elimination of per-operation syscalls is the key innovation.",
+      "faang_bar": "Good. How does io_uring's SQPOLL mode eliminate all syscalls during steady-state operation?",
+      "startup_cto": "Cloudflare switched parts of their stack to io_uring. What throughput improvements should they expect?"
+    }
+  },
+  {
+    "id": "os_io_009",
+    "domain": "Operating Systems",
+    "subdomain": "I/O Systems",
+    "question": "What are the three I/O wait strategies: programmed I/O, interrupt-driven I/O, and DMA?",
+    "keywords": [
+      "polling",
+      "interrupt",
+      "DMA controller",
+      "status register",
+      "bulk transfer",
+      "overhead",
+      "CPU efficiency"
+    ],
+    "common_mistakes": [
+      "Thinking polling is always bad (for fast NVMe devices, polling can be better)"
+    ],
+    "followups": [
+      "When is polling better than interrupt-driven I/O?",
+      "What is interrupt coalescing?",
+      "How does NVMe use polling for ultra-low latency?"
+    ],
+    "roasts": {
+      "angry_staff": "You said polling is always bad. For NVMe SSDs, polling can be FASTER. Context matters.",
+      "strict_prof": "The three strategies form a hierarchy based on transfer size and device speed.",
+      "faang_bar": "Good. When would you use polling over interrupts for a high-speed NVMe device?",
+      "startup_cto": "How does interrupt coalescing in network cards affect your application's latency?"
+    }
+  },
+  {
+    "id": "os_io_010",
+    "domain": "Operating Systems",
+    "subdomain": "I/O Systems",
+    "question": "What is the difference between character and block devices in Linux?",
+    "keywords": [
+      "block",
+      "character",
+      "random access",
+      "sequential",
+      "page cache",
+      "sector",
+      "I/O scheduling",
+      "/dev"
+    ],
+    "common_mistakes": [
+      "Thinking SSDs are character devices",
+      "Not knowing about the block device I/O scheduler"
+    ],
+    "followups": [
+      "What I/O schedulers exist in Linux?",
+      "What is a raw device?",
+      "How does the block layer handle I/O merging?"
+    ],
+    "roasts": {
+      "angry_staff": "SSDs are BLOCK devices. They support random access. Character devices are sequential only.",
+      "strict_prof": "The block device layer's role in I/O scheduling and caching distinguishes it from character devices.",
+      "faang_bar": "Good. What I/O scheduler would you use for SSDs and why is CFQ wrong for them?",
+      "startup_cto": "How does the block device layer affect your database's write amplification?"
+    }
+  },
+  {
+    "id": "os_io_011",
+    "domain": "Operating Systems",
+    "subdomain": "I/O Systems",
+    "question": "What is write-ahead logging (WAL) and how does it relate to I/O?",
+    "keywords": [
+      "sequential log",
+      "fsync",
+      "replay",
+      "crash recovery",
+      "sequential I/O",
+      "random I/O",
+      "atomicity",
+      "durability"
+    ],
+    "common_mistakes": [
+      "Not knowing why sequential WAL writes are faster than random data writes"
+    ],
+    "followups": [
+      "What is checkpointing in WAL?",
+      "How does WAL enable MVCC?",
+      "What is the redo log vs undo log in InnoDB?"
+    ],
+    "roasts": {
+      "angry_staff": "You described WAL but not WHY sequential writes are faster. That's the performance insight.",
+      "strict_prof": "WAL implements both the A and D in ACID. The I/O implications of sequential vs random writes must be addressed.",
+      "faang_bar": "Good. How does PostgreSQL's WAL enable streaming replication?",
+      "startup_cto": "Your SQLite database is corrupted after a power outage. How does WAL protect against this?"
+    }
+  },
+  {
+    "id": "os_io_012",
+    "domain": "Operating Systems",
+    "subdomain": "I/O Systems",
+    "question": "What is I/O scheduling and what are the common disk schedulers?",
+    "keywords": [
+      "reorder",
+      "merge",
+      "NOOP",
+      "CFQ",
+      "Deadline",
+      "BFQ",
+      "seek time",
+      "SSD",
+      "HDD"
+    ],
+    "common_mistakes": [
+      "Using CFQ on SSDs (wrong choice)",
+      "Not knowing that seek time is the primary reason for I/O scheduling on HDDs"
+    ],
+    "followups": [
+      "Why is NOOP better than CFQ for SSDs?",
+      "What is the elevator algorithm for HDD scheduling?",
+      "How do you check and change the I/O scheduler in Linux?"
+    ],
+    "roasts": {
+      "angry_staff": "You'd use CFQ on an SSD? CFQ is HDD-optimized. SSDs don't have seek time. Use NOOP.",
+      "strict_prof": "The rationale for scheduling — minimizing rotational delay and seek time — applies only to HDDs.",
+      "faang_bar": "Good. How does BFQ improve on CFQ for mixed SSD/HDD workloads?",
+      "startup_cto": "How do you change the I/O scheduler for your NVMe disks in production?"
+    }
+  },
+  {
+    "id": "os_io_013",
+    "domain": "Operating Systems",
+    "subdomain": "I/O Systems",
+    "question": "What is a file descriptor in Unix?",
+    "keywords": [
+      "integer",
+      "kernel table",
+      "stdin",
+      "stdout",
+      "stderr",
+      "open",
+      "per-process",
+      "ulimit"
+    ],
+    "common_mistakes": [
+      "Thinking FDs are global across processes",
+      "Forgetting about ulimit -n for server tuning"
+    ],
+    "followups": [
+      "What is the file description vs file descriptor distinction?",
+      "What happens to FDs after fork()?",
+      "What is FD_CLOEXEC?"
+    ],
+    "roasts": {
+      "angry_staff": "File descriptors are per-process, not global. fork() duplicates them. Do you know that?",
+      "strict_prof": "The distinction between the file descriptor (per-process index) and the file description (kernel object) is crucial.",
+      "faang_bar": "Good. What happens to open file descriptors when you exec() a new process?",
+      "startup_cto": "Your Nginx is rejecting connections. What ulimit settings would you check first?"
+    }
+  },
+  {
+    "id": "os_io_014",
+    "domain": "Operating Systems",
+    "subdomain": "I/O Systems",
+    "question": "What is a pipe in Unix and how does it work?",
+    "keywords": [
+      "unidirectional",
+      "kernel buffer",
+      "64KB",
+      "write end",
+      "read end",
+      "blocking",
+      "FIFO",
+      "named pipe"
+    ],
+    "common_mistakes": [
+      "Thinking pipes are bidirectional",
+      "Not knowing the buffer size causes backpressure"
+    ],
+    "followups": [
+      "What is backpressure in the context of pipes?",
+      "What is a named pipe vs anonymous pipe?",
+      "How does Unix pipe() work at the syscall level?"
+    ],
+    "roasts": {
+      "angry_staff": "You said pipes are bidirectional. They're NOT. Unidirectional. Use two pipes for bidirectional.",
+      "strict_prof": "The fixed-size kernel buffer and its blocking behavior on full/empty are the key mechanisms.",
+      "faang_bar": "Good. How does shell piping relate to the producer-consumer pattern?",
+      "startup_cto": "If grep blocks in ls | grep, what happens to ls? Explain the backpressure."
+    }
+  },
+  {
+    "id": "os_io_015",
+    "domain": "Operating Systems",
+    "subdomain": "I/O Systems",
+    "question": "What is a storage stack in Linux and how does a read() call traverse it?",
+    "keywords": [
+      "VFS",
+      "file system",
+      "block layer",
+      "device driver",
+      "page cache",
+      "syscall",
+      "ext4",
+      "I/O scheduler"
+    ],
+    "common_mistakes": [
+      "Skipping the VFS layer",
+      "Not knowing the page cache check happens at the VFS level"
+    ],
+    "followups": [
+      "What is the VFS and why does Linux need it?",
+      "How does NFS use the VFS layer?",
+      "What is a block device driver?"
+    ],
+    "roasts": {
+      "angry_staff": "You skipped the VFS. The whole reason Linux supports 50+ file systems is the VFS abstraction.",
+      "strict_prof": "The layered architecture — syscall, VFS, FS, block, driver, hardware — must be enumerated in order.",
+      "faang_bar": "Good. How does the VFS enable NFS to be transparent to applications?",
+      "startup_cto": "A read() is taking 50ms. How would you trace which layer is the bottleneck?"
+    }
+  },
+  {
+    "id": "os_io_016",
+    "domain": "Operating Systems",
+    "subdomain": "I/O Systems",
+    "question": "What is select() and what are its limitations?",
+    "keywords": [
+      "FD_SETSIZE",
+      "1024 limit",
+      "O(n)",
+      "bitmask",
+      "readability",
+      "writability",
+      "poll",
+      "epoll"
+    ],
+    "common_mistakes": [
+      "Not knowing the 1024 FD limit",
+      "Not knowing epoll solves the O(n) problem"
+    ],
+    "followups": [
+      "How does poll() improve over select()?",
+      "What is the C10K problem?",
+      "Why did select/poll fail for high-concurrency servers?"
+    ],
+    "roasts": {
+      "angry_staff": "You don't know the 1024 FD limit? That's why select() broke the C10K problem.",
+      "strict_prof": "The FD_SETSIZE limitation and O(n) scan are the formal deficiencies of select().",
+      "faang_bar": "Good. Explain the C10K problem and why select/poll couldn't solve it.",
+      "startup_cto": "Your web server has 50K connections. Which I/O multiplexing API would you use?"
+    }
+  },
+  {
+    "id": "os_io_017",
+    "domain": "Operating Systems",
+    "subdomain": "I/O Systems",
+    "question": "What is a system call and how does it work?",
+    "keywords": [
+      "kernel mode",
+      "user mode",
+      "trap",
+      "context switch",
+      "register",
+      "hardware access",
+      "int 0x80",
+      "syscall instruction"
+    ],
+    "common_mistakes": [
+      "Thinking system calls are just function calls",
+      "Not knowing the mechanism (trap/interrupt)"
+    ],
+    "followups": [
+      "What is the difference between a library call and a system call?",
+      "What is vDSO and how does it avoid syscall overhead?",
+      "How many syscalls does 'ls' make?"
+    ],
+    "roasts": {
+      "angry_staff": "A syscall is NOT just a function call. There's a mode switch. The cost matters.",
+      "strict_prof": "The trap instruction mechanism and the privilege level transition are the formal mechanism.",
+      "faang_bar": "Good. What is vDSO and how does it help gettimeofday() avoid a full syscall?",
+      "startup_cto": "How would you measure the overhead of syscalls in your application? What tool?"
+    }
+  },
+  {
+    "id": "os_io_018",
+    "domain": "Operating Systems",
+    "subdomain": "I/O Systems",
+    "question": "What is RAID and what are the common RAID levels?",
+    "keywords": [
+      "striping",
+      "mirroring",
+      "parity",
+      "RAID 0",
+      "RAID 1",
+      "RAID 5",
+      "RAID 10",
+      "write penalty",
+      "redundancy"
+    ],
+    "common_mistakes": [
+      "Thinking RAID 5 is as fast as RAID 10 for writes (parity write penalty)",
+      "Confusing RAID levels"
+    ],
+    "followups": [
+      "What is the RAID 5 write penalty?",
+      "When would you choose RAID 10 over RAID 6?",
+      "What is software RAID vs hardware RAID?"
+    ],
+    "roasts": {
+      "angry_staff": "RAID 5 for a write-heavy database? The write penalty will kill you. Use RAID 10.",
+      "strict_prof": "The RAID 5 write penalty (read-modify-write for parity calculation) is a critical performance consideration.",
+      "faang_bar": "Good. Calculate the IOPS and capacity of a 4-disk RAID 5 vs RAID 10 array.",
+      "startup_cto": "How does cloud storage (S3, EBS) abstract away RAID-level concerns?"
+    }
+  },
+  {
+    "id": "os_io_019",
+    "domain": "Operating Systems",
+    "subdomain": "I/O Systems",
+    "question": "What is a file system and what does it do?",
+    "keywords": [
+      "inode",
+      "directory entry",
+      "free space",
+      "journaling",
+      "ext4",
+      "XFS",
+      "metadata",
+      "naming"
+    ],
+    "common_mistakes": [
+      "Thinking file systems are just about storing files (forgetting metadata, permissions, journals)"
+    ],
+    "followups": [
+      "What is an inode?",
+      "What is journaling in a file system?",
+      "How does ext4 differ from XFS?"
+    ],
+    "roasts": {
+      "angry_staff": "A file system is not just 'storage.' What about inodes, journaling, free space? Go deeper.",
+      "strict_prof": "The inode structure and its role in mapping file names to data blocks is fundamental.",
+      "faang_bar": "Good. How does Btrfs's copy-on-write enable atomic snapshots?",
+      "startup_cto": "Your container image storage is eating disk space. Which file system feature would help?"
+    }
+  },
+  {
+    "id": "os_io_020",
+    "domain": "Operating Systems",
+    "subdomain": "I/O Systems",
+    "question": "What is an inode and what information does it contain?",
+    "keywords": [
+      "metadata",
+      "permissions",
+      "timestamps",
+      "data block pointers",
+      "hard link",
+      "directory entry",
+      "inode number"
+    ],
+    "common_mistakes": [
+      "Thinking inodes contain file names",
+      "Forgetting indirect block pointers"
+    ],
+    "followups": [
+      "What happens to an inode's link count with hard links?",
+      "What is the difference between a hard link and a symlink?",
+      "How does stat() use inodes?"
+    ],
+    "roasts": {
+      "angry_staff": "You said inodes contain the file name. They DON'T. The directory entry has the name.",
+      "strict_prof": "The distinction between the inode (metadata) and directory entry (name-to-inode mapping) is fundamental.",
+      "faang_bar": "Good. What happens to inode link count when you create a directory?",
+      "startup_cto": "You're running out of inodes but have disk space left. What does that mean and how do you fix it?"
+    }
+  },
+  {
+    "id": "os_mem_001",
+    "domain": "Operating Systems",
+    "subdomain": "Memory Management",
+    "question": "What is a page fault and how does the OS handle it?",
+    "keywords": [
+      "virtual memory",
+      "page table",
+      "disk",
+      "frame",
+      "trap",
+      "page replacement"
+    ],
+    "common_mistakes": [
+      "Confusing with a cache miss",
+      "Confusing with segmentation fault",
+      "Not mentioning page replacement"
+    ],
+    "followups": [
+      "What is a major vs minor page fault?",
+      "What page replacement algorithms exist?",
+      "How does demand paging work?"
+    ],
+    "roasts": {
+      "angry_staff": "You just described what a page is, not a page fault. Did you even read the question?",
+      "strict_prof": "Your answer lacks the critical OS trap handling sequence. That is the core of the concept.",
+      "faang_bar": "Correct surface answer. Now tell me what LRU replacement looks like at kernel level.",
+      "startup_cto": "Fine, but how would you debug a page fault storm in production?"
+    }
+  },
+  {
+    "id": "os_mem_002",
+    "domain": "Operating Systems",
+    "subdomain": "Memory Management",
+    "question": "What is virtual memory?",
+    "keywords": [
+      "abstraction",
+      "virtual address",
+      "physical address",
+      "MMU",
+      "page table",
+      "process isolation"
+    ],
+    "common_mistakes": [
+      "Confusing virtual memory with RAM",
+      "Not mentioning the MMU",
+      "Thinking it's just swap space"
+    ],
+    "followups": [
+      "How does address translation work?",
+      "What is TLB and why is it needed?",
+      "What is the difference between paging and segmentation?"
+    ],
+    "roasts": {
+      "angry_staff": "You're describing swap space. That's NOT virtual memory.",
+      "strict_prof": "You omitted the role of the Memory Management Unit entirely.",
+      "faang_bar": "Good. Now explain address translation in a 64-bit system.",
+      "startup_cto": "Basic. How does this affect your app's memory footprint?"
+    }
+  },
+  {
+    "id": "os_mem_003",
+    "domain": "Operating Systems",
+    "subdomain": "Memory Management",
+    "question": "Explain the difference between internal and external fragmentation.",
+    "keywords": [
+      "internal fragmentation",
+      "external fragmentation",
+      "paging",
+      "segmentation",
+      "contiguous",
+      "allocation"
+    ],
+    "common_mistakes": [
+      "Confusing which type paging solves",
+      "Forgetting compaction as a solution to external fragmentation"
+    ],
+    "followups": [
+      "How does compaction solve external fragmentation?",
+      "Why does paging eliminate external fragmentation?",
+      "What is best-fit vs first-fit allocation?"
+    ],
+    "roasts": {
+      "angry_staff": "You confused which one paging fixes. Go back to basics.",
+      "strict_prof": "Your answer is reversed. Internal and external fragmentation are distinct failure modes.",
+      "faang_bar": "Correct. How would you measure fragmentation in a real allocator?",
+      "startup_cto": "I need someone who can debug memory issues, not just name them."
+    }
+  },
+  {
+    "id": "os_mem_004",
+    "domain": "Operating Systems",
+    "subdomain": "Memory Management",
+    "question": "What is the Translation Lookaside Buffer (TLB)?",
+    "keywords": [
+      "cache",
+      "virtual to physical",
+      "TLB hit",
+      "TLB miss",
+      "page table walk",
+      "address translation"
+    ],
+    "common_mistakes": [
+      "Thinking TLB is the page table",
+      "Not explaining what happens on a TLB miss"
+    ],
+    "followups": [
+      "What is TLB shootdown in multi-core systems?",
+      "How does context switching affect the TLB?",
+      "What is ASID in TLB management?"
+    ],
+    "roasts": {
+      "angry_staff": "You described a page table. TLB is a CACHE for translations. Different thing.",
+      "strict_prof": "The TLB miss handling sequence was absent from your explanation.",
+      "faang_bar": "Good. Now explain TLB shootdown across multiple cores.",
+      "startup_cto": "How does this impact your service's latency under load?"
+    }
+  },
+  {
+    "id": "os_mem_005",
+    "domain": "Operating Systems",
+    "subdomain": "Memory Management",
+    "question": "Explain the LRU page replacement algorithm and its challenges.",
+    "keywords": [
+      "LRU",
+      "eviction",
+      "timestamp",
+      "clock algorithm",
+      "thrashing",
+      "Belady",
+      "approximation"
+    ],
+    "common_mistakes": [
+      "Claiming LRU is perfectly implemented in hardware",
+      "Not mentioning the clock algorithm approximation"
+    ],
+    "followups": [
+      "What is Belady's anomaly?",
+      "How does the clock algorithm approximate LRU?",
+      "When does LRU fail?"
+    ],
+    "roasts": {
+      "angry_staff": "You think LRU is perfectly implemented? It's approximated. Learn the difference.",
+      "strict_prof": "You failed to address implementation complexity, which is the entire point of the question.",
+      "faang_bar": "Correct. Describe how Linux approximates LRU using the clock algorithm.",
+      "startup_cto": "How would thrashing manifest as a symptom in a production system?"
+    }
+  },
+  {
+    "id": "os_mem_006",
+    "domain": "Operating Systems",
+    "subdomain": "Memory Management",
+    "question": "What is the difference between stack and heap memory?",
+    "keywords": [
+      "stack",
+      "heap",
+      "LIFO",
+      "dynamic allocation",
+      "local variables",
+      "garbage collection",
+      "stack overflow"
+    ],
+    "common_mistakes": [
+      "Confusing physical stack with call stack",
+      "Forgetting fragmentation affects heap not stack"
+    ],
+    "followups": [
+      "What causes a stack overflow?",
+      "How does garbage collection manage heap memory?",
+      "What is memory leak?"
+    ],
+    "roasts": {
+      "angry_staff": "You forgot fragmentation. Heap fragments, stack doesn't. Basic.",
+      "strict_prof": "The LIFO property of the stack was not mentioned. That is fundamental.",
+      "faang_bar": "Good basics. How does Go handle stack growth differently from C?",
+      "startup_cto": "Have you ever debugged a memory leak? What tool did you use?"
+    }
+  },
+  {
+    "id": "os_mem_007",
+    "domain": "Operating Systems",
+    "subdomain": "Memory Management",
+    "question": "What is demand paging?",
+    "keywords": [
+      "lazy loading",
+      "page fault",
+      "disk",
+      "locality",
+      "startup time",
+      "on demand"
+    ],
+    "common_mistakes": [
+      "Confusing with prepaging",
+      "Not mentioning locality of reference"
+    ],
+    "followups": [
+      "What is prepaging?",
+      "How does demand paging interact with fork()?",
+      "What is copy-on-write?"
+    ],
+    "roasts": {
+      "angry_staff": "You didn't mention WHY it works. Locality of reference. That's the whole point.",
+      "strict_prof": "Your explanation omits the theoretical basis: the principle of locality.",
+      "faang_bar": "Correct. How does Linux implement copy-on-write with demand paging?",
+      "startup_cto": "What's the cold start impact on your container's first request?"
+    }
+  },
+  {
+    "id": "os_mem_008",
+    "domain": "Operating Systems",
+    "subdomain": "Memory Management",
+    "question": "What is thrashing and how can it be prevented?",
+    "keywords": [
+      "working set",
+      "page fault frequency",
+      "swap",
+      "CPU utilization",
+      "degree of multiprogramming"
+    ],
+    "common_mistakes": [
+      "Confusing thrashing with high CPU usage",
+      "Not mentioning the working set model"
+    ],
+    "followups": [
+      "What is the working set model?",
+      "How does the OS detect thrashing?",
+      "How does OOM killer work in Linux?"
+    ],
+    "roasts": {
+      "angry_staff": "You said 'too much swapping.' I need the ROOT CAUSE. What is the working set model?",
+      "strict_prof": "The working set model is the formal solution to thrashing. You didn't mention it.",
+      "faang_bar": "Good. How does Kubernetes handle OOM situations in a containerized environment?",
+      "startup_cto": "Tell me about a time your service thrashed in production."
+    }
+  },
+  {
+    "id": "os_mem_009",
+    "domain": "Operating Systems",
+    "subdomain": "Memory Management",
+    "question": "What is copy-on-write (COW)?",
+    "keywords": [
+      "fork",
+      "shared pages",
+      "read-only",
+      "page fault",
+      "write",
+      "optimization",
+      "exec"
+    ],
+    "common_mistakes": [
+      "Thinking COW copies immediately on fork",
+      "Not explaining the write-triggered copy"
+    ],
+    "followups": [
+      "How does COW interact with mmap?",
+      "What is the role of COW in Redis persistence?",
+      "What is a COW violation?"
+    ],
+    "roasts": {
+      "angry_staff": "You think fork copies memory immediately? It doesn't. That's the WHOLE POINT of COW.",
+      "strict_prof": "The write-triggered page fault is the mechanism. Your answer missed the mechanism.",
+      "faang_bar": "Correct. How does Redis use COW for BGSAVE without blocking writes?",
+      "startup_cto": "How would you use this knowledge to optimize a high-fork-rate service?"
+    }
+  },
+  {
+    "id": "os_mem_010",
+    "domain": "Operating Systems",
+    "subdomain": "Memory Management",
+    "question": "What is a memory leak?",
+    "keywords": [
+      "heap",
+      "free",
+      "garbage collection",
+      "reference",
+      "unbounded growth",
+      "malloc"
+    ],
+    "common_mistakes": [
+      "Thinking GC languages are immune to memory leaks"
+    ],
+    "followups": [
+      "How would you detect a memory leak?",
+      "What tools can find memory leaks?",
+      "How can GC languages still leak memory?"
+    ],
+    "roasts": {
+      "angry_staff": "You think Java can't leak? Retained references. Look it up.",
+      "strict_prof": "The distinction between managed and unmanaged memory leaks was not addressed.",
+      "faang_bar": "Correct. How would you track memory leaks in a Node.js service under production load?",
+      "startup_cto": "Have you used Valgrind or heaptrack? What did you find?"
+    }
+  },
+  {
+    "id": "os_mem_011",
+    "domain": "Operating Systems",
+    "subdomain": "Memory Management",
+    "question": "Explain the difference between paging and segmentation.",
+    "keywords": [
+      "fixed size",
+      "variable size",
+      "internal fragmentation",
+      "external fragmentation",
+      "page",
+      "segment",
+      "logical"
+    ],
+    "common_mistakes": [
+      "Confusing which causes which type of fragmentation",
+      "Thinking they are mutually exclusive"
+    ],
+    "followups": [
+      "Does x86 use segmentation today?",
+      "What is Intel's Protected Mode segmentation?",
+      "How do modern OSes combine paging and segmentation?"
+    ],
+    "roasts": {
+      "angry_staff": "You said paging causes external fragmentation. That is WRONG. The opposite.",
+      "strict_prof": "The logical vs physical organization distinction was entirely absent.",
+      "faang_bar": "Good. Does x86-64 use segmentation? If so, how?",
+      "startup_cto": "When would you choose one memory model over the other in an embedded system?"
+    }
+  },
+  {
+    "id": "os_mem_012",
+    "domain": "Operating Systems",
+    "subdomain": "Memory Management",
+    "question": "What is the working set model?",
+    "keywords": [
+      "working set window",
+      "delta",
+      "multiprogramming",
+      "thrashing prevention",
+      "locality"
+    ],
+    "common_mistakes": [
+      "Confusing working set with resident set",
+      "Not explaining how it prevents thrashing"
+    ],
+    "followups": [
+      "How does the OS measure the working set?",
+      "What is the difference between working set and resident set?",
+      "How does Windows implement working set trimming?"
+    ],
+    "roasts": {
+      "angry_staff": "You confused working set with the resident set. They are NOT the same.",
+      "strict_prof": "The formal definition requires a time window parameter (delta). You omitted it.",
+      "faang_bar": "Correct. How does Linux balance working sets across NUMA nodes?",
+      "startup_cto": "How would you tune the working set window for a latency-sensitive service?"
+    }
+  },
+  {
+    "id": "os_mem_013",
+    "domain": "Operating Systems",
+    "subdomain": "Memory Management",
+    "question": "What is the difference between logical and physical address space?",
+    "keywords": [
+      "logical address",
+      "physical address",
+      "MMU",
+      "address translation",
+      "isolation",
+      "page table"
+    ],
+    "common_mistakes": [
+      "Thinking logical addresses are always smaller than physical",
+      "Not mentioning isolation as a benefit"
+    ],
+    "followups": [
+      "What is address space layout randomization (ASLR)?",
+      "How does the MMU handle protection bits?",
+      "What is the high half kernel mapping?"
+    ],
+    "roasts": {
+      "angry_staff": "You forgot isolation. That's one of the PRIMARY REASONS for this separation.",
+      "strict_prof": "The role of the MMU in runtime translation was not clearly stated.",
+      "faang_bar": "Good. How does ASLR leverage the logical/physical split for security?",
+      "startup_cto": "When would logical addresses exceed physical address space in your application?"
+    }
+  },
+  {
+    "id": "os_mem_014",
+    "domain": "Operating Systems",
+    "subdomain": "Memory Management",
+    "question": "What is swapping in the context of memory management?",
+    "keywords": [
+      "swap space",
+      "disk",
+      "page out",
+      "page in",
+      "RAM",
+      "process",
+      "paging"
+    ],
+    "common_mistakes": [
+      "Confusing swapping with paging",
+      "Thinking modern systems swap full processes"
+    ],
+    "followups": [
+      "What is swappiness in Linux?",
+      "When is swap useful for a system with lots of RAM?",
+      "What is zswap?"
+    ],
+    "roasts": {
+      "angry_staff": "Modern systems don't swap PROCESSES. They page. Know the difference.",
+      "strict_prof": "The historical evolution from full-process swapping to paging was absent.",
+      "faang_bar": "Correct. When is swap useful even for a system with 256GB RAM?",
+      "startup_cto": "Should you use swap on a Kubernetes node? Why or why not?"
+    }
+  },
+  {
+    "id": "os_mem_015",
+    "domain": "Operating Systems",
+    "subdomain": "Memory Management",
+    "question": "What is NUMA and how does it affect application performance?",
+    "keywords": [
+      "non-uniform",
+      "local memory",
+      "remote memory",
+      "latency",
+      "NUMA node",
+      "numactl",
+      "memory binding"
+    ],
+    "common_mistakes": [
+      "Thinking all RAM has the same latency in modern servers",
+      "Not mentioning tools like numactl or libnuma"
+    ],
+    "followups": [
+      "How does Linux schedule tasks on NUMA systems?",
+      "How would you detect NUMA imbalance?",
+      "What is NUMA balancing in Linux?"
+    ],
+    "roasts": {
+      "angry_staff": "You think all RAM has the same latency? On a dual-socket server? Come on.",
+      "strict_prof": "You lacked the formal definition: non-uniform memory access times depending on physical topology.",
+      "faang_bar": "Good. How does Kafka's performance change on a NUMA system without pinning?",
+      "startup_cto": "How would you verify if your service suffers from NUMA imbalance?"
+    }
+  },
+  {
+    "id": "os_mem_016",
+    "domain": "Operating Systems",
+    "subdomain": "Memory Management",
+    "question": "What is the difference between first-fit, best-fit, and worst-fit memory allocation?",
+    "keywords": [
+      "first-fit",
+      "best-fit",
+      "worst-fit",
+      "hole",
+      "fragmentation",
+      "external fragmentation"
+    ],
+    "common_mistakes": [
+      "Thinking best-fit always produces least fragmentation overall",
+      "Forgetting that all three cause external fragmentation"
+    ],
+    "followups": [
+      "What is the buddy system?",
+      "How does malloc implement memory allocation?",
+      "What is jemalloc?"
+    ],
+    "roasts": {
+      "angry_staff": "Best-fit doesn't always cause least fragmentation. Think about tiny unusable chunks.",
+      "strict_prof": "All three strategies still produce external fragmentation. Your answer implied best-fit avoids it.",
+      "faang_bar": "Correct. How does jemalloc improve over these naive strategies?",
+      "startup_cto": "What allocator does your language runtime use and why does it matter?"
+    }
+  },
+  {
+    "id": "os_mem_017",
+    "domain": "Operating Systems",
+    "subdomain": "Memory Management",
+    "question": "What is memory-mapped I/O (mmap)?",
+    "keywords": [
+      "virtual address space",
+      "file",
+      "zero-copy",
+      "shared memory",
+      "paging",
+      "syscall",
+      "lazy loading"
+    ],
+    "common_mistakes": [
+      "Thinking mmap is only for shared memory between processes",
+      "Not mentioning zero-copy benefit"
+    ],
+    "followups": [
+      "How does mmap enable inter-process shared memory?",
+      "What is the difference between MAP_SHARED and MAP_PRIVATE?",
+      "How does mmap differ from read()/write()?"
+    ],
+    "roasts": {
+      "angry_staff": "You said mmap is just for shared memory. That's one use case. What about file I/O?",
+      "strict_prof": "The zero-copy mechanism and its performance implications were absent.",
+      "faang_bar": "Correct. How does Kafka use mmap for its log segments?",
+      "startup_cto": "When would you use mmap over traditional file I/O in a high-throughput service?"
+    }
+  },
+  {
+    "id": "os_mem_018",
+    "domain": "Operating Systems",
+    "subdomain": "Memory Management",
+    "question": "What is a segmentation fault?",
+    "keywords": [
+      "null pointer",
+      "protection",
+      "MMU",
+      "SIGSEGV",
+      "invalid access",
+      "read-only",
+      "page table"
+    ],
+    "common_mistakes": [
+      "Confusing segfault with page fault",
+      "Thinking segfault is the same as a bus error"
+    ],
+    "followups": [
+      "What is the difference between a segfault and a bus error?",
+      "How does AddressSanitizer detect segfaults?",
+      "What is a null pointer dereference?"
+    ],
+    "roasts": {
+      "angry_staff": "A page fault is NOT a segfault. One is valid, one kills your process. Know the difference.",
+      "strict_prof": "The role of the MMU in detecting protection violations was not mentioned.",
+      "faang_bar": "Good. How does AddressSanitizer detect out-of-bounds accesses before a segfault?",
+      "startup_cto": "How do you debug a segfault in a production service without a core dump?"
+    }
+  },
+  {
+    "id": "os_mem_019",
+    "domain": "Operating Systems",
+    "subdomain": "Memory Management",
+    "question": "What is huge pages and when would you use them?",
+    "keywords": [
+      "TLB pressure",
+      "2MB",
+      "1GB",
+      "transparent huge pages",
+      "THP",
+      "internal fragmentation",
+      "database"
+    ],
+    "common_mistakes": [
+      "Thinking huge pages are always better",
+      "Forgetting THP can cause latency spikes due to compaction"
+    ],
+    "followups": [
+      "What are Transparent Huge Pages?",
+      "Why does Redis recommend disabling THP?",
+      "How do you reserve huge pages in Linux?"
+    ],
+    "roasts": {
+      "angry_staff": "You didn't mention TLB pressure. That's literally the REASON huge pages exist.",
+      "strict_prof": "The tradeoff between TLB efficiency and increased internal fragmentation was absent.",
+      "faang_bar": "Good. Why does Redis documentation explicitly say to disable Transparent Huge Pages?",
+      "startup_cto": "How would you measure whether huge pages actually improve your service's performance?"
+    }
+  },
+  {
+    "id": "os_mem_020",
+    "domain": "Operating Systems",
+    "subdomain": "Memory Management",
+    "question": "What is the buddy system memory allocation?",
+    "keywords": [
+      "power of 2",
+      "split",
+      "merge",
+      "buddy",
+      "external fragmentation",
+      "Linux kernel"
+    ],
+    "common_mistakes": [
+      "Thinking buddy system eliminates internal fragmentation",
+      "Not mentioning the merge-on-free behavior"
+    ],
+    "followups": [
+      "How does the Linux kernel use the buddy system?",
+      "What is slab allocation?",
+      "Why does buddy system still cause internal fragmentation?"
+    ],
+    "roasts": {
+      "angry_staff": "You forgot the merge step. That's what makes it efficient. Restate.",
+      "strict_prof": "The merge-on-free coalescing behavior is the defining characteristic. It was absent.",
+      "faang_bar": "Correct. How does the Linux kernel's zone allocator build on top of the buddy system?",
+      "startup_cto": "When would you choose slab allocation over the buddy system?"
+    }
+  },
+  {
+    "id": "os_proc_001",
+    "domain": "Operating Systems",
+    "subdomain": "Processes & Threads",
+    "question": "What is the difference between a process and a thread?",
+    "keywords": [
+      "address space",
+      "shared memory",
+      "stack",
+      "program counter",
+      "IPC",
+      "lightweight",
+      "resources"
+    ],
+    "common_mistakes": [
+      "Saying threads are 'mini-processes'",
+      "Forgetting threads share heap but not stack"
+    ],
+    "followups": [
+      "What is a context switch?",
+      "What are the advantages of threads over processes?",
+      "What is a race condition?"
+    ],
+    "roasts": {
+      "angry_staff": "You said threads are 'faster processes.' That's not what I asked. Explain the STRUCTURAL difference.",
+      "strict_prof": "The shared vs private memory distinction was insufficiently detailed.",
+      "faang_bar": "Good basics. How does Go's goroutine model differ from OS threads?",
+      "startup_cto": "When would you choose multiprocessing over multithreading for a web server?"
+    }
+  },
+  {
+    "id": "os_proc_002",
+    "domain": "Operating Systems",
+    "subdomain": "Processes & Threads",
+    "question": "What is a context switch and what is its cost?",
+    "keywords": [
+      "save state",
+      "restore state",
+      "CPU registers",
+      "cache pollution",
+      "TLB flush",
+      "overhead",
+      "scheduling"
+    ],
+    "common_mistakes": [
+      "Forgetting indirect costs (cache pollution, TLB flushes)",
+      "Saying thread switches are the same cost as process switches"
+    ],
+    "followups": [
+      "How does the OS decide when to context switch?",
+      "What is a voluntary vs involuntary context switch?",
+      "How do you measure context switch overhead?"
+    ],
+    "roasts": {
+      "angry_staff": "You only mentioned CPU register saving. Cache pollution and TLB flushes are the REAL cost.",
+      "strict_prof": "A complete answer must distinguish direct and indirect costs of context switching.",
+      "faang_bar": "Good. How do you measure context switch overhead in production?",
+      "startup_cto": "How does context switch overhead affect your gRPC service under high concurrency?"
+    }
+  },
+  {
+    "id": "os_proc_003",
+    "domain": "Operating Systems",
+    "subdomain": "Processes & Threads",
+    "question": "What are the different states of a process?",
+    "keywords": [
+      "new",
+      "ready",
+      "running",
+      "waiting",
+      "terminated",
+      "scheduler",
+      "preempted",
+      "I/O"
+    ],
+    "common_mistakes": [
+      "Missing the blocked/waiting state",
+      "Confusing the transitions between states"
+    ],
+    "followups": [
+      "What is the zombie state?",
+      "What is the difference between preemptive and non-preemptive scheduling?",
+      "What is a ready queue?"
+    ],
+    "roasts": {
+      "angry_staff": "You forgot the blocked state. That's where most processes spend most of their time.",
+      "strict_prof": "The transitions between states are as important as the states themselves. You omitted them.",
+      "faang_bar": "Correct. Now explain what happens when a process enters the zombie state.",
+      "startup_cto": "If a process is stuck in D state (uninterruptible sleep) in Linux, what do you do?"
+    }
+  },
+  {
+    "id": "os_proc_004",
+    "domain": "Operating Systems",
+    "subdomain": "Processes & Threads",
+    "question": "What is a zombie process?",
+    "keywords": [
+      "wait()",
+      "exit status",
+      "process table",
+      "parent",
+      "init",
+      "reap",
+      "orphan"
+    ],
+    "common_mistakes": [
+      "Thinking zombies consume significant resources",
+      "Not mentioning the wait() call",
+      "Confusing zombie with orphan process"
+    ],
+    "followups": [
+      "What is an orphan process?",
+      "What is the role of init in process management?",
+      "How would you find zombie processes on a Linux system?"
+    ],
+    "roasts": {
+      "angry_staff": "You said zombies consume resources. They DON'T. Except the process table entry.",
+      "strict_prof": "The role of wait() and the parent-child relationship is the core mechanism. You glossed over it.",
+      "faang_bar": "Good. What happens if you have thousands of zombie processes on a server?",
+      "startup_cto": "How would you detect zombie process buildup in your microservice infrastructure?"
+    }
+  },
+  {
+    "id": "os_proc_005",
+    "domain": "Operating Systems",
+    "subdomain": "Processes & Threads",
+    "question": "Explain the fork() system call and what it does.",
+    "keywords": [
+      "copy",
+      "child",
+      "parent",
+      "PID",
+      "copy-on-write",
+      "exec",
+      "address space",
+      "file descriptors"
+    ],
+    "common_mistakes": [
+      "Thinking fork() copies memory immediately (not with COW)",
+      "Forgetting fork() returns different values in parent and child"
+    ],
+    "followups": [
+      "What is the fork-exec pattern?",
+      "What is vfork()?",
+      "How does fork() handle multithreaded programs?"
+    ],
+    "roasts": {
+      "angry_staff": "You forgot that fork() returns DIFFERENT values in parent vs child. That's critical.",
+      "strict_prof": "The copy-on-write optimization of fork() was not mentioned.",
+      "faang_bar": "Correct. What happens when you fork() in a multithreaded process?",
+      "startup_cto": "In a web server, why is fork() preferred over threads in some architectures?"
+    }
+  },
+  {
+    "id": "os_proc_006",
+    "domain": "Operating Systems",
+    "subdomain": "Processes & Threads",
+    "question": "What is the difference between preemptive and non-preemptive scheduling?",
+    "keywords": [
+      "time quantum",
+      "forcibly removed",
+      "voluntary yield",
+      "priority",
+      "responsiveness",
+      "fairness"
+    ],
+    "common_mistakes": [
+      "Confusing cooperative with preemptive",
+      "Thinking non-preemptive means the process can run forever"
+    ],
+    "followups": [
+      "What scheduling algorithm does Linux use?",
+      "What is priority inversion?",
+      "What is the difference between CFS and round-robin?"
+    ],
+    "roasts": {
+      "angry_staff": "You mixed up which one lets the OS force a context switch. Basic scheduling theory.",
+      "strict_prof": "The formal distinction requires mentioning the time quantum and interrupt mechanisms.",
+      "faang_bar": "Correct. What scheduling algorithm does the Linux kernel use and why?",
+      "startup_cto": "How does scheduling choice affect latency in a real-time embedded system?"
+    }
+  },
+  {
+    "id": "os_proc_007",
+    "domain": "Operating Systems",
+    "subdomain": "Processes & Threads",
+    "question": "What is inter-process communication (IPC) and what are the common mechanisms?",
+    "keywords": [
+      "pipes",
+      "shared memory",
+      "sockets",
+      "signals",
+      "message queues",
+      "semaphores",
+      "synchronization"
+    ],
+    "common_mistakes": [
+      "Forgetting shared memory requires explicit synchronization",
+      "Missing sockets as an IPC mechanism"
+    ],
+    "followups": [
+      "Why is shared memory the fastest IPC?",
+      "What is a Unix domain socket?",
+      "What are the downsides of shared memory IPC?"
+    ],
+    "roasts": {
+      "angry_staff": "You said shared memory is 'just memory.' Why is it the FASTEST? Explain the mechanism.",
+      "strict_prof": "An enumeration of mechanisms without discussing their trade-offs is incomplete.",
+      "faang_bar": "Good. How would you choose between message queues and shared memory for a trading system?",
+      "startup_cto": "What IPC mechanism does your favorite framework use internally?"
+    }
+  },
+  {
+    "id": "os_proc_008",
+    "domain": "Operating Systems",
+    "subdomain": "Processes & Threads",
+    "question": "What is priority inversion and how can it be solved?",
+    "keywords": [
+      "high priority",
+      "low priority",
+      "resource",
+      "blocked",
+      "priority inheritance",
+      "priority ceiling",
+      "starvation"
+    ],
+    "common_mistakes": [
+      "Not explaining HOW the medium-priority thread causes the inversion",
+      "Only mentioning one solution"
+    ],
+    "followups": [
+      "What caused the Mars Pathfinder reset bug?",
+      "What is the difference between priority inheritance and priority ceiling?",
+      "How does Linux handle priority inversion in its mutex implementation?"
+    ],
+    "roasts": {
+      "angry_staff": "You didn't explain WHY the medium-priority thread is the problem. That's the whole point.",
+      "strict_prof": "A complete answer requires both priority inheritance AND priority ceiling as solutions.",
+      "faang_bar": "Good. The Mars Pathfinder had a priority inversion bug. What happened and how was it fixed?",
+      "startup_cto": "How would you detect priority inversion in a real-time embedded system?"
+    }
+  },
+  {
+    "id": "os_proc_009",
+    "domain": "Operating Systems",
+    "subdomain": "Processes & Threads",
+    "question": "What is a race condition?",
+    "keywords": [
+      "shared resource",
+      "interleaving",
+      "timing",
+      "mutex",
+      "atomic",
+      "concurrent",
+      "incorrect result"
+    ],
+    "common_mistakes": [
+      "Confusing race condition with deadlock",
+      "Not providing a concrete example"
+    ],
+    "followups": [
+      "What is a critical section?",
+      "How do you detect race conditions?",
+      "What is a data race vs race condition?"
+    ],
+    "roasts": {
+      "angry_staff": "I asked for a race condition and you described a deadlock. Different concepts.",
+      "strict_prof": "Without a concrete example demonstrating the non-determinism, the definition is insufficient.",
+      "faang_bar": "Correct. How do tools like ThreadSanitizer detect race conditions?",
+      "startup_cto": "Have you ever shipped a race condition to production? How did you find it?"
+    }
+  },
+  {
+    "id": "os_proc_010",
+    "domain": "Operating Systems",
+    "subdomain": "Processes & Threads",
+    "question": "What is a deadlock?",
+    "keywords": [
+      "Coffman conditions",
+      "mutual exclusion",
+      "hold and wait",
+      "no preemption",
+      "circular wait",
+      "waiting"
+    ],
+    "common_mistakes": [
+      "Listing only some Coffman conditions",
+      "Confusing deadlock with livelock or starvation"
+    ],
+    "followups": [
+      "What is the difference between deadlock and livelock?",
+      "How can deadlocks be prevented?",
+      "What is Banker's algorithm?"
+    ],
+    "roasts": {
+      "angry_staff": "You listed 2 of 4 conditions. There are FOUR. Name them all.",
+      "strict_prof": "The four Coffman conditions are the formal definition. Your answer was informal and incomplete.",
+      "faang_bar": "Good. What is livelock and how does it differ from deadlock?",
+      "startup_cto": "How would you detect a deadlock in a distributed microservices environment?"
+    }
+  },
+  {
+    "id": "os_proc_011",
+    "domain": "Operating Systems",
+    "subdomain": "Processes & Threads",
+    "question": "Explain the Banker's algorithm for deadlock avoidance.",
+    "keywords": [
+      "safe state",
+      "safe sequence",
+      "allocation",
+      "max",
+      "available",
+      "resource request",
+      "simulation"
+    ],
+    "common_mistakes": [
+      "Confusing Banker's with deadlock detection",
+      "Not explaining what 'safe state' means"
+    ],
+    "followups": [
+      "What are the limitations of Banker's algorithm in practice?",
+      "What is the difference between deadlock avoidance and prevention?",
+      "Why isn't Banker's algorithm used in real OSes?"
+    ],
+    "roasts": {
+      "angry_staff": "You described deadlock detection, not avoidance. These are different algorithms.",
+      "strict_prof": "The concept of 'safe state' and 'safe sequence' is the core of Banker's algorithm. You omitted it.",
+      "faang_bar": "Correct. Why is Banker's algorithm not used in real operating systems?",
+      "startup_cto": "If Banker's is impractical, what does Linux actually do to avoid deadlocks?"
+    }
+  },
+  {
+    "id": "os_proc_012",
+    "domain": "Operating Systems",
+    "subdomain": "Processes & Threads",
+    "question": "What is the difference between user-level threads and kernel-level threads?",
+    "keywords": [
+      "user space",
+      "kernel space",
+      "syscall",
+      "blocking",
+      "multi-core",
+      "M:N threading",
+      "goroutine"
+    ],
+    "common_mistakes": [
+      "Forgetting that ULTs block the whole process on syscall",
+      "Not mentioning M:N hybrid models"
+    ],
+    "followups": [
+      "What threading model does Python use?",
+      "How does Go implement goroutines?",
+      "What is the Global Interpreter Lock?"
+    ],
+    "roasts": {
+      "angry_staff": "You forgot that ULTs block the ENTIRE process on a blocking syscall. That's their biggest flaw.",
+      "strict_prof": "The M:N hybrid threading model, which resolves both issues, was not mentioned.",
+      "faang_bar": "Good. How does Go's runtime implement M:N scheduling with goroutines?",
+      "startup_cto": "Why does Python's GIL prevent true parallelism even with multiple threads?"
+    }
+  },
+  {
+    "id": "os_proc_013",
+    "domain": "Operating Systems",
+    "subdomain": "Processes & Threads",
+    "question": "What is CPU scheduling and what are the goals of a scheduler?",
+    "keywords": [
+      "utilization",
+      "throughput",
+      "turnaround time",
+      "waiting time",
+      "response time",
+      "fairness",
+      "starvation"
+    ],
+    "common_mistakes": [
+      "Only mentioning one goal",
+      "Confusing response time with turnaround time"
+    ],
+    "followups": [
+      "What is the CFS scheduler in Linux?",
+      "What is the shortest job first algorithm?",
+      "What is starvation and how is it prevented?"
+    ],
+    "roasts": {
+      "angry_staff": "You only mentioned throughput. There are 5+ scheduling goals. List them.",
+      "strict_prof": "Response time and turnaround time are formally distinct metrics. Your answer conflated them.",
+      "faang_bar": "Good. How does Linux's CFS achieve fairness across all processes?",
+      "startup_cto": "How does your application's scheduling behavior change under CPU saturation?"
+    }
+  },
+  {
+    "id": "os_proc_014",
+    "domain": "Operating Systems",
+    "subdomain": "Processes & Threads",
+    "question": "How does the Linux Completely Fair Scheduler (CFS) work?",
+    "keywords": [
+      "vruntime",
+      "red-black tree",
+      "fair share",
+      "niceness",
+      "weight",
+      "O(log n)",
+      "virtual runtime"
+    ],
+    "common_mistakes": [
+      "Confusing CFS with round-robin",
+      "Not mentioning the red-black tree data structure"
+    ],
+    "followups": [
+      "What happens to vruntime when a process sleeps?",
+      "How does niceness affect CFS?",
+      "What is group scheduling in CFS?"
+    ],
+    "roasts": {
+      "angry_staff": "You said CFS is 'round-robin.' It's not. vruntime and red-black trees. Learn it.",
+      "strict_prof": "The red-black tree and vruntime mechanism are the formal definition of CFS. You missed both.",
+      "faang_bar": "Good. How does CFS handle a sleeping process that wakes up after hours?",
+      "startup_cto": "How would you tune CFS scheduling for a latency-sensitive trading application?"
+    }
+  },
+  {
+    "id": "os_proc_015",
+    "domain": "Operating Systems",
+    "subdomain": "Processes & Threads",
+    "question": "What is a signal in Unix/Linux and give examples?",
+    "keywords": [
+      "asynchronous",
+      "SIGTERM",
+      "SIGKILL",
+      "SIGSEGV",
+      "signal handler",
+      "SIGINT",
+      "cannot be caught"
+    ],
+    "common_mistakes": [
+      "Thinking SIGKILL can be caught",
+      "Not mentioning that signals are asynchronous"
+    ],
+    "followups": [
+      "What is the difference between SIGTERM and SIGKILL?",
+      "What is signal masking?",
+      "How do you handle SIGTERM gracefully in a server?"
+    ],
+    "roasts": {
+      "angry_staff": "You said you can catch SIGKILL. You cannot. That's the whole point of SIGKILL.",
+      "strict_prof": "The asynchronous delivery mechanism of signals was not emphasized.",
+      "faang_bar": "Good. How do you implement graceful shutdown in a server using SIGTERM?",
+      "startup_cto": "Your Kubernetes pod is being OOMKilled. What signal does the container receive?"
+    }
+  },
+  {
+    "id": "os_proc_016",
+    "domain": "Operating Systems",
+    "subdomain": "Processes & Threads",
+    "question": "What is a critical section and how do you protect it?",
+    "keywords": [
+      "shared resource",
+      "mutex",
+      "atomic",
+      "mutual exclusion",
+      "progress",
+      "bounded waiting",
+      "semaphore"
+    ],
+    "common_mistakes": [
+      "Only mentioning mutex without discussing the required properties",
+      "Forgetting read-write locks for read-heavy scenarios"
+    ],
+    "followups": [
+      "What is a spinlock vs mutex?",
+      "What is a monitor?",
+      "What are the three conditions for a correct critical section solution?"
+    ],
+    "roasts": {
+      "angry_staff": "You just said 'use a mutex.' Explain WHY it works and what the three properties are.",
+      "strict_prof": "Mutual exclusion, progress, and bounded waiting are the three formal requirements. Name them.",
+      "faang_bar": "Good. When would you use a read-write lock instead of a mutex?",
+      "startup_cto": "How does lock contention manifest in your service's metrics?"
+    }
+  },
+  {
+    "id": "os_proc_017",
+    "domain": "Operating Systems",
+    "subdomain": "Processes & Threads",
+    "question": "Explain the Producer-Consumer problem and its solution.",
+    "keywords": [
+      "bounded buffer",
+      "semaphore",
+      "mutex",
+      "empty",
+      "full",
+      "producer",
+      "consumer",
+      "wait",
+      "signal"
+    ],
+    "common_mistakes": [
+      "Reversing the order of wait operations (causing deadlock)",
+      "Using only one semaphore"
+    ],
+    "followups": [
+      "What happens if producer calls wait(mutex) before wait(empty)?",
+      "How does BlockingQueue in Java solve this?",
+      "What is the readers-writers problem?"
+    ],
+    "roasts": {
+      "angry_staff": "You reversed the wait order. That causes a deadlock. Did you think about it?",
+      "strict_prof": "Three semaphores are required. You described a solution with one. That is incorrect.",
+      "faang_bar": "Correct. How does Java's BlockingQueue solve the producer-consumer problem?",
+      "startup_cto": "Where does the producer-consumer pattern appear in a message queue like Kafka?"
+    }
+  },
+  {
+    "id": "os_proc_018",
+    "domain": "Operating Systems",
+    "subdomain": "Processes & Threads",
+    "question": "What is starvation in the context of scheduling?",
+    "keywords": [
+      "priority",
+      "aging",
+      "perpetually denied",
+      "low priority",
+      "waiting",
+      "fairness"
+    ],
+    "common_mistakes": [
+      "Confusing starvation with deadlock (in deadlock all processes are stuck; in starvation some run just fine)"
+    ],
+    "followups": [
+      "How does Linux prevent starvation?",
+      "What is the difference between starvation and deadlock?",
+      "How does aging work in priority scheduling?"
+    ],
+    "roasts": {
+      "angry_staff": "You described deadlock. In starvation some processes run JUST FINE — the victim doesn't.",
+      "strict_prof": "The aging mechanism as the formal solution to starvation was not mentioned.",
+      "faang_bar": "Good. How does CFS in Linux prevent starvation compared to strict priority scheduling?",
+      "startup_cto": "In a microservices system, what's the equivalent of starvation at the network level?"
+    }
+  },
+  {
+    "id": "os_proc_019",
+    "domain": "Operating Systems",
+    "subdomain": "Processes & Threads",
+    "question": "What is a mutex?",
+    "keywords": [
+      "mutual exclusion",
+      "lock",
+      "critical section",
+      "block",
+      "release",
+      "thread",
+      "race condition"
+    ],
+    "common_mistakes": [
+      "Confusing mutex with semaphore (binary semaphore is not identical to mutex)",
+      "Forgetting that mutex must be unlocked by the same thread"
+    ],
+    "followups": [
+      "What is the difference between a mutex and a binary semaphore?",
+      "What is a recursive mutex?",
+      "What is a spinlock?"
+    ],
+    "roasts": {
+      "angry_staff": "You said a mutex and a binary semaphore are the same thing. They are NOT. Ownership.",
+      "strict_prof": "The ownership property — only the locking thread can unlock — distinguishes mutex from semaphore.",
+      "faang_bar": "Good. Explain the ABA problem in lock-free programming.",
+      "startup_cto": "How would mutex contention show up in your application's latency p99?"
+    }
+  },
+  {
+    "id": "os_proc_020",
+    "domain": "Operating Systems",
+    "subdomain": "Processes & Threads",
+    "question": "What is lock-free programming and why is it difficult?",
+    "keywords": [
+      "atomic",
+      "CAS",
+      "compare-and-swap",
+      "ABA problem",
+      "memory ordering",
+      "lock-free",
+      "system-wide progress"
+    ],
+    "common_mistakes": [
+      "Thinking lock-free means wait-free (stronger guarantee)",
+      "Ignoring memory ordering / compiler reordering"
+    ],
+    "followups": [
+      "What is the ABA problem?",
+      "What is wait-free vs lock-free?",
+      "What is memory barrier?"
+    ],
+    "roasts": {
+      "angry_staff": "You skipped the ABA problem. That's the nightmare of CAS-based algorithms.",
+      "strict_prof": "Lock-free does not imply wait-free. These are formally distinct progress guarantees.",
+      "faang_bar": "Good. How does Java's AtomicReference solve the ABA problem with stamped references?",
+      "startup_cto": "When would you actually choose lock-free over mutex in a production service?"
+    }
+  },
+  {
+    "id": "os_sched_001",
+    "domain": "Operating Systems",
+    "subdomain": "CPU Scheduling",
+    "question": "What is Round Robin scheduling and what is the effect of quantum size?",
+    "keywords": [
+      "time quantum",
+      "preempted",
+      "context switch",
+      "FCFS",
+      "circular queue",
+      "responsiveness",
+      "overhead"
+    ],
+    "common_mistakes": [
+      "Not explaining the quantum size tradeoff",
+      "Forgetting that very large quantum = FCFS"
+    ],
+    "followups": [
+      "How does Round Robin compare to SJF?",
+      "What is multilevel queue scheduling?",
+      "What is the optimal quantum size?"
+    ],
+    "roasts": {
+      "angry_staff": "You didn't explain what happens when the quantum is too small or too large. That's the whole tradeoff.",
+      "strict_prof": "The relationship between quantum size and context switch overhead must be formally addressed.",
+      "faang_bar": "Good. How does a very large quantum degenerate to FCFS and why is that bad?",
+      "startup_cto": "How would you tune the scheduling quantum for a latency-critical API server?"
+    }
+  },
+  {
+    "id": "os_sched_002",
+    "domain": "Operating Systems",
+    "subdomain": "CPU Scheduling",
+    "question": "What is Shortest Job First (SJF) scheduling and what are its problems?",
+    "keywords": [
+      "shortest burst",
+      "optimal",
+      "starvation",
+      "preemptive",
+      "SRTF",
+      "exponential averaging",
+      "waiting time"
+    ],
+    "common_mistakes": [
+      "Not mentioning the impossibility of knowing future burst times",
+      "Forgetting starvation"
+    ],
+    "followups": [
+      "What is Shortest Remaining Time First?",
+      "What is exponential averaging for burst prediction?",
+      "How does SJF compare to Round Robin for interactive systems?"
+    ],
+    "roasts": {
+      "angry_staff": "You said SJF is 'just pick the shortest job.' How do you KNOW the burst length ahead of time?",
+      "strict_prof": "The oracle problem — requiring future knowledge of burst lengths — invalidates naive SJF implementations.",
+      "faang_bar": "Good. How does exponential averaging estimate burst length from history?",
+      "startup_cto": "When would SJF be actually useful in a batch processing system?"
+    }
+  },
+  {
+    "id": "os_sched_003",
+    "domain": "Operating Systems",
+    "subdomain": "CPU Scheduling",
+    "question": "What is First Come First Served (FCFS) scheduling and what is the convoy effect?",
+    "keywords": [
+      "FIFO",
+      "arrival order",
+      "convoy effect",
+      "non-preemptive",
+      "waiting time",
+      "CPU-bound"
+    ],
+    "common_mistakes": [
+      "Forgetting the convoy effect",
+      "Thinking FCFS is fair"
+    ],
+    "followups": [
+      "How does Round Robin solve the convoy effect?",
+      "When is FCFS appropriate?",
+      "What is the average waiting time for FCFS?"
+    ],
+    "roasts": {
+      "angry_staff": "You called FCFS 'fair.' It's not. One long job blocks everyone. That's the convoy effect.",
+      "strict_prof": "The convoy effect is the defining failure mode of FCFS. It was absent from your answer.",
+      "faang_bar": "Good. Give me a numerical example showing how convoy effect increases average waiting time.",
+      "startup_cto": "When would you actually use FCFS? (Hint: there is a valid use case.)"
+    }
+  },
+  {
+    "id": "os_sched_004",
+    "domain": "Operating Systems",
+    "subdomain": "CPU Scheduling",
+    "question": "What is multilevel feedback queue scheduling?",
+    "keywords": [
+      "multiple queues",
+      "priority",
+      "demotion",
+      "aging",
+      "quantum",
+      "I/O-bound",
+      "CPU-bound",
+      "adaptive"
+    ],
+    "common_mistakes": [
+      "Confusing MLFQ with multilevel queue (no feedback)",
+      "Not mentioning aging to prevent starvation"
+    ],
+    "followups": [
+      "How does MLFQ approximate SJF without knowing burst times?",
+      "How does aging prevent starvation in MLFQ?",
+      "How does Windows scheduler relate to MLFQ?"
+    ],
+    "roasts": {
+      "angry_staff": "You described multilevel queue. There's no FEEDBACK in your answer. Add the feedback.",
+      "strict_prof": "The demotion mechanism and aging for starvation prevention are the key innovations of MLFQ.",
+      "faang_bar": "Good. How does MLFQ approximate SJF without oracle knowledge of burst times?",
+      "startup_cto": "How does the Windows thread scheduler implement priority boost (similar to MLFQ aging)?"
+    }
+  },
+  {
+    "id": "os_sched_005",
+    "domain": "Operating Systems",
+    "subdomain": "CPU Scheduling",
+    "question": "What is the difference between CPU-bound and I/O-bound processes?",
+    "keywords": [
+      "CPU bursts",
+      "I/O bursts",
+      "waiting",
+      "responsiveness",
+      "computation",
+      "scheduler priority"
+    ],
+    "common_mistakes": [
+      "Thinking I/O-bound means slow",
+      "Not explaining why schedulers favor I/O-bound processes"
+    ],
+    "followups": [
+      "How does the scheduler differentiate CPU-bound from I/O-bound processes?",
+      "What is a good scheduling strategy for mixed workloads?",
+      "How does MLFQ adapt to CPU-bound vs I/O-bound behavior?"
+    ],
+    "roasts": {
+      "angry_staff": "You said I/O-bound is slow. That's not the definition. Define it by CPU burst length.",
+      "strict_prof": "The scheduler's preference for I/O-bound processes and the rationale was not explained.",
+      "faang_bar": "Good. If a web server has both CPU-heavy and I/O-heavy requests, how would you schedule them?",
+      "startup_cto": "How do you determine if your service is CPU-bound or I/O-bound in production?"
+    }
+  },
+  {
+    "id": "os_sched_006",
+    "domain": "Operating Systems",
+    "subdomain": "CPU Scheduling",
+    "question": "What is real-time scheduling and what are EDF and Rate Monotonic?",
+    "keywords": [
+      "deadline",
+      "Rate Monotonic",
+      "EDF",
+      "period",
+      "utilization bound",
+      "preemptive",
+      "periodic tasks"
+    ],
+    "common_mistakes": [
+      "Confusing EDF with SJF",
+      "Not mentioning the utilization bound for RM"
+    ],
+    "followups": [
+      "What is the utilization bound for Rate Monotonic?",
+      "When would EDF fail in practice?",
+      "What is the difference between hard and soft real-time?"
+    ],
+    "roasts": {
+      "angry_staff": "You confused EDF with SJF. EDF uses DEADLINE as priority, not burst length.",
+      "strict_prof": "The utilization bound for Rate Monotonic scheduling (~69%) is a fundamental result. It was absent.",
+      "faang_bar": "Good. What happens when CPU utilization exceeds the RM utilization bound?",
+      "startup_cto": "In an autonomous vehicle system, would you use RM or EDF? Justify."
+    }
+  },
+  {
+    "id": "os_sched_007",
+    "domain": "Operating Systems",
+    "subdomain": "CPU Scheduling",
+    "question": "What is CPU utilization and how is it measured?",
+    "keywords": [
+      "busy",
+      "idle",
+      "percentage",
+      "/proc/stat",
+      "saturation",
+      "throughput",
+      "response time"
+    ],
+    "common_mistakes": [
+      "Thinking 100% utilization is always good (it often means overloaded)"
+    ],
+    "followups": [
+      "How does CPU utilization differ from CPU saturation?",
+      "What tools measure CPU utilization in Linux?",
+      "How does CPU utilization relate to Little's Law?"
+    ],
+    "roasts": {
+      "angry_staff": "You think 100% CPU is good? That means your system is saturated and latency is spiking.",
+      "strict_prof": "The distinction between utilization and saturation is fundamental to performance analysis.",
+      "faang_bar": "Good. Using Little's Law, how does 99% CPU utilization affect average request wait time?",
+      "startup_cto": "Your CPU is at 95% in production. What do you do first?"
+    }
+  },
+  {
+    "id": "os_sched_008",
+    "domain": "Operating Systems",
+    "subdomain": "CPU Scheduling",
+    "question": "What is gantt chart analysis in CPU scheduling?",
+    "keywords": [
+      "turnaround time",
+      "waiting time",
+      "response time",
+      "completion time",
+      "arrival time",
+      "burst time"
+    ],
+    "common_mistakes": [
+      "Confusing waiting time and turnaround time formulas"
+    ],
+    "followups": [
+      "Calculate average waiting time for given processes using FCFS vs Round Robin",
+      "What is the formula for turnaround time?",
+      "How does response time differ from turnaround time?"
+    ],
+    "roasts": {
+      "angry_staff": "You confused turnaround time and waiting time. Write out the formulas.",
+      "strict_prof": "Turnaround = completion − arrival. Waiting = turnaround − burst. These are distinct.",
+      "faang_bar": "Good. Walk me through calculating waiting time for these processes: P1(0,6), P2(2,4), P3(4,2) under FCFS.",
+      "startup_cto": "How do these scheduling metrics map to SLA metrics in a real web service?"
+    }
+  },
+  {
+    "id": "os_sched_009",
+    "domain": "Operating Systems",
+    "subdomain": "CPU Scheduling",
+    "question": "What is the O(1) scheduler and why was it replaced in Linux?",
+    "keywords": [
+      "O(1)",
+      "priority queues",
+      "active expired arrays",
+      "bitmap",
+      "CFS",
+      "interactivity heuristics",
+      "vruntime"
+    ],
+    "common_mistakes": [
+      "Confusing O(1) scheduler with CFS",
+      "Not explaining WHY it was replaced (heuristics failure)"
+    ],
+    "followups": [
+      "What are the specific interactivity heuristics that O(1) used?",
+      "How does CFS improve over O(1) for interactive workloads?",
+      "What is the EEVDF scheduler being developed to replace CFS?"
+    ],
+    "roasts": {
+      "angry_staff": "You described CFS. I asked about O(1). Different scheduler, different era.",
+      "strict_prof": "The reason for replacement — failed interactivity heuristics — is the key historical lesson.",
+      "faang_bar": "Correct. What is the EEVDF scheduler being developed as CFS's successor?",
+      "startup_cto": "What kernel version introduced CFS and what should developers care about it?"
+    }
+  },
+  {
+    "id": "os_sched_010",
+    "domain": "Operating Systems",
+    "subdomain": "CPU Scheduling",
+    "question": "What is priority scheduling and what is priority inversion?",
+    "keywords": [
+      "priority",
+      "preemptive",
+      "starvation",
+      "priority inversion",
+      "priority inheritance",
+      "resource",
+      "high priority"
+    ],
+    "common_mistakes": [
+      "Not explaining the mechanism of priority inversion (three threads required)",
+      "Forgetting starvation as a problem"
+    ],
+    "followups": [
+      "What is the Mars Pathfinder bug?",
+      "How does priority inheritance solve inversion?",
+      "What is the difference between priority inversion and deadlock?"
+    ],
+    "roasts": {
+      "angry_staff": "You described priority inversion as 'high priority waits.' It needs THREE priority levels to be inversion.",
+      "strict_prof": "The formal definition requires three threads: high, medium, and low priority interacting.",
+      "faang_bar": "Good. Explain exactly what happened in the Mars Pathfinder priority inversion incident.",
+      "startup_cto": "How would you detect and debug priority inversion in an embedded real-time system?"
+    }
+  },
+  {
+    "id": "os_sched_011",
+    "domain": "Operating Systems",
+    "subdomain": "CPU Scheduling",
+    "question": "What is aging in scheduling?",
+    "keywords": [
+      "starvation",
+      "priority increase",
+      "waiting time",
+      "gradual",
+      "low priority",
+      "eventually run"
+    ],
+    "common_mistakes": [
+      "Confusing aging with priority inheritance"
+    ],
+    "followups": [
+      "How does MLFQ implement aging?",
+      "What happens to a process's priority after it runs?",
+      "How does Linux prevent starvation?"
+    ],
+    "roasts": {
+      "angry_staff": "Aging is not priority inheritance. Different problems, different solutions.",
+      "strict_prof": "The mechanism — gradually increasing priority based on wait time — must be stated precisely.",
+      "faang_bar": "Good. How does MLFQ use boost (similar to aging) to prevent CPU-bound processes from starving?",
+      "startup_cto": "Is there an equivalent to aging in distributed job scheduling systems like YARN?"
+    }
+  },
+  {
+    "id": "os_sched_012",
+    "domain": "Operating Systems",
+    "subdomain": "CPU Scheduling",
+    "question": "What is the difference between long-term, medium-term, and short-term schedulers?",
+    "keywords": [
+      "admission",
+      "degree of multiprogramming",
+      "swapper",
+      "CPU scheduler",
+      "frequency",
+      "ready queue"
+    ],
+    "common_mistakes": [
+      "Confusing long-term with short-term",
+      "Thinking all three exist in modern OSes"
+    ],
+    "followups": [
+      "Do modern OSes use all three schedulers?",
+      "How does the medium-term scheduler relate to swapping?",
+      "What determines the degree of multiprogramming?"
+    ],
+    "roasts": {
+      "angry_staff": "You mixed up which one runs most frequently. Short-term = milliseconds. Long-term = rare.",
+      "strict_prof": "The formal distinction in terms of scheduling frequency is the key differentiator.",
+      "faang_bar": "Good. Which of these three schedulers does Linux's scheduler most closely implement?",
+      "startup_cto": "How does this three-level model map to modern container orchestration?"
+    }
+  },
+  {
+    "id": "os_sched_013",
+    "domain": "Operating Systems",
+    "subdomain": "CPU Scheduling",
+    "question": "How does symmetric multiprocessing (SMP) affect scheduling?",
+    "keywords": [
+      "load balancing",
+      "processor affinity",
+      "cache warmth",
+      "NUMA",
+      "migration",
+      "per-CPU run queue",
+      "SMP"
+    ],
+    "common_mistakes": [
+      "Forgetting that migration has cache cold-start costs",
+      "Not mentioning processor affinity"
+    ],
+    "followups": [
+      "What is processor affinity and when is it useful?",
+      "How does Linux balance load across CPUs?",
+      "What is the difference between soft and hard CPU affinity?"
+    ],
+    "roasts": {
+      "angry_staff": "You forgot that moving a process to another CPU flushes its cache. That's the main cost.",
+      "strict_prof": "Processor affinity and its cache-warmth benefits are central to SMP scheduling. You omitted it.",
+      "faang_bar": "Good. How would you set CPU affinity for a latency-sensitive process in Linux?",
+      "startup_cto": "How does Kubernetes CPU request/limit interact with kernel SMP scheduling?"
+    }
+  },
+  {
+    "id": "os_sched_014",
+    "domain": "Operating Systems",
+    "subdomain": "CPU Scheduling",
+    "question": "What is throughput vs response time in scheduling?",
+    "keywords": [
+      "throughput",
+      "response time",
+      "tradeoff",
+      "batch",
+      "interactive",
+      "context switch",
+      "completion"
+    ],
+    "common_mistakes": [
+      "Thinking you can maximize both simultaneously"
+    ],
+    "followups": [
+      "Which scheduling algorithm maximizes throughput?",
+      "How does Round Robin balance throughput and response time?",
+      "What is Little's Law and how does it relate?"
+    ],
+    "roasts": {
+      "angry_staff": "You said 'maximize both.' You can't. They're in direct conflict. Pick a tradeoff.",
+      "strict_prof": "The formal inverse relationship between throughput and response time must be acknowledged.",
+      "faang_bar": "Good. Using Little's Law, explain why high CPU utilization causes response time to spike.",
+      "startup_cto": "For your API server, which metric would you optimize and why?"
+    }
+  },
+  {
+    "id": "os_sched_015",
+    "domain": "Operating Systems",
+    "subdomain": "CPU Scheduling",
+    "question": "What is the Completely Fair Scheduler (CFS) and how does it use vruntime?",
+    "keywords": [
+      "vruntime",
+      "niceness",
+      "weight",
+      "red-black tree",
+      "lowest vruntime",
+      "sleeping cap",
+      "fair share"
+    ],
+    "common_mistakes": [
+      "Not explaining how niceness affects vruntime growth rate",
+      "Forgetting the sleeping process vruntime cap"
+    ],
+    "followups": [
+      "What is the nice value range in Linux?",
+      "How does cgroup CPU scheduling relate to CFS?",
+      "What is the vruntime cap for sleeping processes?"
+    ],
+    "roasts": {
+      "angry_staff": "You didn't explain how niceness affects vruntime growth. That's how priority works in CFS.",
+      "strict_prof": "The inverse relationship between weight and vruntime growth rate is the formal mechanism.",
+      "faang_bar": "Good. How do CPU cgroups (used by Docker/Kubernetes) interact with CFS scheduling?",
+      "startup_cto": "How does setting CPU limits in Kubernetes translate to CFS bandwidth quotas?"
+    }
+  },
+  {
+    "id": "os_sched_016",
+    "domain": "Operating Systems",
+    "subdomain": "CPU Scheduling",
+    "question": "What is CFS bandwidth control and how does it work in containers?",
+    "keywords": [
+      "cgroup",
+      "quota",
+      "throttling",
+      "period",
+      "Kubernetes CPU limits",
+      "latency spikes",
+      "bandwidth control"
+    ],
+    "common_mistakes": [
+      "Thinking Kubernetes CPU limits prevent CPU usage smoothly (throttling causes spikes)",
+      "Not knowing CFS bandwidth control underlies Kubernetes limits"
+    ],
+    "followups": [
+      "Why does CPU throttling in Kubernetes cause latency spikes?",
+      "What is the difference between CPU request and CPU limit?",
+      "How do you detect CPU throttling in a Kubernetes pod?"
+    ],
+    "roasts": {
+      "angry_staff": "You think CPU limits in Kubernetes just smoothly cap usage? Throttling causes SPIKES. Look it up.",
+      "strict_prof": "The period-based quota mechanism of CFS bandwidth control is not equivalent to rate limiting.",
+      "faang_bar": "Good. How would you detect and mitigate CPU throttling in a latency-sensitive Kubernetes service?",
+      "startup_cto": "Should you always set CPU limits on Kubernetes pods? Why or why not?"
+    }
+  },
+  {
+    "id": "os_sched_017",
+    "domain": "Operating Systems",
+    "subdomain": "CPU Scheduling",
+    "question": "What is the difference between turnaround time and response time?",
+    "keywords": [
+      "completion",
+      "arrival",
+      "first execution",
+      "interactivity",
+      "batch",
+      "total elapsed time"
+    ],
+    "common_mistakes": [
+      "Confusing the two metrics",
+      "Thinking they're always equal"
+    ],
+    "followups": [
+      "Which scheduling algorithm minimizes response time?",
+      "Which minimizes turnaround time?",
+      "What is normalized turnaround time?"
+    ],
+    "roasts": {
+      "angry_staff": "You said they're the same thing. They are NOT. Write the formulas.",
+      "strict_prof": "Turnaround = completion − arrival. Response = first_run − arrival. Formally distinct.",
+      "faang_bar": "Good. Which is more important for a real-time gaming server and why?",
+      "startup_cto": "How do turnaround time and response time map to SLA metrics for your API?"
+    }
+  },
+  {
+    "id": "os_sched_018",
+    "domain": "Operating Systems",
+    "subdomain": "CPU Scheduling",
+    "question": "What is non-preemptive scheduling?",
+    "keywords": [
+      "voluntary",
+      "cooperative",
+      "I/O block",
+      "yield",
+      "timer interrupt",
+      "starvation",
+      "predictable"
+    ],
+    "common_mistakes": [
+      "Thinking non-preemptive means the process can never be interrupted"
+    ],
+    "followups": [
+      "When is cooperative scheduling preferred?",
+      "What is the difference between FCFS and cooperative scheduling?",
+      "How does macOS use preemption in its kernel?"
+    ],
+    "roasts": {
+      "angry_staff": "Cooperative scheduling CAN be interrupted by I/O. The process just doesn't get kicked off the CPU.",
+      "strict_prof": "The formal distinction is the absence of involuntary preemption, not the absence of all interrupts.",
+      "faang_bar": "Good. What real-world systems use cooperative scheduling today?",
+      "startup_cto": "Would you use cooperative scheduling in a microcontroller managing safety-critical sensors?"
+    }
+  },
+  {
+    "id": "os_sched_019",
+    "domain": "Operating Systems",
+    "subdomain": "CPU Scheduling",
+    "question": "What happens during a timer interrupt and how does it relate to scheduling?",
+    "keywords": [
+      "hardware timer",
+      "interrupt handler",
+      "preemption",
+      "time slice",
+      "tickless",
+      "preemptive multitasking"
+    ],
+    "common_mistakes": [
+      "Thinking scheduling only happens on process completion"
+    ],
+    "followups": [
+      "What is the HZ value in Linux and what does it mean?",
+      "What is tickless kernel?",
+      "How does the OS prevent a process from disabling timer interrupts?"
+    ],
+    "roasts": {
+      "angry_staff": "You think scheduling only happens when a process finishes? Timer interrupts exist for a reason.",
+      "strict_prof": "The hardware interrupt mechanism is the foundation of preemptive scheduling. It was omitted.",
+      "faang_bar": "Good. What is CONFIG_HZ in Linux and how does changing it affect system behavior?",
+      "startup_cto": "How does timer interrupt frequency affect a high-frequency trading system's performance?"
+    }
+  },
+  {
+    "id": "os_sched_020",
+    "domain": "Operating Systems",
+    "subdomain": "CPU Scheduling",
+    "question": "What is the difference between preemptive and non-preemptive kernel?",
+    "keywords": [
+      "kernel mode",
+      "syscall",
+      "CONFIG_PREEMPT",
+      "spinlock",
+      "real-time",
+      "per-CPU",
+      "synchronization"
+    ],
+    "common_mistakes": [
+      "Confusing user-space preemption with kernel preemption"
+    ],
+    "followups": [
+      "What is CONFIG_PREEMPT_RT in Linux?",
+      "What synchronization issues does kernel preemption introduce?",
+      "Why is kernel preemption important for real-time systems?"
+    ],
+    "roasts": {
+      "angry_staff": "User space preemption and kernel preemption are different things. You confused them.",
+      "strict_prof": "Kernel preemption safety requires spinlocks and per-CPU data — you must address this complexity.",
+      "faang_bar": "Good. What is the PREEMPT_RT patch set and when would you use a PREEMPT_RT kernel?",
+      "startup_cto": "For an autonomous drone controller, would you use a standard or PREEMPT_RT kernel?"
+    }
+  },
+  {
+    "id": "os_sync_001",
+    "domain": "Operating Systems",
+    "subdomain": "Synchronization",
+    "question": "What is a semaphore and how is it different from a mutex?",
+    "keywords": [
+      "counter",
+      "wait",
+      "signal",
+      "binary",
+      "counting",
+      "ownership",
+      "block",
+      "resource pool"
+    ],
+    "common_mistakes": [
+      "Saying mutex and binary semaphore are identical",
+      "Forgetting semaphores have no ownership"
+    ],
+    "followups": [
+      "What is a counting semaphore used for?",
+      "What is the difference between wait/signal and lock/unlock?",
+      "What is a condition variable?"
+    ],
+    "roasts": {
+      "angry_staff": "Binary semaphore ≠ mutex. OWNERSHIP. Any thread can signal a semaphore. You got it wrong.",
+      "strict_prof": "The ownership property distinguishes mutex from semaphore. This was not addressed.",
+      "faang_bar": "Good. Design a bounded semaphore with a maximum count using atomics.",
+      "startup_cto": "In your codebase, when would you reach for a semaphore over a mutex?"
+    }
+  },
+  {
+    "id": "os_sync_002",
+    "domain": "Operating Systems",
+    "subdomain": "Synchronization",
+    "question": "What is a condition variable and how is it used?",
+    "keywords": [
+      "wait",
+      "signal",
+      "broadcast",
+      "mutex",
+      "spurious wakeup",
+      "loop",
+      "condition",
+      "atomic release"
+    ],
+    "common_mistakes": [
+      "Not checking the condition in a loop (spurious wakeup)",
+      "Using signal when broadcast is needed"
+    ],
+    "followups": [
+      "What is a spurious wakeup?",
+      "When would you use broadcast vs signal?",
+      "How does Java's wait/notify relate to condition variables?"
+    ],
+    "roasts": {
+      "angry_staff": "You forgot the loop. Spurious wakeups are real. Always check the condition in a while loop.",
+      "strict_prof": "The atomic release of mutex on wait() is the key invariant. It was not explained.",
+      "faang_bar": "Good. Implement a blocking queue using a mutex and two condition variables.",
+      "startup_cto": "How does Java's synchronized/wait/notify relate to condition variables?"
+    }
+  },
+  {
+    "id": "os_sync_003",
+    "domain": "Operating Systems",
+    "subdomain": "Synchronization",
+    "question": "What is a spinlock and when should you use it?",
+    "keywords": [
+      "busy-wait",
+      "spin",
+      "context switch",
+      "latency",
+      "short critical section",
+      "multi-core",
+      "interrupt"
+    ],
+    "common_mistakes": [
+      "Using spinlocks for long critical sections",
+      "Thinking spinlocks are better than mutexes in all cases"
+    ],
+    "followups": [
+      "Why are spinlocks bad on single-core systems?",
+      "What is an adaptive spinlock?",
+      "How does the Linux kernel use spinlocks?"
+    ],
+    "roasts": {
+      "angry_staff": "You'd use a spinlock for a database query? For a 10ms operation? Wastes an entire CPU core.",
+      "strict_prof": "The single-core pathology — spinning prevents the lock holder from running — must be addressed.",
+      "faang_bar": "Good. What is an adaptive mutex and how does it combine spinning with blocking?",
+      "startup_cto": "Name one place in Linux kernel code where spinlocks are essential."
+    }
+  },
+  {
+    "id": "os_sync_004",
+    "domain": "Operating Systems",
+    "subdomain": "Synchronization",
+    "question": "What is the Dining Philosophers problem and what solutions exist?",
+    "keywords": [
+      "deadlock",
+      "circular wait",
+      "resource hierarchy",
+      "forks",
+      "philosophers",
+      "hold and wait",
+      "concurrency"
+    ],
+    "common_mistakes": [
+      "Only giving the naive deadlocking solution",
+      "Not knowing any correct solution"
+    ],
+    "followups": [
+      "Which Coffman condition does resource hierarchy break?",
+      "How does the waiter solution work?",
+      "What is the Chandy-Misra algorithm?"
+    ],
+    "roasts": {
+      "angry_staff": "You gave me the solution that DEADLOCKS. That's the problem statement, not the solution.",
+      "strict_prof": "Resource hierarchy breaks circular wait, one of the Coffman conditions. This must be stated.",
+      "faang_bar": "Correct. Which Coffman condition does each solution break?",
+      "startup_cto": "Where does the dining philosophers problem appear in real distributed systems?"
+    }
+  },
+  {
+    "id": "os_sync_005",
+    "domain": "Operating Systems",
+    "subdomain": "Synchronization",
+    "question": "What are memory barriers (memory fences) and why are they needed?",
+    "keywords": [
+      "reordering",
+      "out-of-order",
+      "cache",
+      "visibility",
+      "store barrier",
+      "load barrier",
+      "memory model"
+    ],
+    "common_mistakes": [
+      "Thinking that sequential code is automatically visible to other threads",
+      "Not knowing why barriers exist at hardware level"
+    ],
+    "followups": [
+      "What is the difference between acquire and release semantics?",
+      "What is the Java Memory Model?",
+      "When does double-checked locking fail without a barrier?"
+    ],
+    "roasts": {
+      "angry_staff": "You think sequential writes are immediately visible to other cores? Wrong. That's why barriers exist.",
+      "strict_prof": "The hardware store buffer and per-core caching are the root cause. You didn't mention them.",
+      "faang_bar": "Good. Explain why double-checked locking fails without a memory barrier.",
+      "startup_cto": "How do memory barriers affect your lock-free queue implementation's correctness?"
+    }
+  },
+  {
+    "id": "os_sync_006",
+    "domain": "Operating Systems",
+    "subdomain": "Synchronization",
+    "question": "Explain the Readers-Writers problem and its solutions.",
+    "keywords": [
+      "shared read",
+      "exclusive write",
+      "readers preferred",
+      "writers preferred",
+      "starvation",
+      "read-write lock",
+      "mutex"
+    ],
+    "common_mistakes": [
+      "Only describing one version (readers or writers preferred)",
+      "Not addressing starvation in each version"
+    ],
+    "followups": [
+      "How does Java's ReentrantReadWriteLock prevent starvation?",
+      "What is a fair read-write lock?",
+      "When would you use a read-write lock vs a mutex?"
+    ],
+    "roasts": {
+      "angry_staff": "You gave one version. There are TWO. And both can starve. Which is it?",
+      "strict_prof": "The two canonical versions differ in which party can starve. Both must be addressed.",
+      "faang_bar": "Correct. How does Java's StampedLock improve over a traditional ReadWriteLock?",
+      "startup_cto": "In a database, when would reads blocking writes be worse than writes blocking reads?"
+    }
+  },
+  {
+    "id": "os_sync_007",
+    "domain": "Operating Systems",
+    "subdomain": "Synchronization",
+    "question": "What is a monitor in synchronization?",
+    "keywords": [
+      "encapsulation",
+      "mutual exclusion",
+      "condition variable",
+      "Java synchronized",
+      "automatic",
+      "procedure"
+    ],
+    "common_mistakes": [
+      "Confusing monitor with mutex",
+      "Not mentioning condition variables inside monitors"
+    ],
+    "followups": [
+      "How does Java's synchronized keyword implement a monitor?",
+      "What is the difference between notify() and notifyAll()?",
+      "What is a reentrant lock in monitors?"
+    ],
+    "roasts": {
+      "angry_staff": "Monitor ≠ mutex. A monitor encapsulates data + operations + synchronization. Different abstraction.",
+      "strict_prof": "Condition variables within monitors are essential to the abstraction. You omitted them.",
+      "faang_bar": "Good. Implement a blocking queue using Java monitors (synchronized + wait/notifyAll).",
+      "startup_cto": "How does Go's sync.Mutex compare to Java's monitor synchronization model?"
+    }
+  },
+  {
+    "id": "os_sync_008",
+    "domain": "Operating Systems",
+    "subdomain": "Synchronization",
+    "question": "What is the ABA problem in lock-free programming?",
+    "keywords": [
+      "CAS",
+      "compare-and-swap",
+      "version counter",
+      "tagged pointer",
+      "hazard pointer",
+      "lock-free",
+      "ABA"
+    ],
+    "common_mistakes": [
+      "Thinking CAS is always correct",
+      "Not explaining the concrete scenario"
+    ],
+    "followups": [
+      "How do tagged pointers solve ABA?",
+      "What is RCU (Read-Copy-Update)?",
+      "How does Java's AtomicStampedReference solve ABA?"
+    ],
+    "roasts": {
+      "angry_staff": "You said CAS is 'always safe.' The ABA problem exists for a reason. Learn it.",
+      "strict_prof": "The formal mechanism — state changed from A→B→A — must be demonstrated concretely.",
+      "faang_bar": "Good. Implement a fix for ABA using stamped/tagged references.",
+      "startup_cto": "Has ABA ever caused a production incident? What would the symptoms look like?"
+    }
+  },
+  {
+    "id": "os_sync_009",
+    "domain": "Operating Systems",
+    "subdomain": "Synchronization",
+    "question": "What is a livelock?",
+    "keywords": [
+      "no progress",
+      "active",
+      "backoff",
+      "retry",
+      "not blocked",
+      "conflict detection",
+      "priority"
+    ],
+    "common_mistakes": [
+      "Confusing livelock with deadlock (in deadlock threads are blocked)"
+    ],
+    "followups": [
+      "How does Ethernet's CSMA/CD handle livelock?",
+      "What is exponential backoff?",
+      "Give a real-world example of livelock in distributed systems."
+    ],
+    "roasts": {
+      "angry_staff": "In a livelock, threads are NOT blocked. They're spinning. You described deadlock.",
+      "strict_prof": "The key distinction — active execution without progress — is the formal definition of livelock.",
+      "faang_bar": "Good. How does Ethernet's CSMA/CD prevent collision-induced livelock?",
+      "startup_cto": "Describe a livelock scenario in a distributed transaction system."
+    }
+  },
+  {
+    "id": "os_sync_010",
+    "domain": "Operating Systems",
+    "subdomain": "Synchronization",
+    "question": "What is an atomic operation?",
+    "keywords": [
+      "indivisible",
+      "compare-and-swap",
+      "fetch-and-add",
+      "test-and-set",
+      "hardware",
+      "lock-free",
+      "LOCK prefix"
+    ],
+    "common_mistakes": [
+      "Thinking volatile is atomic in Java (it's not for compound operations)",
+      "Confusing atomicity with isolation"
+    ],
+    "followups": [
+      "What is the difference between atomic and volatile in Java?",
+      "What instructions implement atomic operations on x86?",
+      "When is CAS preferred over a mutex?"
+    ],
+    "roasts": {
+      "angry_staff": "You think volatile in Java is the same as atomic? It's not. volatile prevents reordering, not atomicity.",
+      "strict_prof": "Hardware-level instructions (test-and-set, CAS) implement atomicity. You must mention them.",
+      "faang_bar": "Good. When is CAS more efficient than a mutex for a shared counter?",
+      "startup_cto": "How does Java's AtomicLong compare to a synchronized counter in throughput?"
+    }
+  },
+  {
+    "id": "os_sync_011",
+    "domain": "Operating Systems",
+    "subdomain": "Synchronization",
+    "question": "What is RCU (Read-Copy-Update) and how does it work?",
+    "keywords": [
+      "read-heavy",
+      "grace period",
+      "copy",
+      "atomic pointer swap",
+      "lock-free reads",
+      "reclaim",
+      "Linux kernel"
+    ],
+    "common_mistakes": [
+      "Thinking RCU is suitable for write-heavy workloads",
+      "Not mentioning the grace period for memory reclamation"
+    ],
+    "followups": [
+      "What is a grace period in RCU?",
+      "What data structures in Linux use RCU?",
+      "How does RCU relate to MVCC in databases?"
+    ],
+    "roasts": {
+      "angry_staff": "You'd use RCU for write-heavy workloads? It serializes writers. It's for READ-HEAVY.",
+      "strict_prof": "The grace period for safe memory reclamation is the key innovation of RCU.",
+      "faang_bar": "Good. How does RCU relate to MVCC (Multi-Version Concurrency Control) in databases?",
+      "startup_cto": "Name two Linux kernel data structures that use RCU."
+    }
+  },
+  {
+    "id": "os_sync_012",
+    "domain": "Operating Systems",
+    "subdomain": "Synchronization",
+    "question": "What is the sleeping barber problem?",
+    "keywords": [
+      "waiting room",
+      "semaphore",
+      "race condition",
+      "mutex",
+      "customers",
+      "barbers",
+      "miss each other"
+    ],
+    "common_mistakes": [
+      "Not identifying the race condition as the core problem"
+    ],
+    "followups": [
+      "How does this relate to thread pool patterns?",
+      "What real-world system does this model?",
+      "How would you implement this with a condition variable?"
+    ],
+    "roasts": {
+      "angry_staff": "You described the setup, not the PROBLEM. The race condition is the core. What is it?",
+      "strict_prof": "The race condition between checking for customers and waking the barber must be formally identified.",
+      "faang_bar": "Good. How does this problem model a thread pool with a task queue?",
+      "startup_cto": "This models a web server with a thread pool. What parameters would you tune?"
+    }
+  },
+  {
+    "id": "os_sync_013",
+    "domain": "Operating Systems",
+    "subdomain": "Synchronization",
+    "question": "What is the difference between optimistic and pessimistic locking?",
+    "keywords": [
+      "conflict",
+      "lock first",
+      "verify then commit",
+      "version number",
+      "CAS",
+      "retry",
+      "contention",
+      "MVCC"
+    ],
+    "common_mistakes": [
+      "Thinking optimistic is always better (high contention = many retries)",
+      "Not mentioning version numbers or CAS for verification"
+    ],
+    "followups": [
+      "How does MVCC in PostgreSQL implement optimistic concurrency?",
+      "When does optimistic locking degrade to being worse than pessimistic?",
+      "What is the write skew anomaly?"
+    ],
+    "roasts": {
+      "angry_staff": "You said optimistic is always better. Under high contention, all your operations retry infinitely.",
+      "strict_prof": "The verification mechanism — version number or CAS — is what makes optimistic locking work.",
+      "faang_bar": "Good. How does PostgreSQL's MVCC implement optimistic concurrency for transactions?",
+      "startup_cto": "In your database design, when would you choose row-level locking over MVCC?"
+    }
+  },
+  {
+    "id": "os_sync_014",
+    "domain": "Operating Systems",
+    "subdomain": "Synchronization",
+    "question": "What is sequential consistency vs relaxed memory ordering?",
+    "keywords": [
+      "sequential consistency",
+      "TSO",
+      "relaxed",
+      "acquire",
+      "release",
+      "seq_cst",
+      "reordering",
+      "memory model"
+    ],
+    "common_mistakes": [
+      "Thinking x86 is sequentially consistent (it's TSO)",
+      "Not knowing that different architectures have different models"
+    ],
+    "followups": [
+      "What is TSO (Total Store Order)?",
+      "When would you use memory_order_relaxed in C++?",
+      "How does the Java Memory Model define happens-before?"
+    ],
+    "roasts": {
+      "angry_staff": "x86 is NOT sequentially consistent. It's TSO. Every ARM developer learns this the hard way.",
+      "strict_prof": "The formal definition of sequential consistency — Lamport's definition — was not cited.",
+      "faang_bar": "Good. Explain when memory_order_relaxed is safe to use in C++ atomics.",
+      "startup_cto": "How would a memory ordering bug manifest in production on an ARM server?"
+    }
+  },
+  {
+    "id": "os_sync_015",
+    "domain": "Operating Systems",
+    "subdomain": "Synchronization",
+    "question": "What is the test-and-set instruction?",
+    "keywords": [
+      "atomic",
+      "read old value",
+      "set to 1",
+      "spinlock",
+      "hardware instruction",
+      "XCHG",
+      "busy-wait"
+    ],
+    "common_mistakes": [
+      "Thinking TAS can be implemented in software without hardware support"
+    ],
+    "followups": [
+      "Why can't test-and-set be implemented purely in software?",
+      "What is compare-and-swap (CAS) and how is it stronger than TAS?",
+      "What is the fetch-and-add instruction?"
+    ],
+    "roasts": {
+      "angry_staff": "You think you can implement test-and-set in software? You can't. Hardware atomic support is required.",
+      "strict_prof": "The atomicity guarantee — read-modify-write in a single instruction — requires hardware support.",
+      "faang_bar": "Good. Why is CAS strictly more powerful than test-and-set?",
+      "startup_cto": "What happens on a NUMA system when every core does TAS on the same variable?"
+    }
+  },
+  {
+    "id": "os_sync_016",
+    "domain": "Operating Systems",
+    "subdomain": "Synchronization",
+    "question": "What is a lock-free vs wait-free data structure?",
+    "keywords": [
+      "lock-free",
+      "wait-free",
+      "system-wide progress",
+      "per-thread progress",
+      "CAS",
+      "bounded steps",
+      "starvation"
+    ],
+    "common_mistakes": [
+      "Thinking lock-free means wait-free",
+      "Not knowing that lock-free still allows individual starvation"
+    ],
+    "followups": [
+      "What is an obstruction-free algorithm?",
+      "How does Java's ConcurrentLinkedQueue achieve lock-free behavior?",
+      "When would you need wait-free guarantees?"
+    ],
+    "roasts": {
+      "angry_staff": "Lock-free and wait-free are NOT the same. Lock-free can starve individual threads. Know the difference.",
+      "strict_prof": "The formal hierarchy: wait-free ⊂ lock-free ⊂ obstruction-free. You conflated the first two.",
+      "faang_bar": "Good. When would you need wait-free guarantees over lock-free? Name a use case.",
+      "startup_cto": "Is Java's ConcurrentHashMap lock-free or does it use locks?"
+    }
+  },
+  {
+    "id": "os_sync_017",
+    "domain": "Operating Systems",
+    "subdomain": "Synchronization",
+    "question": "What is a read-write lock and when should you use it?",
+    "keywords": [
+      "concurrent readers",
+      "exclusive writer",
+      "read-heavy",
+      "starvation",
+      "ReentrantReadWriteLock",
+      "overhead"
+    ],
+    "common_mistakes": [
+      "Using rwlock for write-heavy workloads (overhead exceeds benefit)",
+      "Not mentioning writer starvation risk"
+    ],
+    "followups": [
+      "How does Java's StampedLock improve on ReadWriteLock?",
+      "When does rwlock perform WORSE than a plain mutex?",
+      "What is an optimistic read lock?"
+    ],
+    "roasts": {
+      "angry_staff": "You'd use an rwlock when writes are frequent? The overhead makes it WORSE than a mutex.",
+      "strict_prof": "The writer starvation risk in readers-preferred implementations must be addressed.",
+      "faang_bar": "Good. How does Java's StampedLock enable optimistic reads without blocking?",
+      "startup_cto": "In a cache with high read and occasional invalidation, would you use rwlock or a different approach?"
+    }
+  },
+  {
+    "id": "os_sync_018",
+    "domain": "Operating Systems",
+    "subdomain": "Synchronization",
+    "question": "What is deadlock detection vs deadlock prevention?",
+    "keywords": [
+      "Coffman conditions",
+      "resource allocation graph",
+      "cycle detection",
+      "recovery",
+      "abort",
+      "proactive",
+      "reactive"
+    ],
+    "common_mistakes": [
+      "Confusing detection with avoidance (Banker's)",
+      "Not describing recovery mechanisms"
+    ],
+    "followups": [
+      "What is deadlock avoidance vs prevention?",
+      "How does deadlock recovery work?",
+      "What data structure represents the resource allocation graph?"
+    ],
+    "roasts": {
+      "angry_staff": "Prevention, avoidance, and detection are THREE DIFFERENT THINGS. You conflated two.",
+      "strict_prof": "Deadlock avoidance (Banker's) is distinct from prevention. The taxonomy must be precise.",
+      "faang_bar": "Good. How does a database detect and break deadlocks in a transaction system?",
+      "startup_cto": "Which approach does the Linux kernel use to handle deadlocks?"
+    }
+  },
+  {
+    "id": "os_sync_019",
+    "domain": "Operating Systems",
+    "subdomain": "Synchronization",
+    "question": "What is a critical section problem?",
+    "keywords": [
+      "mutual exclusion",
+      "progress",
+      "bounded waiting",
+      "starvation",
+      "shared resource",
+      "protocol"
+    ],
+    "common_mistakes": [
+      "Missing one of the three properties",
+      "Confusing progress with bounded waiting"
+    ],
+    "followups": [
+      "What is the difference between progress and bounded waiting?",
+      "How does Peterson's algorithm solve the critical section problem?",
+      "Why is software-only mutual exclusion insufficient without hardware support?"
+    ],
+    "roasts": {
+      "angry_staff": "Three conditions. You listed two. Bounded waiting — processes don't wait forever. Missing.",
+      "strict_prof": "Mutual exclusion, progress, and bounded waiting are the formal criteria. All three required.",
+      "faang_bar": "Correct. Why does Peterson's algorithm fail on modern CPUs without memory barriers?",
+      "startup_cto": "How do these three properties map to requirements in a distributed lock service?"
+    }
+  },
+  {
+    "id": "os_sync_020",
+    "domain": "Operating Systems",
+    "subdomain": "Synchronization",
+    "question": "What is Peterson's algorithm and why does it fail on modern hardware?",
+    "keywords": [
+      "flag",
+      "turn",
+      "software-only",
+      "memory reordering",
+      "memory barrier",
+      "two-process",
+      "mutual exclusion"
+    ],
+    "common_mistakes": [
+      "Thinking Peterson's algorithm is safe on modern hardware without barriers"
+    ],
+    "followups": [
+      "Which processor architectures can reorder the operations in Peterson's algorithm?",
+      "What memory barrier would fix Peterson's?",
+      "What replaced Peterson's in practice?"
+    ],
+    "roasts": {
+      "angry_staff": "Peterson's algorithm fails on ARM without memory barriers. Do you even test on non-x86?",
+      "strict_prof": "The formal correctness proof assumes sequential consistency, which modern CPUs violate.",
+      "faang_bar": "Good. Which specific memory ordering violation breaks Peterson's algorithm on ARM?",
+      "startup_cto": "What would you use instead of Peterson's algorithm in production C++ code?"
+    }
   }
 ]

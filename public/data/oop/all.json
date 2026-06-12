@@ -1406,5 +1406,541 @@
       "faang_bar": "Good, let's move to something more complex.",
       "startup_cto": "Just give me the TL;DR so we can ship."
     }
+  },
+  {
+    "id": "oop_001",
+    "domain": "OOP",
+    "subdomain": "OOP Principles",
+    "question": "What are the four pillars of OOP?",
+    "keywords": [
+      "encapsulation",
+      "abstraction",
+      "inheritance",
+      "polymorphism"
+    ],
+    "common_mistakes": [
+      "Confusing encapsulation and abstraction"
+    ],
+    "followups": [
+      "Encapsulation vs abstraction?",
+      "What is polymorphism?"
+    ],
+    "roasts": {
+      "angry_staff": "Encapsulation hides STATE. Abstraction hides IMPLEMENTATION. Different.",
+      "strict_prof": "Each pillar has a formal definition relating to information hiding, interface design, behavioral substitution.",
+      "faang_bar": "Good. Compile-time vs runtime polymorphism?",
+      "startup_cto": "Real-world example of each pillar?"
+    }
+  },
+  {
+    "id": "oop_002",
+    "domain": "OOP",
+    "subdomain": "OOP Principles",
+    "question": "What is the difference between encapsulation and abstraction?",
+    "keywords": [
+      "access modifiers",
+      "private",
+      "interface",
+      "hiding state",
+      "hiding implementation"
+    ],
+    "common_mistakes": [
+      "Saying they are the same"
+    ],
+    "followups": [
+      "How do abstract classes implement abstraction?",
+      "What is information hiding?"
+    ],
+    "roasts": {
+      "angry_staff": "Encapsulation = access control. Abstraction = interface design.",
+      "strict_prof": "Encapsulation is the mechanism; abstraction is the principle.",
+      "faang_bar": "Good. Java interface vs abstract class for abstraction?",
+      "startup_cto": "Example of poor encapsulation causing maintenance issues?"
+    }
+  },
+  {
+    "id": "oop_003",
+    "domain": "OOP",
+    "subdomain": "OOP Principles",
+    "question": "What is polymorphism?",
+    "keywords": [
+      "method overloading",
+      "method overriding",
+      "virtual dispatch",
+      "compile-time",
+      "runtime",
+      "interface"
+    ],
+    "common_mistakes": [
+      "Confusing overloading with overriding"
+    ],
+    "followups": [
+      "Overriding vs overloading?",
+      "What is dynamic dispatch?"
+    ],
+    "roasts": {
+      "angry_staff": "Overloading = compile-time. Overriding = runtime. Different resolution.",
+      "strict_prof": "Dynamic polymorphism implemented via vtables in compiled languages.",
+      "faang_bar": "Good. How does Go achieve polymorphism via interfaces without inheritance?",
+      "startup_cto": "How does polymorphism allow adding payment method without modifying checkout code?"
+    }
+  },
+  {
+    "id": "oop_004",
+    "domain": "OOP",
+    "subdomain": "OOP Principles",
+    "question": "What is inheritance and its pitfalls?",
+    "keywords": [
+      "parent",
+      "child",
+      "code reuse",
+      "tight coupling",
+      "fragile base class",
+      "diamond problem"
+    ],
+    "common_mistakes": [
+      "Using inheritance for code reuse when composition is better"
+    ],
+    "followups": [
+      "Fragile base class problem?",
+      "Composition vs inheritance?"
+    ],
+    "roasts": {
+      "angry_staff": "Deep inheritance = maintenance nightmare. Composition over inheritance.",
+      "strict_prof": "Fragile base class: changes to superclass can alter subclass behavior unexpectedly.",
+      "faang_bar": "Good. Diamond problem in C++ vs Java?",
+      "startup_cto": "8-level deep hierarchy. Problem and refactor?"
+    }
+  },
+  {
+    "id": "oop_005",
+    "domain": "OOP",
+    "subdomain": "SOLID Principles",
+    "question": "What are the SOLID principles?",
+    "keywords": [
+      "Single Responsibility",
+      "Open/Closed",
+      "Liskov",
+      "Interface Segregation",
+      "Dependency Inversion"
+    ],
+    "common_mistakes": [
+      "Only memorizing names without understanding"
+    ],
+    "followups": [
+      "What is Liskov Substitution?",
+      "How does DI enable testing?"
+    ],
+    "roasts": {
+      "angry_staff": "Name all five AND explain each one. Names alone are useless.",
+      "strict_prof": "Each SOLID principle has a formal statement.",
+      "faang_bar": "Good. How does violating Open/Closed lead to regression bugs?",
+      "startup_cto": "Show me a class violating Single Responsibility and explain the refactor."
+    }
+  },
+  {
+    "id": "oop_006",
+    "domain": "OOP",
+    "subdomain": "SOLID Principles",
+    "question": "What is the Liskov Substitution Principle?",
+    "keywords": [
+      "subtype",
+      "invariant",
+      "Rectangle Square",
+      "behavioral compatibility",
+      "postconditions",
+      "preconditions"
+    ],
+    "common_mistakes": [
+      "Thinking LSP just means subclasses inherit from parents"
+    ],
+    "followups": [
+      "Rectangle/Square LSP violation?",
+      "What is behavioral subtyping?"
+    ],
+    "roasts": {
+      "angry_staff": "Square extends Rectangle but breaks invariant. Sets width AND height. That violates LSP.",
+      "strict_prof": "Subtypes must not strengthen preconditions, may weaken postconditions, and must preserve invariants.",
+      "faang_bar": "Good. How does Rectangle/Square LSP violation manifest in production?",
+      "startup_cto": "Senior says: just override setWidth. What is your technical objection?"
+    }
+  },
+  {
+    "id": "oop_007",
+    "domain": "OOP",
+    "subdomain": "SOLID Principles",
+    "question": "What is Dependency Injection?",
+    "keywords": [
+      "constructor injection",
+      "loose coupling",
+      "mock",
+      "testability",
+      "Spring",
+      "IoC"
+    ],
+    "common_mistakes": [
+      "Confusing DI with Dependency Inversion Principle"
+    ],
+    "followups": [
+      "What is IoC?",
+      "What is a DI container?"
+    ],
+    "roasts": {
+      "angry_staff": "DI (pattern) != DIP (principle). Related but different.",
+      "strict_prof": "DI transfers responsibility of dependency resolution to an external assembler.",
+      "faang_bar": "Good. Service Locator antipattern vs true DI?",
+      "startup_cto": "new DatabaseConnection() in constructor. What is wrong?"
+    }
+  },
+  {
+    "id": "oop_008",
+    "domain": "OOP",
+    "subdomain": "Design Patterns",
+    "question": "What is the Singleton pattern and its drawbacks?",
+    "keywords": [
+      "single instance",
+      "static getInstance",
+      "volatile",
+      "global state",
+      "testability"
+    ],
+    "common_mistakes": [
+      "Not making singleton thread-safe"
+    ],
+    "followups": [
+      "Thread-safe Singleton?",
+      "Alternative to Singleton?"
+    ],
+    "roasts": {
+      "angry_staff": "Singleton with global state = antipattern. Use DI for a shared instance.",
+      "strict_prof": "Thread-safe Singleton needs volatile + double-checked locking or holder idiom.",
+      "faang_bar": "Good. Threading failure modes of naive Singleton in Java?",
+      "startup_cto": "Whole codebase depends on a Singleton for config. How do you refactor?"
+    }
+  },
+  {
+    "id": "oop_009",
+    "domain": "OOP",
+    "subdomain": "Design Patterns",
+    "question": "What is the Observer pattern?",
+    "keywords": [
+      "publish-subscribe",
+      "subject",
+      "observer",
+      "notify",
+      "loose coupling",
+      "memory leak"
+    ],
+    "common_mistakes": [
+      "Not handling memory leaks from unremoved observers"
+    ],
+    "followups": [
+      "Observer vs Pub-Sub?",
+      "How does React relate to Observer?"
+    ],
+    "roasts": {
+      "angry_staff": "Not removing observers = memory leak in Java. GC cannot collect them.",
+      "strict_prof": "Observer establishes behavioral coupling through interface — subject depends only on Observer interface.",
+      "faang_bar": "Good. How does React useState implement Observer?",
+      "startup_cto": "Implemented Observer but cannot remove listeners. What memory issue?"
+    }
+  },
+  {
+    "id": "oop_010",
+    "domain": "OOP",
+    "subdomain": "Design Patterns",
+    "question": "What is the Strategy pattern?",
+    "keywords": [
+      "encapsulate algorithm",
+      "interchangeable",
+      "context",
+      "interface",
+      "runtime swap",
+      "Open/Closed"
+    ],
+    "common_mistakes": [
+      "Using if/else chains instead of Strategy"
+    ],
+    "followups": [
+      "Strategy vs Template Method?",
+      "Strategy vs State?"
+    ],
+    "roasts": {
+      "angry_staff": "10-branch if/else on payment type violates Open/Closed. Use Strategy.",
+      "strict_prof": "Strategy encapsulates algorithmic variation through a common interface.",
+      "faang_bar": "Good. Strategy vs State pattern?",
+      "startup_cto": "8 payment type if/else. Refactor with Strategy."
+    }
+  },
+  {
+    "id": "oop_011",
+    "domain": "OOP",
+    "subdomain": "Design Patterns",
+    "question": "What is the Decorator pattern?",
+    "keywords": [
+      "wrap",
+      "same interface",
+      "runtime behavior",
+      "stack",
+      "Java IO",
+      "middleware",
+      "composition"
+    ],
+    "common_mistakes": [
+      "Confusing Decorator with inheritance"
+    ],
+    "followups": [
+      "Java InputStream Decorator?",
+      "Decorator vs Proxy?"
+    ],
+    "roasts": {
+      "angry_staff": "Decorator uses COMPOSITION not inheritance.",
+      "strict_prof": "Decorator implements same interface as component, delegates to wrapped object while adding behavior.",
+      "faang_bar": "Good. Python @functools.wraps and the Decorator pattern?",
+      "startup_cto": "Add logging+auth to 20 service methods without modifying each. Which pattern?"
+    }
+  },
+  {
+    "id": "oop_012",
+    "domain": "OOP",
+    "subdomain": "OOP Principles",
+    "question": "What is an abstract class vs an interface?",
+    "keywords": [
+      "abstract methods",
+      "concrete methods",
+      "single inheritance",
+      "multiple implementation",
+      "contract",
+      "IS-A",
+      "CAN-DO"
+    ],
+    "common_mistakes": [
+      "Not knowing multiple interface implementation but single class inheritance"
+    ],
+    "followups": [
+      "Java 8 default methods?",
+      "Abstract class vs interface when?"
+    ],
+    "roasts": {
+      "angry_staff": "Multiple interfaces, one class. That is why interfaces exist for contracts.",
+      "strict_prof": "Abstract classes express IS-A with partial implementation; interfaces express behavioral contracts.",
+      "faang_bar": "Good. Java 8 default methods blurring the distinction?",
+      "startup_cto": "PaymentProcessor: abstract class or interface?"
+    }
+  },
+  {
+    "id": "oop_013",
+    "domain": "OOP",
+    "subdomain": "Design Patterns",
+    "question": "What is the Factory Method pattern?",
+    "keywords": [
+      "creation decoupled",
+      "open/closed",
+      "subclass decides",
+      "Abstract Factory",
+      "interface"
+    ],
+    "common_mistakes": [
+      "Confusing Factory Method with Abstract Factory"
+    ],
+    "followups": [
+      "Factory Method vs Abstract Factory?",
+      "Builder pattern?"
+    ],
+    "roasts": {
+      "angry_staff": "Simple Factory ≠ Factory Method pattern. GoF Factory Method uses subclass decision.",
+      "strict_prof": "Factory Method defines abstract creator with a factory method; Abstract Factory creates product families.",
+      "faang_bar": "Good. JDBC DriverManager as Abstract Factory?",
+      "startup_cto": "Support MySQL and PostgreSQL with same code. Which pattern?"
+    }
+  },
+  {
+    "id": "oop_014",
+    "domain": "OOP",
+    "subdomain": "OOP Principles",
+    "question": "What is method overriding vs overloading?",
+    "keywords": [
+      "same name",
+      "different signature",
+      "compile-time",
+      "runtime",
+      "@Override",
+      "dynamic dispatch"
+    ],
+    "common_mistakes": [
+      "Thinking overloading is runtime polymorphism"
+    ],
+    "followups": [
+      "Covariant return type?",
+      "Can constructors be overridden?"
+    ],
+    "roasts": {
+      "angry_staff": "Overloading = compile-time. Overriding = runtime. Not the same.",
+      "strict_prof": "Overriding implements behavioral subtype polymorphism; overloading is ad-hoc polymorphism.",
+      "faang_bar": "Good. Java type erasure and overloading conflict?",
+      "startup_cto": "process(String) vs process(Integer). Overload or override?"
+    }
+  },
+  {
+    "id": "oop_015",
+    "domain": "OOP",
+    "subdomain": "OOP Principles",
+    "question": "What is the difference between deep copy and shallow copy?",
+    "keywords": [
+      "references",
+      "nested objects",
+      "independent",
+      "Java clone",
+      "recursive",
+      "immutable"
+    ],
+    "common_mistakes": [
+      "Thinking clone() does deep copy"
+    ],
+    "followups": [
+      "Deep copy in Java?",
+      "What is copy constructor?"
+    ],
+    "roasts": {
+      "angry_staff": "Java clone() = SHALLOW. Nested objects are shared. Bug waiting to happen.",
+      "strict_prof": "Deep copy ensures structural independence — creates isomorphic copies of entire object graph.",
+      "faang_bar": "Good. Deep copy of object graph with circular references?",
+      "startup_cto": "Cloned Configuration object, changed nested list. Why did original also change?"
+    }
+  },
+  {
+    "id": "oop_016",
+    "domain": "OOP",
+    "subdomain": "OOP Principles",
+    "question": "What is coupling and cohesion?",
+    "keywords": [
+      "high cohesion",
+      "loose coupling",
+      "God class",
+      "Single Responsibility",
+      "dependency"
+    ],
+    "common_mistakes": [
+      "Confusing which should be high and which low"
+    ],
+    "followups": [
+      "How does DI achieve loose coupling?",
+      "What is a God class?"
+    ],
+    "roasts": {
+      "angry_staff": "High cohesion GOOD. Loose coupling GOOD. If mixed up, reconsider your design career.",
+      "strict_prof": "Cohesion = intra-module relatedness; coupling = inter-module dependency strength.",
+      "faang_bar": "Good. How does DIP formally achieve loose coupling?",
+      "startup_cto": "5000-line UserService does auth, email, payments, analytics. Problem?"
+    }
+  },
+  {
+    "id": "oop_017",
+    "domain": "OOP",
+    "subdomain": "SOLID Principles",
+    "question": "What is the Open/Closed Principle?",
+    "keywords": [
+      "extension",
+      "modification",
+      "polymorphism",
+      "Strategy",
+      "regression",
+      "interface",
+      "composition"
+    ],
+    "common_mistakes": [
+      "Modifying existing code for every new feature"
+    ],
+    "followups": [
+      "How does Strategy implement OCP?",
+      "What is the Template Method pattern?"
+    ],
+    "roasts": {
+      "angry_staff": "Adding new if/else for every payment type modifies existing code. OCP violation.",
+      "strict_prof": "OCP formally requires that entities be extensible without source modification.",
+      "faang_bar": "Good. How does the Decorator pattern implement OCP?",
+      "startup_cto": "Every new feature requires editing core OrderProcessor. What principle is being violated?"
+    }
+  },
+  {
+    "id": "oop_018",
+    "domain": "OOP",
+    "subdomain": "Design Patterns",
+    "question": "What is the Builder pattern?",
+    "keywords": [
+      "telescoping constructor",
+      "immutable",
+      "fluent API",
+      "method chaining",
+      "optional parameters"
+    ],
+    "common_mistakes": [
+      "Confusing Builder with Abstract Factory"
+    ],
+    "followups": [
+      "Telescoping constructor antipattern?",
+      "Builder vs Factory?"
+    ],
+    "roasts": {
+      "angry_staff": "12-parameter constructor = telescoping antipattern. Builder solves it.",
+      "strict_prof": "Builder formally separates construction logic from the product.",
+      "faang_bar": "Good. Lombok @Builder vs manual Builder?",
+      "startup_cto": "REST request object with 15 optional fields. How to use Builder?"
+    }
+  },
+  {
+    "id": "oop_019",
+    "domain": "OOP",
+    "subdomain": "OOP Principles",
+    "question": "What is the difference between static and instance methods?",
+    "keywords": [
+      "this",
+      "instance",
+      "class method",
+      "utility",
+      "factory",
+      "no virtual dispatch"
+    ],
+    "common_mistakes": [
+      "Thinking static methods can be overridden"
+    ],
+    "followups": [
+      "Can static method access instance fields?",
+      "What is a static factory method?"
+    ],
+    "roasts": {
+      "angry_staff": "Static methods cannot be OVERRIDDEN. They can be HIDDEN. No virtual dispatch.",
+      "strict_prof": "Static methods lack a receiver — formally operate on class-level state.",
+      "faang_bar": "Good. Static factory method vs constructor API design?",
+      "startup_cto": "50 static methods in utility class. Testability implications?"
+    }
+  },
+  {
+    "id": "oop_020",
+    "domain": "OOP",
+    "subdomain": "Design Patterns",
+    "question": "What is the Template Method pattern?",
+    "keywords": [
+      "skeleton",
+      "algorithm",
+      "defer",
+      "abstract method",
+      "override",
+      "inheritance",
+      "IoC"
+    ],
+    "common_mistakes": [
+      "Confusing Template Method with Strategy (Template uses inheritance, Strategy uses composition)"
+    ],
+    "followups": [
+      "Template Method vs Strategy?",
+      "When to use Template Method?"
+    ],
+    "roasts": {
+      "angry_staff": "Template Method uses INHERITANCE. Strategy uses COMPOSITION. Structural difference.",
+      "strict_prof": "Template Method implements the Hollywood Principle: do not call us, we will call you.",
+      "faang_bar": "Good. What are the trade-offs of Template Method vs Strategy for algorithm variation?",
+      "startup_cto": "You have 5 report formats sharing 80% logic. Template Method or Strategy?"
+    }
   }
 ]
