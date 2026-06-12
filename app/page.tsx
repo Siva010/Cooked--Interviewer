@@ -20,29 +20,34 @@ const domainMap: Record<string, string[]> = {
   "Backend": ["backend"]
 };
 
-function countQuestions(dir: string, counts: Record<string, number>): number {
+async function countQuestions(dir: string, counts: Record<string, number>): Promise<number> {
     let total = 0;
     try {
-        const entries = fs.readdirSync(dir, { withFileTypes: true });
-        for (const entry of entries) {
+        const entries = await fs.promises.readdir(dir, { withFileTypes: true });
+        const promises = entries.map(async (entry) => {
             const fullPath = path.join(dir, entry.name);
             if (entry.isDirectory()) {
-                total += countQuestions(fullPath, counts);
+                return await countQuestions(fullPath, counts);
             } else if (entry.isFile() && fullPath.endsWith('.json')) {
                 try {
-                    const arr = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+                    const content = await fs.promises.readFile(fullPath, 'utf8');
+                    const arr = JSON.parse(content);
                     if (Array.isArray(arr)) {
-                        total += arr.length;
+                        const count = arr.length;
                         const dirname = path.basename(dir);
                         for (const [dom, folders] of Object.entries(domainMap)) {
                             if (folders.includes(dirname)) {
-                                counts[dom] += arr.length;
+                                counts[dom] = (counts[dom] || 0) + count;
                             }
                         }
+                        return count;
                     }
                 } catch(e) {}
             }
-        }
+            return 0;
+        });
+        const results = await Promise.all(promises);
+        total = results.reduce((acc, curr) => acc + curr, 0);
     } catch(e) {}
     return total;
 }
@@ -52,7 +57,7 @@ export default async function LandingPage() {
   for (const k of Object.keys(domainMap)) counts[k] = 0;
 
   const dataDir = path.join(process.cwd(), "public", "data");
-  const totalCount = countQuestions(dataDir, counts);
+  const totalCount = await countQuestions(dataDir, counts);
 
   const DOMAINS: { id: Domain | "All Domains"; label: string; emoji: string; count: number; color: string }[] = [
     { id: "Operating Systems", label: "Operating Systems", emoji: "⚙️", count: counts["Operating Systems"] || 0, color: "#8866ff" },

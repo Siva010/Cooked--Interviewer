@@ -23,146 +23,54 @@ export default function LandingClient({ DOMAINS, STATS }: { DOMAINS: DomainData[
   }
 
   return (
-    <div style={{ minHeight: "calc(100vh - 60px)", padding: "0" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
+    <div className="min-h-[calc(100vh-60px)] p-0">
+      <div className="max-w-[1200px] mx-auto px-6">
 
         {/* ── Hero ───────────────────────────────────────────── */}
-        <section
-          style={{
-            paddingTop: 120,
-            paddingBottom: 80,
-            textAlign: "center",
-            animation: "slideUp 0.6s cubic-bezier(0.4,0,0.2,1)",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center"
-          }}
-        >
+        <section className="pt-[120px] pb-20 text-center flex flex-col items-center animate-slide-up">
           {/* Badge */}
-          <div style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 8,
-            marginBottom: 32,
-            padding: "6px 12px",
-            borderRadius: "99px",
-            border: "1px solid var(--border)",
-            background: "var(--bg-card)",
-            fontSize: 13,
-            fontWeight: 600,
-            color: "var(--text-primary)"
-          }}>
-            <span style={{
-              width: 8, height: 8, borderRadius: '50%', background: 'var(--primary)', border: '1px solid var(--border-bright)'
-            }} />
+          <div className="inline-flex items-center gap-2 mb-8 px-3 py-1.5 rounded-full border border-[var(--border)] bg-[var(--bg-card)] text-[13px] font-semibold text-[var(--text-primary)]">
+            <span className="w-2 h-2 rounded-full bg-[var(--primary)] border border-[var(--border-bright)]" />
             Traditional prep is dead
-            <span style={{ color: "var(--text-secondary)", marginLeft: 4, fontFamily: 'IBM Plex Mono, monospace' }}>cooked.app/next →</span>
+            <span className="text-[var(--text-secondary)] ml-1 mono-font">cooked.app/next →</span>
           </div>
 
-          <h1
-            style={{
-              fontSize: "clamp(48px, 8vw, 92px)",
-              fontWeight: 700,
-              letterSpacing: "-0.04em",
-              lineHeight: 1.05,
-              marginBottom: 24,
-              maxWidth: 900,
-              color: "var(--text-primary)"
-            }}
-          >
+          <h1 className="text-[clamp(48px,8vw,92px)] font-bold tracking-[-0.04em] leading-[1.05] mb-6 max-w-[900px] text-[var(--text-primary)]">
             The interview system for engineers and agents
           </h1>
 
-          <p
-            style={{
-              fontSize: 22,
-              color: "var(--text-secondary)",
-              maxWidth: 700,
-              margin: "0 auto 60px",
-              lineHeight: 1.5,
-              fontWeight: 400
-            }}
-          >
+          <p className="text-[22px] text-[var(--text-secondary)] max-w-[700px] mx-auto mb-[60px] leading-relaxed font-normal">
             Purpose-built for planning and passing interviews. Designed for the AI era.
           </p>
 
           <button
             onClick={() => document.getElementById('setup-section')?.scrollIntoView({ behavior: 'smooth' })}
-            className="btn btn-primary btn-lg"
-            style={{
-              borderRadius: "99px",
-              padding: "16px 32px",
-            }}
+            className="btn btn-primary btn-lg rounded-full px-8 py-4"
           >
             Get started
           </button>
         </section>
 
         {/* ── Setup Section ─────────────────────────────────────── */}
-        <div
-          id="setup-section"
-          style={{
-            padding: "60px 0",
-            animation: "slideUp 0.8s cubic-bezier(0.4,0,0.2,1) 0.1s both",
-          }}
-        >
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 24,
-            alignItems: "stretch"
-          }}>
+        <div id="setup-section" className="py-[60px] animate-slide-up" style={{ animationDelay: "0.1s" }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {/* Step 1 – Domain */}
-            <div className="glass" style={{
-              padding: 40,
-              display: "flex",
-              flexDirection: "column",
-            }}>
-              <h2 style={{ fontSize: 24, fontWeight: 700, marginBottom: 8, letterSpacing: "-0.02em", color: "var(--text-primary)" }}>Built for purpose</h2>
-              <p style={{ color: "var(--text-secondary)", marginBottom: 32, fontSize: 16 }}>
+            <div className="glass p-10 flex flex-col">
+              <h2 className="text-2xl font-bold mb-2 tracking-[-0.02em] text-[var(--text-primary)]">Built for purpose</h2>
+              <p className="text-[var(--text-secondary)] mb-8 text-base">
                 Choose the domain you want to master. We cover everything from distributed systems to low-level OS details.
               </p>
               
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: 8,
-                }}
-              >
+              <div className="flex flex-wrap gap-2">
                 {DOMAINS.map((d) => (
                   <button
                     key={d.id}
                     onClick={() => setDomain(d.id)}
-                    style={{
-                      padding: "10px 16px",
-                      borderRadius: 4,
-                      border: `1px solid ${domain === d.id ? "var(--primary)" : "var(--border)"}`,
-                      background: domain === d.id ? "rgba(59, 130, 246, 0.1)" : "var(--bg-card)",
-                      color: domain === d.id ? "var(--primary)" : "var(--text-secondary)",
-                      cursor: "pointer",
-                      transition: "all 0.15s",
-                      fontSize: 14,
-                      fontWeight: 600,
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 8,
-                      fontFamily: 'IBM Plex Mono, monospace'
-                    }}
-                    onMouseOver={(e) => {
-                      if (domain !== d.id) {
-                        e.currentTarget.style.color = 'var(--text-primary)';
-                        e.currentTarget.style.border = '1px solid var(--border-bright)';
-                        e.currentTarget.style.background = 'var(--bg-card-hover)';
-                      }
-                    }}
-                    onMouseOut={(e) => {
-                      if (domain !== d.id) {
-                        e.currentTarget.style.color = 'var(--text-secondary)';
-                        e.currentTarget.style.border = '1px solid var(--border)';
-                        e.currentTarget.style.background = 'var(--bg-card)';
-                      }
-                    }}
+                    className={`px-4 py-2.5 rounded border transition-all duration-150 text-[14px] font-semibold flex items-center gap-2 mono-font ${
+                      domain === d.id
+                        ? 'border-[var(--primary)] bg-[rgba(59,130,246,0.1)] text-[var(--primary)]'
+                        : 'border-[var(--border)] bg-[var(--bg-card)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--border-bright)] hover:bg-[var(--bg-card-hover)]'
+                    }`}
                   >
                     <span>{d.emoji}</span>
                     {d.label}
@@ -172,84 +80,44 @@ export default function LandingClient({ DOMAINS, STATS }: { DOMAINS: DomainData[
             </div>
 
             {/* Step 2 – Personality */}
-            <div className="glass" style={{
-              padding: 40,
-              display: "flex",
-              flexDirection: "column",
-            }}>
-              <h2 style={{ fontSize: 24, fontWeight: 700, marginBottom: 8, letterSpacing: "-0.02em", color: "var(--text-primary)" }}>Powered by AI agents</h2>
-              <p style={{ color: "var(--text-secondary)", marginBottom: 32, fontSize: 16 }}>
+            <div className="glass p-10 flex flex-col">
+              <h2 className="text-2xl font-bold mb-2 tracking-[-0.02em] text-[var(--text-primary)]">Powered by AI agents</h2>
+              <p className="text-[var(--text-secondary)] mb-8 text-base">
                 Select an interviewer persona. From angry staff engineers to strict professors, they will challenge you.
               </p>
               
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 8,
-                }}
-              >
+              <div className="flex flex-col gap-2">
                 {PERSONALITY_LIST.map((p) => (
                   <button
                     key={p.id}
                     onClick={() => setPersonality(p.id)}
-                    style={{
-                      padding: "16px",
-                      borderRadius: 8,
-                      border: `1px solid ${personality === p.id ? "var(--primary)" : "var(--border)"}`,
-                      background: personality === p.id ? "rgba(59, 130, 246, 0.05)" : "var(--bg-card)",
-                      cursor: "pointer",
-                      transition: "all 0.15s",
-                      textAlign: "left",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 16,
-                    }}
-                    onMouseOver={(e) => {
-                      if (personality !== p.id) {
-                        e.currentTarget.style.border = '1px solid var(--border-bright)';
-                        e.currentTarget.style.background = 'var(--bg-card-hover)';
-                      }
-                    }}
-                    onMouseOut={(e) => {
-                      if (personality !== p.id) {
-                        e.currentTarget.style.border = '1px solid var(--border)';
-                        e.currentTarget.style.background = 'var(--bg-card)';
-                      }
-                    }}
+                    className={`p-4 rounded-lg border transition-all duration-150 text-left flex items-center gap-4 ${
+                      personality === p.id
+                        ? 'border-[var(--primary)] bg-[rgba(59,130,246,0.05)]'
+                        : 'border-[var(--border)] bg-[var(--bg-card)] hover:border-[var(--border-bright)] hover:bg-[var(--bg-card-hover)]'
+                    }`}
                   >
-                    <div style={{ fontSize: 24 }}>{p.emoji}</div>
-                    <div style={{ flex: 1 }}>
-                      <div style={{ fontSize: 16, fontWeight: 700, color: personality === p.id ? "var(--primary)" : "var(--text-primary)", fontFamily: 'Space Grotesk, sans-serif' }}>
+                    <div className="text-2xl">{p.emoji}</div>
+                    <div className="flex-1">
+                      <div className={`text-base font-bold display-font ${personality === p.id ? 'text-[var(--primary)]' : 'text-[var(--text-primary)]'}`}>
                         {p.name}
                       </div>
-                      <div style={{ fontSize: 14, color: "var(--text-secondary)", marginTop: 2, fontFamily: 'IBM Plex Mono, monospace' }}>
+                      <div className="text-sm text-[var(--text-secondary)] mt-0.5 mono-font">
                         {p.title}
                       </div>
                     </div>
                     {personality === p.id && (
-                      <div style={{ width: 12, height: 12, borderRadius: '50%', background: 'var(--primary)' }} />
+                      <div className="w-3 h-3 rounded-full bg-[var(--primary)]" />
                     )}
                   </button>
                 ))}
               </div>
               
-              <div style={{ marginTop: "auto", paddingTop: 32 }}>
+              <div className="mt-auto pt-8">
                 <button
                   onClick={handleStart}
                   disabled={launching}
-                  className="btn btn-primary"
-                  style={{
-                    width: "100%",
-                    fontSize: 16,
-                    padding: "16px",
-                    cursor: launching ? "not-allowed" : "pointer",
-                    opacity: launching ? 0.7 : 1,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    gap: 8,
-                  }}
+                  className={`btn btn-primary w-full text-base p-4 flex justify-center items-center gap-2 ${launching ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}
                 >
                   {launching ? (
                     "Initiating session..."
@@ -263,56 +131,23 @@ export default function LandingClient({ DOMAINS, STATS }: { DOMAINS: DomainData[
         </div>
 
         {/* ── Mid Section ───────────────────────────────────────── */}
-        <section style={{ 
-          marginTop: 60, 
-          paddingBottom: 100,
-          borderBottom: "1px solid var(--border)",
-          animation: "slideUp 0.8s cubic-bezier(0.4,0,0.2,1) 0.2s both" 
-        }}>
-          <h2
-            style={{
-              fontSize: "clamp(32px, 5vw, 48px)",
-              fontWeight: 700,
-              letterSpacing: "-0.03em",
-              marginBottom: 24,
-              maxWidth: 800,
-              color: "var(--text-primary)"
-            }}
-          >
-            A new species of interview tool. <span style={{ color: "var(--text-secondary)" }}>Purpose-built for modern engineers with AI workflows at its core, Cooked sets a new standard for prep.</span>
+        <section className="mt-[60px] pb-[100px] border-b border-[var(--border)] animate-slide-up" style={{ animationDelay: "0.2s" }}>
+          <h2 className="text-[clamp(32px,5vw,48px)] font-bold tracking-[-0.03em] mb-6 max-w-[800px] text-[var(--text-primary)]">
+            A new species of interview tool. <span className="text-[var(--text-secondary)]">Purpose-built for modern engineers with AI workflows at its core, Cooked sets a new standard for prep.</span>
           </h2>
           
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: 24,
-              marginTop: 60
-            }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-[60px]">
             {FEATURES.map((f, i) => (
-              <div key={f.title} style={{ 
-                padding: "32px 0",
-                borderTop: "1px solid var(--border)"
-              }}>
-                <div style={{ fontSize: 13, color: "var(--primary)", fontWeight: 600, letterSpacing: "0.05em", marginBottom: 32, fontFamily: "IBM Plex Mono, monospace" }}>
+              <div key={f.title} className="py-8 border-t border-[var(--border)]">
+                <div className="text-[13px] text-[var(--primary)] font-semibold tracking-[0.05em] mb-8 mono-font">
                   FIG 0.{i+1}
                 </div>
                 {/* Abstract visualization box instead of colorful icons */}
-                <div style={{ 
-                  height: 180, 
-                  marginBottom: 32, 
-                  background: "radial-gradient(ellipse at center, rgba(59, 130, 246, 0.05) 0%, transparent 70%)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  border: "1px solid var(--border)",
-                  borderRadius: 4
-                }}>
-                  <div style={{ color: "var(--primary)" }}>{f.icon}</div>
+                <div className="h-[180px] mb-8 flex items-center justify-center border border-[var(--border)] rounded bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.05)_0%,transparent_70%)]">
+                  <div className="text-[var(--primary)]">{f.icon}</div>
                 </div>
-                <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 12, color: "var(--text-primary)", fontFamily: 'Space Grotesk, sans-serif' }}>{f.title}</h3>
-                <p style={{ fontSize: 16, color: "var(--text-secondary)", lineHeight: 1.6 }}>
+                <h3 className="text-xl font-bold mb-3 text-[var(--text-primary)] display-font">{f.title}</h3>
+                <p className="text-base text-[var(--text-secondary)] leading-relaxed">
                   {f.desc}
                 </p>
               </div>
@@ -322,52 +157,47 @@ export default function LandingClient({ DOMAINS, STATS }: { DOMAINS: DomainData[
       </div>
 
       {/* ── Footer ───────────────────────────────────────────── */}
-      <footer style={{
-        padding: "80px 24px 40px",
-        background: "var(--bg-secondary)",
-        borderTop: "1px solid var(--border)"
-      }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1.5fr 1fr 1fr 1fr 1fr", gap: 32 }}>
+      <footer className="pt-20 pb-10 px-6 bg-[var(--bg-secondary)] border-t border-[var(--border)]">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-8">
           <div>
-            <div style={{ width: 32, height: 32, borderRadius: '4px', background: 'var(--primary)', position: 'relative', overflow: 'hidden' }}>
-            </div>
+            <div className="w-8 h-8 rounded bg-[var(--primary)] relative overflow-hidden" />
           </div>
           <div>
-            <div style={{ fontSize: 14, fontWeight: 700, color: "var(--text-primary)", marginBottom: 24, fontFamily: 'Space Grotesk, sans-serif' }}>Product</div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <div className="text-sm font-bold text-[var(--text-primary)] mb-6 display-font">Product</div>
+            <div className="flex flex-col gap-4">
               {["Intake", "Plan", "Build", "Diffs", "Monitor"].map(l => (
-                <a key={l} href="#" style={{ fontSize: 14, color: "var(--text-secondary)", textDecoration: "none", transition: "color 0.2s" }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--text-primary)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>{l}</a>
+                <a key={l} href="#" className="text-sm text-[var(--text-secondary)] no-underline transition-colors duration-200 hover:text-[var(--text-primary)]">{l}</a>
               ))}
             </div>
           </div>
           <div>
-            <div style={{ fontSize: 14, fontWeight: 700, color: "var(--text-primary)", marginBottom: 24, fontFamily: 'Space Grotesk, sans-serif' }}>Features</div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <div className="text-sm font-bold text-[var(--text-primary)] mb-6 display-font">Features</div>
+            <div className="flex flex-col gap-4">
               {["Asks", "Agents", "Insights", "Mobile", "Integrations"].map(l => (
-                <a key={l} href="#" style={{ fontSize: 14, color: "var(--text-secondary)", textDecoration: "none", transition: "color 0.2s" }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--text-primary)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>{l}</a>
+                <a key={l} href="#" className="text-sm text-[var(--text-secondary)] no-underline transition-colors duration-200 hover:text-[var(--text-primary)]">{l}</a>
               ))}
             </div>
           </div>
           <div>
-            <div style={{ fontSize: 14, fontWeight: 700, color: "var(--text-primary)", marginBottom: 24, fontFamily: 'Space Grotesk, sans-serif' }}>Company</div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <div className="text-sm font-bold text-[var(--text-primary)] mb-6 display-font">Company</div>
+            <div className="flex flex-col gap-4">
               {["About", "Customers", "Careers", "Blog", "Method"].map(l => (
-                <a key={l} href="#" style={{ fontSize: 14, color: "var(--text-secondary)", textDecoration: "none", transition: "color 0.2s" }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--text-primary)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>{l}</a>
+                <a key={l} href="#" className="text-sm text-[var(--text-secondary)] no-underline transition-colors duration-200 hover:text-[var(--text-primary)]">{l}</a>
               ))}
             </div>
           </div>
           <div>
-            <div style={{ fontSize: 14, fontWeight: 700, color: "var(--text-primary)", marginBottom: 24, fontFamily: 'Space Grotesk, sans-serif' }}>Resources</div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <div className="text-sm font-bold text-[var(--text-primary)] mb-6 display-font">Resources</div>
+            <div className="flex flex-col gap-4">
               {["Download", "Documentation", "Developers", "Status", "Enterprise"].map(l => (
-                <a key={l} href="#" style={{ fontSize: 14, color: "var(--text-secondary)", textDecoration: "none", transition: "color 0.2s" }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--text-primary)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>{l}</a>
+                <a key={l} href="#" className="text-sm text-[var(--text-secondary)] no-underline transition-colors duration-200 hover:text-[var(--text-primary)]">{l}</a>
               ))}
             </div>
           </div>
         </div>
-        <div style={{ maxWidth: 1200, margin: "100px auto 0", borderTop: "1px solid var(--border)", paddingTop: 32, display: "flex", gap: 24 }}>
+        <div className="max-w-[1200px] mx-auto mt-[100px] pt-8 border-t border-[var(--border)] flex gap-6">
           {["Privacy", "Terms", "DPA", "AUP"].map(l => (
-            <a key={l} href="#" style={{ fontSize: 14, color: "var(--text-muted)", textDecoration: "none" }}>{l}</a>
+            <a key={l} href="#" className="text-sm text-[var(--text-muted)] no-underline hover:text-[var(--text-primary)] transition-colors">{l}</a>
           ))}
         </div>
       </footer>
