@@ -25,6 +25,30 @@ An AI-driven technical interview platform designed to grill you, roast your mist
 3. **RAG (Retrieval-Augmented Generation):** Uses `@langchain/ollama` and `nomic-embed-text` to chunk and store document embeddings locally in `public/data/vectordb.json`.
 4. **AI Generation:** Supports both cloud APIs (Gemini) and Local LLMs (Ollama) for evaluating candidate answers and generating question banks.
 
+### Directory Structure
+```text
+app/
+├── admin/          # Admin UI (Crawl4AI ingestion & RAG management)
+├── analytics/      # Analytics & spaced repetition dashboard
+├── api/            # API Routes (evaluate, ingest, generate ideal answers)
+├── interview/      # Core interview UI (Queue, STT, TTS)
+└── settings/       # App configuration (LLM Provider, Voice, etc.)
+
+components/         
+├── interview/      # Evaluation panel, loading screens, stat pills
+├── layout/         # Navigation bar
+└── settings/       # Voice selection dropdowns
+
+lib/
+├── adaptive.ts     # SRS logic and adaptive question queueing
+├── db.ts           # IndexedDB wrappers for offline analytics
+├── evaluator.ts    # Scoring logic and LLM prompt orchestrator
+├── personalities.ts# Persona definitions (Angry Staff, CTO, etc.)
+├── rag.ts          # Local vector database setup (Ollama embeddings)
+├── stt.ts          # Speech-to-Text via WebSpeech API
+└── tts.ts          # Text-to-Speech via WebSpeech API
+```
+
 ---
 
 ## 🛠️ Local Environment Setup
