@@ -88,4 +88,18 @@ To add new technical questions to your database:
 - The markdown is embedded using `nomic-embed-text` and saved to your local `vectordb.json` for RAG evaluation.
 - The generated questions are appended to the domain's local JSON bank (`public/data/{domain}/all.json`).
 
+---
+
+## 🎙️ Voice Capabilities (TTS & STT)
+
+The platform supports an immersive, conversational interview experience through built-in Text-to-Speech (TTS) and Speech-to-Text (STT) functionality. 
+
+**How to use it:**
+- **Text-to-Speech (TTS):** When enabled via the Volume icon in the interview navigation bar or in Settings, the AI interviewer will vocalize its questions and roasts aloud. 
+- **Speech-to-Text (STT):** During the "Answering" phase, click the "Dictate" button to speak your answer instead of typing. The speech will be transcribed into the text area in real-time.
+
+**Configuration:**
+By default, the app leverages the free, zero-setup **Browser Native APIs** (`window.speechSynthesis` and `window.SpeechRecognition`) which run completely locally in your browser. 
+If you want higher quality or custom voices, you can configure **Custom APIs** in the Settings menu by pointing the app to external TTS/STT endpoints (e.g. OpenAI Whisper or ElevenLabs compatible endpoints).
+
 Enjoy getting cooked! 👨‍🍳🔥
