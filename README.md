@@ -75,19 +75,18 @@ ollama pull llama3
 ollama pull nomic-embed-text
 ```
 
-### Step 3: Start the Crawl4AI Scraper
-To use the automatic Q&A ingestion pipeline, start the Crawl4AI Docker container:
-```bash
-docker run -p 11225:11225 -d --name crawl4ai unclecode/crawl4ai:basic-amd64
-```
-*(This exposes the crawler API on `http://localhost:11225/crawl`)*
+### Step 3: Start the Application (One-Click)
+We have simplified the startup process! You no longer need to manually start multiple Docker containers or the Next.js dev server individually.
 
-### Step 4: Run the Application
-Start the Next.js development server:
-```bash
-npm run dev
+Simply run the startup script in PowerShell from the `app` directory:
+```powershell
+.\start.ps1
 ```
-Navigate to [http://localhost:3000](http://localhost:3000) in your browser.
+
+**What this script does:**
+1. Spins up all required Docker services in the background via `docker-compose` (including Crawl4AI for ingestion, Kokoro for TTS, and Faster-Whisper for STT).
+2. Ensures `ollama serve` is running.
+3. Starts the Next.js development server and automatically opens `http://localhost:3000` in your browser.
 
 ### Step 5: Configure App Settings
 1. In the app, click the **Settings** icon (gear) in the navbar.

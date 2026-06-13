@@ -1,0 +1,47 @@
+services:
+  crawl4ai:
+    image: unclecode/crawl4ai:basic-amd64
+    container_name: crawl4ai
+    ports:
+      - "11225:11225"
+    restart: unless-stopped
+
+  kokoro-tts:
+    # By default, using CPU. 
+    # To use GPU, comment out this image line and uncomment the GPU block below.
+    image: ghcr.io/remsky/kokoro-fastapi-cpu:latest
+    container_name: kokoro-tts
+    ports:
+      - "8880:8880"
+    restart: unless-stopped
+    # -------------------------------------------------------------
+    # FOR NVIDIA GPU: Uncomment the lines below and comment out the image above
+    # -------------------------------------------------------------
+    # image: ghcr.io/remsky/kokoro-fastapi-gpu:latest
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+
+  faster-whisper:
+    # By default, using CPU. 
+    # To use GPU, comment out this image line and uncomment the GPU block below.
+    image: fedirz/faster-whisper-server:latest-cpu
+    container_name: faster-whisper
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    # -------------------------------------------------------------
+    # FOR NVIDIA GPU: Uncomment the lines below and comment out the image above
+    # -------------------------------------------------------------
+    # image: fedirz/faster-whisper-server:latest-cuda
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
